@@ -1,0 +1,55 @@
+.banner {
+  width: 100%;
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.selecaoProdutosPosBanner {
+  display: flex;
+  gap: 3rem;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.selecaoProdutosPosBanner img {
+  width: 10rem;
+  border-radius: 50%;
+}
+
+.produtosPosBanner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* LIP OILS DO MEIO DE PAGINA */
+
+.lipOils {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  background-color: lightgrey;
+}
+
+.lipOilsTitle {
+  width: 7rem;
+  text-transform: uppercase;
+}
+
+.lipOils img {
+  width: 21rem;
+}
+
+.lipOilsProducts {
+  width: 21rem;
+  margin: 0.5rem;
+  gap: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
