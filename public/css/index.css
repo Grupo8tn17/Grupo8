@@ -1,10 +1,16 @@
 .banner {
-  width: 100%;
+  height: 52vh;
   margin-bottom: 2rem;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
+.banner img {
+  height: 50vh;
+}
+
+/* ********************************************************* */
 
 .selecaoProdutosPosBanner {
   display: flex;
@@ -32,16 +38,27 @@
   justify-content: center;
   align-items: center;
   width: auto;
-  background-color: lightgrey;
 }
 
 .lipOilsTitle {
-  width: 7rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 9rem;
   text-transform: uppercase;
 }
 
-.lipOils img {
-  width: 21rem;
+.lipOilsTitle h2 {
+  font-size: 2rem;
+}
+
+.lipOilsTitle span {
+  font-size: 0.8rem;
+}
+
+.lipOilsProducts img {
+  width: 18rem;
 }
 
 .lipOilsProducts {
@@ -52,4 +69,46 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+.lipOilsProducts a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.lipOilsDescription {
+  margin-top: 0.5rem;
+  text-align: center;
+}
+
+.lipOilsPrice {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+/* QUADRO COM TEXTO E FOTO NO MEIO DA PAGINA */
+
+.aboutInfinity {
+  margin: 1rem 5rem;
+  width: 75rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  background-color: var(--offwhite);
+}
+
+.aboutInfinity-image {
+  margin: 1.5rem;
+}
+
+.aboutInfinity-image img {
+  width: 30rem;
+}
+
+.aboutInfinity-text {
+  margin: 1.5rem;
+  text-align: justify;
 }

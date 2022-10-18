@@ -1,6 +1,12 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
-@import url("assets/css/footer.css");
-@import url("assets/css/mainIndex.css");
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;400;700;900&display=swap");
+@import url("footer.css");
+@import url("index.css");
+
+:root {
+  --bg-lightcolor: #d0e1aa;
+  --bg-darkcolor: #4e6122;
+  --offwhite: #f7f4eb;
+}
 
 * {
   box-sizing: border-box;
@@ -8,5 +14,6 @@
   padding: 0;
   text-decoration: none;
   list-style: none;
-  font-family: "Poppins", sans-serif;
+  font-family: "Lato", sans-serif;
 }
+
