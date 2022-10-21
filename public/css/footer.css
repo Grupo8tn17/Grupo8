@@ -99,7 +99,7 @@ footer {
 }
 
 .footer-payment img {
-  width: 1.8rem;
+  width: 2.3rem;
 }
 
 /* DIV DOS CERTIFICADOS DE SEGURANÇA */
@@ -108,7 +108,8 @@ footer {
 }
 
 .footer-securitycertificate img {
-  width: 4rem;
+  width: 7rem;
+  margin-top: 1rem;
 }
 
 /* FINAL DO RODAPÉ COM DADOS DA EMPRESA E DESENVOLVIMENTO */
