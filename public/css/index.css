@@ -1,5 +1,8 @@
+body {
+  background-color: var(--offwhite);
+}
+
 .banner {
-  height: 52vh;
   margin-bottom: 2rem;
   display: flex;
   justify-content: center;
@@ -7,15 +10,18 @@
 }
 
 .banner img {
-width: 65vw;
+  width: 100%;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
 }
 
 /* ********************************************************* */
 
 .selecaoProdutosPosBanner {
   display: flex;
-  gap: 3rem;
   justify-content: center;
+  align-items: center;
+  gap: 3rem;
   margin: 2rem 0;
 }
 
@@ -67,12 +73,11 @@ width: 65vw;
 
 .indexProductsProducts img {
   width: 18rem;
+  border: 0.2rem solid var(--offwhite-lightborder);
 }
 
 .indexProductsProducts {
   width: 21rem;
-  margin: 0.5rem;
-  gap: 0.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -114,7 +119,8 @@ width: 65vw;
   justify-content: center;
   align-items: center;
   gap: 1.5rem;
-  background-color: var(--offwhite);
+  background-color: var(--gray);
+  border-radius: 1rem;
 }
 
 .aboutInfinity-image {
@@ -127,6 +133,7 @@ width: 65vw;
 
 .aboutInfinity-text {
   width: 30rem;
+  background-color: var(--gray);
 }
 
 .aboutInfinity-text h2 {
@@ -134,20 +141,28 @@ width: 65vw;
   font-weight: 700;
   margin-bottom: 0.5rem;
   font-style: italic;
+  background-color: var(--gray);
 }
 
 .aboutInfinity-text p {
   margin-bottom: 1.5rem;
   text-align: justify;
+  background-color: var(--gray);
 }
 
 .aboutInfinity-text ul {
   display: flex;
   gap: 0.5rem;
+  background-color: var(--gray);
 }
 
 .aboutInfinity-text .fa-solid {
   color: var(--bg-darkcolor);
+  background-color: var(--gray);
+}
+
+.aboutInfinity-text ul li {
+  background-color: var(--gray);
 }
 
 .aboutInfinity-text button {
@@ -161,4 +176,165 @@ width: 65vw;
   border-radius: 8%;
   background-color: var(--bg-darkcolor);
   color: var(--offwhite);
+  transition: 0.5s ease;
+  cursor: pointer;
+}
+
+.aboutInfinity-text button:hover {
+  background-color: var(--bg-midlecolor);
+}
+
+/* PROMOTIONAL PRODUCTS */
+
+.promotionalProducts {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.promotionalProducts-container {
+  width: 70rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  border-radius: 1rem;
+}
+
+.promotionalProducts-right {
+  margin: 1.5rem 0;
+}
+
+.promotionalProducts-right img {
+  width: 30rem;
+}
+
+.promotionalProducts-left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 30rem;
+}
+
+.promotionalProducts-left p {
+  margin: 1.5rem;
+  text-align: justify;
+}
+
+.promotionalProducts-left h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  font-style: italic;
+  color: var(--bg-darkcolor);
+}
+
+.promotionalProducts-left button {
+  margin-top: 4rem;
+  text-transform: uppercase;
+  width: 13rem;
+  height: 3rem;
+  font-weight: 700;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 8%;
+  background-color: var(--bg-darkcolor);
+  color: var(--offwhite);
+  transition: 0.5s ease;
+  cursor: pointer;
+}
+
+.promotionalProducts-left button:hover {
+  background-color: var(--bg-midlecolor);
+}
+
+/* FINAL DA PAGINA PARA COLETAR DADOS DO CLIENTE/VISITANTE OU SE CADASTRAR */
+
+.endPage {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 1.5rem 0;
+  margin: 2rem 0;
+  background-color: var(--gray);
+}
+
+.endPage h2 {
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  margin-bottom: 0.8rem;
+}
+
+.endPage h3 {
+  font-size: 2rem;
+  margin: 0.5rem;
+}
+
+.endPage p {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.endPage button {
+  background-color: var(--gray);
+  text-transform: uppercase;
+  color: var(--bg-darkcolor);
+  font-size: 1.5rem;
+  font-weight: 700;
+  border-radius: 1rem;
+  padding: 0.5rem;
+  margin: 0.8rem;
+  cursor: pointer;
+  border: 0.1rem solid var(--bg-darkcolor)
+}
+
+
+.endPage-vipList {
+  width: 30rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.endPage form {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  margin: 1rem;
+}
+
+#userName {
+  border: 0.1rem solid var(--offwhite-lightborder);
+  width: 10rem;
+  height: 1.5rem;
+}
+
+#userEmail {
+  border: 0.1rem solid var(--offwhite-lightborder);
+  width: 10rem;
+  height: 1.5rem;
+}
+
+#userSignUp {
+  width: 9.7rem;
+  height: 2rem;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: var(--bg-darkcolor);
+  color: #fff;
+}
+
+.endPage-contactUs {
+  width: 30rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
