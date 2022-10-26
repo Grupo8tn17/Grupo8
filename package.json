@@ -1,19 +1,24 @@
 {
-  "name": "y",
+  "name": "infinity-group",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon style.css"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Grupo8tn17/Infinity-Group.git"
   },
+  "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Grupo8tn17/Infinity-Group/issues"
   },
-  "homepage": "https://github.com/Grupo8tn17/Infinity-Group#readme"
+  "homepage": "https://github.com/Grupo8tn17/Infinity-Group#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
 }
