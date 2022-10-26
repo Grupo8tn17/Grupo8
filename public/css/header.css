@@ -1,3 +1,8 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
 body .banner-frete {
     height: 27px;
     color: #4E6122;
