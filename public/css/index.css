@@ -1,5 +1,7 @@
 body {
   background-color: var(--offwhite);
+  width: 100%;
+  display: flex;
 }
 
 .banner {
@@ -7,6 +9,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
 }
 
 .banner img {
@@ -17,12 +20,15 @@ body {
 
 /* ********************************************************* */
 
+/*Alterei para Mobilefirst*/
 .selecaoProdutosPosBanner {
   display: flex;
+  flex-flow: row wrap;
   justify-content: center;
   align-items: center;
   gap: 3rem;
   margin: 2rem 0;
+  width: 100%;
 }
 
 .selecaoProdutosPosBanner img {
@@ -39,14 +45,18 @@ body {
 
 /* LIP OILS DO MEIO DE PAGINA */
 
+/*Alterei para Mobilefirst*/
 .indexProducts {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   width: auto;
   margin-bottom: 1.5rem;
+
 }
 
+/*Alterei para Mobilefirst*/
 .indexProductsTitle {
   display: flex;
   flex-direction: column;
@@ -55,6 +65,14 @@ body {
   text-align: center;
   width: 9rem;
   text-transform: uppercase;
+  margin-top: 2rem;
+}
+
+/*Alterei para Mobilefirst*/
+hr {
+  color: grey;
+  width: 80%;
+  margin: 1rem;
 }
 
 .indexProductsTitle h2 {
@@ -76,12 +94,14 @@ body {
   border: 0.2rem solid var(--offwhite-lightborder);
 }
 
+/*Alterei para Mobilefirst*/
 .indexProductsProducts {
   width: 21rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin-bottom: 2rem;
 }
 
 .indexProductsProducts a {
@@ -106,42 +126,62 @@ body {
 
 /* QUADRO COM TEXTO E FOTO NO MEIO DA PAGINA */
 
+/*Alterei para Mobilefirst*/
 .aboutInfinity {
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-bottom: 1.5rem;
 }
 
+/*Alterei para Mobilefirst*/
 .aboutInfinity-container {
-  width: 70rem;
+  width: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 1.5rem;
   background-color: var(--gray);
   border-radius: 1rem;
+  margin: 1rem;
+
 }
 
+/*Alterei para Mobilefirst*/
 .aboutInfinity-image {
   margin: 1.5rem 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
+/*Alterei para Mobilefirst*/
 .aboutInfinity-image img {
-  width: 30rem;
+  width: 90%;
 }
 
+/*Alterei para Mobilefirst*/
 .aboutInfinity-text {
-  width: 30rem;
+  width: 80%;
   background-color: var(--gray);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
+/*Alterei para Mobilefirst*/
 .aboutInfinity-text h2 {
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 0.5rem;
   font-style: italic;
   background-color: var(--gray);
+  display: flex;
+  justify-content: center;
 }
 
 .aboutInfinity-text p {
@@ -152,19 +192,32 @@ body {
 
 .aboutInfinity-text ul {
   display: flex;
+  flex-flow: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
   gap: 0.5rem;
   background-color: var(--gray);
 }
 
+/*Alterei para Mobilefirst*/
 .aboutInfinity-text .fa-solid {
   color: var(--bg-darkcolor);
   background-color: var(--gray);
+  padding: .5rem;
 }
 
+/*Alterei para Mobilefirst*/
 .aboutInfinity-text ul li {
+  width: 80%;
   background-color: var(--gray);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
 }
 
+/*Alterei para Mobilefirst*/
 .aboutInfinity-text button {
   margin-top: 4rem;
   text-transform: uppercase;
@@ -178,6 +231,10 @@ body {
   color: var(--offwhite);
   transition: 0.5s ease;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
 }
 
 .aboutInfinity-text button:hover {
@@ -186,16 +243,20 @@ body {
 
 /* PROMOTIONAL PRODUCTS */
 
+/*Alterei para Mobilefirst*/
 .promotionalProducts {
   display: flex;
+  width: 100%;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   margin-bottom: 1.5rem;
 }
 
 .promotionalProducts-container {
-  width: 70rem;
+  width: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 1.5rem;
@@ -223,7 +284,9 @@ body {
   text-align: justify;
 }
 
+/*Alterei para Mobilefirst*/
 .promotionalProducts-left h2 {
+  padding-top: 2rem;
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 0.5rem;
@@ -252,13 +315,16 @@ body {
 
 /* FINAL DA PAGINA PARA COLETAR DADOS DO CLIENTE/VISITANTE OU SE CADASTRAR */
 
+/*Alterei para Mobilefirst*/
 .endPage {
   display: flex;
+  flex-direction: column;
   justify-content: space-around;
   align-items: center;
   padding: 1.5rem 0;
   margin: 2rem 0;
   background-color: var(--gray);
+  width: 100%;
 }
 
 .endPage h2 {
@@ -291,34 +357,40 @@ body {
   border: 0.1rem solid var(--bg-darkcolor)
 }
 
-
+/*Alterei para Mobilefirst*/
 .endPage-vipList {
-  width: 30rem;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
+/*Alterei para Mobilefirst*/
 .endPage form {
   display: flex;
+  flex-direction: column;
   align-items: center;
   gap: 0.3rem;
   margin: 1rem;
+
 }
 
+/*Alterei para Mobilefirst*/
 #userName {
   border: 0.1rem solid var(--offwhite-lightborder);
-  width: 10rem;
+  width: 20rem;
   height: 1.5rem;
 }
 
+/*Alterei para Mobilefirst*/
 #userEmail {
   border: 0.1rem solid var(--offwhite-lightborder);
-  width: 10rem;
+  width: 20rem;
   height: 1.5rem;
 }
 
+/*Alterei para Mobilefirst*/
 #userSignUp {
   width: 9.7rem;
   height: 2rem;
@@ -329,6 +401,8 @@ body {
   border-radius: 0.5rem;
   background-color: var(--bg-darkcolor);
   color: #fff;
+  margin-top: .3rem;
+  width: 20rem;
 }
 
 .endPage-contactUs {
@@ -337,4 +411,368 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-top: 3rem;
+}
+
+@media (min-width: 768px) {
+
+  body {
+    background-color: var(--offwhite);
+    width: 100%;
+  }
+  
+  .banner {
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .banner img {
+    width: 100%;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+  }
+  
+  /* ********************************************************* */
+  
+  .selecaoProdutosPosBanner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    margin: 2rem 0;
+  }
+  
+  .selecaoProdutosPosBanner img {
+    width: 10rem;
+    border-radius: 50%;
+  }
+  
+  .produtosPosBanner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* LIP OILS DO MEIO DE PAGINA */
+  
+  .indexProducts {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    margin-bottom: 1.5rem;
+  }
+  
+  .indexProductsTitle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 9rem;
+    text-transform: uppercase;
+  }
+  
+  .indexProductsTitle h2 {
+    font-size: 2rem;
+  }
+  
+  .indexProductsTitle span {
+    margin-top: 0.5rem;
+    font-size: 0.8rem;
+    border-bottom: solid 0.1rem var(--bg-darkcolor);
+  }
+  
+  .indexProductsTitle a {
+    color: #000;
+  }
+  
+  .indexProductsProducts img {
+    width: 18rem;
+    border: 0.2rem solid var(--offwhite-lightborder);
+  }
+  
+  .indexProductsProducts {
+    width: 21rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .indexProductsProducts a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #000;
+  }
+  
+  .indexProductsDescription {
+    margin-top: 0.5rem;
+    text-align: center;
+  }
+  
+  .indexProductsPrice {
+    margin-top: 0.5rem;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--bg-darkcolor);
+  }
+
+  hr {
+    display: none;  
+  }
+  
+  /* QUADRO COM TEXTO E FOTO NO MEIO DA PAGINA */
+  
+  .aboutInfinity {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  .aboutInfinity-container {
+    width: 70rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    background-color: var(--gray);
+    border-radius: 1rem;
+  }
+  
+  .aboutInfinity-image {
+    margin: 1.5rem 0;
+  }
+  
+  .aboutInfinity-image img {
+    width: 30rem;
+  }
+  
+  .aboutInfinity-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: var(--gray);
+    padding-right: 2rem;
+  }
+  
+  .aboutInfinity-text h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    font-style: italic;
+    background-color: var(--gray);
+  }
+  
+  .aboutInfinity-text p {
+    margin-bottom: 1.5rem;
+    text-align: justify;
+    background-color: var(--gray);
+  }
+  
+  .aboutInfinity-text ul {
+    display: flex;
+    gap: 0.5rem;
+    background-color: var(--gray);
+  }
+  
+  .aboutInfinity-text .fa-solid {
+    color: var(--bg-darkcolor);
+    background-color: var(--gray);
+  }
+  
+  .aboutInfinity-text ul li {
+    background-color: var(--gray);
+  }
+  
+  .aboutInfinity-text button {
+    margin-top: 4rem;
+    text-transform: uppercase;
+    width: 13rem;
+    height: 3rem;
+    font-weight: 700;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 8%;
+    background-color: var(--bg-darkcolor);
+    color: var(--offwhite);
+    transition: 0.5s ease;
+    cursor: pointer;
+  }
+  
+  .aboutInfinity-text button:hover {
+    background-color: var(--bg-midlecolor);
+  }
+  
+  /* PROMOTIONAL PRODUCTS */
+  
+  .promotionalProducts {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  .promotionalProducts-container {
+    width: 70rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    border-radius: 1rem;
+  }
+  
+  .promotionalProducts-right {
+    margin: 1.5rem 0;
+  }
+  
+  .promotionalProducts-right img {
+    width: 30rem;
+  }
+  
+  .promotionalProducts-left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 30rem;
+  }
+  
+  .promotionalProducts-left p {
+    margin: 1.5rem;
+    text-align: justify;
+  }
+  
+  .promotionalProducts-left h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    font-style: italic;
+    color: var(--bg-darkcolor);
+  }
+  
+  .promotionalProducts-left button {
+    margin-top: 4rem;
+    text-transform: uppercase;
+    width: 13rem;
+    height: 3rem;
+    font-weight: 700;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 8%;
+    background-color: var(--bg-darkcolor);
+    color: var(--offwhite);
+    transition: 0.5s ease;
+    cursor: pointer;
+  }
+  
+  .promotionalProducts-left button:hover {
+    background-color: var(--bg-midlecolor);
+  }
+  
+  /* FINAL DA PAGINA PARA COLETAR DADOS DO CLIENTE/VISITANTE OU SE CADASTRAR */
+  
+  .endPage {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1.5rem 0;
+    margin: 2rem 0;
+    background-color: var(--gray);
+    width: 100%;
+  }
+  
+  .endPage h2 {
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    margin-bottom: 0.8rem;
+  }
+  
+  .endPage h3 {
+    font-size: 2rem;
+    margin: 0.5rem;
+  }
+  
+  .endPage p {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+  }
+  
+  .endPage button {
+    background-color: var(--gray);
+    text-transform: uppercase;
+    color: var(--bg-darkcolor);
+    font-size: 1.5rem;
+    font-weight: 700;
+    border-radius: 1rem;
+    padding: 0.5rem;
+    margin: 0.8rem;
+    cursor: pointer;
+    border: 0.1rem solid var(--bg-darkcolor)
+  }
+  
+  
+  .endPage-vipList {
+    width: 30rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .endPage form {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    margin: 1rem;
+  }
+  
+  #userName {
+    border: 0.1rem solid var(--offwhite-lightborder);
+    width: 20rem;
+    height: 1.5rem;
+  }
+  
+  #userEmail {
+    border: 0.1rem solid var(--offwhite-lightborder);
+    width: 20rem;
+    height: 1.5rem;
+  }
+  
+  #userSignUp {
+    width: 9.7rem;
+    height: 2rem;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    font-weight: 700;
+    border: none;
+    border-radius: 0.5rem;
+    background-color: var(--bg-darkcolor);
+    color: #fff;
+    
+  }
+  
+  .endPage-contactUs {
+    width: 30rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
 }

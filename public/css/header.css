@@ -1,6 +1,24 @@
+/*
+body * {
+    font-family: 'Lato', sans-serif;
+    box-sizing: border-box;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+
 body{
     margin: 0;
     padding: 0;
+}
+*/
+
+body {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    box-sizing: border-box;
 }
 
 body .banner-frete {
@@ -63,7 +81,12 @@ header .icons {
         display: flex;
         flex-direction: row;
         align-items: center;
-        justify-content: space-around;
+        justify-content: space-between;
+        padding: 0 5rem;
+    }
+
+    header > .menu-mobile {
+        display: none;
     }
 
     header > .menu-mobile img {

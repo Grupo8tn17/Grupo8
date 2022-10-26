@@ -106,10 +106,11 @@ main .container-produtos {
 }
 
 .section-filter .order select {
-    margin-left: .3rem;
+    margin-left: 1rem;
     border: .030rem grey solid;
     background-color: white;
     padding: .3rem;
+    width: 10rem;
 }
 
 main hr {
@@ -152,6 +153,7 @@ main hr {
     display: flex;
     flex-direction: column;
     align-items: center;
+    color: black;
 }
 
 .container .cards footer h3 {
