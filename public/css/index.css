@@ -2,9 +2,8 @@ body {
   background-color: var(--offwhite);
 }
 
-/* BANNER */
 .banner {
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -12,36 +11,23 @@ body {
 
 .banner img {
   width: 100%;
-  border: 1px solid red;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
 }
 
-/* PRODUCT SECTION SELECTOR */
+/* ********************************************************* */
+
 .selecaoProdutosPosBanner {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 3rem;
-}
-
-.selecaoProdutosPosBanner-container {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  flex-wrap: wrap;
-
-  border: 1px solid red;
-  width: 90%;
+  gap: 3rem;
+  margin: 2rem 0;
 }
 
 .selecaoProdutosPosBanner img {
-  width: 15rem;
+  width: 10rem;
   border-radius: 50%;
-}
-
-.selecaoProdutosPosBanner span {
-  font-size: 2rem;
-  color: var(--bg-darkcolor);
-  margin-top: 1rem;
 }
 
 .produtosPosBanner {
@@ -51,130 +37,84 @@ body {
   align-items: center;
 }
 
-/* INDEX PRODUCTS */
+/* LIP OILS DO MEIO DE PAGINA */
+
 .indexProducts {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 3rem;
+  width: auto;
+  margin-bottom: 1.5rem;
 }
 
-.indexProducts-container {
-  width: 90%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-}
-
-.indexProductsSection {
+.indexProductsTitle {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  width: 15rem;
+  width: 9rem;
   text-transform: uppercase;
 }
 
-
-.indexProductsSection h2 {
-  font-size: 3rem;
+.indexProductsTitle h2 {
+  font-size: 2rem;
 }
 
-.indexProductsSection span {
+.indexProductsTitle span {
   margin-top: 0.5rem;
-  font-size: 2rem;
+  font-size: 0.8rem;
   border-bottom: solid 0.1rem var(--bg-darkcolor);
 }
 
-.indexProductsSection a {
+.indexProductsTitle a {
   color: #000;
 }
 
-.indexProducts-product {
-  max-width: 28rem;
-  height: 70rem;
-  margin: 1rem;
-  padding: 0.5rem;
-  border: 0.1rem solid var(--offwhite-darkborder);
+.indexProductsProducts img {
+  width: 18rem;
+  border: 0.2rem solid var(--offwhite-lightborder);
 }
 
-.indexProducts-product a {
+.indexProductsProducts {
+  width: 21rem;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
+  justify-content: center;
+}
+
+.indexProductsProducts a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
   color: #000;
 }
 
-.indexProducts-product img {
-  max-width: 25rem;
-  border: 0.2rem solid var(--offwhite-lightborder);
-}
-
-.productBrand {
-  font-size: 2rem;
-  margin-bottom: 0.2rem;
-  font-weight: 700;
-  text-transform: uppercase;
-}
-
-.indexProductsTitle {
-  margin-bottom: 1.5rem;
-  font-size: 2rem;
-  word-wrap: break-word;
-}
-
-.indexProducts-product-score {
-  font-size: 2rem;
-  color: var(--bg-midlecolor);
-}
-
-.indexProducts-product-priceGroup {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  margin: 0;
-}
-
-.indexProductsOldPrice {
-  background-color: var(--gray);
-  color: var(--offwhite);
-  padding: 0.5rem;
-  border-radius: 0.5rem;
-  font-size: 1rem;
-  text-decoration: line-through;
+.indexProductsDescription {
+  margin-top: 0.5rem;
+  text-align: center;
 }
 
 .indexProductsPrice {
-  font-size: 3rem;
+  margin-top: 0.5rem;
+  font-size: 2rem;
   font-weight: 700;
   color: var(--bg-darkcolor);
 }
 
-.indexProductsSubPrice {
-  margin: 0;
-  font-size: 1.5rem;
-}
+/* QUADRO COM TEXTO E FOTO NO MEIO DA PAGINA */
 
-.indexProductsDescription {
-  font-size: 1.6rem;
-  margin: 1.5rem 0;
-  word-wrap: break-word;
-  text-align: justify;
-}
-
-/* ABOUT INFINITY COMESTICS  */
 .aboutInfinity {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 .aboutInfinity-container {
-  width: 90%;
+  width: 70rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -184,17 +124,16 @@ body {
 }
 
 .aboutInfinity-image {
-  margin: 0.5rem 0;
+  margin: 1.5rem 0;
 }
 
 .aboutInfinity-image img {
   width: 30rem;
-  border-radius: 0.5rem;
 }
 
 .aboutInfinity-text {
-  background-color: var(--gray);
   width: 30rem;
+  background-color: var(--gray);
 }
 
 .aboutInfinity-text h2 {
@@ -255,12 +194,12 @@ body {
 }
 
 .promotionalProducts-container {
-  width: 90%;
-  border: 1px solid red;
+  width: 70rem;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 1.5rem;
+  border-radius: 1rem;
 }
 
 .promotionalProducts-right {
@@ -315,19 +254,11 @@ body {
 
 .endPage {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   padding: 1.5rem 0;
   margin: 2rem 0;
   background-color: var(--gray);
-}
-
-.endPage-container {
-  border: 1px solid red;
-  width: 90%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 }
 
 .endPage h2 {
@@ -357,18 +288,16 @@ body {
   padding: 0.5rem;
   margin: 0.8rem;
   cursor: pointer;
-  border: 0.1rem solid var(--bg-darkcolor);
+  border: 0.1rem solid var(--bg-darkcolor)
 }
 
+
 .endPage-vipList {
-  border: 1px solid red;
-  width: 45%;
-  height: 15rem;
+  width: 30rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  align-content: stretch;
 }
 
 .endPage form {
@@ -380,19 +309,19 @@ body {
 
 #userName {
   border: 0.1rem solid var(--offwhite-lightborder);
-  width: 50%;
+  width: 10rem;
   height: 1.5rem;
 }
 
 #userEmail {
   border: 0.1rem solid var(--offwhite-lightborder);
-  width: 50%;
+  width: 10rem;
   height: 1.5rem;
 }
 
 #userSignUp {
-  width: 50%;
-  height: 2.5rem;
+  width: 9.7rem;
+  height: 2rem;
   text-transform: uppercase;
   font-size: 1.2rem;
   font-weight: 700;
@@ -403,9 +332,7 @@ body {
 }
 
 .endPage-contactUs {
-  border: 1px solid red;
-  height: 15rem;
-  width: 47.5%;
+  width: 30rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
