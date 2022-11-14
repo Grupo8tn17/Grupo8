@@ -3,6 +3,7 @@ footer {
   flex-direction: column;
   color: var(--bg-lightcolor);
   width: 100%;
+  z-index: 20;
 }
 
 footer h3 {
