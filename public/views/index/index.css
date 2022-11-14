@@ -34,8 +34,6 @@
   opacity: 1;
 }
 
-/* ********************************************************* */
-
 .selecaoProdutosPosBanner {
   display: flex;
   justify-content: center;
@@ -55,8 +53,6 @@
   justify-content: center;
   align-items: center;
 }
-
-/* LIP OILS DO MEIO DE PAGINA */
 
 .indexProducts {
   display: flex;
@@ -122,8 +118,6 @@
   font-weight: 700;
   color: var(--bg-darkcolor);
 }
-
-/* QUADRO COM TEXTO E FOTO NO MEIO DA PAGINA */
 
 .aboutInfinity {
   display: flex;
@@ -203,8 +197,6 @@
   background-color: var(--bg-midlecolor);
 }
 
-/* PROMOTIONAL PRODUCTS */
-
 .promotionalProducts {
   display: flex;
   justify-content: center;
@@ -268,8 +260,6 @@
 .promotionalProducts-left button:hover {
   background-color: var(--bg-midlecolor);
 }
-
-/* FINAL DA PAGINA PARA COLETAR DADOS DO CLIENTE/VISITANTE OU SE CADASTRAR */
 
 .endPage {
   display: flex;
