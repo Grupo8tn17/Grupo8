@@ -5,11 +5,17 @@
 @import url("footer.css");
 <<<<<<< HEAD
 @import url("index.css");
+<<<<<<< HEAD
 @import url(/public/views/productDescription/productDescription.css);
 =======
 @import url("../views/index/index.css");
 @import url("../views/orderFinished/orderFinished.css");
 >>>>>>> 3f55f95465b02e1171cbad14bd5446619cd6176e
+=======
+@import url("../views/Cadastro/cadastro.css");
+@import url("../views/Login/login.css");
+@import url("../views/PoliticasPrivacidade/politicaPrivacidadeCookiesUso.css");
+>>>>>>> dev-lucilia
 
 :root {
   --bg-lightcolor: #d0e1aa;
