@@ -1,0 +1,267 @@
+body {
+  background-color: var(--offwhite);
+
+}
+
+.orderCongrats {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 0;
+  background-color: var(--gray);
+  margin-bottom: 2rem;
+}
+
+.orderCongrats h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+
+.orderCongrats p {
+  margin-bottom: 1rem;
+}
+
+.orderPayment {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.orderPayment h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+
+.orderPayment p {
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.orderPayment-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 20%;
+}
+
+.orderPayment button {
+  border: none;
+  background-color: var(--bg-darkcolor);
+  padding: 0.5rem;
+  border-radius: 3rem;
+  color: var(--offwhite);
+}
+
+.orderBoleto {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+  padding: 2rem 0;
+  background-color: var(--gray);
+}
+
+.orderBoleto-square {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.orderBoleto-square img {
+  width: 42.75rem;
+  border: 0.1rem solid var(--offwhite-darkborder);
+}
+
+.orderBoleto-square button {
+  width: 42.75rem;
+  border-bottom: 0.1rem solid var(--offwhite-darkborder);
+  border-left: 0.1rem solid var(--offwhite-darkborder);
+  border-right: 0.1rem solid var(--offwhite-darkborder);
+  border-top: none;
+  background-color: var(--offwhite);
+  color: var(--bg-darkcolor);
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.orderBoleto-square p {
+  margin-top: 1rem;
+  font-size: 0.8rem;
+  border-top: 0.1rem solid var(--bg-darkcolor);
+  padding: 0 3rem;
+}
+
+.orderBoleto-square strong {
+  color: var(--bg-lightcolor);
+  font-size: 1rem;
+  font-weight: 100;
+}
+
+/* ****************************  */
+/* ****************************  */
+/* ****************************  */
+/* ****************************  */
+/* ****************************  */
+
+.orderData {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.orderData-container {
+  width: 81rem;
+  max-width: 70%;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.orderData-title {
+  margin-bottom: 2rem;
+}
+
+.orderData-title h1 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.orderData-user {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.orderData-user h2 {
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.orderData-userData {
+  border: 0.1rem solid var(--bg-darkcolor);
+  border-radius: 1rem;
+  padding: 1rem 3rem 1rem 1rem;
+}
+
+.orderData-userData-resume {
+  display: flex;
+  justify-content: space-between;
+  gap: 4rem;
+}
+
+.orderData-address {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  border: 0.1rem solid var(--bg-darkcolor);
+  border-radius: 1rem;
+  padding: 1rem 3rem 1rem 1rem;
+}
+
+.orderData-address h2 {
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.orderData-address span {
+  margin-top: 1.5rem;
+}
+
+.orderItems {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+
+}
+
+.orderItems-title {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+
+
+}
+
+.orderItems-title h4 {
+  text-transform: uppercase;
+}
+
+.orderItems-title p {
+  font-size: 1.5rem;
+}
+
+.orderItems-list {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+
+
+}
+
+.orderItems-listContainer {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  gap: 1rem;
+  padding-right: 1rem;
+  border-top: 0.1rem solid var(--bg-darkcolor);
+
+
+}
+
+.orderItems-listContainer img {
+  width: 9rem;
+}
+
+.orderItems-listContainer h3 {
+color: var(--bg-darkcolor);
+}
+
+.orderItems-listContainer p {
+  color: var(--gray);
+}
+
+.orderFinishButtons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  padding-right: 1rem;
+
+
+}
+
+.orderFinishButtons button {
+  color: var(--bg-darkcolor);
+  font-size: 1.5rem;
+  font-weight: 700;
+  padding: .5rem;
+  background-color: inherit;
+  border: 1px solid var(--bg-darkcolor);
+  border-radius: 3rem;
+  transition: .3s ease;
+}
+
+.orderFinishButtons button:hover {
+  color: var(--bg-lightcolor);
+  background-color: var(--bg-darkcolor);
+}
