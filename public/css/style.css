@@ -1,7 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
-@import url('/public/css/header.css');
+
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,400;0,700;0,900;1,100;1,400;1,700;1,900&display=swap");
 @import url('/public/css/footer.css');
+@import url('/public/css/header.css');
+@import url('/public/css/headerAlternate.css');
 
 :root {
   --bg-lightcolor: #d0e1aa;

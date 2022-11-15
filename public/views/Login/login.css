@@ -16,7 +16,7 @@ h1 {
 .container {
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
 }
 
 hr {
@@ -31,8 +31,16 @@ hr {
     align-items: center;
     justify-content: center;
     margin: 2rem;
-    width: 50%;
+    width: 30rem;
+    height: 30rem;
     border: 3px solid green;
+}
+
+#first form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 #first h2 {
@@ -44,7 +52,7 @@ hr {
 #first input {
     background-color:#ffff;
     border: none; 
-    width: 70%;
+    width: 25rem;
     height: 3.5rem;
     padding-left: .5rem;
     margin-bottom: 1rem;
@@ -72,8 +80,6 @@ hr {
 button{
     background-color: #4E6122;
     border: none; 
-    margin-top: .8rem;
-    margin-bottom: .5rem;
     border-radius: 3rem;
     font-weight: 700;
     
@@ -82,7 +88,7 @@ button{
 #first button {
     background-color: #4E6122;
     border: none; 
-    margin-top: 1.5rem;
+    margin-top: 1rem;
     margin-bottom: .5rem;
     border-radius: 3rem;
     font-weight: 700;
@@ -99,8 +105,18 @@ button{
     flex-direction: column;
     text-align: center;
     margin-top: 2rem;
-    width: 50%;
+    width: 30rem;
+    height: 30rem;
     border: 3px solid green;
+}
+
+.secondCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
 }
 
 #second button {
@@ -108,26 +124,30 @@ button{
     height: 3.3rem;
     font-size: 1.5rem;
     color: #F7F4EB;
-    margin-top: 2rem;
 }
 
 #desc {
     font-size: 1.7rem;
     color: #4E6122;
-    margin-top: 2rem;
     font-weight: 700;
+    margin-bottom: 4rem;
 }
 
 #desc strong {
     color:darkorange;
 }
 
+.buttonGoogle button {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .buttonGoogle img {
     max-width: 2.5rem;
     border-radius: 1rem;
-    text-align: left;
-    margin-top: .27rem;
-    margin-left: -5rem;
+    margin-right: 2rem;
 }
 
 
