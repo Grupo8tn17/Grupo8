@@ -15,7 +15,7 @@ footer h3 {
   display: flex;
   gap: 1rem;
   padding-top: 1rem;
-
+  justify-content: center;
 }
 
 .footer-icon {
