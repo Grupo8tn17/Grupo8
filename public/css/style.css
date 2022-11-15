@@ -1,21 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
-@import url(/public/css/header.css);
-@import url(/public/views/list-product/list-products.css);
+@import url('/public/css/header.css');
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,400;0,700;0,900;1,100;1,400;1,700;1,900&display=swap");
-@import url("footer.css");
-<<<<<<< HEAD
-@import url("index.css");
-<<<<<<< HEAD
-@import url(/public/views/productDescription/productDescription.css);
-=======
-@import url("../views/index/index.css");
-@import url("../views/orderFinished/orderFinished.css");
->>>>>>> 3f55f95465b02e1171cbad14bd5446619cd6176e
-=======
-@import url("../views/Cadastro/cadastro.css");
-@import url("../views/Login/login.css");
-@import url("../views/PoliticasPrivacidade/politicaPrivacidadeCookiesUso.css");
->>>>>>> dev-lucilia
+@import url('/public/css/footer.css');
 
 :root {
   --bg-lightcolor: #d0e1aa;
