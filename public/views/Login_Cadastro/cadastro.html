@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lato&family=Rajdhani&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="fontawesome/css/all.min.css">
+        <link rel="stylesheet" href="cadastro.css">
+        <title>Formulário de Cadastro de Novo Cliente</title>
+    </head>
+
+    <body link="#4E6122" vlink="#4E6122">
+
+        <div class="banner-frete"><a>GRÁTIS ACIMA DE R$ 249,90 - TODO BRASIL</a></div>
+        <header>
+          <div class="menu-mobile">
+              <img src="/public/img/icons8-cardápio-64.png" alt="">
+          </div>
+          <nav>
+              <ul>
+                  <li><a href="first">+Categorias</a></li>
+                  <li><a href="second">Pó Facial</a></li>
+                  <li><a href="tree">Lip Oil</a></li>
+                  <li><a href="four">Bruma</a></li>
+                  <li><a href="five">Iluminador</a></li>
+              </ul>
+          </nav>
+      
+          <div class="logo">
+              <a href="index.html"><img src="/public/img/Logo3PNG.png" alt=""></a>
+          </div>
+      
+          <div class="icons">       
+              <div class="icon-search">
+                  <form action="/" method="post">
+                      <input type="text" placeholder="Pesquisar Produtos...">
+                      <img src="/public/img/icons8-search-64.png" alt="">
+                  </form>
+              </div>
+              <div class="icons-infos">
+                  <div class="icon-user">
+                      <img src="/public/img/icons8-user-64-white.png" alt="">
+                  </div>
+                  <div class="icon-phone">
+                      <img src="/public/img/icons8-telefone-desligado-64.png" alt="">
+                  </div>
+                  <div class="icon-cart">
+                      <img src="/public/img/icons8-carrinho-de-compras-64.png" alt="">
+                  </div>
+              </div>    
+          </div>
+        </header>
+
+        <main>
+          <header>
+            <h1>Cadastro de Novo Cliente</h1>
+            <hr/>                   
+          </header>
+            
+          <form action="/" method="post">
+            <h2>Dados Pessoais</h2>
+                
+            <section class="personal-data">
+                    
+              <section id="first">
+                    
+                <div class="dice">
+                  <label for="name"></label>
+                  <input type="text" id="name" name="name" required="required" placeholder="Nome Completo:"/> 
+                </div>
+                
+                <div class="dice">
+                  <label for="email"></label>
+                  <input type="email" id="email" name="email" required="required" placeholder="E-mail:"/> 
+                </div> 
+
+                <div class="dice">
+                  <label for="cpf"></label>
+                  <input type="text" id="cpf" minlength="14" maxlength="14" required="required" placeholder="CPF:">
+                </div> 
+
+                <div class="small-data">
+                  <label for="tel"></label>
+                  <input type="text" id="tel" minlength="14" maxlength="14" required="required" placeholder="Tel Celular:"/> 
+                
+                  <label for="cep"></label>
+                  <input type="text" id="cep" minlength="9" maxlength="9" required="required" placeholder="CEP:"/> 
+                </div>                       
+                      
+              </section>
+
+              <section id="second">
+                    
+                <div class="dice">
+                  <label for="pwd1"></label>
+                  <input type="password" id="pwd1" name="pwd1" required="required" placeholder="Crie sua senha de acesso:"/> 
+                </div>
+                
+                <div class="dice">
+                  <label for="pwd2"></label>
+                  <input type="password" id="pwd2" name="pwd2" required="required" placeholder="Confirme sua senha de acesso:"/> 
+                </div> 
+
+                <div class="checkbox">
+                  <input type="checkbox" name="promotional-email" id="promotional-email" value="true">
+                  <label for="promotional-email">Desejo receber e-mails promocionais</label>
+                </div>
+
+                <div class="checkbox">           
+                  <input type="checkbox" name="privacy-policy" id="privacy-policy" value="true">
+                  <label for="privacy-policy">Concordo com a <a href="">política de privacidade</a> e os <a href="">termos de uso</a>.</label>
+                </div>
+
+                <div class="advance"></div>
+                  <button type="submit">Avançar</button>
+                </div>
+   
+                      
+              </section>
+
+            </section>
+
+            </form>                
+                
+        </main>
+
+        <footer>
+            <div class="footer-start">
+              <div class="footer-icon">
+                <img src="public/img/infinityCosmeticosLogoFooter.png" alt="">
+              </div>
+              <div class="footer-links">
+        
+                <div class="footer-linksup">
+                  <div class="footer-institutional">
+                    <h3>Institucional</h3>
+                    <ul>
+                      <li><a href="#">Atendimento</a></li>
+                      <li><a href="#">Politica de Privacidade</a></li>
+                      <li><a href="#">Termos e Condições</a></li>
+                      <li><a href="#">Politica de Entrega</a></li>
+                      <li><a href="#">Trocas e Devoluções</a></li>
+                    </ul>
+                  </div>
+        
+                  <div class="footer-contact">
+                    <h3>Contato</h3>
+                    <ul>
+                      <li><a href="https://chat.whatsapp.com/FjdF5cHSeSyJIcPrKWDZmL" target="_blank"><i
+                            class="fa-brands fa-whatsapp"></i> (11)948584656</a></li>
+                      <li><a href="#">sac@grupoinfinity.com.br</a></li>
+                    </ul>
+                    <span>Atendimento 24 horas</span>
+                  </div>
+        
+                  <div class="footer-sociallinks">
+                    <h3>Redes sociais</h3>
+                    <div class="sociallinks-boxone">
+                      <ul>
+                        <li><a href=""><i class="fa-brands fa-facebook-f"></i></a></li>
+                        <li><a href="https://github.com/Grupo8tn17" target="_blank"><i class="fa-brands fa-github"></i></a></li>
+                      </ul>
+                    </div>
+                    <div class="sociallinks-boxtwo">
+                      <ul>
+                        <li><a href=""><i class="fa-brands fa-instagram"></i></a></li>
+                        <li><a href=""><i class="fa-brands fa-twitter"></i></a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+        
+                <div class="footer-linksdown">
+                  <div class="footer-payment">
+                    <h3>Pagamento</h3>
+                    <ul>
+                      <li><i class="fa-brands fa-cc-visa" title="VISA"></i></li>
+                      <li><i class="fa-brands fa-cc-mastercard" title="Mastercard"></i></li>
+                      <li><i class="fa-brands fa-cc-amex" title="American Express"></i></li>
+                      <li><i class="fa-brands fa-cc-diners-club" title="Diners Club"></i></li>
+                      <li><img
+                          src="https://i1.wp.com/remaxdobrasil.com.br/wp-content/uploads/2020/06/boleto-icone-branco.png?ssl=1"
+                          title="Boleto" alt="Icone de pagamento em boleto"></i></li>
+                    </ul>
+                  </div>
+        
+                  <div class="footer-securitycertificate">
+                    <h3>Compra segura</h3>
+                    <ul>
+                      <li><img src="https://logodownload.org/wp-content/uploads/2016/09/pagseguro-logo-4-1.png"
+                          alt="Icone PagSeguro"></li>
+                    </ul>
+        
+        
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="footer-end">
+              <span>Copyright &copy; 2002 - Infinity Cosméticos Ltda. Todos os direitos reservados. CNPJ 26.226.155/0001-34 -
+                Av. Domingos Odália Filho, 301 - Sala: 14/106 - Centro Osasco, 06010-060, São Paulo - Brasil</span>
+            </div>
+        </footer>
+        
+    </body>
+
+</html>
