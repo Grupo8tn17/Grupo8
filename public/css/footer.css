@@ -4,6 +4,7 @@ footer {
   color: var(--bg-lightcolor);
   width: 100%;
   background-color: var(--bg-darkcolor);
+  margin-bottom: 0;
 }
 
 footer h3 {

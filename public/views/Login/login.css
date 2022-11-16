@@ -13,6 +13,7 @@ h1 {
     margin-bottom: 1rem;
 }
 
+
 .container {
     width: 100%;
     display: flex;
@@ -130,11 +131,15 @@ button{
     font-size: 1.7rem;
     color: #4E6122;
     font-weight: 700;
-    margin-bottom: 4rem;
 }
 
 #desc strong {
     color:darkorange;
+}
+
+.buttonCadastro {
+    margin-bottom: 4rem;
+    cursor: pointer;
 }
 
 .buttonGoogle button {

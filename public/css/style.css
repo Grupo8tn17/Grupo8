@@ -3,6 +3,7 @@
 @import url('/public/css/footer.css');
 @import url('/public/css/header.css');
 @import url('/public/css/headerAlternate.css');
+@import url('/public/css/footerAlternative.css');
 
 :root {
   --bg-lightcolor: #d0e1aa;
