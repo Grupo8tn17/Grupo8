@@ -2,25 +2,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'lato';
-
-}
-body{
-   background-color: #f7f4eb ;
-}
-
-header{
-    color:#fff;
-    padding-top: 0.625rem;
-    text-align: center;
-    padding-bottom: 0.625rem;
-    background-color: #4e6022;
-}
-
 .titulo-painel{
     width: 100%;
     padding-top: 1.25rem;

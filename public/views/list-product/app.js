@@ -33,7 +33,7 @@ buttonClosed.addEventListener('click', function() {
 buttonFilter.addEventListener('click', function (){
     if(!showSidebar) {
         menuFilter.style.marginLeft = 0;
-        navList.style.animationName = 'showSidebar'
+        menuFilter.style.animationName = 'showSidebar'
     } else {
         menuFilter.style.marginLeft = -100;
     }
