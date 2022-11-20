@@ -1,6 +1,6 @@
 .orderHeader {
   width: 100%;
-  box-shadow: 0px 2px 6px #464646;
+  box-shadow: 0 4px 2px -2px #464646;
   padding: 0 0 1rem 0;
   margin-bottom: 2rem;
 }
@@ -238,7 +238,7 @@
   color: var(--bg-darkcolor);
   font-size: 1.5rem;
   font-weight: 700;
-  
+
   padding-left: 1rem;
   padding-right: 0.5rem;
   border-radius: 0 120px 0 120px;
@@ -270,12 +270,20 @@
   .orderUserData-personal,
   .orderUserData-address {
     max-width: 90%;
+    padding: 0;
   }
   #orderAddressZipCode,
   #orderAddressCity {
     width: auto;
-    max-width: 90%;
   }
+
+  .orderUserData fieldset {
+    padding: 0;
+  }
+  .orderUserData-addressContainer {
+    width: auto;
+  }
+
   .orderPaymentType-container {
     flex-wrap: wrap;
     justify-content: center;
@@ -288,5 +296,6 @@
 
   .orderHeader-safeBuy h3 {
     font-size: 1rem;
+    width: auto;
   }
 }
