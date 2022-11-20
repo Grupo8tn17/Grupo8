@@ -5,173 +5,99 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://kit.fontawesome.com/0ad644d1e0.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="orderFinished.css">
     <title>Infinity Cosmeticos</title>
 </head>
 
 <body>
+    <header class="orderHeader">
+        <div class="orderHeader-container">
 
-    <div class="orderCongrats">
-        <h2>Seu pedido foi processado com sucesso!</h2>
-        <p>Um e-mail de confirmação foi enviado a você em <strong>grupo8@email.com.br</strong> com todos os detalhes
-            do
-            pedido.</p>
-        <p>Efetue o pagamento no valor de <strong> R$ 249,46 </strong> até o dia <strong>09/11/2022</strong>
-            utilizando
-            os dados abaixo.</p>
-    </div>
+            <a href="../../../index.html"><img src="../../img/infinityCosmeticosLogo.png"
+                    alt="Logotipo Infinity Cosmeticos"></a>
 
-    <div class="orderPayment">
-        <h2>Dados do Boleto Bancário a ser pago</h2>
-        <p>74593.11218 15675.028003 00421.082330 7 91640000027946</p>
-        <div class="orderPayment-buttons">
-            <button><i class="fa-regular fa-copy"></i> Copiar</button>
-            <button><i class="fa-solid fa-print"></i> Imprimir Boleto Bancário</button>
-        </div>
-    </div>
-
-
-    <div class="orderBoleto">
-        <div class="orderBoleto-square">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/c/c7/BoletoBancario.png" alt="">
-            <button>Expandir</button>
-            <p>Não consegue ver o seu Boleto Bancário? <strong
-                    title="Seu Boleto Bancário está funcionando normalmente! Clique em 'Imprimir Boleto Bancário' para efetuar o pagamento.">&#128712;</strong>
-            </p>
-        </div>
-    </div>
-
-    <div class="orderData">
-
-
-        <div class="orderData-container">
-
-            <div class="orderData-title">
-                <h1>Pedido #0000001-01</h1>
-            </div>
-
-
-            <div class="orderData-user">
-                <div class="orderData-userData">
-                    <h2>dados pessoais</h2>
-                    <p>Leonardo Machado</p>
-                    <p>111.222.333-44</p>
-                    <p>+5511993224884</p>
-                </div>
-                <div class="orderData-userData">
-                    <h2>pagamento</h2>
-                    <p>Boleto Bancário</p>
-                    <p>R$ 279,46 à vista</p>
-                </div>
-                <div class="orderData-userData">
-                    <h2>resumo</h2>
-                    <div class="orderData-userData-resume">
-                        <p>Subtotal</p>
-                        <p>R$ 288,65</p>
-                    </div>
-                    <div class="orderData-userData-resume">
-                        <p>Descontos</p>
-                        <p>-R$ 9,19</p>
-                    </div>
-                    <div class="orderData-userData-resume">
-                        <p>Total</p>
-                        <p>R$ 279,46</p>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="orderData-address">
-                <h2>receber</h2>
-                <p>Leonardo Machado</p>
-                <p>Rua 01 de Janeiro, 02</p>
-                <p>Centro - Sao Paulo - SP</p>
-                <p>12345-678</p>
-                <p>Brasil</p>
-
-                <span> Frete Economico </span>
-                <p>4 dias úteis <i class="fa-solid fa-truck-fast"></i></p>
-            </div>
-
-
-            <div class="orderData-items">
-
-
+            <div class="orderHeader-safeBuy">
+                <h3>sua compra segura</h3>
+                <i class="fa-solid fa-lock"></i>
             </div>
         </div>
-    </div>
+    </header>
 
-    <div class="orderItems">
-        <div class="orderItems-container">
-            <div class="orderItems-title">
-                <h4>Economico</h4>
-                <p>Em até 4 dias úteis</p>
+
+    <div class="orderFinished">
+
+        <div class="orderFinished-left">
+            <div class="orderFinished-leftTopBox">
+                <span><i class="fa-solid fa-circle-check"></i></span>
+                <h1>Pedido Concluido com Sucesso</h1>
+
+                <p class="orderNumberTitle">Número do pedido</p>
+                <p class="orderNumber">03-538713470</p>
+
+                <p class="orderUserEmail">Confirmação do pedido enviado para: <br> grupo8@email.com.br</p>
+            </div>
+            <div class="orderFinished-leftBotBox">
+                <h2>Endereço de entrega</h2>
+                <p>Fulano de Tal <br> Rua 1 de Janeiro, 02 - São Paulo SP <br> CEP: 01234-678</p>
+
+                <h2>Forma de pagamento</h2>
+                <p>MasterCard 5555********6789 <br> 2x de R$ 227,75 sem juros <br>Valor Total R$
+                    455,50
+                </p>
+
+                <span>Receba seu pedido até 31 de Dezembro <i class="fa-solid fa-truck-fast"></i></span>
+            </div>
+        </div>
+
+        <div class="orderFinished-right">
+            <h2>Resumo da compra</h2>
+
+            <div class="orderProducts">
+                <img src="https://useorganico.vteximg.com.br/arquivos/ids/166679-1000-1000/Desodrante-Natural-Sem-Perfume-120ml-Livealoe.jpg?v=637520105477430000"
+                    alt="">
+                <span class="orderProductsTitle">Desodorante Natural Sem Perfume 120ml - Livealoe</span>
+                <span class="orderProductsAmount">Qtd: 01</span>
+                <span class="orderProductsPrice">R$ 20,35</span>
+            </div>
+            <div class="orderProducts">
+                <img src="https://useorganico.vteximg.com.br/arquivos/ids/166679-1000-1000/Desodrante-Natural-Sem-Perfume-120ml-Livealoe.jpg?v=637520105477430000"
+                    alt="">
+                <span class="orderProductsTitle">Desodorante Natural Sem Perfume 120ml - Livealoe</span>
+                <span class="orderProductsAmount">Qtd: 01</span>
+                <span class="orderProductsPrice">R$ 20,35</span>
+            </div>
+            <div class="orderProducts">
+                <img src="https://useorganico.vteximg.com.br/arquivos/ids/166679-1000-1000/Desodrante-Natural-Sem-Perfume-120ml-Livealoe.jpg?v=637520105477430000"
+                    alt="">
+                <span class="orderProductsTitle">Desodorante Natural Sem Perfume 120ml - Livealoe</span>
+                <span class="orderProductsAmount">Qtd: 01</span>
+                <span class="orderProductsPrice">R$ 20,35</span>
             </div>
 
-            <div class="orderItems-list">
-                <div class="orderItems-listContainer">
-                    <div class="orderItems-listImage">
-                        <img src="https://useorganico.vteximg.com.br/arquivos/ids/165194-1000-1000/Kit-com-Esfoliante-e-Manteiga-Suavidade---Ahoaloe.jpg?v=637278528923470000"
-                            alt="">
-                    </div>
-                    <div class="orderItems-listDescription">
-                        <h3>Kit com Esfoliante e Manteiga Suavidade - Ahaloe</h3>
-                        <p>1 un. R$ 189,50</p>
-                    </div>
+
+            <div class="orderFinishResume">
+                <div class="orderResume-resume">
+                    <p>Subtotal </p>
+                    <p>R$ 249,00</p>
                 </div>
-                <div class="orderItems-listContainer">
-                    <div class="orderItems-listImage">
-                        <img src="https://useorganico.vteximg.com.br/arquivos/ids/166202-1000-1000/creme-facial-noturno-antioxidante-25-45-50g-souvie.jpg?v=637432949174600000"
-                            alt="">
-                    </div>
-                    <div class="orderItems-listDescription">
-                        <h3>Creme Facial Noturno Antioxidante 25/45 50g - Souvie</h3>
-                        <p>1 un. R$ 114,00</p>
-                    </div>
+                <div class="orderResume-delivery">
+                    <p>Frete</p>
+                    <p>R$ 11,26</p>
                 </div>
-                <div class="orderItems-listContainer">
-                    <div class="orderItems-listImage">
-                        <img src="https://useorganico.vteximg.com.br/arquivos/ids/155842-1000-1000/_MG_8725-Editar.jpg?v=636439390176130000"
-                            alt="">
-                    </div>
-                    <div class="orderItems-listDescription">
-                        <h3>Máscara de Argila Dourada Orgânica 40g – Terramater</h3>
-                        <p>1 un. R$ 11,82</p>
-                    </div>
-                </div>
-                <div class="orderItems-listContainer">
-                    <div class="orderItems-listImage">
-                        <img src="https://useorganico.vteximg.com.br/arquivos/ids/167584-1000-1000/kit-revitalizante-viagem.jpg?v=637686099758230000"
-                            alt="">
-                    </div>
-                    <div class="orderItems-listDescription">
-                        <h3>Kit Viagem Revitalizante para todos os tipos de pele - AhoAloe</h3>
-                        <p>1 un. R$ 74,92</p>
-                    </div>
-                </div>
-                <div class="orderItems-listContainer">
-                    <div class="orderItems-listImage">
-                        <img src="https://useorganico.vteximg.com.br/arquivos/ids/159710-1000-1000/kit-cabelos-claros-multivegetal.jpg?v=636747560419200000"
-                            alt="">
-                    </div>
-                    <div class="orderItems-listDescription">
-                        <h3>Kit Shampoo e Condicionador para Cabelos Claros - Multi Vegetal</h3>
-                        <p>1 un. R$ 114,00</p>
-                    </div>
+
+                <div class="orderResume-total">
+                    <p>TOTAL</p>
+                    <p>R$ 509,26</p>
                 </div>
             </div>
         </div>
 
     </div>
 
-    <div class="orderFinishButtons">
-
-        <button>Realizar nova compra</button>
+    <div class="orderFinishedButtons">
+        <button>Continuar comprando</button>
         <button>Ir para meus pedidos</button>
-
     </div>
-
-
 
 
 
