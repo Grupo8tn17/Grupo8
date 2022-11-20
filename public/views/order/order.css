@@ -6,7 +6,7 @@
 }
 
 .orderHeader-container {
-  max-width: 90%;
+  max-width: 100%;
   display: flex;
   justify-content: space-between;
   margin: auto;
@@ -238,10 +238,13 @@
   color: var(--bg-darkcolor);
   font-size: 1.5rem;
   font-weight: 700;
-  padding: 0.5rem;
+  
+  padding-left: 1rem;
+  padding-right: 0.5rem;
+  border-radius: 0 120px 0 120px;
+
   background-color: inherit;
   border: 1px solid var(--bg-darkcolor);
-  border-radius: 1rem;
   transition: 0.3s ease;
   cursor: pointer;
 }
@@ -278,8 +281,12 @@
     justify-content: center;
   }
 
- .orderHeader-safeBuy .fa-lock {
+  .orderHeader-safeBuy .fa-lock {
     font-size: 1.5rem;
-    padding: .3rem;
+    padding: 0.3rem;
+  }
+
+  .orderHeader-safeBuy h3 {
+    font-size: 1rem;
   }
 }
