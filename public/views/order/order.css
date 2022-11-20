@@ -15,6 +15,7 @@
 
 .orderHeader-container img {
   width: 10rem;
+  padding-left: 1rem;
 }
 
 .orderHeader-safeBuy {
@@ -23,6 +24,7 @@
   align-items: center;
   gap: 0.5rem;
   color: var(--bg-darkcolor);
+  padding-right: 1rem;
 }
 
 .orderHeader-safeBuy h3 {
