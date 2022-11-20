@@ -46,6 +46,8 @@
   width: 80rem; /* 1280px */
   max-width: 90%;
   margin-bottom: 2rem;
+
+  flex-wrap: wrap;
 }
 
 .orderUserData-personal,
@@ -145,6 +147,8 @@
   width: 80rem; /* 1280px */
   max-width: 90%;
   margin-bottom: 2rem;
+
+  flex-wrap: wrap;
 }
 
 .orderPaymentType {
@@ -228,6 +232,7 @@
   justify-content: flex-end;
   gap: 1rem;
   margin-bottom: 2rem;
+  flex-wrap: wrap;
 }
 .orderButtons button {
   color: var(--bg-darkcolor);
@@ -244,4 +249,37 @@
 .orderButtons button:hover {
   color: var(--bg-lightcolor);
   background-color: var(--bg-darkcolor);
+}
+
+@media screen and (max-width: 820px) {
+  .orderUserData {
+    flex-direction: column;
+    align-content: center;
+  }
+
+  .orderUserData-personal,
+  .orderUserData-address {
+    border-right: none;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .orderUserData-personal,
+  .orderUserData-address {
+    max-width: 90%;
+  }
+  #orderAddressZipCode,
+  #orderAddressCity {
+    width: auto;
+    max-width: 90%;
+  }
+  .orderPaymentType-container {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+ .orderHeader-safeBuy .fa-lock {
+    font-size: 1.5rem;
+    padding: .3rem;
+  }
 }
