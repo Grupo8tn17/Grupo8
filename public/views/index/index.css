@@ -39,6 +39,7 @@
   align-items: center;
   gap: 3rem;
   margin: 2rem 0;
+  flex-wrap: wrap;
 }
 
 .selecaoProdutosPosBanner img {
@@ -111,8 +112,14 @@
   text-align: center;
 }
 
+.indexProductsOldPrice {
+  margin-top: .5rem;
+  text-decoration: line-through;
+  color: var(--gray);
+}
+
 .indexProductsPrice {
-  margin-top: 0.5rem;
+  
   font-size: 2rem;
   font-weight: 700;
   color: var(--bg-darkcolor);
@@ -133,6 +140,7 @@
   gap: 1.5rem;
   background-color: var(--gray);
   border-radius: 1rem;
+  flex-wrap: wrap;
 }
 
 .aboutInfinity-image {
@@ -347,8 +355,33 @@
   align-items: center;
 }
 
+@media screen and (max-width: 1920px) {
+  body > header {
+  margin-bottom: 0;
+}
+}
+
 @media screen and (max-width: 820px) {
   /* FEITO */
+
+  .selecaoProdutosPosBanner {
+    padding: 0 6rem;
+  }
+
+  .aboutInfinity-container {
+    width: 50rem;
+    max-width: 100%;
+    padding: 1rem;
+  }
+
+  .aboutInfinity-image {
+    display: none;
+  }
+
+  .aboutInfinity-text {
+    width: 80%;
+  }
+
   .indexProducts {
     flex-wrap: wrap;
     gap: 0.5rem;
@@ -388,9 +421,57 @@
 }
 
 @media screen and (max-width: 400px) {
-  .aboutInfinity-image {
-    display: none;
+  .selecaoProdutosPosBanner {
+    padding: 0;
+    width: 90%;
   }
+
+  .selecaoProdutosPosBanner img {
+    width: 7.5rem;
+  }
+
+  .aboutInfinity-container {
+    flex-direction: column;
+  }
+
+  .aboutInfinity-image {
+    display: initial;
+  }
+
+  .aboutInfinity-image img {
+    width: 20rem;
+    border-radius: 0.5rem;
+  }
+
+  .aboutInfinity-text {
+    width: 20rem;
+  }
+
+  .aboutInfinity-text ul {
+    flex-direction: column;
+    text-align: justify;
+  }
+  .aboutInfinity-text ul li {
+    text-align: left;
+    padding: 0 4rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .aboutInfinity button {
+    margin-top: 1rem;
+ justify-content: center;
+ align-items: center;
+ align-content: center;
+
+ 
+
+
+  
+ 
+  transition: 0.5s ease;
+  cursor: pointer;
+  }
+
 
   /* FEITO */
   .promotionalProducts {
