@@ -4,7 +4,6 @@ footer {
   color: var(--bg-lightcolor);
   width: 100%;
   background-color: var(--bg-darkcolor);
-  margin-bottom: 0;
 }
 
 footer h3 {
@@ -39,9 +38,7 @@ footer h3 {
   justify-content: space-between;
 }
 
-.footer-institutional {
-  margin-left: 3rem;
-}
+
 
 .footer-institutional ul {
   display: flex;

@@ -5,7 +5,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://kit.fontawesome.com/0ad644d1e0.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="orderFinished.css">
+    <link rel="shortcut icon" href="public/img/infinityCosmeticos.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="order.css">
     <title>Infinity Cosmeticos</title>
 </head>
 
@@ -23,88 +25,106 @@
         </div>
     </header>
 
+    <div class="orderUserData">
 
-    <div class="orderFinished">
+        <form class="orderUserData-personal" action="">
+            <h3>Dados Pessoais</h3>
+            <input type="text" id="orderUserName" placeholder="Nome Completo">
+            <input type="email" id="orderUserEmail" placeholder="E-mail">
+            <input type="text" id="orderUserPhone" placeholder="Telefone" maxlength="11">
+            <input type="text" id="orderUserDocument" placeholder="CPF" maxlength="11">
 
-        <div class="orderFinished-left">
-            <div class="orderFinished-leftTopBox">
-                <span><i class="fa-solid fa-circle-check"></i></span>
-                <h1>Pedido Concluido com Sucesso</h1>
+        </form>
 
-                <p class="orderNumberTitle">Número do pedido</p>
-                <p class="orderNumber">03-538713470</p>
-
-                <p class="orderUserEmail">Confirmação do pedido enviado para: <br> grupo8@email.com.br</p>
+        <form class="orderUserData-address" action="">
+            <h3>Endereço de Entrega</h3>
+            <input type="text" id="orderAddressStreet" placeholder="Rua">
+            <div class="orderUserData-addressContainer">
+                <input type="number" id="orderAddressNumber" placeholder="Nº">
+                <input type="text" id="orderAddressZipCode" placeholder="CEP" maxlength="8">
             </div>
-            <div class="orderFinished-leftBotBox">
-                <h2>Endereço de entrega</h2>
-                <p>Fulano de Tal <br> Rua 1 de Janeiro, 02 - São Paulo SP <br> CEP: 01234-678</p>
-
-                <h2>Forma de pagamento</h2>
-                <p>MasterCard 5555********6789 <br> 2x de R$ 227,75 sem juros <br>Valor Total R$
-                    455,50
-                </p>
-
-                <span>Receba seu pedido até 31 de Dezembro <i class="fa-solid fa-truck-fast"></i></span>
-            </div>
-        </div>
-
-        <div class="orderFinished-right">
-            <h2>Resumo da compra</h2>
-
-            <div class="orderProducts">
-                <img src="https://useorganico.vteximg.com.br/arquivos/ids/166679-1000-1000/Desodrante-Natural-Sem-Perfume-120ml-Livealoe.jpg?v=637520105477430000"
-                    alt="">
-                <span class="orderProductsTitle">Desodorante Natural Sem Perfume 120ml - Livealoe</span>
-                <span class="orderProductsAmount">Qtd: 01</span>
-                <span class="orderProductsPrice">R$ 20,35</span>
-            </div>
-            <div class="orderProducts">
-                <img src="https://useorganico.vteximg.com.br/arquivos/ids/166679-1000-1000/Desodrante-Natural-Sem-Perfume-120ml-Livealoe.jpg?v=637520105477430000"
-                    alt="">
-                <span class="orderProductsTitle">Desodorante Natural Sem Perfume 120ml - Livealoe</span>
-                <span class="orderProductsAmount">Qtd: 01</span>
-                <span class="orderProductsPrice">R$ 20,35</span>
-            </div>
-            <div class="orderProducts">
-                <img src="https://useorganico.vteximg.com.br/arquivos/ids/166679-1000-1000/Desodrante-Natural-Sem-Perfume-120ml-Livealoe.jpg?v=637520105477430000"
-                    alt="">
-                <span class="orderProductsTitle">Desodorante Natural Sem Perfume 120ml - Livealoe</span>
-                <span class="orderProductsAmount">Qtd: 01</span>
-                <span class="orderProductsPrice">R$ 20,35</span>
+            <div class="orderUserData-addressContainer">
+                <input type="text" id="orderAddressCity" placeholder="Cidade">
+                <input type="text" id="orderAddressState" placeholder="Estado">
             </div>
 
+            <input type="text" id="orderAddressComplement" placeholder="Complemento">
+            <input type="text" id="orderAddressReference" placeholder="Ponto de Referencia">
+        </form>
 
-            <div class="orderFinishResume">
-                <div class="orderResume-resume">
-                    <p>Subtotal </p>
-                    <p>R$ 249,00</p>
-                </div>
-                <div class="orderResume-delivery">
-                    <p>Frete</p>
-                    <p>R$ 11,26</p>
-                </div>
+        <fieldset>
 
-                <div class="orderResume-total">
-                    <p>TOTAL</p>
-                    <p>R$ 509,26</p>
-                </div>
+            <legend>Forma de Envio</legend>
+            <div>
+                <h4>PAC</h4>
+                <label for="pac">
+                    <input name="frete" type="radio" id="pac">
+                    <div class="deliveryType-price">
+                        <p class="price">R$ 11,26</p>
+                        <p class="deadline">Entrega em 9 dias uteis</p>
+                    </div>
+                </label>
             </div>
-        </div>
+
+            <div>
+                <h4>Sedex</h4>
+                <label for="sedex">
+                    <input name="frete" type="radio" id="sedex">
+                    <div class="deliveryType-price">
+                        <p class="price">R$ 11,26</p>
+                        <p class="deadline">Entrega em 9 dias uteis</p>
+                    </div>
+                </label>
+            </div>
+
+        </fieldset>
 
     </div>
 
-    <div class="orderFinishedButtons">
+    <div class="orderPaymentResume">
+        <div class="orderPaymentType">
+
+            <h3>Forma de pagamento</h3>
+            <div class="orderPaymentType-container">
+                <button><span>Cartão de Crédito <br> </span><i class="fa-regular fa-credit-card"></i></button>
+
+                <button><span>Boleto Bancário <br> </span><i class="fa-solid fa-barcode"></i></button>
+
+                <button><span>Pix <br> </span><i class="fa-brands fa-pix"></i></button>
+            </div>
+        </div>
+
+        <div class="orderResume">
+
+            <h3>Resumo da Compra</h3>
+            <div class="orderResume-resume">
+                <p>1 Produto </p>
+                <p>R$ 249,00</p>
+            </div>
+            <div class="orderResume-delivery">
+                <p>Frete</p>
+                <p>R$ 11,26</p>
+            </div>
+
+            <div class="orderResume-total">
+                <p>TOTAL</p>
+                <p>R$ 509,26</p>
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <div class="orderButtons">
         <button>Continuar comprando</button>
-        <button>Ir para meus pedidos</button>
+        <button>Finalizar pedido</button>
     </div>
-
-
 
     <footer>
         <div class="footer-start">
             <div class="footer-icon">
-                <img src="../../img/infinityCosmeticosLogoFooter.png" alt="">
+                <img src="../../img/infinityCosmeticosLogo.png" alt="">
             </div>
             <div class="footer-links">
 
@@ -156,8 +176,7 @@
                             <li><i class="fa-brands fa-cc-mastercard" title="Mastercard"></i></li>
                             <li><i class="fa-brands fa-cc-amex" title="American Express"></i></li>
                             <li><i class="fa-brands fa-cc-diners-club" title="Diners Club"></i></li>
-                            <li><img src="https://i1.wp.com/remaxdobrasil.com.br/wp-content/uploads/2020/06/boleto-icone-branco.png?ssl=1"
-                                    title="Boleto" alt="Icone de pagamento em boleto"></i></li>
+                            <li><i class="fa-solid fa-barcode" title="Boleto"></i></li>
                         </ul>
                     </div>
 
