@@ -30,7 +30,7 @@ body {
 
 #login {
   margin: 2rem;
-  padding: 2rem;  
+  padding: 3rem;  
 }
 
 #login h1 {
@@ -38,7 +38,7 @@ body {
   text-align: center;
   color: var(--bg-darkcolor);
   font-weight: 700;
-  margin-top: 2rem;
+  margin-top: 4rem;
   margin-bottom: 1rem;
 }
 
@@ -58,10 +58,11 @@ body {
   justify-content: center;
   align-content: center;
   flex-wrap: wrap;
-  gap: 2rem;
-  margin: 2rem;
-  padding: 2rem;
-  max-width: 90%;
+  gap: 3rem;
+  margin: auto;
+  padding-bottom: 14rem;
+  padding-top: 4rem;
+ width: 100%;
 }
 
 #first-login {
@@ -194,3 +195,14 @@ transform: translateX(-2px);
   max-width: 2.5rem;
   border-radius: 1rem;
 }
+
+.errorInput{
+  border: 3px solid rgb(240, 54, 54) !important;
+}
+
+@media (max-width: 1020px) {
+  #container-login {
+   max-width: 90%;  
+ }
+ }
+ 
