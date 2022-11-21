@@ -83,3 +83,12 @@
 .products_files_area input {
     padding-left: 2rem;
 }
+
+.error {
+    margin-top: .5rem;
+    border-radius: .25rem;
+    padding: .7rem;
+    color: #721c24;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+}

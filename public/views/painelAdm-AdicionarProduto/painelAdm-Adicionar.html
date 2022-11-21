@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="painelAdm-Adicionar.css">
+    <script src="/public/views/painelAdm-AdicionarProduto/app.js" defer></script>
     <link rel="stylesheet" href="/public/views/painelAdm-AdicionarProduto/painelAdm-AdicionarProduto.css">
     <script src="https://kit.fontawesome.com/0ad644d1e0.js" crossorigin="anonymous"></script>
     <title>Painel Administrativo - Infinity Cosméticos</title>
@@ -43,7 +44,7 @@
             <div class="container-products">
                 <h3>Adicionar Produtos</h3>
   
-                <form method="POST" enctype="multipart/form-data" action="">
+                <form  action="/public/views/painelAdm-AdicionarProduto/painelAdm-AdicionarProduto.html" id="form">
                     <div class="box">
                         <div class="box-header">
                             <h4 class="box-title">Novo Produto</h4>
@@ -55,12 +56,12 @@
 
                             <div class="form-group">
                                 <label for="p_name">Nome do produto</label>
-                                <input required type="text" id="p_name" name="name" />
+                                <input  type="text" id="p_name" name="name" />
                             </div>
             
                             <div class="form-group">
                                 <label for="p_cat">Categoria</label>
-                                <select required name="id_category" id="p_cat" >
+                                <select  name="id_category" id="p_cat" >
                                   <option value="" selected></option>
                                   <option value="">Pó Facial</option>
                                   <option value="">Lip Oil</option>
@@ -71,7 +72,7 @@
             
                             <div class="form-group">
                                 <label for="p_brand">Marca</label>
-                                <select required name="id_brand" id="p_brand" >
+                                <select name="id_brand" id="p_brand" >
                                         <option value="" selected></option>
                                         <option>Bergamia</option>
                                         <option>Khor Cosmetics</option>
@@ -88,12 +89,12 @@
             
                             <div class="form-group">
                                 <label for="p_stock">Estoque Disponível</label>
-                                <input required type="number" id="p_stock" name="stock" />
+                                <input type="number" id="p_stock" name="stock" />
                             </div>
             
                             <div class="form-group">
                                 <label for="p_price">Preço</label>
-                                <input required type="text"  id="p_price" name="price" />
+                                <input  type="text"  id="p_price" name="price" />
                             </div>       
                             
                             <div class="image-product">
