@@ -9,9 +9,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lato&family=Rajdhani&display=swap" rel="stylesheet">
   <link rel="shortcut icon" href="/public/img/infinityCosmeticos.ico" type="image/x-icon" />
+  <script src="https://kit.fontawesome.com/9b4c830fd1.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="login.css">
-  <script src="loginValidacao.js" defer></script>
-  <title>Formulário de Login e Cadastro</title>
+  <script src="loginValidForm.js" defer></script>
+  <title>Infinity Cosméticos</title>
 </head>
 
 <body link="#4E6122" vlink="#4E6122">
@@ -54,19 +55,19 @@
 
           <div class="input">
             <label for="email"></label>
-            <input type="email" id="email" name="email" placeholder="E-mail" />
+            <input type="email" id="email" name="email" placeholder="E-mail" required/>
           </div>
 
           <div class="input">
             <label for="pwd"></label>
-            <input type="password" id="pwd" name="pwd" placeholder="Senha">
+            <input type="password" id="pwd" name="pwd" placeholder="Senha" requerid/>
           </div>
           <div class="first-login-buttom">
             <p>
               <a href="">Esqueci minha senha?</a>
             </p>
   
-            <button type="submit">Entrar</button>
+            <button type="submit" id="enter">Entrar</button>
           </div>
         </form>
       </div>

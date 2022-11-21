@@ -1,106 +1,62 @@
-window.addEventListener("load", function () {
+const button = document.getElementById('advance')
 
-  const formCadastro = document.querySelector("main form.registrationForm");
-  const formCadastroInput = document.querySelectorAll(
-    "main form.registrationForm input"
-  );
-  let hasFormErrors = false;
-  let hasErrors = false;
- 
-  const removeErrors = function(errorType){
-    if(errorType === 'form'){
-      hasFormErrors = false;
+button.addEventListener('click', (event) => {
+    event.preventDefault()
+   
+    const fullName = document.getElementById('fullName')
+    const email = document.getElementById('email')
+    const cpf = document.getElementById('cpf')
+    const tel = document.getElementById('tel')
+    const cep = document.getElementById('cep')
+    const pwd1 = document.getElementById('pwd1')
+    const pwd2 = document.getElementById('pwd2')
+
+    if(fullName.value == ''){
+        fullName.classList.add('errorInput')
+        alert('O campo nome não pode estar vazio') 
+    }else {
+        fullName.classList.remove('errorInput')
+    }
+
+    if(pwd1.value.length < 7){
+        pwd1.classList.add('errorInput')
+        alert('O campo senha não pode ter menos que 7 caracteres')
+    }else {
+        pwd1.classList.remove('errorInput')
+    }
+
+    if(pwd2.value == "" || pwd2.value !== pwd1.value){
+        pwd2.classList.add('errorInput')
+        alert('Confirmação de senha incorreta') 
+    }else {
+        pwd2.classList.remove('errorInput')
+    }
+
+    if(email.value.indexOf('@') == -1 || email.value.indexOf('.') == -1 || (email.value.indexOf('.') - email.value.indexOf('@') == 1)){
+        email.classList.add('errorInput')
+        alert("Preencha o campo email corretamente")
     } else {
-      hasErrors = false;
+        email.classList.remove('errorInput')
     }
 
-    const errorSpan = document.querySelectorAll('main form.registrationForm span.error');
-    errorSpan.forEach(span => span.remove());
-  };
-
-  const createError = function(input, mensagem, errorType){
-    if(errorType === 'form'){
-      hasFormErrors = true;
-    } else {
-      hasErrors = true;
+    if(cpf.value.length < 11 || cpf.value.length > 11){
+        cpf.classList.add('errorInput')
+        alert('O campo CPF tem que ter 11 caracteres')
+    }else {
+        cpf.classList.remove('errorInput')
     }
 
-    const errorSpan = document.createElement('span');
-    errorSpan.classList.add('error');
-    errorSpan.innerText - mensagem;
-    input.insertAdjacentElement('afterend', errorSpan);
-  };
-
-  formCadastro.addEventListener(sumit, function (event) {
-    event.preventDefault();
-    removeErrors('form');
-
-    formCadastroInput.forEach(input => {
-      if(!input.value){
-        createError(input, 'Campo Obrigatório', 'form');
-      }
-    });
-
-    if(!hasErrors && !hasFormErrors){
-      this.sumit();
+    if(tel.value.length < 13 || tel.value.length > 13){
+        tel.classList.add('errorInput')
+        alert('O campo Tel Celular tem que ter 13 caracteres')
+    }else {
+        tel.classList.remove('errorInput')
     }
-    
-    const validateLength = function (input, min, max) {
-      const { value } = input;
-      if (value.length >= min && value.length < max) {
-        return;
-      } else {
-        createError(input, `O campo deve ter entre ${min} e ${max} caracteres`);
-      }
-    };
 
-    const validateEmail = function (input) {
-      const { value } = input;
-      if (value.includes("@") && value.includes(".")) {
-        return;
-      } else {
-        createError(input, "Email incorreto", 'input');
-      }
-    };
-
-    formCadastroInput.forEach((input) => {
-      input.addEventListener("change", function () {
-        removeErrors(input);
-
-        switch (input.name) {
-          case "name":
-            validateLength(input, 5, 50);
-            break;
-
-          case "email":
-            validateLength(input, 10, 50);
-            validateEmail(input);
-            break;
-
-          case "cpf":
-            validateCpf();
-            break;
-
-          case "tel":
-            validateTel();
-            break;
-
-          case "cep":
-            validateCep();
-            break;
-
-          case "pwd1":
-            validatePwd1();
-            break;
-
-          case "pwd2":
-            validatePwd2();
-            break;
-
-          default:
-            break;
-        }
-      });
-    });
-  });
-});
+    if(cep.value.length < 9 || cep.value.length > 9){
+        cep.classList.add('errorInput')
+        alert('O campo cep tem que ter 9 caracteres')
+    }else {
+        cep.classList.remove('errorInput')
+    }
+})
