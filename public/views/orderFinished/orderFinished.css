@@ -1,5 +1,5 @@
-@import url(../../css/style.css);
-@import url(../order/order.css);
+@import url("/public/css/style.css");
+@import url("/public/views/order/order.css");
 
 .orderFinished {
   display: flex;
@@ -142,6 +142,10 @@
   margin-bottom: 2rem;
 }
 
+.orderFinishedButtons button a {
+  color: var(--bg-darkcolor);
+}
+
 .orderFinishedButtons button {
   color: var(--bg-darkcolor);
   font-size: 1.5rem;
@@ -153,7 +157,7 @@
   padding-left: 1rem;
   padding-right: 0.5rem;
   border-radius: 0 120px 0 120px;
-  
+
   transition: 0.3s ease;
   cursor: pointer;
 }
