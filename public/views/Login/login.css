@@ -1,14 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,400;0,700;0,900;1,100;1,400;1,700;1,900&display=swap");
-/*@import url('../../css/header.css');
-@import url('../../css/headerAlternate.css');*/
-/*@import url('../../css/footerAlternative.css');
-@import url('../../css/footer.css');*/
+@import url('/public/css/footerAlternative.css');
+@import url('/public/css/headerAlternative.css');
+@import url('/public/css/footer.css');
 
 :root {
   --bg-lightcolor: #d0e1aa;
   --bg-midlelightcolor: #bfd68b;
   --bg-midlecolor: #9ab669;
-  --bg-darkcolor: #4e6122;
+  --bg-darkcolor: #4e6122;  
   --offwhite: #f7f4eb;
   --offwhite-lightborder: #fffaf0;
   --offwhite-darkborder: #dbcea6;

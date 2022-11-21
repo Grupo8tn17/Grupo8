@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lato&family=Rajdhani&display=swap" rel="stylesheet">
+  <link rel="shortcut icon" href="/public/img/infinityCosmeticos.ico" type="image/x-icon" />
   <link rel="stylesheet" href="login.css">
   <script src="loginValidacao.js" defer></script>
   <title>Formulário de Login e Cadastro</title>
@@ -49,7 +50,7 @@
       <div id="first-login">
         <h2>LOGIN</h2>
 
-        <form action="/">
+        <form action="/public/views/painelDoUsuario/painelDeUsuario.html">
 
           <div class="input">
             <label for="email"></label>
@@ -60,17 +61,14 @@
             <label for="pwd"></label>
             <input type="password" id="pwd" name="pwd" placeholder="Senha">
           </div>
-
+          <div class="first-login-buttom">
+            <p>
+              <a href="">Esqueci minha senha?</a>
+            </p>
+  
+            <button type="submit">Entrar</button>
+          </div>
         </form>
-
-        <div class="first-login-buttom">
-          <p>
-            <a href="">Esqueci minha senha?</a>
-          </p>
-
-          <button type="submit">Entrar</button>
-        </div>
-
       </div>
 
       <div id="second-login">
