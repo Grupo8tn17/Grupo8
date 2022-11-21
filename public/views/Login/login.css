@@ -1,164 +1,197 @@
-main {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,400;0,700;0,900;1,100;1,400;1,700;1,900&display=swap");
+/*@import url('../../css/header.css');
+@import url('../../css/headerAlternate.css');*/
+/*@import url('../../css/footerAlternative.css');
+@import url('../../css/footer.css');*/
+
+:root {
+  --bg-lightcolor: #d0e1aa;
+  --bg-midlelightcolor: #bfd68b;
+  --bg-midlecolor: #9ab669;
+  --bg-darkcolor: #4e6122;
+  --offwhite: #f7f4eb;
+  --offwhite-lightborder: #fffaf0;
+  --offwhite-darkborder: #dbcea6;
+  --gray: #b5c1b8;
+  --darkorange: darkorange;
 }
 
-h1 {
-    font-size: 3rem;
-    text-align: center;
-    color: #4E6122;
-    font-weight: 700;
-    margin-top: 2rem;
-    margin-bottom: 1rem;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  font-family: "Lato", sans-serif;
 }
 
-
-.container {
-    width: 100%;
-    display: flex;
-    justify-content: center;
+body {
+  background-color: var(--offwhite);
 }
 
-hr {
-    border: 0;
-    height: 0.2rem;
-    background-image: linear-gradient(to right, transparent, #4E6122, transparent);    
+#login {
+  margin: 2rem;
+  padding: 2rem;  
 }
 
-#first{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: 2rem;
-    width: 30rem;
-    height: 30rem;
-    border: 3px solid green;
+#login h1 {
+  font-size: 3rem;
+  text-align: center;
+  color: var(--bg-darkcolor);
+  font-weight: 700;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
 }
 
-#first form {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+#login hr {
+  border: 0;
+  height: 0.2rem;
+  background-image: linear-gradient(
+    to right,
+    transparent,
+    #4e6122,
+    transparent
+  );
 }
 
-#first h2 {
-    font-size: 2rem;
-    color: #4E6122;
-    margin-bottom: 1rem;
+#container-login {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin: 2rem;
+  padding: 2rem;
+  max-width: 90%;
 }
 
-#first input {
-    background-color:#ffff;
-    border: none; 
-    width: 25rem;
-    height: 3.5rem;
-    padding-left: .5rem;
-    margin-bottom: 1rem;
-    box-shadow: 5px 4px 4px #B5C1B8;
-    font-size: 2rem;
+#first-login {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  padding: 2rem;
+  width: 65rem;
+  height: 25rem;
+  box-shadow: 4px 4px 4px 4px var(--gray);
 }
 
-#first input:focus, .small-data input:focus {
-    outline: .2rem solid #4E6122;
+#first-login h2 {
+  font-size: 2rem;
+  color: var(--bg-darkcolor);
+  margin-bottom: 1rem;
 }
 
-#email::placeholder, #pwd::placeholder {
-    padding: .5rem;
-    font-size: 1.5rem;
+#first-login input {
+  background-color: #ffff;
+  border: none;
+  width: 80%;
+  height: 4rem;
+  padding-left: 1rem;
+  margin-bottom: 2rem;
+  box-shadow: 5px 4px 4px var(--gray);
+  font-size: 2rem;
+  transition: all 0.15s ease-in-out;
 }
 
-
-#first p {
-    font-size: 1.5rem;
-    color: #4E6122;
-    margin-bottom: 1rem;
-    font-weight: 700;
+#first-login input:focus{
+outline: 0.1rem solid var(--bg-darkcolor);
 }
 
-button{
-    background-color: #4E6122;
-    border: none; 
-    border-radius: 3rem;
-    font-weight: 700;
-    
+#first-login input:hover {
+  box-shadow:
+  1px 1px var(--gray),
+  2px 2px var(--gray),
+  3px 3px var(--gray);
+-webkit-transform: translateX(-3px);
+transform: translateX(-3px);
 }
 
-#first button {
-    background-color: #4E6122;
-    border: none; 
-    margin-top: 1rem;
-    margin-bottom: .5rem;
-    border-radius: 3rem;
-    font-weight: 700;
-    width: 18rem;
-    height: 3rem;
-    font-size: 1.8rem;
-    text-align: center;
-    color: #F7F4EB;
-    border-radius: 3rem;
+#email::placeholder,
+#pwd::placeholder {
+  padding: 0.5rem;
+  font-size: 1.5rem;
 }
 
-#second {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    margin-top: 2rem;
-    width: 30rem;
-    height: 30rem;
-    border: 3px solid green;
+#first-login p {
+  font-size: 1.5rem;
+  color: var(--bg-darkcolor);
+  margin-bottom: 1rem;
+  font-weight: 700;
 }
 
-.secondCard {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
+#container-login button {
+  background-color: var(--bg-darkcolor);
+  border: none;
+  margin-top: 0.8rem;
+  margin-bottom: 0.5rem;
+  border-radius: 3rem;
+  font-weight: 700;
+  transition: all 0.15s ease-in-out;
 }
 
-#second button {
-    width: 25rem;
-    height: 3.3rem;
-    font-size: 1.5rem;
-    color: #F7F4EB;
+#container-login button:hover {
+  filter: brightness(115%);
+-webkit-transform: translateX(-2px);
+transform: translateX(-2px);  
+}
+
+.first-login-buttom {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#first-login button {
+  width: 17rem;
+  height: 3rem;
+  font-size: 1.8rem;
+  text-align: center;
+  color: #f7f4eb;
+  border-radius: 3rem;
+}
+
+#second-login {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  width: 65rem;
+  height: 25rem;
+  box-shadow: 4px 4px 4px 4px var(--gray);
+  gap: 1.5rem;
+}
+
+#second-login button {
+  width: 25rem;
+  height: 3.3rem;
+  font-size: 1.5rem;
+  color: #f7f4eb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem 1rem;
 }
 
 #desc {
-    font-size: 1.7rem;
-    color: #4E6122;
-    font-weight: 700;
+  font-size: 1.7rem;
+  color: var(--bg-darkcolor) 2;
+  font-weight: 700;
 }
 
 #desc strong {
-    color:darkorange;
+  color: var(--darkorange);
 }
 
-.buttonCadastro {
-    margin-bottom: 4rem;
-    cursor: pointer;
+#buttonGoogle,
+#buttonRegister {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.buttonGoogle button {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+#buttonGoogle img {
+  max-width: 2.5rem;
+  border-radius: 1rem;
 }
-
-.buttonGoogle img {
-    max-width: 2.5rem;
-    border-radius: 1rem;
-    margin-right: 2rem;
-}
-
-
-
-
-
-
-
-
