@@ -44,7 +44,7 @@
       <h2>Dados Pessoais</h2>
     </div>
 
-    <form class="registrationForm" action="/public/views/Login/login.html">
+    <form class="registrationForm" action="/public/views/Login/login.html" id="form">
 
       <section id="personal-data">
 
@@ -52,26 +52,26 @@
 
           <div class="data">
             <label for="name"></label>
-            <input type="text" id="fullName" name="name" placeholder="Nome Completo:" required/>
+            <input type="text" id="fullName" name="name" placeholder="Nome Completo:" />
           </div>
 
           <div class="data">
             <label for="email"></label>
-            <input type="email" id="email" name="email" placeholder="E-mail:" required/>
+            <input type="email" id="email" name="email" placeholder="E-mail:" />
           </div>
 
 
           <div class="data">
             <label for="cpf"></label>
-            <input type="text" id="cpf" maxlength="11" placeholder="CPF:" minLength="14" maxLength="14" required/>
+            <input type="text" id="cpf" maxlength="11" placeholder="CPF:" minLength="14" maxLength="14" />
           </div>
 
           <div class="small-data">
             <label for="tel"></label>
-            <input type="text" id="tel" maxlength="13" placeholder="Tel Celular:" required/>
+            <input type="text" id="tel" maxlength="13" placeholder="Tel Celular:" />
 
             <label for="cep"></label>
-            <input type="text" id="cep" maxlength="9" placeholder="CEP:" required/>
+            <input type="text" id="cep" maxlength="9" placeholder="CEP:" />
           </div>
 
         </div>
@@ -80,12 +80,12 @@
 
           <div class="data">
             <label for="pwd1"></label>
-            <input type="password" id="pwd1" name="pwd1" placeholder="Crie sua senha de acesso:" required/>
+            <input type="password" id="pwd1" name="pwd1" placeholder="Crie sua senha de acesso:" />
           </div>
 
           <div class="data">
             <label for="pwd2"></label>
-            <input type="password" id="pwd2" name="pwd2" required="required"
+            <input type="password" id="pwd2" name="pwd2" 
               placeholder="Confirme sua senha de acesso:" />
           </div>
 
@@ -95,7 +95,7 @@
           </div>
 
           <div class="checkbox">
-            <input type="checkbox" name="privacy-policy" id="privacy-policy" value="true" required/>
+            <input type="checkbox" name="privacy-policy" id="privacy-policy" value="true" />
             <label for="privacy-policy">Concordo com a <a
                 href="../PoliticasPrivacidade/politicaPrivacidadeCookiesUso.html">política de privacidade</a> e os
               <a href="../PoliticasPrivacidade/politicaPrivacidadeCookiesUso.html#terms-use">termos de

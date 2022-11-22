@@ -193,6 +193,21 @@ body {
   border: 3px solid rgb(240, 54, 54) !important;
 }
 
+.error {
+  display: flex;
+  border-radius: .25rem;
+  margin-top: -1.5rem;
+  margin-bottom: .5rem;
+  padding: .7rem;
+  color: #721c24;
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  width: 80%;
+  align-items: center;
+  justify-content: center;
+  margin-left: 6.2rem;
+}
+
 @media (max-width: 1020px) {
   #personal-data {
     max-width: 90%;

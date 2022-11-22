@@ -157,6 +157,10 @@ header .nav-bar {
   color: white;
 }
 
+.icon-cart a {
+  color: white;
+}
+
 @media (min-width: 990px) {
   body .banner-frete {
     height: 27px;

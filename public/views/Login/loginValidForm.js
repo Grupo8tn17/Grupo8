@@ -1,24 +1,40 @@
-const button = document.getElementById('enter')
+const form = document.getElementById('form');
 
-button.addEventListener('click', (event) => {
-    event.preventDefault()
+const removeError = function () {
+    const errorSpans = document.querySelectorAll('span.error');
+    errorSpans.forEach(span => span.remove());
+}
+
+const createError = function (input, mensagem) {
+    const errorSpan = document.createElement('span'); 
+    errorSpan.classList.add('error');
+    errorSpan.innerText = mensagem
+    input.insertAdjacentElement('afterend', errorSpan);
+}
+
+form.addEventListener('submit', function(event) {
+    event.preventDefault();
+    removeError();
+
    
     const email = document.getElementById('email')
     const pwd = document.getElementById('pwd')
+    let hasError = false;
         
     if(email.value.indexOf('@') == -1 || email.value.indexOf('.') == -1 || (email.value.indexOf('.') - email.value.indexOf('@') == 1)){
-        email.classList.add('errorInput')
-        alert("Preencha o campo email corretamente")
-    } else {
-        email.classList.remove('errorInput')
-    }
+        hasError = true;
+        createError(email, 'Preencha o campo email corretamente')
+    } 
 
     if(pwd.value == ''){
-        pwd.classList.add('errorInput')
-        alert('Insira sua senha')
-    }else {
-        pwd.classList.remove('errorInput')
-    }    
+        hasError = true;
+        createError(pwd, 'Insira sua Senha');
+    }
+
+    if(!hasError) {
+        this.submit();
+    }
+    
 })
 
 function mostrarOcultarSenha(){
