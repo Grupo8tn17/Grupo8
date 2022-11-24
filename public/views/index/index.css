@@ -1,8 +1,5 @@
-<<<<<<< HEAD
-=======
 @import url(/public/css/style.css);
 
->>>>>>> origin/developer
 #banner {
   margin-bottom: 2rem;
 
@@ -16,10 +13,6 @@
   max-height: 100rem;
 
   position: relative;
-<<<<<<< HEAD
-=======
-
->>>>>>> origin/developer
 }
 
 #banner img {
@@ -48,11 +41,8 @@
   align-items: center;
   gap: 3rem;
   margin: 2rem 0;
-<<<<<<< HEAD
-=======
   flex-wrap: wrap;
 
->>>>>>> origin/developer
 }
 
 .selecaoProdutosPosBanner img {
@@ -73,10 +63,6 @@
   align-items: center;
   width: auto;
   margin-bottom: 2rem;
-<<<<<<< HEAD
-=======
-
->>>>>>> origin/developer
 }
 
 .indexProductsTitle {
@@ -157,10 +143,7 @@
   gap: 1.5rem;
   background-color: var(--gray);
   border-radius: 1rem;
-<<<<<<< HEAD
-=======
   flex-wrap: wrap;
->>>>>>> origin/developer
 }
 
 .aboutInfinity-image {
@@ -377,16 +360,11 @@
   align-items: center;
 }
 
-<<<<<<< HEAD
-@media screen and (max-width: 820px) {
- 
-=======
 @media screen and (max-width: 1920px) {
   body > header {
     margin-bottom: 0;
   }
 }
->>>>>>> origin/developer
 
 @media screen and (max-width: 820px) {
   /* FEITO */
