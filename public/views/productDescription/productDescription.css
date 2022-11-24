@@ -1,0 +1,265 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,400;0,700;0,900;1,100;1,400;1,700;1,900&display=swap");
+@import url("footer.css");
+@import url("index.css");
+@import url("style.css");
+@import url("productDescription.css"); 
+
+
+.body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.principal {  font-size: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: --offwhite-darkborder #dbcea6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  gap: 2rem; 
+  font-family: "Lato", sans-serif
+ }
+
+
+.primeira {
+    font-size: 100%;
+    background: --offwhite-darkborder #dbcea6;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    gap: 2rem; 
+    font-family: "Lato", sans-serif;
+  }
+
+.primeira1 { font-size: 90%;
+  background: --offwhite-darkborder #dbcea6;
+  display: flex;
+  flex-direction:column;
+  align-items: flex-start;
+  justify-content: space-around;
+   gap: 1rem; 
+ }
+
+ .primeira3 { font-size: 90%;
+  background: --offwhite-darkborder #dbcea6;
+  display: flex;
+  flex-direction:column;
+  align-items: flex-start;
+  justify-content: space-around;
+   gap: 1rem; 
+ }
+
+.imagemProduto{
+  height: 25rem;
+}
+
+
+.second {  display: flex;
+  flex-direction:row;
+  align-items: flex-start;
+  justify-content: space-around;
+   gap: 1rem;  }
+
+.item {
+  height: 5rem;
+  width: 5rem;
+  flex-shrink: 0;
+  transition: all 600ms ease-in-out;
+  opacity: 0.5;
+}
+
+
+.container {
+  position: relative;
+  padding: 1rem;
+  max-width: 200rem;
+  margin: 0 auto;
+}
+
+
+.arrow-left, .arrow-right {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: auto;
+  bottom: 0;
+  font-size: 20px;
+  line-height: 10px;
+  width: 40px;
+  color: #fff;
+  transition: all 600ms ease-in-out;
+  background: linear-gradient(to left, transparent 0%, black 200%);
+  opacity: 0.1;
+  cursor: pointer;
+  border: none;
+}
+
+
+.arrow-right {
+  right: 0;
+  left: auto;
+  text-align: right;
+  background: linear-gradient(to right, transparent 0%, black 200%);
+}
+
+.arrow-left:hover {
+  opacity: 1;
+}
+
+.arrow-right:hover {
+  opacity: 1;
+}
+
+
+
+
+.gallery {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 1rem;
+}
+
+.current-item {
+  opacity: 1;
+}
+
+
+
+.top {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #4e6122;
+  width: 13rem;
+  height:2rem;
+  border: none;
+  box-shadow: 4px 5px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  font-family: "Lato", sans-serif;
+  font-weight: 600;
+  font-size: 0,5rem;
+  color: #0a0a0a}
+
+.principal.segunda {font-size: 100%;
+  
+  background: --offwhite-darkborder #dbcea6;
+  display: flex;
+  flex-direction: row;
+  align-items: flex start;
+  justify-content: space-around;
+  gap: 2rem; 
+  margin: 4rem;
+}
+
+.segunda1 {font-size: 100%;
+  background: --offwhite-darkborder #dbcea6;
+  display: flex;
+  flex-direction: column;
+  align-items: flex start;
+  justify-content: space-around;
+  gap: 0.8rem; 
+  font-family: "Lato", sans-serif;
+  font-style: oblique;
+  font-al: ;
+}
+  
+
+.segunda2{font-size: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex start;
+  justify-content: space-around;
+  gap: 0.8rem; 
+  margin-top: 2rem
+  font-family: "Lato", sans-serif;
+
+}
+ 
+.conteudo-secundario-paragrafo{font-size: 80%;}
+
+.productDescription {font-weight: 700;
+font-size: 102%;
+color: #4e6122;}
+
+.avaliation {font-weight: 700;
+  font-size: 102%;
+  color: #4e6122;}
+
+.avaliationsubtitle {font-weight: 700;
+    font-size: 90%;
+    color: #4e6122;}
+
+.heading1{font-weight: 700;
+  font-size: 70%;
+  color: #4e6122;}
+
+.primeira1-1{font-weight: 900;
+  font-size: 150%;
+  color: #4e6122;}
+
+  .pesquisaCep{font-weight: 400;
+    font-size: 90%;
+    color: #4e6122;
+  }
+
+.texto1{font-weight: 700;
+    font-size: 90%;
+    color: #090909;
+  }
+
+  .primeira1-3{display: flex;
+    flex-direction: row;
+    align-content: center;}
+
+  .preço{font-weight: 700;
+    font-size:150%;
+    color: #4e6122;
+    font-style: italic;
+  }
+.preçoParcelado {font-weight: 400;
+  font-size:100%;
+  color: #4e6122;
+ 
+}
+
+.cor{font-weight: 700;
+  font-size: 90%;
+  color: #090909;
+}
+
+.segunda2-1{font-size: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex start;
+  justify-content: space-around;
+  gap: 0.8rem; 
+  margin-top: 2rem
+  font-family: "Lato", sans-serif;
+}
+
+.red {
+    width: 2rem;
+    height: 2rem;
+    border: 0.1rem solid red;
+    background-color: red;
+}
+
+.pink {
+    width: 2rem;
+    height: 2rem;
+    border: 0.1rem solid pink;
+    background-color: pink;
+}
+
+.purple {
+    width: 2rem;
+    height: 2rem;
+
+    border: 0.1rem solid purple;
+    background-color: purple;
+}

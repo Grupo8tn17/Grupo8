@@ -15,7 +15,7 @@ footer h3 {
   display: flex;
   gap: 1rem;
   padding-top: 1rem;
-  margin: auto;
+  justify-content: center;
 }
 
 .footer-icon {
@@ -38,6 +38,11 @@ footer h3 {
   justify-content: space-between;
 }
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> origin/developer
 .footer-institutional ul {
   display: flex;
   flex-direction: column;
