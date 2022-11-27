@@ -19,6 +19,7 @@ main * {
 main .container-principal {
     width: 100%;
     padding-top: 3rem;
+    margin-top: 2rem;
 }
 
 
