@@ -8,70 +8,51 @@ body {
 }
 
 
+p {
+    color: #4e6122;
+    text-align: left;
+}
 
 
-
-.indexProducts {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: auto;
-    margin-bottom: 1.5rem;
-  }
-  
-  .indexProductsTitle {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+td {
+    color: #4e6122;
     text-align: center;
-    width: 9rem;
-    text-transform: uppercase;
-  }
-  
-  .indexProductsTitle h2 {
-    font-size: 2rem;
-  }
-  
-  .indexProductsTitle span {
-    margin-top: 0.5rem;
-    font-size: 0.8rem;
-    border-bottom: solid 0.1rem var(--bg-darkcolor);
-  }
-  
-  .indexProductsTitle a {
-    color: #000;
-  }
-  
-  .indexProductsProducts img {
-    width: 18rem;
-    border: 0.2rem solid var(--offwhite-lightborder);
-  }
-  
-  .indexProductsProducts {
-    width: 21rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .indexProductsProducts a {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: #000;
-  }
-  
-  .indexProductsDescription {
-    margin-top: 0.5rem;
+
+}
+
+
+
+tbody {
+    color: #4e6122;
+
+
+}
+
+span {
+    color: #4e6122;
     text-align: center;
-  }
-  
-  .indexProductsPrice {
-    margin-top: 0.5rem;
-    font-size: 2rem;
-    font-weight: 700;
-    color: var(--bg-darkcolor);
-  }
+
+
+}
+
+form {
+    color: #4e6122;
+
+
+}
+
+
+
+button {
+    background-color: #4e6122;
+    box-shadow: 0.3rem -0.3rem 0.3rem #b5c1b8;
+    color:  white;
+    padding: 0.7rem 0.7rem;
+    text-align: center;
+    font-size: 0.9rem;
+    font-family: "lato";
+    margin: 1rem 1rem;
+    border-radius: 0.8rem;
+    
+}
+
