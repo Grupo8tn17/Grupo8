@@ -1,4 +1,4 @@
-const  = document.querycontrolsSelectorAll(".control");
+const  control = document.querycontrolsSelectorAll(".control");
 let currentItem = 0;
 const items = document.querySelectorAll(".item");
 const maxItems = items.length;
