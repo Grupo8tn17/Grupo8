@@ -1,8 +1,8 @@
-
+const productsModel = require('../models/productsModel')
 
 module.exports = {
     listProducts: (req, res) => {
-        
-        return res.render('list-products', );
+        const products = productsModel.products;
+        return res.render('list-products', {  products });
     }
 }
