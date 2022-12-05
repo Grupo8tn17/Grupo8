@@ -1,0 +1,156 @@
+dev-lucilia
+@import url("https://fonts.googleapis.com/css2?family= Lato:ital, wght @0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900 & display=swap");
+
+
+body {
+    font-family: "Lato";
+    background-color: #dbcea6;
+
+}
+
+
+
+
+
+.indexProducts {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    margin-bottom: 1.5rem;
+  }
+  
+  .indexProductsTitle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 9rem;
+    text-transform: uppercase;
+  }
+  
+  .indexProductsTitle h2 {
+    font-size: 2rem;
+  }
+  
+  .indexProductsTitle span {
+    margin-top: 0.5rem;
+    font-size: 0.8rem;
+    border-bottom: solid 0.1rem var(--bg-darkcolor);
+  }
+  
+  .indexProductsTitle a {
+    color: #000;
+  }
+  
+  .indexProductsProducts img {
+    width: 18rem;
+    border: 0.2rem solid var(--offwhite-lightborder);
+  }
+  
+  .indexProductsProducts {
+    width: 21rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .indexProductsProducts a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #000;
+  }
+  
+  .indexProductsDescription {
+    margin-top: 0.5rem;
+    text-align: center;
+  }
+  
+  .indexProductsPrice {
+    margin-top: 0.5rem;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--bg-darkcolor);
+=======
+@import url("https://fonts.googleapis.com/css2?family= Lato:ital, wght @0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900 & display=swap");
+
+
+body {
+    font-family: "Lato";
+    background-color: #dbcea6;
+
+}
+
+
+
+
+
+.indexProducts {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    margin-bottom: 1.5rem;
+  }
+  
+  .indexProductsTitle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 9rem;
+    text-transform: uppercase;
+  }
+  
+  .indexProductsTitle h2 {
+    font-size: 2rem;
+  }
+  
+  .indexProductsTitle span {
+    margin-top: 0.5rem;
+    font-size: 0.8rem;
+    border-bottom: solid 0.1rem var(--bg-darkcolor);
+  }
+  
+  .indexProductsTitle a {
+    color: #000;
+  }
+  
+  .indexProductsProducts img {
+    width: 18rem;
+    border: 0.2rem solid var(--offwhite-lightborder);
+  }
+  
+  .indexProductsProducts {
+    width: 21rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .indexProductsProducts a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #000;
+  }
+  
+  .indexProductsDescription {
+    margin-top: 0.5rem;
+    text-align: center;
+  }
+  
+  .indexProductsPrice {
+    margin-top: 0.5rem;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--bg-darkcolor);
+main
+  }
