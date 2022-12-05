@@ -2,6 +2,7 @@
 
 module.exports = {
     listProducts: (req, res) => {
-        return res.render('list-products');
+        
+        return res.render('list-products', );
     }
 }
