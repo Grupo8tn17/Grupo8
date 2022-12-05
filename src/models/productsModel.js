@@ -6,7 +6,8 @@ module.exports = {
               "titulo": "Puro Gel Babosa Multifuncional Natural de Aloe 210ml – Livealoe",
               "categoria": ["cabelo", "tratamento", "gel"],
               "Composição": "", 
-              "valor": "R$ 39,35 ou 3x de R$ 13,11",
+              "valor": "R$ 39,35",
+              "parcelamento": "3x de R$ 13,11",
               "quantidade": "26",
               "imagem": "1"
              },
@@ -16,7 +17,8 @@ module.exports = {
               "categoria": ["cabelo", "hidratante", "calmante", "regenerador"],
               "descrição": " O Sérum Capilar Leave-in Natural Proteção da Ahoaloe é elaborado com o Puro Gel de Aloe e o óleo de Coco Palmiste, o Dendê que combinados com os óleos orgânicos de Paracaxi e Murumuru vindos da Amazônia, atuam protegendo e fortalecendo os fios contra as ações desagradáveis do calor do secador, do sal do mar e do cloro da piscina. Com esse Leave-in seus cabelos estarão mais fortes, disciplinados com brilho e maciez. O Leave-in é um creme sem enxague que é aplicado após a lavagem e condicionamento dos fios, ele faz uma camada protetora que auxilia na proteção de danos externos (alta temperatura de secadores, sol, cloro e etc); além de contribuir para a hidratação dos cabelos.",
               "composição": "", 
-              "valor": "$ 69,00 ou 6x de R$ 11,50", 
+              "valor": "R$ 69,00", 
+              "parcelamento": "6x de R$ 11,50",
               "quantidade": "35", 
               "imagem": "2"
              },
@@ -27,7 +29,8 @@ module.exports = {
               "categoria": ["cabelo", "shampoo", "nutrição", "frizz- free"], 
               "descrição": " O Shampoo Suave de Argan e Linhaça da Boni Natural possui uma fórmula natural, vegana e exclusiva que deixa os cabelos mais macios, brilhosos e saudáveis. É enriquecido com o óleo de argan, poderoso antioxidante que hidrata, melhora o aspecto dos fios e as pontas duplas e ainda possui efeito anti-frizz e o óleo de linhaça, que nutre e fortalece os cabelos proporcionando um brilho intenso. Contém ainda extratos de aloe vera e calêndula, que age como anti-inflamatório no couro cabeludo.",
               "composição": "",
-              "valor": "R$ 69,00 ou 6x de R$ 11,50",
+              "valor": "R$ 69,00",
+              "parcelamento": "6x de R$ 11,50",
               "quantidade": "84",
               "imagem": "3"
              },
@@ -38,7 +41,8 @@ module.exports = {
               "categoria": ["cabelo", "shampoo", "quebra", "queda"], 
               "descrição": " O Elixir Capilar B.H.C. raízes fortes Alecrim Orgânico e Cedro da WNF é um potente fortalecedor dos fios capilares, desde sua fase de nascimento, crescimento e total desenvolvimento. É formulado com o Óleos Essenciais de Alecrim e Cedro Virgínia, que atuam no equilíbrio do ciclo capilar, fornecendo força e nutrição aos fios, evitando a quebra e a queda capilar e protegendo-os contra danos causados por fatores externos, como umidade, poluição e raios solares. Possui ainda os óleos vegetais de jojoba e abacate que hidratam profundamente e promovem o aumento da elasticidade dos cabelos e os óleos essenciais de tea tree e lavanda com suas propriedades antissépticas e cicatrizantes. É ideal para ser utilizado pré-lavagem dos fios, garantindo a saúde dos cabelos por mais tempo.",
               "composição": "", 
-              "valor":  "R$ 39,90 ou 3x de R$ 13,30",
+              "valor":  "R$ 39,90",
+              "parcelamento": "3x de R$ 13,30",
               "quantidade": "36",
               "imagem": "4"
              },
@@ -50,6 +54,7 @@ module.exports = {
               "descrição": " O Óleo Vegetal de Girassol da WNF é ico em vitamina E, um super antioxidante, ácido palmítico, ácido esteárico, ácido oleico e ácido linoleico. É um excelente óleo para todos os tipos de massagem, principalmente as modeladoras manuais e intensas. Pode ser usado como óleo base para as terapias de relaxamento muscular, em massagens esportivas e como hidratante para peles secas.",
               "composição": "",
               "valor":  "R$ 19,90",
+              "parcelamento": "2x de R$ 9,95",
               "quantidade": "76", 
               "imagem": "5"
              },
