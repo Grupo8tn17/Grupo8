@@ -20,6 +20,7 @@
     padding: 6px 12px;
     border-radius: 0.25rem;
     font-size: 1rem;
+    cursor: pointer;
 }
 
 .container-products .box-body {
