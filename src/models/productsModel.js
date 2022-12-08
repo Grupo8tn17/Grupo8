@@ -183,7 +183,7 @@ module.exports = {
               "id": "203",         
               "titulo": " Bálsamo Hidratante Labial 5g – Elemento Mineral",         
               "categoria": ["cosmético", "protetor labial"],         
-              "descrição": " O Bálsamo Hidratante Labial Natural da Elemento Mineral restaura e protege contra o ressecamento e danos do calor e do frio intenso, com uma excelente formula nutritiva composta por manteiga de karité, óleo de coco palmiste que doam hidratação e nutrição e os óleos essenciais que trazem benefícios e perfume natural de jasmim, rosa, cardamomo, galbanum, melão, abeto, jacinto e ylang. ",
+              "descrição": "O Bálsamo Hidratante Labial Natural da Elemento Mineral restaura e protege contra o ressecamento e danos do calor e do frio intenso, com uma excelente formula nutritiva composta por manteiga de karité, óleo de coco palmiste que doam hidratação e nutrição e os óleos essenciais que trazem benefícios e perfume natural de jasmim, rosa, cardamomo, galbanum, melão, abeto, jacinto e ylang. ",
               "composição": "",
               "valor":  "R$ 39,90",
               "parcelamento": "3x de R$ 13,30",
