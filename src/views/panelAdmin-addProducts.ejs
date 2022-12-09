@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/public/views/painelAdm-AdicionarProduto/painelAdm-AdicionarProduto.css">
+    <link rel="stylesheet" href="/stylesheets/panelAdmin-addProducts.css">
     <script src="https://kit.fontawesome.com/0ad644d1e0.js" crossorigin="anonymous"></script>
     <title>Painel Administrativo - Infinity Cosméticos</title>
 </head>
@@ -25,12 +25,12 @@
     </header>
     <main>
         <div class="sidebar">
-            <h3 class="title-sidebar"><a href="/public/views/painelAdm-AdicionarProduto/painelAdm-home.html">Home</a></h3>
+            <h3 class="title-sidebar"><a href="/admin">Home</a></h3>
             <nav>
                 <h3>Produtos</h3>
                 <a class="link-sidebar" href=""><i class="fa-solid fa-plus"></i> Categorias</a>
                 <a class="link-sidebar" href=""><i class="fa-solid fa-plus"></i> Marca</a>
-                <a class="link-sidebar" href="/public/views/painelAdm-AdicionarProduto/painelAdm-AdicionarProduto.html"><i class="fa-solid fa-plus"></i> Produtos</a>
+                <a class="link-sidebar" href="/admin/products"><i class="fa-solid fa-plus"></i> Produtos</a>
             </nav>
             <nav>
                 <h3>Usuários</h3>
@@ -44,7 +44,7 @@
                 <div class="box-header">
                     <h4 class="box-title">Produtos</h3>
                     <div class="box-tools">
-                        <a href="/public/views/painelAdm-AdicionarProduto/painelAdm-Adicionar.html">Adicionar</a>
+                        <a href="/admin/add">Adicionar</a>
                     </div>
                 </div>
                 <div class="box-body">
@@ -58,16 +58,18 @@
                             <th class="table-action">Ações</th>
                         </tr>
                         <tr>
-                            <td class="table-id">1</td>
-                            <td class="table-name">Óleo Vegetal de Groselha Negra</td>
-                            <td class="table-inventory">10</td>
+                            <% for (let product of products) { %>
+                            <td class="table-id"><%= product.id %> </td>
+                            <td class="table-name"><%= product.titulo %></td>
+                            <td class="table-inventory"><%= product.quantidade %> </td>
                             <td class="table-picture"><img src="/public/img/product-1.png" alt=""></td>
-                            <td class="table-price">R$ 104,00</td>
+                            <td class="table-price"><%= product.valor %></td>
                             <td class="table-action">
                                 <a class="action-edit" href="">Editar</a>
                                 <a class="action-delete" href="">Excluir</a>
                             </td>
                         </tr>
+                        <% } %>
                     </table>
                 </div>
                 </div>

@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="painelAdm-Adicionar.css">
-    <script src="/public/views/painelAdm-AdicionarProduto/app.js" defer></script>
-    <link rel="stylesheet" href="/public/views/painelAdm-AdicionarProduto/painelAdm-AdicionarProduto.css">
+    <link rel="stylesheet" href="/stylesheets/panelAdmin-add.css">
+    <script src="/javascripts/panelAdmin-validation.js" defer></script>
+    <link rel="stylesheet" href="/stylesheets/panelAdmin-addProducts.css">
     <script src="https://kit.fontawesome.com/0ad644d1e0.js" crossorigin="anonymous"></script>
     <title>Painel Administrativo - Infinity Cosméticos</title>
 </head>
@@ -27,12 +27,12 @@
     </header>
     <main>
         <div class="sidebar">
-            <h3 class="title-sidebar"><a href="/public/views/painelAdm-AdicionarProduto/painelAdm-home.html">Home</a></h3>
+            <h3 class="title-sidebar"><a href="/admin">Home</a></h3>
             <nav>
                 <h3>Produtos</h3>
                 <a class="link-sidebar" href=""><i class="fa-solid fa-plus"></i> Categorias</a>
                 <a class="link-sidebar" href=""><i class="fa-solid fa-plus"></i> Marca</a>
-                <a class="link-sidebar" href="/public/views/painelAdm-AdicionarProduto/painelAdm-AdicionarProduto.html"><i class="fa-solid fa-plus"></i> Produtos</a>
+                <a class="link-sidebar" href="/admin/products"><i class="fa-solid fa-plus"></i> Produtos</a>
             </nav>
             <nav>
                 <h3>Usuários</h3>
@@ -44,7 +44,7 @@
             <div class="container-products">
                 <h3>Adicionar Produtos</h3>
   
-                <form  action="/public/views/painelAdm-AdicionarProduto/painelAdm-AdicionarProduto.html" id="form">
+                <form  action="/admin/create" method="POST" id="form">
                     <div class="box">
                         <div class="box-header">
                             <h4 class="box-title">Novo Produto</h4>
@@ -61,24 +61,24 @@
             
                             <div class="form-group">
                                 <label for="p_cat">Categoria</label>
-                                <select  name="id_category" id="p_cat" >
-                                  <option value="" selected></option>
-                                  <option value="">Pó Facial</option>
-                                  <option value="">Lip Oil</option>
-                                  <option value="">Bruma</option>
-                                  <option value="">Iluminador</option>
+                                <select  name="category" id="p_cat" >
+                                  <option value="1" selected></option>
+                                  <option value="po-facial">Pó Facial</option>
+                                  <option value="lip-oil">Lip Oil</option>
+                                  <option value="bruma">Bruma</option>
+                                  <option value="iluminador">Iluminador</option>
                                 </select>
                             </div>
             
                             <div class="form-group">
                                 <label for="p_brand">Marca</label>
-                                <select name="id_brand" id="p_brand" >
+                                <select name="brand" id="p_brand" >
                                         <option value="" selected></option>
-                                        <option>Bergamia</option>
-                                        <option>Khor Cosmetics</option>
-                                        <option>Weleda</option>
-                                        <option>Souvie</option>
-                                        <option>Care Natural</option>
+                                        <option value="bergamia">Bergamia</option>
+                                        <option value="khor-cosmetics">Khor Cosmetics</option>
+                                        <option value="weleda">Weleda</option>
+                                        <option value="souvie">Souvie</option>
+                                        <option value="care-natural">Care Natural</option>
                                 </select>
                             </div>
             
@@ -102,7 +102,7 @@
                             </div>
 
                             <div class="products_files_area">
-                                <input type="file" name="images[]" />
+                                <input type="file" name="images" />
                             </div>
 
             
