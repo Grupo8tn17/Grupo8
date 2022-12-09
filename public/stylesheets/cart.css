@@ -1,4 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family= Lato:ital, wght @0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900 & display=swap");
+
+:root {
+    --bg-lightcolor: #d0e1aa;
+    --bg-midlelightcolor: #bfd68b;
+    --bg-midlecolor: #9ab669;
+    --bg-darkcolor: #4e6122;
+    --offwhite: #f7f4eb;
+    --offwhite-lightborder: #fffaf0;
+    --offwhite-darkborder: #dbcea6;
+    --gray: #b5c1b8;
+  }
+
 *{
     box-sizing: border-box;
     margin: 0;
@@ -12,7 +24,7 @@ body {
     align-items: center;
     margin: 1rem auto;
     font: "Lato";
-    background-color: #dbcea6;
+    background-color: var(--offwhite);
 }
 
 .meu-carrinho {
@@ -22,7 +34,7 @@ body {
 }
 
 .meu-carrinho h1 {
-    color: #4e6122;
+    color: var(--bg-darkcolor);
     text-align: center;
     margin: 1rem;
 }
@@ -37,8 +49,9 @@ table thead {
 }
 
 table tbody tr{
-    background-color: azure;
-    border: none;
+    background-color: var(--bg-lightcolor);
+    box-shadow: 1px 1px 2px 2px var(--gray);
+    border-radius: .3rem;
 }
 
 table td img {
@@ -55,7 +68,7 @@ table td form button {
 }
 
 td {
-    color: #4e6122;
+    color: var(--bg-darkcolor);
     text-align: center;
     font-weight: bold;
     border: none;
@@ -72,9 +85,8 @@ td > div {
 }
 
 tbody {
-    background-color: azure;
     color: #4e6122;
-    border: none;
+    
 }
 
 span {
@@ -88,31 +100,39 @@ form {
 }
 
 button {
-    background-color: #4e6122;
-    color: #FFF;
-    padding: 0.7rem 0.7rem;
+    text-transform: uppercase;
+    background-color: var(--bg-darkcolor);
+    color: var(--offwhite);
+    cursor: pointer;
+    padding: .5rem;
     text-align: center;
     font: "Lato";
-    font-weight: bold;
-    border-radius: 0.5rem;  
+    font-weight:700;
+    border-radius: .5rem;
+    border: none;  
 }
 
 input {
-    padding: 0.7rem 0.7rem;
+    padding: .5rem;
     text-align: center;
     font: "Lato";
     font-weight: bold;
     border-radius: 0.5rem;
-    border-color: #000;
+    border: none;
+    box-shadow: 1px 1px 2px 2px var(--gray);
 }
 
 .entrega {
-    background-color: aliceblue;
+    background-color: var(--bg-lightcolor);
     color: #4e6122;
     font-weight: bold;
     text-align: center;
     padding: .5rem;
     margin: 1rem;
+    border-radius: .3rem;
+    box-shadow: 1px 1px 2px 2px var(--gray);
+    border-radius: .3rem;
+    
 }
 
 .cep label{
@@ -121,11 +141,15 @@ input {
 
 .entrega input {
     min-width: 25rem;
+    box-shadow: 1px 1px 2px 2px var(--gray);
+    border-radius: .3rem;
 }
 
 .entrega button {
     min-width: 25rem;
     margin: .2rem;
+    box-shadow: 1px 1px 2px 2px var(--gray);
+    border-radius: .3rem;
  } 
 
  form .btn-f {
