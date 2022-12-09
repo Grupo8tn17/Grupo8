@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-bt">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Meu Carrinho Infinity Cosméticos</title>
+        <link rel="Shortcut icon" href="img/infinityCosmeticos.ico" type="image/x-icon">
+        <!-- Estilos -->
+        <link rel="stylesheet" href="css/cart.css">
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family= Lato:ital, wght @0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900 & display=swap" rel="stylesheet">
+    </head>
+    <body>  
+        <header>
+        </header>
+        <main>
+            <!-- Cabeçalho do Carrinho -->
+            <div class="meu-carrinho"> 
+                <h1>Meu Carrinho</h1>
+                <table>
+                    <thead>
+                        <tr>
+                            <td>CÓD</td>
+                            <td>PRODUTO</td>
+                            <td>PREÇO</td>
+                            <td>QUANTIDADE</td>
+                            <td>SUBTOTAL</td>
+                            <td>REMOVER</td>
+                        </tr>
+                    </thead>
+                    <tbody>    
+                        <tr>
+                            <td>001</td>
+                            <td>
+                                <div>
+                                    <img src="https://useorganico.vteximg.com.br/arquivos/ids/159313-1000-1000/Sabonete-Liquido-Natural-Suavetex-com-oleo-de-Coco-e-Extrato-de-Roma-237ml-%E2%80%93-Organico-Natural.jpg?v=636672865799200000">
+                                    <h4>Sabonete Liquido Natural</h4>
+                                </div>
+                            </td>
+                            <td style="width: 8rem;"> R$ 50,00 </td>
+                            <td style="width: 12rem;"> 
+                                <form>
+                                    <button onclick="this.nextElementSibling.value++">+</button>
+                                    <input  class="quantity" type="text"inputmode="numeric" value="1">
+                                    <button onclick="this.previousElementSibling.value--">-</button>
+                                </form>
+                            </td>
+                            <td> R$ 50,00 </td>                      
+                            <td style="width: 8rem;">
+                                <button onclick="this.nextElementSibling.value++" id="buttonX"> X </button>
+                            </td>
+                        </tr>
+                    </tbody>     
+                    <tfoot>
+                        <tr>
+                            <td colspan="5" style="text-align: end;">TOTAL: </td>
+                            <td>R$ 50,00</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+
+            <section>
+                <div class="entrega">
+                    <h2><strong>ENTREGA</strong></h2>
+                    <h3>Veja as opções de entrega para seus itens,
+                    com todos os prazos e valores.</h3>
+                    <form class="cep">
+                        <label for="cep">CEP: </label>
+                        <input type="text" name="cep" id="cep" placeholder="11.111-111">
+                        <button type="">Calcular frete</button>
+                    </form>
+                    <form>
+                        <label for="cupom-desconto">Cupom de Desconto: </label>
+                        <input type="text" name="cupom-desconto" id="cupom-desconto" placeholder="Digite o seu cupom">
+                        <button> Aplicar Desconto</button>
+                    </form>
+                </div>
+                <form class="form-fechar-pedido" >
+                    <button class="btn-f">Fechar Pedido</button>
+                    <button class="btn-f">Escolher Mais Produtos </button>
+                </form>
+            </section>
+        </main>
+        <footer>
+        </footer>
+    </body>
+</html>
