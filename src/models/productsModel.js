@@ -21,6 +21,12 @@ module.exports = {
 
       products.push(newProduct);
       fs.writeFileSync(path.join(__dirname, '../database/products.json'), JSON.stringify(products, null, 4))
+    }, 
+
+    descriptionProducts: (req) => {
+      let found = products.find(product => { product.id == req.body.id
+        return found
+      })
     }
 }
 

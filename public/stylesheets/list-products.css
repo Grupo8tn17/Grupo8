@@ -174,7 +174,7 @@ main hr {
     padding: 20px;
     margin: 1rem;
     background-color: rgba(255, 255, 255, 30%);
-
+    cursor: pointer;
 }
 
 .container .cards:hover {

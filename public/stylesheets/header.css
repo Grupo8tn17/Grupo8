@@ -9,25 +9,27 @@ body .banner-frete {
   display: none;
 }
 
-body > header {
+header {
+  width: 100%;
+}
+
+.header-principal {
   background-color: #4e6122;
-  box-shadow: 0px 2px 6px #464646;
   max-height: 6rem;
   width: 100%;
-  position: sticky;
-  top: 0;
   z-index: 100;
   margin-bottom: 4.2rem;
   display: flex;
   align-items: center;
+  flex-direction: column;
 }
+
 
 .container-header {
   display: flex;
   flex-direction: row;
   align-items: center;
   width: 100%;
-  margin: 0 2rem;
 }
 
 .header-logo {
@@ -37,8 +39,10 @@ body > header {
 }
 
 .header-logo img {
-  width: 10rem;
-  height: 7rem;
+  width: 8rem;
+  height: 5rem;
+  margin-right: .3rem;
+  margin-left: 2rem;
 }
 
 .header-logo span {
@@ -50,10 +54,23 @@ body > header {
   display: flex;
   align-items: center;
   width: 100%;
+  justify-content: center;
+}
+
+.header-search button {
+  background-color: transparent;
+  border: none;
+  width: 1.8rem;
+}
+
+.header-search img {
+  width: 1.8rem;
+  cursor: pointer;
+  margin-left: -4rem;
 }
 
 .header-input {
-  width: 30rem;
+  width: 100%;
   border: 1px solid #c2c2c2;
   padding-left: 1.25rem;
   padding-bottom: .625rem;
@@ -66,7 +83,7 @@ body > header {
   display: flex;
   align-items: center;
   width: 100%;
-  justify-content: center;
+  justify-content: flex-end;
 }
 
 .links-favorites {
@@ -96,11 +113,68 @@ body > header {
 .links-account img {
   width: 2rem;
   height: 2rem;
+  margin-right: .5rem;
 }
 
 .links-cart {
   display: flex;
+  align-items: center;
 }
+
+.links-cart img {
+  width: 2rem;
+  height: 2rem;
+  margin-right: 2rem;
+}
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: var(--bg-midlecolor);
+  width: 100%;
+  height: 3rem;
+  box-shadow: 0px 2px 6px #464646;
+  color: white;
+  font-weight: bold;
+}
+
+.navbar-products {
+  display: flex;
+  width: 20rem;
+  padding: .8rem;
+  justify-content: center;
+  align-items: center;
+  background-color: #bfd68b;
+}
+
+.navbar-products img {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-right: .3rem;
+}
+
+.navbar-listcategories {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 1rem;
+}
+
+.navbar-listcategories li {
+  display: flex;
+  justify-content: center;
+  width: 15rem;
+  cursor: pointer;
+}
+
+.navbar-listcategories li:hover {
+  color: #4e6122;
+}
+
+
 
 
 

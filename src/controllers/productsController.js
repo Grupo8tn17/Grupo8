@@ -4,5 +4,9 @@ module.exports = {
     listProducts: (req, res) => {
         const products = productsModel.products();
         return res.render('list-products', {  products });
-    }
+    }, 
+
+    descriptionProduct: (req, res) => {
+        res.render('product-description')
+    } 
 }

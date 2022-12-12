@@ -160,8 +160,9 @@
                 <section id="list-products">    
                     <div class="container">
 
-                        <% for ( let itemProducts of products) { %> 
-                        <div class="cards">
+                        <% for ( let itemProducts of products) { %>
+                    <li href="/products/:id"> 
+                        <div id="product" class="cards" >
                             <section>
                                 <img src="/public/img/product-1.png" alt="">
                             </section>
@@ -171,6 +172,7 @@
                                 <span><%= itemProducts.parcelamento %> </span>
                             </footer>
                         </div>
+                    </li>    
                         <% } %>                        
                     </div>
                 </section>    
