@@ -1,6 +1,6 @@
-var btnAddCart = document.querySelector(".top");
-var idProduct = document.querySelector(".primeira1 sub");
-var quantity = document.querySelectorAll(".form-control")[1];
+var btnAddCart = document.querySelector("add-cart");
+var idProduct = document.querySelector(".code-product");
+var quantity = document.querySelectorAll(".quantity-product")[1];
 let quantityValue = 0;
 let cart = [];
 
