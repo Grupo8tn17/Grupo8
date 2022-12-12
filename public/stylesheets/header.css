@@ -174,35 +174,6 @@ header {
   color: #4e6122;
 }
 
-<<<<<<< HEAD
-.nav-icons .icon-cart {
-  margin-right: 1rem;
-  padding-right: 1rem;
-  color: white;
-}
-
-.icon-cart a {
-  color: white;
-}
-
-@media (min-width: 990px) {
-  body .banner-frete {
-    height: 27px;
-    color: #4e6122;
-    background-color: #bfd68b;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    font-size: 15px;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-  }
-=======
->>>>>>> dev-kaique
 
 
 

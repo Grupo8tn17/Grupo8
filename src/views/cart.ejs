@@ -15,7 +15,8 @@
         <!-- Estilos -->
         <link rel="stylesheet" href="/stylesheets/cart.css">
     
-        
+        <script src="\javascripts\productsCart.js" defer></script>
+
     </head>
     <body>  
         <header>
@@ -35,28 +36,8 @@
                             <td>REMOVER</td>
                         </tr>
                     </thead>
-                    <tbody>    
-                        <tr>
-                            <td>001</td>
-                            <td>
-                                <div>
-                                    <img src="https://useorganico.vteximg.com.br/arquivos/ids/159313-1000-1000/Sabonete-Liquido-Natural-Suavetex-com-oleo-de-Coco-e-Extrato-de-Roma-237ml-%E2%80%93-Organico-Natural.jpg?v=636672865799200000">
-                                    <h4>Sabonete Liquido Natural</h4>
-                                </div>
-                            </td>
-                            <td style="width: 8rem;"> R$ 50,00 </td>
-                            <td style="width: 12rem;"> 
-                                <form>
-                                    <button onclick="this.nextElementSibling.value++">+</button>
-                                    <input  class="quantity" type="text"inputmode="numeric" value="1">
-                                    <button onclick="this.previousElementSibling.value--">-</button>
-                                </form>
-                            </td>
-                            <td> R$ 50,00 </td>                      
-                            <td style="width: 8rem;">
-                                <button onclick="this.nextElementSibling.value++" id="buttonX"> X </button>
-                            </td>
-                        </tr>
+                    <tbody class="cart-product">    
+                        
                     </tbody>     
                     <tfoot>
                         <tr>
