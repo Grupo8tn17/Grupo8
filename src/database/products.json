@@ -12,7 +12,7 @@
         "valor": "R$ 39,35",
         "parcelamento": "3x de R$ 13,11",
         "quantidade": "26",
-        "imagem": "1"
+        "imagem": "PURO-GEL-LIVEALOE.png"
     },
     {
         "id": 2,
@@ -29,7 +29,7 @@
         "valor": "R$ 69,00",
         "parcelamento": "6x de R$ 11,50",
         "quantidade": "35",
-        "imagem": "2"
+        "imagem": "leave-in-natural-protecao-120ml–ahoaloe.webp"
     },
     {
         "id": 3,
@@ -46,7 +46,7 @@
         "valor": "R$ 69,00",
         "parcelamento": "6x de R$ 11,50",
         "quantidade": "84",
-        "imagem": ""
+        "imagem": "shampoo-natural-hidratação-suave-argan-e-linhaça.webp"
     },
     {
         "id": 4,
@@ -63,7 +63,7 @@
         "valor": "R$ 39,90",
         "parcelamento": "3x de R$ 13,30",
         "quantidade": "36",
-        "imagem": "4"
+        "imagem": "elixir-capilar-raizes-fortes-vegana-wnf.webp"
     },
     {
         "id": 5,
@@ -79,24 +79,7 @@
         "valor": "R$ 19,90",
         "parcelamento": "2x de R$ 9,95",
         "quantidade": "76",
-        "imagem": "5"
-    },
-    {
-        "id": 6,
-        "titulo": "Óleo Vegetal Natural de Girassol 50ml",
-        "marca": "WNF",
-        "categoria": [
-            "cabelo",
-            "hidratação",
-            "reestruturação",
-            "nutrição"
-        ],
-        "descrição": " O Óleo Vegetal de Girassol da WNF é ico em vitamina E, um super antioxidante, ácido palmítico, ácido esteárico, ácido oleico e ácido linoleico. É um excelente óleo para todos os tipos de massagem, principalmente as modeladoras manuais e intensas. Pode ser usado como óleo base para as terapias de relaxamento muscular, em massagens esportivas e como hidratante para peles secas.",
-        "composição": "",
-        "valor": "R$ 32,90",
-        "parcelamento": "3x de R$ 10,96",
-        "quantidade": "48",
-        "imagem": "6"
+        "imagem": "oleo-vegetal-natural-de-girassol.webp"
     },
     {
         "id": 7,
@@ -113,7 +96,7 @@
         "valor": "R$ 4,90",
         "quantidade": "48",
         "parcelamento": "Avista",
-        "imagem": "7"
+        "imagem": "sabonete-vegetal-suavetex-camomila.jpg"
     },
     {
         "id": 8,
@@ -130,7 +113,7 @@
         "valor": "R$ 28,90",
         "parcelamento": "Avista",
         "quantidade": "48",
-        "imagem": "8"
+        "imagem": "deo-lavanda-use.png"
     },
     {
         "id": 9,
@@ -146,7 +129,7 @@
         "valor": "R$ 79,00",
         "parcelamento": "6x de R$ 13,16",
         "quantidade": "57",
-        "imagem": "9"
+        "imagem": "desodorante-stick-kristall-sensitive-alva-120g-alva.webp"
     },
     {
         "id": 10,
@@ -162,7 +145,7 @@
         "valor": "R$ 26,90",
         "parcelamento": "2x de R$ 13,45",
         "quantidade": "33",
-        "imagem": "10"
+        "imagem": "desodorante-spray-natural-melaleuca-e-aloe-vera-120ml-boni-natural.webp"
     },
     {
         "id": 11,
@@ -178,7 +161,7 @@
         "valor": "R$ 35,97",
         "parcelamento": "3x de R$ 11,99",
         "quantidade": "33",
-        "imagem": "11"
+        "imagem": "kit-com-3-unidades-da-pasta-dental-natural-menta-e-melaleuca-sem-fluor-90g-boni-natural.webp"
     },
     {
         "id": 12,
@@ -194,10 +177,7 @@
         "valor": "R$ 59,00",
         "parcelamento": "5x de R$ 11,80",
         "quantidade": "39",
-        "imagem": [
-            "12",
-            "12.1"
-        ]
+        "imagem": "Desodorante-de-Pedra-Natural-Stick-Kristall-Sensitive-90g---Alva.webp"
     },
     {
         "id": 13,
@@ -212,7 +192,7 @@
         "valor": "R$ 137,80",
         "parcelamento": "6x de R$ 22,96",
         "quantidade": "59",
-        "imagem": "13"
+        "imagem": "Protetor-Solar-Natural-Facial-e-Corporal-FPS-30-UVA-15-100g-Khor-Cosmetics.webp"
     },
     {
         "id": 14,
@@ -228,9 +208,7 @@
         "valor": "R$ 35,00",
         "parcelamento": "3x de R$ 11,66",
         "quantidade": "59",
-        "imagem": [
-            "14"
-        ]
+        "imagem": "purabioglitter-pasta-vermelha.jpg"
     },
     {
         "id": 15,
@@ -246,10 +224,7 @@
         "valor": "R$ 70,00",
         "parcelamento": "6x de R$ 11,66",
         "quantidade": "36",
-        "imagem": [
-            "15",
-            "15.1"
-        ]
+        "imagem": "mascara-de-cilios-vegana-e-natural-bionutritivo.webp"
     },
     {
         "id": 16,
@@ -264,9 +239,7 @@
         "valor": "R$ 39,90",
         "parcelamento": "3x de R$ 13,30",
         "quantidade": "86",
-        "imagem": [
-            "16"
-        ]
+        "imagem":"elemento-mineral-balsamo-hidratante-labial-5g.webp"
     },
     {
         "id": 17,
@@ -281,56 +254,6 @@
         "valor": "R$ 59,00",
         "parcelamento": "5x de R$ 11,80",
         "quantidade": "86",
-        "imagem": [
-            "17"
-        ]
-    },
-    {
-        "id": 18,
-        "titulo": "Loção de Limpeza Facial Natural Aloe Vera e Moringa 210ml ",
-        "marca": "Livealoe",
-        "categoria": [
-            "cosmético",
-            " limpeza facial"
-        ],
-        "descrição": "O Loção de Limpeza Facial Natural Aloe Vera e Moringa da Livealoe é um tônico facial natural formulado com gel de aloe vera e extrato de moringa, que juntos restauram o equilíbrio fisiológico da face, ajustam o pH, devolvem a luminosidade natural, auxiliam no controle de excesso de oleosidade, refrescam, removem impurezas, resíduos e mantêm a pele mais bonita e saudável. Também auxilia na remoção de maquiagem.",
-        "composição": "",
-        "valor": " R$ 44,05",
-        "parcelamento": "4x de R$ 11,01",
-        "quantidade": "31",
-        "imagem": [
-            "18",
-            "18,1"
-        ]
-    },
-    {
-        "id": 19,
-        "titulo": "Batom ",
-        "marca": "4",
-        "categoria": "3",
-        "descricao": "terste",
-        "valor": "33",
-        "quantidade": "3",
-        "imagem": "IMG_8592-removebg-preview.png"
-    },
-    {
-        "id": 20,
-        "titulo": "Kaique Masqueto",
-        "marca": "5",
-        "categoria": "3",
-        "descricao": "aaaaaa",
-        "valor": "1",
-        "quantidade": "2",
-        "imagem": "IMG_8592-removebg-preview.png"
-    },
-    {
-        "id": 21,
-        "titulo": "aaaaaaaaa",
-        "marca": "4",
-        "categoria": "2",
-        "descricao": "aaaaaaaaa",
-        "valor": "1",
-        "quantidade": "2",
-        "imagem": "3bf71054-254a-4c66-8bce-7823449e93de.jpg"
+        "imagem": "lip-balm-tintet-believe-lafes.webp"
     }
 ]

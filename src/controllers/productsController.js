@@ -7,6 +7,8 @@ module.exports = {
     }, 
 
     descriptionProduct: (req, res) => {
-        res.render('product-description')
+        const listProducts = productsModel.products();
+        let products =  productsModel.findByParams(req)
+        res.render('product-description', {products: products, listporduct: listProducts})
     } 
 }

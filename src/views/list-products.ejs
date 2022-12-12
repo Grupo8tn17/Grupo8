@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/0ad644d1e0.js" crossorigin="anonymous"></script>
-    <link rel="shortcut icon" href="/public/img/infinityCosmeticos.ico"image/x-icon" />
-    <link rel="stylesheet" href="stylesheets/list-products.css">
+    <link rel="shortcut icon" href="/images/infinityCosmeticos.ico"image/x-icon" />
+    <link rel="stylesheet" href="/stylesheets/list-products.css">
     <link rel="stylesheet" href="/stylesheets/style.css">
     <script src="/javascripts/list-products.js" defer></script>
     <title>Infinity Cosméticos</title>
@@ -29,7 +29,7 @@
                     </svg>
                 </button>
                 <ul>
-                   <li class="nav-item"><a href="#" class="nav-link">+Categorias</a></li>
+                   <li class="nav-item"><a href="/products" class="nav-link">+Categorias</a></li>
                     <li class="nav-item"><a href="#" class="nav-link">Pó Facial</a></li>
                     <li class="nav-item"><a href="#" class="nav-link">Lip Oil</a></li>
                     <li class="nav-item"><a href="#" class="nav-link">Bruma</a></li>
@@ -37,7 +37,7 @@
                 </ul>
             </div>
             <div class="logo">
-                <a href="../../../index.html"><img src="/public/img/Logo3PNG.png" alt="Logo"></a>
+                <a href="/"><img src="/images/Logo3PNG.png" alt="Logo"></a>
             </div>
             <div class="nav-search">
                 <input type="text" placeholder="Pesquisar Produtos...">
@@ -48,9 +48,8 @@
                 </button>
             </div>
             <div class="nav-icons">
-            
                 <div class="icon-user">
-                    <a href="../Login/login.html">
+                    <a href="/login">
                         <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
                             <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
                             <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
@@ -161,10 +160,10 @@
                     <div class="container">
 
                         <% for ( let itemProducts of products) { %>
-                    <li href="/products/:id"> 
+                    <a href="/products/description/<%= itemProducts.id %> "> 
                         <div id="product" class="cards" >
                             <section>
-                                <img src="/public/img/product-1.png" alt="">
+                                <img src="/images/products/<%= itemProducts.imagem %> " alt="">
                             </section>
                             <footer class="footer-card">
                                 <span><%= itemProducts.titulo %></span>
@@ -172,7 +171,7 @@
                                 <span><%= itemProducts.parcelamento %> </span>
                             </footer>
                         </div>
-                    </li>    
+                    </a>    
                         <% } %>                        
                     </div>
                 </section>    

@@ -8,7 +8,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lato&family=Rajdhani&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="/stylesheets/registration.css">
+  <link rel="stylesheet" href="/stylesheets/style.css">
   <title>Formulário de Cadastro de Novo Cliente</title>
 </head>
 
@@ -25,45 +26,46 @@
       <h2>Dados Pessoais</h2>
     </header>
 
-    <form action="/">
-      
+    <form class="registrationForm" action="/login">
+
       <section id="personal-data">
 
-        <section id="first-new-customer">
+        <div id="first-new-customer">
 
-          <div class="dice">
+          <div class="data">
             <label for="name"></label>
             <input type="text" id="name" name="name" required="required" placeholder="Nome Completo:" />
           </div>
 
-          <div class="dice">
+          <div class="data">
             <label for="email"></label>
             <input type="email" id="email" name="email" required="required" placeholder="E-mail:" />
           </div>
+          
 
-          <div class="dice">
+          <div class="data">
             <label for="cpf"></label>
-            <input type="text" id="cpf" minlength="14" maxlength="14" required="required" placeholder="CPF:">
+            <input type="text" id="cpf" required="required" placeholder="CPF:">
           </div>
 
           <div class="small-data">
             <label for="tel"></label>
-            <input type="text" id="tel" minlength="14" maxlength="14" required="required" placeholder="Tel Celular:" />
+            <input type="text" id="tel" required="required" placeholder="Tel Celular:" />
 
             <label for="cep"></label>
-            <input type="text" id="cep" minlength="9" maxlength="9" required="required" placeholder="CEP:" />
+            <input type="text" id="cep" required="required" placeholder="CEP:" />
           </div>
 
-        </section>
+        </div>
 
-        <section id="second-new-customer">
+        <div id="second-new-customer">
 
-          <div class="dice">
+          <div class="data">
             <label for="pwd1"></label>
             <input type="password" id="pwd1" name="pwd1" required="required" placeholder="Crie sua senha de acesso:" />
           </div>
 
-          <div class="dice">
+          <div class="data">
             <label for="pwd2"></label>
             <input type="password" id="pwd2" name="pwd2" required="required"
               placeholder="Confirme sua senha de acesso:" />
@@ -75,17 +77,18 @@
           </div>
 
           <div class="checkbox">
-            <input type="checkbox" name="privacy-policy" id="privacy-policy" value="true">
+            <input type="checkbox" name="privacy-policy" id="privacy-policy" required="required" value="true">
             <label for="privacy-policy">Concordo com a <a
-                href="/views/PoliticasPrivacidade/politicaPrivacidadeCookiesUso.html">política de privacidade</a> e os
-              <a href="/views/PoliticasPrivacidade/politicaPrivacidadeCookiesUso.html">termos de uso</a>.</label>
+                href="/privacy-policy">política de privacidade</a> e os
+              <a href="/privacy-policy">termos de
+                uso</a>.</label>
           </div>
 
-          <div></div>
-          <button type="submit" id="advance">Avançar</button>
+          <div class="personal-data-button">
+            <button type="submit" id="advance">Avançar</button>
           </div>
 
-        </section>
+        </div>
 
       </section>
 
