@@ -8,6 +8,12 @@ router.get('/', indexController.index);
 
 router.get('/login', userController.login);
 
+router.get('/checkout/order', indexController.order);
+
+router.get('/checkout/order-finished', indexController.onderFinished);
+
+router.get('/privacy-policy', indexController.privacyPolicy);
+
 module.exports = router;
 
 

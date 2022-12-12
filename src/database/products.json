@@ -182,7 +182,7 @@
     },
     {
         "id": 12,
-        "titulo": " Desodorante de Pedra Natural Stick Kristall Sensitive 90g",
+        "titulo": "Desodorante de Pedra Natural Stick Kristall Sensitive 90g",
         "marca": "Alva",
         "categoria": [
             "corpo",
@@ -201,7 +201,7 @@
     },
     {
         "id": 13,
-        "titulo": " Protetor Solar Natural Facial e Corporal FPS 30 UVA 15 100g (nova fórmula)",
+        "titulo": "Protetor Solar Natural Facial e Corporal FPS 30 UVA 15 100g (nova fórmula)",
         "marca": "Khor Cosmetics",
         "categoria": [
             "cosmético",
@@ -216,7 +216,7 @@
     },
     {
         "id": 14,
-        "titulo": " Glitter Natural e Biodegradável em Pasta 35ml",
+        "titulo": "Glitter Natural e Biodegradável em Pasta 35ml",
         "marca": "Pura Bioglitter",
         "categoria": [
             "cosmético",
@@ -234,14 +234,14 @@
     },
     {
         "id": 15,
-        "titulo": " Máscara de Cílios Vegana e Natural Bionutritivo 4ml",
+        "titulo": "Máscara de Cílios Vegana e Natural Bionutritivo 4ml",
         "marca": "Bioart",
         "categoria": [
             "cosmético",
             "máscara de cílios",
             "glitter"
         ],
-        "descrição": " O Rímel Natural e Vegano da Bioart, também chamado de Máscara de Cílios Bionutritiva é rica em argila, vitamina E, óleo de rícino, um excelente estimulante do crescimento dos pelos e baru - rico em ácido oléico e linoleico – que possui alto poder de hidratação além de estimular o fortalecimento do pelo. Este rímel proporciona mais leveza e proteção aos cílios, podendo ser utilizado também para ressaltar a cor das sobrancelhas. ",
+        "descrição": "O Rímel Natural e Vegano da Bioart, também chamado de Máscara de Cílios Bionutritiva é rica em argila, vitamina E, óleo de rícino, um excelente estimulante do crescimento dos pelos e baru - rico em ácido oléico e linoleico – que possui alto poder de hidratação além de estimular o fortalecimento do pelo. Este rímel proporciona mais leveza e proteção aos cílios, podendo ser utilizado também para ressaltar a cor das sobrancelhas. ",
         "composição": "",
         "valor": "R$ 70,00",
         "parcelamento": "6x de R$ 11,66",
@@ -253,7 +253,7 @@
     },
     {
         "id": 16,
-        "titulo": " Bálsamo Hidratante Labial 5g",
+        "titulo": "Bálsamo Hidratante Labial 5g",
         "marca": "Elemento Mineral",
         "categoria": [
             "cosmético",
