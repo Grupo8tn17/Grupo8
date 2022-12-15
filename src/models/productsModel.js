@@ -27,6 +27,11 @@ module.exports = {
       let found = products.find(product => { product.id == req.body.id
         return found
       })
+    }, 
+
+    findByParams: (req) => {
+      let found = products.find(product => product.id == req.params.id)
+      return found
     }
 }
 

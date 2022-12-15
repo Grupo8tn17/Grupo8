@@ -1,82 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/stylesheets/style.css">
-  <link rel="stylesheet" href="/stylesheets/product-description.css">
-  <script src="/javascripts/product-description.js" defer></script>
-  <script src="/javascripts/addCart.js" defer></script>
-  
-  <title>Document</title>
-</head>
-<body>
-  <div class="banner-frete"><a>GRÁTIS ACIMA DE R$ 249,90 - TODO BRASIL</a></div>
-    <header id="header">
-      <div class="header-principal">
-        <div class="container-header">
-        <div class="header-logo">
-          <img src="/images/Logo3PNG.png" alt="">
-          <span><strong>Infinity</strong> Cosméticos</span>
-        </div>
-        <div class="header-search">
-          <input class="header-input" type="text" placeholder="Pesquisar Produto...">
-          <button><img src="/images/lupa-arredondada.png" alt=""></button>
-        </div>  
-        <div class="header-links">
-          <div class="links-favorites">
-            <img src="/images/coracao.png" alt="">
-            <a>Lista de Desejos</a>
-          </div>
-          <div class="links-account">
-            <img src="/images/account2.png" alt="">
-            <a>Minha Conta</a>
-          </div>
-          <div class="links-cart">
-            <img src="/images/shopping-bag.png" alt="">
-          </div>
-        </div>
-        </div>
-        <div class="navbar">
-          <div class="navbar-products">
-            <img src="/images/menu-arredondado.png" alt="">
-            <span>Todos os departamentos</span>
-          </div>
-          <div class="navbar-listcategories">
-            <li>Cabelos</li>
-            <li>Tratamentos</li>
-            <li>Corpo e Banho</li>
-            <li>Maquiagem</li>
-            <li>Aromaterapia</li>
-          </div>
-        </div>
-      </div>
-    </header>
-    <div class="container">
+<%- include('partials/header') %>
+
+      <div class="container">
       <div class="links-filter">
         <a href="">Home ></a>
         <a href="">Marcas de A-Z ></a>
         <a href="">Gestante e Bebê ></a>
         <a href="">Bebê</a>
       </div>
-      <div class="products">
+      <div class="products">  
+        <% for(let product of listporduct) { %> 
+          <% if (product.id == products.id) { %>      
         <div class="products-left">
-          <img id="img-product" src="/images/products/Pasta-Dental-Natural-Baby-com-Extratos-de-Banana-Camomila-e-Erva-Cidreira-50g-Organico-Natural.jpg" alt="Imagem do Produto">
+          <img id="img-product" src="/images/products/<%= product.imagem %> " alt="Imagem do Produto">
         </div>
         <div class="products-rigth">
           <div class="products-reference">
             <div class="products-categories">
-              <a href="">Orgânico Natural</a>
-              <span class="code-product">Ref: 00002</span>
+              <a href=""><%= product.marca  %></a>
+              <span>Ref: <%= product.id %></span>
             </div>  
             <div class="products-favorite">
-              <img src="/images/coracao.png" alt="">
+              <img src="/images/icon-whishlist-add-v2.png" alt="">
             </div>
           </div>
           <div class="title-product">            
-            <h3>Creme Dental Natural Baby de Banana, 
-              Camomila e Erva Cidreira 50g – Orgânico Natural</h3>
+            <h3><%= product.titulo%> </h3>
             <img src="/images/compartilhar.png" alt="">
           </div>
           <div class="stars-rating">
@@ -89,7 +37,7 @@
           </div>
           <div class="product-price">
             <h5>De: 19,90</h5>
-            <span>Por:<strong>R$ 9,90</strong></span>
+            <span>Por:<strong><%= product.valor %> </strong></span>
           </div>
           <div class="product-add">
             <div class="button-add">
@@ -162,6 +110,7 @@
       <div class="container-rating">
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, cum ut! Soluta similique blanditiis numquam ex quasi laboriosam neque iure voluptatem, nam voluptatum velit accusantium modi dolorem, quos quisquam temporibus?</p>
       </div>
+      <% } %>
+      <% } %> 
     </div>
-</body>
-</html>
+    <%- include('partials/footer') %>
