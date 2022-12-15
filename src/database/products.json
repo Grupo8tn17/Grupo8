@@ -239,7 +239,7 @@
         "valor": "R$ 39,90",
         "parcelamento": "3x de R$ 13,30",
         "quantidade": "86",
-        "imagem":"elemento-mineral-balsamo-hidratante-labial-5g.webp"
+        "imagem": "elemento-mineral-balsamo-hidratante-labial-5g.webp"
     },
     {
         "id": 17,
@@ -255,5 +255,15 @@
         "parcelamento": "5x de R$ 11,80",
         "quantidade": "86",
         "imagem": "lip-balm-tintet-believe-lafes.webp"
+    },
+    {
+        "id": 18,
+        "titulo": "Kaique Masqueto",
+        "marca": "bergamia",
+        "categoria": "po-facial",
+        "descricao": "aaaaaaa",
+        "valor": "300",
+        "quantidade": "3",
+        "imagem": "batom.png"
     }
 ]
