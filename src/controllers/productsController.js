@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-
-
-module.exports = {
-    listProducts: (req, res) => {
-        return res.render('list-products');
-    }
-=======
 const productsModel = require('../models/productsModel')
 
 module.exports = {
@@ -19,5 +11,4 @@ module.exports = {
         let products =  productsModel.findByParams(req)
         res.render('product-description', {products: products, listporduct: listProducts, css: ['style.css', 'product-description.css'], js: ['product-description.js', 'addCart.js'] })
     },
->>>>>>> dev-danieli
 }

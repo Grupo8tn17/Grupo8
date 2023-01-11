@@ -1,15 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,400;0,700;0,900;1,100;1,400;1,700;1,900&display=swap");
-<<<<<<< HEAD
-@import url('/public/css/footerAlternative.css');
 @import url('/public/css/headerAlternative.css');
 @import url('/public/css/footer.css');
 
-
-=======
-@import url('/public/css/headerAlternative.css');
-@import url('/public/css/footer.css');
-
->>>>>>> dev-danieli
 :root {
   --bg-lightcolor: #d0e1aa;
   --bg-midlelightcolor: #bfd68b;
@@ -35,14 +27,11 @@ body {
   background-color: var(--offwhite);
 }
 
-<<<<<<< HEAD
-=======
 #new-customer {
   margin: 2rem;
   padding: 4rem 0.5rem 0.5rem 0.5rem;
 }
 
->>>>>>> dev-danieli
 #new-customer h1 {
   font-size: 3rem;
   text-align: center;
@@ -59,12 +48,8 @@ body {
     to right,
     transparent,
     var(--bg-darkcolor),
-<<<<<<< HEAD
-    transparent);
-=======
     transparent
   );
->>>>>>> dev-danieli
 }
 
 #new-customer h2 {
@@ -72,10 +57,6 @@ body {
   text-align: center;
   color: var(--bg-darkcolor);
   font-weight: 700;
-<<<<<<< HEAD
-  margin-top: 3rem;
-  margin-bottom: 3rem;
-=======
   margin: auto;
   padding: 4rem 0.5rem 1rem 0.5rem;
 }
@@ -83,7 +64,6 @@ body {
 .registrationForm {
   display: flex;
   justify-content: center;
->>>>>>> dev-danieli
 }
 
 #personal-data {
@@ -92,16 +72,10 @@ body {
   align-content: center;
   flex-flow: row wrap;
   flex-wrap: wrap;
-<<<<<<< HEAD
-  gap: 2rem;
-  margin: auto;
-  max-width: 90%;
-=======
   gap: 3rem;
   margin: auto;
   padding-bottom: 9rem;
   width: 100%;
->>>>>>> dev-danieli
 }
 
 #first-new-customer,
@@ -150,19 +124,6 @@ body {
   outline: 0.1rem solid var(--bg-darkcolor);
 }
 
-<<<<<<< HEAD
-.data input:hover, .small-data input:hover {
-  box-shadow:
-  1px 1px var(--gray),
-  2px 2px var(--gray),
-  3px 3px var(--gray);
--webkit-transform: translateX(-3px);
-transform: translateX(-3px);
-}
-  
-
-#name::placeholder,
-=======
 .data input:hover,
 .small-data input:hover {
   box-shadow: 1px 1px var(--gray), 2px 2px var(--gray), 3px 3px var(--gray);
@@ -171,7 +132,6 @@ transform: translateX(-3px);
 }
 
 #fullName::placeholder,
->>>>>>> dev-danieli
 #email::placeholder,
 #cpf::placeholder,
 #tel::placeholder,
@@ -201,14 +161,8 @@ transform: translateX(-3px);
 }
 
 .personal-data-button {
-<<<<<<< HEAD
-    display: flex;
-    justify-content: flex-end;
-
-=======
   display: flex;
   justify-content: flex-end;
->>>>>>> dev-danieli
 }
 
 #advance {
@@ -227,14 +181,6 @@ transform: translateX(-3px);
   transition: all 0.15s ease-in-out;
 }
 
-<<<<<<< HEAD
-#advance:hover, .checkbox a:hover {
-filter: brightness(115%);
--webkit-transform: translateX(-2px);
-transform: translateX(-2px);  
-}
-
-=======
 #advance:hover,
 .checkbox a:hover {
   filter: brightness(115%);
@@ -266,4 +212,3 @@ transform: translateX(-2px);
     max-width: 90%;
   }
 }
->>>>>>> dev-danieli

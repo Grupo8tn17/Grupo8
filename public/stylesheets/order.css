@@ -1,8 +1,5 @@
-<<<<<<< HEAD
-=======
 @import url("/public/css/style.css");
 
->>>>>>> dev-danieli
 .orderHeader {
   width: 100%;
   box-shadow: 0 4px 2px -2px #464646;
@@ -38,20 +35,13 @@
   width: 8rem;
   display: flex;
   text-align: right;
-<<<<<<< HEAD
-=======
   color: var(--bg-lightcolor);
->>>>>>> dev-danieli
 }
 
 .orderHeader-safeBuy .fa-lock {
   font-size: 2.5rem;
-<<<<<<< HEAD
-  border: 0.25rem solid var(--bg-darkcolor);
-=======
   border: 0.25rem solid var(--bg-lightcolor);
   color: var(--bg-lightcolor);
->>>>>>> dev-danieli
   border-radius: 50%;
   padding: 0.7rem;
 }
@@ -174,11 +164,7 @@
   margin-bottom: 2rem;
   border-radius: 0.5rem;
   padding: 1rem;
-<<<<<<< HEAD
-  box-shadow: 2px 4px 6px var(--bg-darkcolor);
-=======
   box-shadow: 2px 4px 6px var(--gray);
->>>>>>> dev-danieli
   width: 35rem;
 }
 
@@ -217,11 +203,7 @@
   margin-bottom: 2rem;
   border-radius: 0.5rem;
   padding: 1rem;
-<<<<<<< HEAD
-  box-shadow: 2px 4px 6px var(--bg-darkcolor);
-=======
   box-shadow: 2px 4px 6px var(--gray);
->>>>>>> dev-danieli
   width: 35rem;
 }
 .orderResume h3 {
@@ -258,14 +240,11 @@
   margin-bottom: 2rem;
   flex-wrap: wrap;
 }
-<<<<<<< HEAD
-=======
 
 .orderButtons button a {
   color: var(--bg-darkcolor);
 }
 
->>>>>>> dev-danieli
 .orderButtons button {
   color: var(--bg-darkcolor);
   font-size: 1.5rem;

@@ -1,9 +1,6 @@
 
 module.exports = {
     login: (req, res) => {
-<<<<<<< HEAD
-        return res.render('login')
-=======
         return res.render('login', {css: ['style.css', 'login.css'], js: ''})
     }, 
 
@@ -13,6 +10,5 @@ module.exports = {
 
     registrate: (req, res) => {
         res.render('registration', {css: ['style.css', 'registration.css'], js: ''});
->>>>>>> dev-danieli
     }
 }

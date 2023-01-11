@@ -19,10 +19,7 @@ main * {
 main .container-principal {
     width: 100%;
     padding-top: 3rem;
-<<<<<<< HEAD
-=======
     margin-top: 2rem;
->>>>>>> dev-danieli
 }
 
 
@@ -178,11 +175,7 @@ main hr {
     padding: 20px;
     margin: 1rem;
     background-color: rgba(255, 255, 255, 30%);
-<<<<<<< HEAD
-
-=======
     cursor: pointer;
->>>>>>> dev-danieli
 }
 
 .container .cards:hover {
@@ -350,11 +343,8 @@ main hr {
         align-items: center;
         padding: 20px;
         margin: 1rem;
-<<<<<<< HEAD
-=======
         max-width: 20rem;
         height: 30rem;
->>>>>>> dev-danieli
         background-color: rgba(255, 255, 255, 30%);
     
     }
