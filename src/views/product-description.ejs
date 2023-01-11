@@ -1,0 +1,116 @@
+<%- include('partials/header') %>
+
+      <div class="container">
+      <div class="links-filter">
+        <a href="">Home ></a>
+        <a href="">Marcas de A-Z ></a>
+        <a href="">Gestante e Bebê ></a>
+        <a href="">Bebê</a>
+      </div>
+      <div class="products">  
+        <% for(let product of listporduct) { %> 
+          <% if (product.id == products.id) { %>      
+        <div class="products-left">
+          <img id="img-product" src="/images/products/<%= product.imagem %> " alt="Imagem do Produto">
+        </div>
+        <div class="products-rigth">
+          <div class="products-reference">
+            <div class="products-categories">
+              <a href=""><%= product.marca  %></a>
+              <span class="code-product">Ref: <%= product.id %></span>
+            </div>  
+            <div class="products-favorite">
+              <img src="/images/icon-whishlist-add-v2.png" alt="">
+            </div>
+          </div>
+          <div class="title-product">            
+            <h3><%= product.titulo%> </h3>
+            <img src="/images/compartilhar.png" alt="">
+          </div>
+          <div class="stars-rating">
+            <img src="/images/estrela.png" alt="">
+            <img src="/images/estrela.png" alt="">
+            <img src="/images/estrela.png" alt="">
+            <img src="/images/estrela.png" alt="">
+            <img src="/images/estrela.png" alt="">
+            <span>9 Avaliações</span>
+          </div>
+          <div class="product-price">
+            <h5>De: 19,90</h5>
+            <span>Por:<strong>R$ <span id="price"><%= product.valor %></span> </strong></span>
+          </div>
+          <div class="product-add">
+            <div class="button-add">
+            <button id="button-small">-</button>
+            <span class="quantity-products" id="qtdProducts">1</span>
+            <button id="button-larger">+</button>
+            </div>
+            <button class="add-cart" id="add-cart">Adicionar</button>
+          </div>
+          <div class="calculator-freight">
+            <div class="freight-header">
+              <img src="/images/caminhao-de-entrega.png" alt="">
+            <span>Consulte o frete e a disponibilidade</span>
+            </div>
+            <div class="freight-field">
+              <input type="number">
+              <button>Calcular</button>
+            </div>                        
+          </div>
+        </div>  
+      </div>
+      <div class="products-tables">
+        <div class="assessments">
+          <button id="rating">Avaliações</button>
+          <button id="info-product">Informações do produto</button>
+        </div>
+        <div class="description-product">
+          <div class="products-composition">
+            <div class="product-information">
+              <h3>O que ele é?</h3>
+              <p>A Pasta Dental Natural Baby com Extratos de Banana, Camomila e Erva Cidreira da Orgânico Natural da Orgânico Natural foi desenvolvido higienie bucal de bebês e crianças, possui uma fórmula exclusiva certificada com matérias-primas orgânicas e naturais de ação anticárie. Possui um delicioso sabor natural de banana estimula as crianças a manterem bons hábitos de higiene bucal, não contém substâncias prejudiciais ao organismo em caso de Ingestão, pois não possui flúor, sem parabeno, sem glutén, sem sulfato, sem propileno glicol e sem corantes artificiais.</p>          
+              <strong>Características:</strong>
+              <ul>
+                <li>Produto Natural e Vegano</li>
+                <li>Delicioso sabor natural de banana</li>
+                <li>Não contém substâncias prejudiciais ao organismo</li>
+                <li>Fórmula livre de flúor</li>
+                <li>Embalagem reciclável</li>
+              </ul>
+            </div>
+            <div class="product-information">
+              <h3>O que ele tem?</h3>
+              <strong>Ingredientes:</strong>
+              <p>Extrato de Camomila: suavizante, anti-inflamatória e antisséptica.</p>
+              <p>Extrato de Erva Cidreira: ação adstringente e suavizante. Rica em oxidantes e nutrientes que protegem a pele.</p>
+              <p>Extrato de Banana: rico em cálcio e magnésio, ajuda na produção de saliva..</p>
+              <p>Composição: Sorbitol, xylitol, sodium benzoate, hydrates silica, xanthan gum, aroma, aqua.</p>
+              <p>Fórmula livre de: álcool, flúor, triclosan, parabenos, glúten, conservantes químicos, corantes artificiais e produtos de origem animal. Não é testado em animais.</p>
+            </div>
+            <div class="product-information">
+              <h3>Por que usar?</h3>
+              <p>É Natural, Vegano e Cruelty free
+                Limpa os dentes naturalmente e ajuda na produção de saliva;
+                Possui uma ação suavizante e refrescante;
+                Livre de flúor e substâncias nocivas à saúde do bebê ou criança
+                </p>
+                <strong>Indicação</strong>
+                <p>A Pasta Dental Natural Baby com Extratos de Banana, Camomila e Erva Cidreira da Orgânico Natural é indicado para higiene bucal diária de bebês e crianças.</p>
+            </div>
+            <div class="product-information">
+              <h3>Como usar?</h3>
+              <p>Recomendamos utilizar a Pasta Dental Natural Baby com Extratos de Banana, Camomila e Erva Cidreira da Orgânico Natural após as refeições de bebês e crianças ou de acordo com as necessidades diárias.
+              </p>
+              <strong>Precauções</strong>
+              <p>Manter fora do alcance de crianças. Havendo irritação suspenda o uso, não usar sob a pele ferida. Conservar em local fresco. Uso externo. Não ingerir. Deve ser aplicado por um Adulto ou sob sua supervisão.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container-rating">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, cum ut! Soluta similique blanditiis numquam ex quasi laboriosam neque iure voluptatem, nam voluptatum velit accusantium modi dolorem, quos quisquam temporibus?</p>
+      </div>
+      <% } %>
+      <% } %> 
+    </div>
+    <%- include('partials/footer') %>

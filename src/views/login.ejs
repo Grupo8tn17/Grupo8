@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -36,6 +37,9 @@
       </div>
     </nav>
   </header>
+=======
+<%- include('partials/alternative-header') %>
+>>>>>>> dev-danieli
 
   <main>
 
@@ -51,23 +55,40 @@
       <div id="first-login">
         <h2>LOGIN</h2>
 
+<<<<<<< HEAD
         <form action="/public/views/painelDoUsuario/painelDeUsuario.html">
 
           <div class="input">
             <label for="email"></label>
             <input type="email" id="email" name="email" placeholder="E-mail" />
+=======
+        <form action="/user/user-panel">
+
+          <div class="input">
+            <label for="email"></label>
+            <input type="email" id="email" name="email" placeholder="E-mail"  />
+>>>>>>> dev-danieli
           </div>
 
           <div class="input">
             <label for="pwd"></label>
+<<<<<<< HEAD
             <input type="password" id="pwd" name="pwd" placeholder="Senha">
+=======
+            <input type="password" id="pwd" name="pwd" placeholder="Senha"  />
+>>>>>>> dev-danieli
           </div>
           <div class="first-login-buttom">
             <p>
               <a href="">Esqueci minha senha?</a>
             </p>
+<<<<<<< HEAD
   
             <button type="submit">Entrar</button>
+=======
+
+            <button type="submit" id="enter">Entrar</button>
+>>>>>>> dev-danieli
           </div>
         </form>
       </div>
@@ -75,12 +96,20 @@
       <div id="second-login">
 
         <div id="buttonGoogle">
+<<<<<<< HEAD
           <button type="submit"><img src="../../img/simbolGoogle.png" alt="Google">Continuar com o
+=======
+          <button type="submit"><img src="images/simbolGoogle.png" alt="Google">Continuar com o
+>>>>>>> dev-danieli
             Google</button><br />
         </div>
 
         <div id="buttonRegister">
+<<<<<<< HEAD
           <a href="../Cadastro/cadastro.html"><button type="submit">Clique e cadastre-se</button></a>
+=======
+          <a href="/registrate"><button type="submit">Clique e cadastre-se</button></a>
+>>>>>>> dev-danieli
         </div>
 
         <aside id="desc">
@@ -95,6 +124,7 @@
 
   </main>
 
+<<<<<<< HEAD
   <footer class="footerAlternative">
     <div class="footerAlternative-start">
       <div class="footerAlternative-links">
@@ -135,3 +165,6 @@
 </body>
 
 </html>
+=======
+  <%- include('partials/alternative-footer') %>
+>>>>>>> dev-danieli
