@@ -31,6 +31,7 @@ body {
     width: 100%;
     display: flex;
     flex-direction: column;
+    margin-top: 2rem;
 }
 
 .meu-carrinho h1 {
@@ -41,62 +42,59 @@ body {
 
 table {
     width: 100%;
-   border: none; 
+    
 }
 
-table thead {
-    font-size: small;
+table thead{
+   display: none;
 }
 
-table tbody tr{
-    background-color: var(--bg-lightcolor);
-    box-shadow: 1px 1px 2px 2px var(--gray);
-    border-radius: .3rem;
+.item-product {
+    
 }
 
 table td img {
     width: 5rem; 
 }
 
-table td form input {
-    width: 2rem;
-}
-
-table td form button {
+table td button {
     width: 2rem;
     font-weight: bold;
 }
 
 td {
-    color: var(--bg-darkcolor);
+    color: black;
     text-align: center;
     font-weight: bold;
     border: none;
-    margin: 0;
-    padding: .1rem;
+    margin-bottom: 5rem;
+    padding: .5rem 0rem;
 }
 
-td > div {
+td  div {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap: .5rem;
+    gap: .2rem;
 }
 
 tbody {
-    color: #4e6122;
+    color:black;
     
 }
 
 span {
-    color: #4e6122;
+    color: black;
     text-align: center;
 }
 
-form {
-    color: #4e6122;
-    font-weight: bold;
+.image-product{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: .2rem;
 }
 
 button {

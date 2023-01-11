@@ -9,6 +9,6 @@ module.exports = {
     descriptionProduct: (req, res) => {
         const listProducts = productsModel.products();
         let products =  productsModel.findByParams(req)
-        res.render('product-description', {products: products, listporduct: listProducts, css: ['style.css', 'product-description.css'], js: 'product-description.js' })
-    } 
+        res.render('product-description', {products: products, listporduct: listProducts, css: ['style.css', 'product-description.css'], js: ['product-description.js', 'addCart.js'] })
+    },
 }
