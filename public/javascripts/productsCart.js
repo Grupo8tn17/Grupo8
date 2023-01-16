@@ -37,11 +37,11 @@ for (var i = 0; i <= objectCart.length - 1; i++) {
     "</span></td>" +
     '<td style="width: 10rem;"> ' +
     "<div>" +
-    '<button onclick="this.nextElementSibling.value++">+</button>' +
+    '<button id="btnAdd" onclick="this.nextElementSibling.value++">+</button>' +
     '<span class="quantity">' +
     objectCart[i].quantity +
     "</span>" +
-    '<button onclick="this.previousElementSibling.value--">-</button>' +
+    '<button id="btnRemove" onclick="this.previousElementSibling.value--">-</button>' +
     "</div>" +
     "</td>" +
     "<td>" +
