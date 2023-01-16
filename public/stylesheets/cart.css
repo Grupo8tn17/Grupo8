@@ -158,4 +158,32 @@ input {
 .form-fechar-pedido {
     text-align: center;
 }
+
+/*Inicio estilo carrinho vazio*/
+
+.cart-empty {
+    text-align: center;         
+ }
+ 
+ .cart-empty h1 {
+     color: var(--bg-darkcolor);
+     font-size: 3rem;
+ }
+ 
+ .cart-empty p {
+     color: var(--gray);
+     font-size: 1.5rem;
+ }
+ 
+ .cart-empty span {
+     font-family: Material Icons, sans-serif;
+     font-size: 5rem;
+     color: var(--gray);
+ }
+ 
+ /*End estilo carrinho vazio*/
+
+ .cart-invisible {
+    display: none;
+ }
   

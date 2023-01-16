@@ -1,53 +1,63 @@
 <%- include('partials/header') %>
-        <main>
-            <!-- Cabeçalho do Carrinho -->
-            <div class="meu-carrinho"> 
-                <h1>Meu Carrinho</h1>
-                <table>
-                    <thead>
-                        <tr>
-                            <td>CÓD</td>
-                            <td>PRODUTO</td>
-                            <td>PREÇO</td>
-                            <td>QUANTIDADE</td>
-                            <td>SUBTOTAL</td>
-                            <td>REMOVER</td>
-                        </tr>
-                    </thead>
-                    <tbody class="cart-product">    
-                        
-                    </tbody>     
-                    <tfoot>
-                        <tr>
-                            <td colspan="4" style="text-align: end;">TOTAL: </td>
-                            <td>R$ 50,00</td>
-                        </tr>
-                    </tfoot>
-                </table>
-            </div>
+    <main>
+        <!-- Cabeçalho do Carrinho -->
+        <div class="meu-carrinho">
+            <h1>Meu Carrinho</h1>
+            <table>
+                <thead>
+                    <tr>
+                        <td>CÓD</td>
+                        <td>PRODUTO</td>
+                        <td>PREÇO</td>
+                        <td>QUANTIDADE</td>
+                        <td>SUBTOTAL</td>
+                        <td>REMOVER</td>
+                    </tr>
+                </thead>
+                <tbody class="cart-product">
 
-            <section>
-                <div class="entrega">
-                    <h2><strong>ENTREGA</strong></h2>
-                    <h3>Veja as opções de entrega para seus itens,
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="4" style="text-align: end;">TOTAL: </td>
+                        <td>R$ 50,00</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+
+        <!--Carrinho vazio-->
+        <div class="cart-empty cart-invisible">
+            <span>shopping_cart</span>
+            <h1>Seu carrinho está vazio</h1>
+            <p>Parece que você não adicionou nenhum item ao carrinho; comece a fazer compras para
+                preenchê-lo.</p>
+        </div>
+        <!--End Carrinho vazio-->
+
+        <section>
+            <div class="entrega">
+                <h2><strong>ENTREGA</strong></h2>
+                <h3>Veja as opções de entrega para seus itens,
                     com todos os prazos e valores.</h3>
-                    <form class="cep">
-                        <label for="cep">CEP: </label>
-                        <input type="text" name="cep" id="cep" placeholder="11.111-111">
-                        <button type="">Calcular frete</button>
-                    </form>
-                    <form>
-                        <label for="cupom-desconto">Cupom de Desconto: </label>
-                        <input type="text" name="cupom-desconto" id="cupom-desconto" placeholder="Digite o seu cupom">
-                        <button> Aplicar Desconto</button>
-                    </form>
-                </div>
-                <form class="form-fechar-pedido" >
-                    <button class="btn-f">Fechar Pedido</button>
-                    <button class="btn-f">Escolher Mais Produtos </button>
+                <form class="cep">
+                    <label for="cep">CEP: </label>
+                    <input type="text" name="cep" id="cep" placeholder="11.111-111">
+                    <button type="">Calcular frete</button>
                 </form>
-            </section>
-        </main>
-        <%- include('partials/alternative-footer') %>
-    </body>
-</html>
+                <form>
+                    <label for="cupom-desconto">Cupom de Desconto: </label>
+                    <input type="text" name="cupom-desconto" id="cupom-desconto" placeholder="Digite o seu cupom">
+                    <button> Aplicar Desconto</button>
+                </form>
+            </div>
+            <form class="form-fechar-pedido">
+                <button class="btn-f">Fechar Pedido</button>
+                <button class="btn-f">Escolher Mais Produtos </button>
+            </form>
+        </section>
+    </main>
+    <%- include('partials/alternative-footer') %>
+        </body>
+
+        </html>
