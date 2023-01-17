@@ -265,5 +265,15 @@
         "valor": "",
         "quantidade": "3",
         "imagem": "batom.png"
+    },
+    {
+        "id": 19,
+        "titulo": "batom",
+        "marca": "bergamia",
+        "categoria": "po-facial",
+        "descricao": "dddddddddddddddddddddddddddddddddddddddddddd",
+        "valor": "20,00",
+        "quantidade": "2",
+        "imagem": "7midze8hdc5733z5gutzk7u8h.jpg"
     }
 ]

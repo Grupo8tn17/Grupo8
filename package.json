@@ -5,27 +5,20 @@
   "scripts": {
     "start": "nodemon ./src/bin/www"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Grupo8tn17/Infinity-Group.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Grupo8tn17/Infinity-Group/issues"
+  "dependencies": {
+    "cookie-parser": "~1.4.4",
+    "cors": "^2.8.5",
+    "debug": "~2.6.9",
+    "ejs": "^3.1.8",
+    "express": "^4.18.2",
+    "express-validator": "^6.14.2",
+    "http-errors": "~1.6.3",
+    "method-override": "^3.0.0",
+    "morgan": "~1.9.1",
+    "multer": "^1.4.5-lts.1",
+    "node-correios": "^3.0.2"
   },
   "devDependencies": {
     "nodemon": "^2.0.20"
-  },
-  "dependencies": {
-    "cors": "^2.8.5",
-    "ejs": "^3.1.8",
-    "express-validator": "^6.14.2",
-    "method-override": "^3.0.0",
-    "multer": "^1.4.5-lts.1"
-  },
-  "description": "<h1 align=\"center\">\r Infinity Cosméticos\r </h1>",
-  "homepage": "https://github.com/Grupo8tn17/Infinity-Group#readme",
-  "main": "index.js"
+  }
 }
