@@ -16,7 +16,9 @@ module.exports = {
         descricao: req.body.description,
         valor: req.body.price,
         quantidade: req.body.stock,
-        imagem: req.body.images
+        imagem: req.files[0] ? req.files[0].filename : '',
+        imagem2: req.files[1] ? req.files[1].filename : '',
+        imagem3: req.files[2] ? req.files[2].filename : '',
       }
 
       products.push(newProduct);
