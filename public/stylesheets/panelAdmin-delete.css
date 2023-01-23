@@ -193,6 +193,10 @@ main {
     cursor: pointer;
 }
 
+.modal-buttons .button-cancel  {
+    background-color: #888;
+}
+
 .button-cancel, .button-delete {
     padding: 0.6rem 1.2rem;
     background-color: #888;
@@ -270,6 +274,7 @@ main {
   
   .modal-body p {
     margin-bottom: 1rem;
+    text-align: center;
   }
   
   #modal.hide,
