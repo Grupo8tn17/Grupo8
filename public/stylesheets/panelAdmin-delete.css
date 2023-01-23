@@ -106,7 +106,7 @@ main {
     text-decoration: none;
     color: white;
     font-weight: bold;
-    background-color: #28a745;
+    background-color: #dc3545;
     padding: 6px 12px;
     border-radius: 0.25rem;
     font-size: 1rem;
@@ -162,6 +162,7 @@ main {
     align-items: center;
     justify-content: center;
     text-align: center;
+    
 }
 
 .box-body .box-table td img {
@@ -201,12 +202,7 @@ main {
     cursor: pointer;
     opacity: 0.9;
     font-size: 1rem;
-  }
-
-  .button-delete {
-    background-color: #dc3545;
-  }
-  
+  }  
 
  .button-delete:hover {
     opacity: 1;
@@ -216,6 +212,22 @@ main {
     opacity: 1;
   }
   
+  .modal-body .button-delete {
+    background-color: #dc3545;
+  }
+
+  .action-delete {
+    background-color: #dc3545;
+    cursor: pointer;
+  }
+
+  .form-group  #p_price{
+    margin-bottom: 2rem;
+  }
+
+  .form-group .input-delete {
+    background-color: #fff
+  }
   
   #fade {
     position: fixed;

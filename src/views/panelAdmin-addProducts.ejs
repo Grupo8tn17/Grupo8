@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/stylesheets/panelAdmin-addProducts.css">
+    <script src="/javascripts/panelAdmin-delete.js" defer></script>
     <script src="https://kit.fontawesome.com/0ad644d1e0.js" crossorigin="anonymous"></script>
     <title>Painel Administrativo - Infinity Cosméticos</title>
 </head>
@@ -59,14 +60,14 @@
                         </tr>
                         <tr>
                             <% for (let product of products) { %>
-                            <td class="table-id"><%= product.id %> </td>
-                            <td class="table-name"><%= product.titulo %></td>
-                            <td class="table-inventory"><%= product.quantidade %> </td>
-                            <td class="table-picture"><img src="/images/products/<%= product.imagem %> " alt=""></td>
-                            <td class="table-price"><%= product.valor %></td>
+                            <td class="table-id"><%= product.id %></td>
+                            <td class="table-name"><%= product.name %></td>
+                            <td class="table-inventory"><%= product.stock %> </td>
+                            <td class="table-picture"><img src="/images/products/<%= product.images %> " alt=""></td>
+                            <td class="table-price"><%= product.price %></td>
                             <td class="table-action">
-                                <a class="action-edit" href="">Editar</a>
-                                <a class="action-delete" href="">Excluir</a>
+                                <a class="action-edit" href="/admin/update/<%= product.id %> ">Editar</a>
+                                <a class="action-delete" href="/admin/delete/<%= product.id %> ">Excluir</a>                              
                             </td>
                         </tr>
                         <% } %>

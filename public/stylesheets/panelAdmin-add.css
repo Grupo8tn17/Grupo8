@@ -23,6 +23,7 @@
     cursor: pointer;
 }
 
+
 .container-products .box-body {
     display: flex;
     flex-direction: column;
