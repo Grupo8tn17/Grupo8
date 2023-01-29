@@ -275,5 +275,15 @@
         "valor": "20,00",
         "quantidade": "2",
         "imagem": "7midze8hdc5733z5gutzk7u8h.jpg"
+    },
+    {
+        "id": 20,
+        "titulo": "Batom",
+        "marca": "bergamia",
+        "categoria": "lip-oil",
+        "descricao": "Batom cor rosa pink",
+        "valor": "5",
+        "quantidade": "25",
+        "imagem": "7midze8hdc5733z5gutzk7u8h.jpg"
     }
 ]

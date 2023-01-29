@@ -173,12 +173,13 @@ input {
  .cart-empty p {
      color: var(--gray);
      font-size: 1.5rem;
+     padding-bottom: 5rem;
  }
  
- .cart-empty span {
-     font-family: Material Icons, sans-serif;
-     font-size: 5rem;
-     color: var(--gray);
+ .img-cart {
+    padding-top: 6rem;
+    padding-bottom: 4rem;
+    color: var(--gray);    
  }
  
  /*End estilo carrinho vazio*/
