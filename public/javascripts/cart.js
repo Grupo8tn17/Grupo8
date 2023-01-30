@@ -52,7 +52,8 @@ function updateTotal() {
 }
 
 function toReal(price) {
-  return price.toFixed(2).replace(".", ",");
+  console.log(price)
+  return price.toFixed(2).replace(".", ",");  
 }
 
 function subtotal(quantity, price) {
@@ -78,6 +79,9 @@ function removeItem () {
   productsCart = productsCart.filter((item) => item.id != id);
   localStorage.setItem("cart", JSON.stringify(productsCart));
   updateTotal();
+  if(productsCart.length < 1){
+    showEmptyCart();
+  }
 }
 
 function showEmptyCart () {
