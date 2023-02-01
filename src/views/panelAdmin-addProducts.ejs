@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="PT-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,16 +9,18 @@
     <script src="https://kit.fontawesome.com/0ad644d1e0.js" crossorigin="anonymous"></script>
     <title>Painel Administrativo - Infinity Cosméticos</title>
 </head>
+
 <body>
     <header>
         <div class="info-header">
             <div class="logo">
+
                 <head>Infinity Cosméticos</head>
             </div>
             <div class="header-icon-search">
                 <i class="fa-solid fa-magnifying-glass"></i>
             </div>
-        </div>    
+        </div>
         <div class="info-header">
             <i class="fa-solid fa-envelope"></i>
             <i class="fa-solid fa-user"></i>
@@ -43,9 +46,9 @@
                 <h3>Produtos</h3>
                 <div class="box-header">
                     <h4 class="box-title">Produtos</h3>
-                    <div class="box-tools">
-                        <a href="/admin/add">Adicionar</a>
-                    </div>
+                        <div class="box-tools">
+                            <a href="/admin/add">Adicionar</a>
+                        </div>
                 </div>
                 <div class="box-body">
                     <table class="box-table">
@@ -59,22 +62,32 @@
                         </tr>
                         <tr>
                             <% for (let product of products) { %>
-                            <td class="table-id"><%= product.id %> </td>
-                            <td class="table-name"><%= product.titulo %></td>
-                            <td class="table-inventory"><%= product.quantidade %> </td>
-                            <td class="table-picture"><img src="/images/products/<%= product.imagem %> " alt=""></td>
-                            <td class="table-price"><%= product.valor %></td>
-                            <td class="table-action">
-                                <a class="action-edit" href="">Editar</a>
-                                <a class="action-delete" href="">Excluir</a>
-                            </td>
+                                <td class="table-id">
+                                    <%= product.id %>
+                                </td>
+                                <td class="table-name">
+                                    <%= product.titulo %>
+                                </td>
+                                <td class="table-inventory">
+                                    <%= product.quantidade %>
+                                </td>
+                                <td class="table-picture"><img src="/images/products/<%= product.imagem %> " alt="">
+                                </td>
+                                <td class="table-price">
+                                    <%= product.valor %>
+                                </td>
+                                <td class="table-action">
+                                    <a class="action-edit" href="">Editar</a>
+                                    <a class="action-delete" href="">Excluir</a>
+                                </td>
                         </tr>
                         <% } %>
                     </table>
                 </div>
-                </div>
             </div>
+        </div>
         </div>
     </main>
 </body>
+
 </html>

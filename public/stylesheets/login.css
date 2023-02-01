@@ -1,13 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,400;0,700;0,900;1,100;1,400;1,700;1,900&display=swap");
-@import url('/public/css/footerAlternative.css');
-@import url('/public/css/headerAlternative.css');
-@import url('/public/css/footer.css');
+@import url("/public/css/footerAlternative.css");
+@import url("/public/css/headerAlternative.css");
+@import url("/public/css/footer.css");
 
 :root {
   --bg-lightcolor: #d0e1aa;
   --bg-midlelightcolor: #bfd68b;
   --bg-midlecolor: #9ab669;
-  --bg-darkcolor: #4e6122;  
+  --bg-darkcolor: #4e6122;
   --offwhite: #f7f4eb;
   --offwhite-lightborder: #fffaf0;
   --offwhite-darkborder: #dbcea6;
@@ -30,7 +30,7 @@ body {
 
 #login {
   margin: 2rem;
-  padding: 2rem;  
+  padding: 2rem;
 }
 
 #login h1 {
@@ -93,17 +93,14 @@ body {
   transition: all 0.15s ease-in-out;
 }
 
-#first-login input:focus{
-outline: 0.1rem solid var(--bg-darkcolor);
+#first-login input:focus {
+  outline: 0.1rem solid var(--bg-darkcolor);
 }
 
 #first-login input:hover {
-  box-shadow:
-  1px 1px var(--gray),
-  2px 2px var(--gray),
-  3px 3px var(--gray);
--webkit-transform: translateX(-3px);
-transform: translateX(-3px);
+  box-shadow: 1px 1px var(--gray), 2px 2px var(--gray), 3px 3px var(--gray);
+  -webkit-transform: translateX(-3px);
+  transform: translateX(-3px);
 }
 
 #email::placeholder,
@@ -131,8 +128,8 @@ transform: translateX(-3px);
 
 #container-login button:hover {
   filter: brightness(115%);
--webkit-transform: translateX(-2px);
-transform: translateX(-2px);  
+  -webkit-transform: translateX(-2px);
+  transform: translateX(-2px);
 }
 
 .first-login-buttom {

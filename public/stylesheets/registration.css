@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,400;0,700;0,900;1,100;1,400;1,700;1,900&display=swap");
-@import url('/public/css/headerAlternative.css');
-@import url('/public/css/footer.css');
+@import url("/public/css/headerAlternative.css");
+@import url("/public/css/footer.css");
 
 :root {
   --bg-lightcolor: #d0e1aa;
@@ -194,10 +194,10 @@ body {
 
 .error {
   display: flex;
-  border-radius: .25rem;
+  border-radius: 0.25rem;
   margin-top: -1.5rem;
-  margin-bottom: .5rem;
-  padding: .7rem;
+  margin-bottom: 0.5rem;
+  padding: 0.7rem;
   color: #721c24;
   background-color: #f8d7da;
   border: 1px solid #f5c6cb;

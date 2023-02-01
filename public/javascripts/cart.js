@@ -1,5 +1,5 @@
 function subtractItem() {
-  console.log(this)
+  console.log(this);
   let id = this.closest("tr").id;
   let elementQtd = document.querySelector('tr[id="' + id + '"] .quantity');
   let elementPrice = document.querySelector('tr[id="' + id + '"] .price');
@@ -7,7 +7,7 @@ function subtractItem() {
   let qtd = Number(elementQtd.innerText);
   let price = elementPrice.innerText.replace(",", ".");
   let subtotalItem = Number(elementSubtotal.innerText);
-  
+
   if (qtd != 0 && qtd > 1) {
     qtd -= 1;
     subtotalItem = subtotal(qtd, price);
@@ -33,7 +33,7 @@ function addItem() {
     elementSubtotal.innerText = subtotalItem.replace(".", ",");
   }
 
-  updateItemQtd(id, qtd);  
+  updateItemQtd(id, qtd);
 }
 
 function calcularTotal() {
@@ -52,8 +52,8 @@ function updateTotal() {
 }
 
 function toReal(price) {
-  console.log(price)
-  return price.toFixed(2).replace(".", ",");  
+  console.log(price);
+  return price.toFixed(2).replace(".", ",");
 }
 
 function subtotal(quantity, price) {
@@ -69,9 +69,9 @@ function updateItemQtd(id, quantity) {
     }
     updateTotal();
   });
-  }
+}
 
-function removeItem () {
+function removeItem() {
   let id = this.closest("tr").id;
   let item = this.closest("tr");
   item.remove();
@@ -79,25 +79,24 @@ function removeItem () {
   productsCart = productsCart.filter((item) => item.id != id);
   localStorage.setItem("cart", JSON.stringify(productsCart));
   updateTotal();
-  if(productsCart.length < 1){
+  if (productsCart.length < 1) {
     showEmptyCart();
   }
 }
 
-function showEmptyCart () {
-  let cartEmpty = document.querySelector('.cart-empty')
+function showEmptyCart() {
+  let cartEmpty = document.querySelector(".cart-empty");
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
-  if(cart.length == 0){
+  if (cart.length == 0) {
     meuCarrinho.style.display = "none";
-    cartEmpty.classList.remove('cart-invisible');
-  };
-};
+    cartEmpty.classList.remove("cart-invisible");
+  }
+}
 
 function buildCart() {
   //buscando o produto no localStorage
   let objectCart = JSON.parse(localStorage.getItem("cart")) || [];
 
-  
   //selecionando o elemento/tag onde o produto será adicionado no HTML
   var cartProduct = document.querySelector(".cart-product"); //tbody
 
@@ -142,7 +141,7 @@ function buildCart() {
       "</td>" +
       "</tr>";
   }
-};
+}
 
 buildCart();
 
@@ -167,7 +166,7 @@ btnSubtractList.forEach(function (btnSubtract) {
 const btnRemoveList = document.querySelectorAll(".btnRemove"); // botão de remover produto do carrinho
 
 btnRemoveList.forEach(function (btnRemove) {
-  console.log(btnRemove)
+  console.log(btnRemove);
   btnRemove.addEventListener("click", removeItem.bind(btnRemove));
 });
 
