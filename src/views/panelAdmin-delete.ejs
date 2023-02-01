@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/panelAdmin-delete.css">
+    <link rel="stylesheet" href="/stylesheets/panelAdmin-add.css">
+    <script src="/javascripts/panelAdmin-delete.js" defer></script>
+    <script src="https://kit.fontawesome.com/0ad644d1e0.js" crossorigin="anonymous"></script>
+    <title>Painel Administrativo - Infinity Cosméticos</title>
+</head>
+
+<body>
+    <header>
+        <div class="info-header">
+            <div class="logo">
+
+                <head>Infinity Cosméticos</head>
+            </div>
+            <div class="header-icon-search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+        </div>
+        <div class="info-header">
+            <i class="fa-solid fa-envelope"></i>
+            <i class="fa-solid fa-user"></i>
+        </div>
+    </header>
+    <main>
+        <div class="sidebar">
+            <h3 class="title-sidebar"><a href="/admin">Home</a></h3>
+            <nav>
+                <h3>Produtos</h3>
+                <a class="link-sidebar" href=""><i class="fa-solid fa-plus"></i> Categorias</a>
+                <a class="link-sidebar" href=""><i class="fa-solid fa-plus"></i> Marca</a>
+                <a class="link-sidebar" href="/admin/products"><i class="fa-solid fa-plus"></i> Produtos</a>
+            </nav>
+            <nav>
+                <h3>Usuários</h3>
+                <a class="link-sidebar" href=""><i class="fa-solid fa-plus"></i> Usuários</a>
+                <a class="link-sidebar" href=""><i class="fa-solid fa-plus"></i> Permissões</a>
+            </nav>
+        </div>
+        <div class="content-products">
+            <div class="container-products">
+                <h3>Excluir Produto</h3>
+
+                <div class="box">
+                    <div class="box-header">
+                        <h4 class="box-title">Excluir Produto</h4>
+                        <div class="box-tools">
+                            <a class="action-delete open-modal">Excluir</a>
+                            <div id="fade" class="hide"></div>
+                            <div id="modal" class="hide">
+                                <div class="modal-header">
+                                    <h2>Excluir Registro</h2>
+                                </div>
+                                <div class="modal-body">
+                                    <p>Tem certeza que deseja Excluir esse Registro? </p>
+                                    <div class="modal-buttons">
+                                        <a id="close-modal" class="button-cancel" href="/admin/products">Cancelar</a>
+                                        <form action="/admin/delete/<%= product.id %>?_method=DELETE " method="POST"
+                                            id="form">
+                                            <input type="submit" class="button-delete" value="Excluir" id="">
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box-body">
+
+                        <div class="form-group">
+                            <label for="p_name">Nome do produto</label>
+                            <input type="text" class="input-delete" id="p_name" name="name" disabled
+                                value="<%= product.name %> " />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="p_description">Descrição do Produto</label>
+                            <textarea id="p_description" name="description" disabled
+                                value="<%= product.description %> "></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="p_stock">Estoque Disponível</label>
+                            <input type="number" id="p_stock" name="stock" disabled value="<%= product.stock %> " />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="p_price">Preço</label>
+                            <input type="text" id="p_price" name="price" disabled value="<%= product.price %> " />
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

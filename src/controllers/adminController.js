@@ -1,3 +1,4 @@
+const { products, findProducts } = require("../models/productsModel");
 const productsModel = require("../models/productsModel");
 
 //importar bibliotecas necessárias ao middleware:
@@ -17,17 +18,51 @@ module.exports = {
     res.render("panelAdmin-add");
   },
 
-  //inserir as mudanças do middleware no createProducts
   createProducts: (req, res) => {
-    let errors = validationResult(req);
-    if (!errors.isEmpty()) {
-      return res.render("panelAdmin-add", {
-        errors: errors.mapped(),
-        old: req.body,
-      });
-    } else {
-      productsModel.productsCreate(req);
-      res.redirect("/admin/products");
+    productsModel.productsCreate(req.body);
+    res.redirect("/admin/products");
+  },
+
+  deleteView: (req, res) => {
+    const { id } = req.params;
+    let product = null;
+
+    if (id) {
+      product = productsModel.findProducts(id);
     }
+
+    return res.render("panelAdmin-delete", { product });
+  },
+
+  deleteProducts: (req, res) => {
+    const { id } = req.params;
+    productsModel.deleteProduct(id);
+    return res.redirect("/admin/products");
+  },
+
+  updateProducts: (req, res) => {
+    const { id } = req.params;
+    let product = null;
+
+    if (id) {
+      product = productsModel.findProducts(id);
+    }
+    return res.render("panelAdmin-updateProduct", { product });
+  },
+
+  update: (req, res) => {
+    const { id } = req.params;
+
+    productsModel.updateProducts(id, req.body);
+    return res.redirect("/admin/products");
   },
 };
+
+/* inserir as mudanças do middleware no createProducts
+createProducts: (req, res) => {
+  let errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    return res.render("panelAdmin-add", {
+      errors: errors.mapped(),
+      old: req.body,
+    }); */
