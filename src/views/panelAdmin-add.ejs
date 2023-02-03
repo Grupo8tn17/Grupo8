@@ -44,7 +44,7 @@
             <div class="container-products">
                 <h3>Adicionar Produtos</h3>
   
-                <form  action="/admin/create" method="POST" id="form">
+                <form  action="/admin/create" method="POST" id="form" enctype="multipart/form-data">
                     <div class="box">
                         <div class="box-header">
                             <h4 class="box-title">Novo Produto</h4>
@@ -102,7 +102,7 @@
                             </div>
 
                             <div class="products_files_area">
-                                <input type="file" name="images" />
+                                <input type="file" name="images" multiple/>
                             </div>
 
             

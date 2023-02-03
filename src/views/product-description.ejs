@@ -17,7 +17,7 @@
           <div class="products-reference">
             <div class="products-categories">
               <a href=""><%= product.marca  %></a>
-              <span>Ref: <%= product.id %></span>
+              <span class="code-product">Ref: <%= product.id %></span>
             </div>  
             <div class="products-favorite">
               <img src="/images/icon-whishlist-add-v2.png" alt="">
@@ -37,15 +37,15 @@
           </div>
           <div class="product-price">
             <h5>De: 19,90</h5>
-            <span>Por:<strong><%= product.valor %> </strong></span>
+            <span>Por:<strong>R$ <span id="price"><%= product.valor %></span> </strong></span>
           </div>
           <div class="product-add">
             <div class="button-add">
             <button id="button-small">-</button>
-            <span id="qtdProducts">1</span>
+            <span class="quantity-products" id="qtdProducts">1</span>
             <button id="button-larger">+</button>
             </div>
-            <button>Adicionar</button>
+            <button class="add-cart" id="add-cart">Adicionar</button>
           </div>
           <div class="calculator-freight">
             <div class="freight-header">

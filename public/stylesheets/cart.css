@@ -1,14 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family= Lato:ital, wght @0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900 & display=swap");
+
 :root {
     --bg-lightcolor: #d0e1aa;
     --bg-midlelightcolor: #bfd68b;
     --bg-midlecolor: #9ab669;
-    --bg-darkcolor: #4e6122;  
+    --bg-darkcolor: #4e6122;
     --offwhite: #f7f4eb;
     --offwhite-lightborder: #fffaf0;
     --offwhite-darkborder: #dbcea6;
     --gray: #b5c1b8;
-    --darkorange: darkorange;
   }
 
 *{
@@ -31,91 +31,93 @@ body {
     width: 100%;
     display: flex;
     flex-direction: column;
+    margin-top: 2rem;
 }
 
 .meu-carrinho h1 {
-    color: #4e6122;
+    color: var(--bg-darkcolor);
     text-align: center;
     margin: 1rem;
 }
 
 table {
     width: 100%;
-   border: none; 
+    
 }
 
-table thead {
-    font-size: small;
+table thead{
+   display: none;
 }
 
-table tbody tr{
-    background-color: var(--bg-lightcolor);
-    border: none;
+.item-product {
+    
 }
 
 table td img {
     width: 5rem; 
 }
 
-table td form input {
-    width: 2rem;
-}
-
-table td form button {
+table td button {
     width: 2rem;
     font-weight: bold;
 }
 
 td {
-    color: #4e6122;
+    color: black;
     text-align: center;
     font-weight: bold;
     border: none;
-    margin: 0;
-    padding: .1rem;
+    margin-bottom: 5rem;
+    padding: .5rem 0rem;
 }
 
-td > div {
+td  div {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap: .5rem;
+    gap: .2rem;
 }
 
 tbody {
-    background-color: azure;
-    color: #4e6122;
-    border: none;
+    color:black;
+    
 }
 
 span {
-    color: #4e6122;
+    color: black;
     text-align: center;
 }
 
-form {
-    color: #4e6122;
-    font-weight: bold;
+.image-product{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: .2rem;
 }
 
 button {
-    background-color: #4e6122;
-    color: #FFF;
-    padding: 0.7rem 0.7rem;
+    text-transform: uppercase;
+    background-color: var(--bg-darkcolor);
+    color: var(--offwhite);
+    cursor: pointer;
+    padding: .5rem;
     text-align: center;
     font: "Lato";
-    font-weight: bold;
-    border-radius: 0.5rem;  
+    font-weight:700;
+    border-radius: .5rem;
+    border: none;  
 }
 
 input {
-    padding: 0.7rem 0.7rem;
+    padding: .5rem;
     text-align: center;
     font: "Lato";
     font-weight: bold;
     border-radius: 0.5rem;
-    border-color: #000;
+    border: none;
+    box-shadow: 1px 1px 2px 2px var(--gray);
 }
 
 .entrega {
@@ -125,6 +127,10 @@ input {
     text-align: center;
     padding: .5rem;
     margin: 1rem;
+    border-radius: .3rem;
+    box-shadow: 1px 1px 2px 2px var(--gray);
+    border-radius: .3rem;
+    
 }
 
 .cep label{
@@ -133,11 +139,15 @@ input {
 
 .entrega input {
     min-width: 25rem;
+    box-shadow: 1px 1px 2px 2px var(--gray);
+    border-radius: .3rem;
 }
 
 .entrega button {
     min-width: 25rem;
     margin: .2rem;
+    box-shadow: 1px 1px 2px 2px var(--gray);
+    border-radius: .3rem;
  } 
 
  form .btn-f {
@@ -148,32 +158,4 @@ input {
 .form-fechar-pedido {
     text-align: center;
 }
-
-/*Inicio estilo carrinho vazio*/
-
-.cart-empty {
-    text-align: center;         
- }
- 
- .cart-empty h1 {
-     color: var(--bg-darkcolor);
-     font-size: 3rem;
- }
- 
- .cart-empty p {
-     color: var(--gray);
-     font-size: 1.5rem;
- }
- 
- .cart-empty span {
-     font-family: Material Icons, sans-serif;
-     font-size: 5rem;
-     color: var(--gray);
- }
- 
- /*End estilo carrinho vazio*/
-
- .cart-invisible {
-    display: none;
- }
   

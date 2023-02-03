@@ -7,8 +7,13 @@ var objectCart = JSON.parse(productsCart);
 
 //selecionando o elemento/tag onde o produto será adicionado no HTML
 var cartProduct = document.querySelector(".cart-product");//tbody 
-
-
+function toReal(price){
+    return price.toFixed(2).replace('.', ',')
+}
+function subtotal(quantity, price){
+    
+    return toReal(Number(price*quantity))
+}
 
 //adicionando o novo produto ao HTML
 
@@ -16,24 +21,26 @@ for (var i=0; i <= objectCart.length -1; i++) {
    
     cartProduct.innerHTML +=  
                         '<tr class="item-product">'+
-                            '<td>'+objectCart[i].id+'</td>'+
+                            '<td style="min-width: 7rem;">'+objectCart[i].id+'</td>'+
                                 '<td>'+
-                                    '<div>'+
-                                        '<img src="https://useorganico.vteximg.com.br/arquivos/ids/159313-1000-1000/Sabonete-Liquido-Natural-Suavetex-com-oleo-de-Coco-e-Extrato-de-Roma-237ml-%E2%80%93-Organico-Natural.jpg?v=636672865799200000">'+
-                                        '<h4>Sabonete Liquido Natural</h4>'+
+                                    '<div class="image-product" rowspan="2">'+
+                                        '<img src="'+ objectCart[i].img +'">' +
+                                        '<span>'+ objectCart[i].title +'</span>'+
                                     '</div>'+
                                 '</td>'+
-                                '<td style="width: 8rem;"> R$ 50,00 </td>'+
-                                '<td style="width: 12rem;"> '+
+                                '<td style="min-width: 7rem;"> R$ <span>'+ toReal(objectCart[i].price) +'</span></td>'+ 
+
+                                '<td style="width: 10rem;"> '+
                                     '<div>'+
                                         '<button onclick="this.nextElementSibling.value++">+</button>'+
                                         '<span class="quantity">'+ objectCart[i].quantity +'</span>'+
                                         '<button onclick="this.previousElementSibling.value--">-</button>'+
                                     '</div>'+
                                 '</td>'+
-                                '<td> R$ 50,00 </td>'+                 
+                                '<td>'+'R$'+  subtotal(objectCart[i].quantity, objectCart[i].price) +'</td>'+                 
                                 '<td style="width: 8rem;">'+
                                     '<button onclick="this.nextElementSibling.value++" id="buttonX"> X </button>'+
                                 '</td>'+
                        '</tr>'
 }
+

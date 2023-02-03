@@ -6,7 +6,6 @@
 @import url('/public/css/headerAlternative.css');
 @import url('/public/css/footer.css');
 
-
 :root {
   --bg-lightcolor: #d0e1aa;
   --bg-midlelightcolor: #bfd68b;
@@ -32,6 +31,11 @@ body {
   background-color: var(--offwhite);
 }
 
+#new-customer {
+  margin: 2rem;
+  padding: 4rem 0.5rem 0.5rem 0.5rem;
+}
+
 #new-customer h1 {
   font-size: 3rem;
   text-align: center;
@@ -48,7 +52,8 @@ body {
     to right,
     transparent,
     var(--bg-darkcolor),
-    transparent);
+    transparent
+  );
 }
 
 #new-customer h2 {
@@ -56,8 +61,13 @@ body {
   text-align: center;
   color: var(--bg-darkcolor);
   font-weight: 700;
-  margin-top: 3rem;
-  margin-bottom: 3rem;
+  margin: auto;
+  padding: 4rem 0.5rem 1rem 0.5rem;
+}
+
+.registrationForm {
+  display: flex;
+  justify-content: center;
 }
 
 #personal-data {
@@ -66,9 +76,10 @@ body {
   align-content: center;
   flex-flow: row wrap;
   flex-wrap: wrap;
-  gap: 2rem;
+  gap: 3rem;
   margin: auto;
-  max-width: 90%;
+  padding-bottom: 9rem;
+  width: 100%;
 }
 
 #first-new-customer,
@@ -117,17 +128,14 @@ body {
   outline: 0.1rem solid var(--bg-darkcolor);
 }
 
-.data input:hover, .small-data input:hover {
-  box-shadow:
-  1px 1px var(--gray),
-  2px 2px var(--gray),
-  3px 3px var(--gray);
--webkit-transform: translateX(-3px);
-transform: translateX(-3px);
+.data input:hover,
+.small-data input:hover {
+  box-shadow: 1px 1px var(--gray), 2px 2px var(--gray), 3px 3px var(--gray);
+  -webkit-transform: translateX(-3px);
+  transform: translateX(-3px);
 }
-  
 
-#name::placeholder,
+#fullName::placeholder,
 #email::placeholder,
 #cpf::placeholder,
 #tel::placeholder,
@@ -157,9 +165,8 @@ transform: translateX(-3px);
 }
 
 .personal-data-button {
-    display: flex;
-    justify-content: flex-end;
-
+  display: flex;
+  justify-content: flex-end;
 }
 
 #advance {
@@ -178,6 +185,7 @@ transform: translateX(-3px);
   transition: all 0.15s ease-in-out;
 }
 
+<<<<<<< HEAD
 #advance:hover, .checkbox a:hover {
 filter: brightness(115%);
 -webkit-transform: translateX(-2px);
@@ -188,3 +196,36 @@ transform: translateX(-2px);
 }
 
 >>>>>>> 815320044c41239ed604b605f56f564f1938137a
+=======
+#advance:hover,
+.checkbox a:hover {
+  filter: brightness(115%);
+  -webkit-transform: translateX(-2px);
+  transform: translateX(-2px);
+}
+
+.errorInput {
+  border: 3px solid rgb(240, 54, 54) !important;
+}
+
+.error {
+  display: flex;
+  border-radius: .25rem;
+  margin-top: -1.5rem;
+  margin-bottom: .5rem;
+  padding: .7rem;
+  color: #721c24;
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  width: 80%;
+  align-items: center;
+  justify-content: center;
+  margin-left: 6.2rem;
+}
+
+@media (max-width: 1020px) {
+  #personal-data {
+    max-width: 90%;
+  }
+}
+>>>>>>> dev-danieli

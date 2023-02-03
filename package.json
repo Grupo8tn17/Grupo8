@@ -8,15 +8,13 @@
   "dependencies": {
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
-    "ejs": "~2.6.1",
-    "express": "~4.16.1",
+    "ejs": "^3.1.8",
+    "express": "^4.18.2",
+    "express-validator": "^6.14.2",
     "http-errors": "~1.6.3",
-<<<<<<< HEAD
     "morgan": "~1.9.1",
+    "multer": "^1.4.5-lts.1",
     "node-correios": "^3.0.2"
-=======
-    "morgan": "~1.9.1"
->>>>>>> 815320044c41239ed604b605f56f564f1938137a
   },
   "devDependencies": {
     "nodemon": "^2.0.20"
