@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const productsModel = require('../models/productsModel')
 
 module.exports = {
@@ -11,4 +12,12 @@ module.exports = {
         let products =  productsModel.findByParams(req)
         res.render('product-description', {products: products, listporduct: listProducts, css: ['style.css', 'product-description.css'], js: 'product-description.js' })
     } 
+=======
+
+
+module.exports = {
+    listProducts: (req, res) => {
+        return res.render('list-products');
+    }
+>>>>>>> 815320044c41239ed604b605f56f564f1938137a
 }

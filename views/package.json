@@ -1,9 +1,9 @@
 {
-  "name": "infinity-group",
+  "name": "views",
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "nodemon ./src/bin/www"
+    "start": "node ./bin/www"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
@@ -11,14 +11,6 @@
     "ejs": "~2.6.1",
     "express": "~4.16.1",
     "http-errors": "~1.6.3",
-<<<<<<< HEAD
-    "morgan": "~1.9.1",
-    "node-correios": "^3.0.2"
-=======
     "morgan": "~1.9.1"
->>>>>>> 815320044c41239ed604b605f56f564f1938137a
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.20"
   }
 }

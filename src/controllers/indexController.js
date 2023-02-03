@@ -2,6 +2,7 @@
 
 module.exports = {
     index: (req, res) => {
+<<<<<<< HEAD
         return res.render('index', {css: ['style.css', 'index.css'], js: 'home.js' });
     },
 
@@ -15,5 +16,8 @@ module.exports = {
 
     privacyPolicy: (req, res) => {
         res.render('privacy-policy', {css: ['style.css', 'privacy-policy.css'], js: '' })
+=======
+        return res.render('index');
+>>>>>>> 815320044c41239ed604b605f56f564f1938137a
     }
 }

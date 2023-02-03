@@ -4,13 +4,8 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-var productsRouter = require('./routes/products');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-<<<<<<< HEAD
-var adminRouter = require('./routes/admin')
-=======
->>>>>>> 815320044c41239ed604b605f56f564f1938137a
 
 var app = express();
 
@@ -22,13 +17,8 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, '../public')));
+app.use(express.static(path.join(__dirname, 'public')));
 
-<<<<<<< HEAD
-app.use('/admin', adminRouter);
-=======
->>>>>>> 815320044c41239ed604b605f56f564f1938137a
-app.use('/products', productsRouter);
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 

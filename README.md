@@ -15,7 +15,7 @@ Infinity Cosméticos
 🍁 Sobre o Projeto
 </h2> 
 
- A proposta do projeta é a criação de um e-commerce de cosméticos com destaque em produtos orgânicos e saudáveis, aliando a beleza com a saúde.
+ A proposta do projeto é a criação de um e-commerce de cosméticos com destaque em produtos orgânicos e saudáveis, aliando a beleza com a saúde.
 
  Foi desenvolvido para o Projeto Integrador do curso de Desenvolvimento Web Full Stack da Digital House.
 
