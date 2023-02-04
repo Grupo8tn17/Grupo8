@@ -1,24 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,400;0,700;0,900;1,100;1,400;1,700;1,900&display=swap");
 @import url("footer.css");
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD:public/css/style.css
-=======
->>>>>>> 815320044c41239ed604b605f56f564f1938137a
 @import url("header.css");
 @import url("footerAlternative.css");
-@import url("headerAlternative.css");
-<<<<<<< HEAD
 @import url("../views/index/index.css");
 @import url("../views/orderFinished/orderFinished.css");
-<<<<<<< HEAD
-=======
 
->>>>>>> dev-danieli
-
-=======
->>>>>>> 668a6bc46c41ed6630690151a8435be908f81018:public/stylesheets/style.css
->>>>>>> 815320044c41239ed604b605f56f564f1938137a
 
 :root {
   --bg-lightcolor: #d0e1aa;

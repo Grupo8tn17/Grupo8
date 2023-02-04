@@ -17,5 +17,40 @@ module.exports = {
     createProducts: (req, res) => {
         productsModel.productsCreate(req);
         res.redirect('/admin/products');
-    } 
+    }, 
+    
+    deleteView: (req, res) => {
+        const { id } = req.params;
+        let product = null;
+
+        if(id) {
+            product = productsModel.findProducts(id);
+        }
+
+        return res.render('panelAdmin-delete', {product})
+        
+    },
+
+    deleteProducts: (req, res) => {
+        const {id}= req.params;
+        productsModel.deleteProduct(id);
+        return res.redirect('/admin/products');
+    }, 
+    
+    updateProducts: (req, res) => {
+        const { id } = req.params;
+        let product = null;
+
+        if(id) {
+            product = productsModel.findProducts(id);
+        }
+        return res.render('panelAdmin-updateProduct', {product})
+    },
+
+    update: (req, res) => {
+        const {id} = req.params;
+
+        productsModel.updateProducts(id, req.body);
+        return res.redirect('/admin/products');
+    }
 }

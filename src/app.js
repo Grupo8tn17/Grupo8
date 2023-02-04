@@ -3,12 +3,12 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var methodOverride = require('method-override');
 
 var productsRouter = require('./routes/products');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-<<<<<<< HEAD
-var adminRouter = require('./routes/admin')
+var adminRouter = require('./routes/admin');
 var cartRouter = require('./routes/cart');
 
 var app = express();
@@ -16,17 +16,14 @@ var app = express();
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
-
+app.use(methodOverride('_method'));
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../public')));
 
-<<<<<<< HEAD
 app.use('/admin', adminRouter);
-=======
->>>>>>> 815320044c41239ed604b605f56f564f1938137a
 app.use('/products', productsRouter);
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
