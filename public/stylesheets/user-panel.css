@@ -2,7 +2,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 
 
-<<<<<<< HEAD
 *{
     margin: 0;
     padding: 0;
@@ -28,17 +27,12 @@ header{
     background-image: linear-gradient(to right,transparent,var(--bg-darkcolor),transparent);
   }
 
-=======
->>>>>>> 815320044c41239ed604b605f56f564f1938137a
 .titulo-painel{
     width: 100%;
     padding-top: 1.25rem;
     text-align: center;
     padding-bottom: 0.625rem;
-<<<<<<< HEAD
     color: #4e6022;
-=======
->>>>>>> 815320044c41239ed604b605f56f564f1938137a
 }
 .container{
     width: 95%;
@@ -53,7 +47,6 @@ header{
 .container main{
     grid-area: main;
 }
-<<<<<<< HEAD
 
 /* Início do Primeiro Produto */
 .container main .produtos{
@@ -63,16 +56,6 @@ header{
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
     
 }
-=======
-/* Início do Scroll */
-.scroll {
-    overflow-y: scroll;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-
-}
-/* fim do scroll */
-/* Início do Primeiro Produto */
->>>>>>> 815320044c41239ed604b605f56f564f1938137a
 .container main .produtos .produto01{
     padding: 0.625rem;
     background-color: #fff;
@@ -127,7 +110,6 @@ header{
 
 /* Início dos Dados Pessoais */
 .container main .dadospessoais{
-<<<<<<< HEAD
     padding: 30px;
     background-color: #fff;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
@@ -135,12 +117,6 @@ header{
     
 }
 
-=======
-    padding: 10px;
-    background-color: #fff;
-    box-shadow: 0.016rem 0.016rem 0.069rem #000;
-}
->>>>>>> 815320044c41239ed604b605f56f564f1938137a
 .container main .dadospessoais h2{
     text-align: center;
     margin-bottom: 1.25rem;

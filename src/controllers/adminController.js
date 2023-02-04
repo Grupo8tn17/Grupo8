@@ -1,3 +1,4 @@
+const { products, findProducts } = require('../models/productsModel');
 const productsModel = require('../models/productsModel');
 
 module.exports = {
@@ -15,7 +16,7 @@ module.exports = {
     },
 
     createProducts: (req, res) => {
-        productsModel.productsCreate(req);
+        productsModel.productsCreate(req.body);
         res.redirect('/admin/products');
     }, 
     

@@ -1,8 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,400;0,700;0,900;1,100;1,400;1,700;1,900&display=swap");
-<<<<<<< HEAD
-=======
-@import url('/public/css/footerAlternative.css');
->>>>>>> 815320044c41239ed604b605f56f564f1938137a
 @import url('/public/css/headerAlternative.css');
 @import url('/public/css/footer.css');
 
@@ -185,18 +181,13 @@ body {
   transition: all 0.15s ease-in-out;
 }
 
-<<<<<<< HEAD
 #advance:hover, .checkbox a:hover {
 filter: brightness(115%);
 -webkit-transform: translateX(-2px);
 transform: translateX(-2px);  
-<<<<<<< HEAD
-}
-=======
+
 }
 
->>>>>>> 815320044c41239ed604b605f56f564f1938137a
-=======
 #advance:hover,
 .checkbox a:hover {
   filter: brightness(115%);
@@ -228,4 +219,3 @@ transform: translateX(-2px);
     max-width: 90%;
   }
 }
->>>>>>> dev-danieli
