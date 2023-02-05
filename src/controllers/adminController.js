@@ -16,7 +16,7 @@ module.exports = {
     },
 
     createProducts: (req, res) => {
-        productsModel.productsCreate(req.body);
+        productsModel.productsCreate(req);
         res.redirect('/admin/products');
     }, 
     

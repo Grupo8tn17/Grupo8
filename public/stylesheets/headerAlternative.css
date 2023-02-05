@@ -1,4 +1,9 @@
  
+  * {
+    padding: 0;
+    margin: 0;
+  }
+  
   body .headerAlternative{
     display: flex;
     background-color: #4e6122;
