@@ -42,6 +42,7 @@
   gap: 3rem;
   margin: 2rem 0;
   flex-wrap: wrap;
+
 }
 
 .selecaoProdutosPosBanner img {
@@ -131,6 +132,7 @@
   justify-content: center;
   align-items: center;
   margin-bottom: 2rem;
+
 }
 
 .aboutInfinity-container {
@@ -210,6 +212,7 @@
   justify-content: center;
   align-items: center;
   margin-bottom: 2rem;
+
 }
 
 .promotionalProducts-container {
@@ -277,6 +280,7 @@
   background-color: var(--gray);
 
   width: 100%;
+
 }
 
 .endPage h2 {

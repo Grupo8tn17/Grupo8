@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="PT-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,18 +10,16 @@
     <script src="https://kit.fontawesome.com/0ad644d1e0.js" crossorigin="anonymous"></script>
     <title>Painel Administrativo - Infinity Cosméticos</title>
 </head>
-
 <body>
     <header>
         <div class="info-header">
             <div class="logo">
-
                 <head>Infinity Cosméticos</head>
             </div>
             <div class="header-icon-search">
                 <i class="fa-solid fa-magnifying-glass"></i>
             </div>
-        </div>
+        </div>    
         <div class="info-header">
             <i class="fa-solid fa-envelope"></i>
             <i class="fa-solid fa-user"></i>
@@ -47,87 +44,83 @@
             <div class="container-products">
                 <h3>Adicionar Produtos</h3>
 
-                <!-- inserindo mensagens de erro das validações middlewares -->
-                <% if(typeof errors !=='undefined' ) {%>
-                    <ul>
-                        <% for(let erro in errors) {%>
-                            <li style="color: red; font-style: italic">
-                                <%= errors[erro].msg %>
-                            </li>
-                            <% } %>
-                    </ul>
-                    <% } %>
-                        <!-- Fim da mensagem de erro -->
-
-                        <form action="/admin/create" method="POST" id="form">
-                            <div class="box">
-                                <div class="box-header">
-                                    <h4 class="box-title">Novo Produto</h4>
-                                    <div class="box-tools">
-                                        <input type="submit" value="Salvar">
-                                    </div>
-                                </div>
-                                <div class="box-body">
-
-                                    <div class="form-group">
-                                        <label for="p_name">Nome do produto</label>
-                                        <input type="text" id="p_name" name="name" />
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="p_cat">Categoria</label>
-                                        <select name="category" id="p_cat">
-                                            <option value="1" selected></option>
-                                            <option value="po-facial">Pó Facial</option>
-                                            <option value="lip-oil">Lip Oil</option>
-                                            <option value="bruma">Bruma</option>
-                                            <option value="iluminador">Iluminador</option>
-                                        </select>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="p_brand">Marca</label>
-                                        <select name="brand" id="p_brand">
-                                            <option value="" selected></option>
-                                            <option value="bergamia">Bergamia</option>
-                                            <option value="khor-cosmetics">Khor Cosmetics</option>
-                                            <option value="weleda">Weleda</option>
-                                            <option value="souvie">Souvie</option>
-                                            <option value="care-natural">Care Natural</option>
-                                        </select>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="p_description">Descrição do Produto</label>
-                                        <textarea id="p_description" name="description"></textarea>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="p_stock">Estoque Disponível</label>
-                                        <input type="number" id="p_stock" name="stock" />
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="p_price">Preço</label>
-                                        <input type="text" id="p_price" name="price" />
-                                    </div>
-
-                                    <div class="image-product">
-                                        <label>Imagens do Produto</label><br />
-                                    </div>
-
-                                    <div class="products_files_area">
-                                        <input type="file" name="images" />
-                                    </div>
-
-
-                                </div>
+                <form  action="/admin/create" method="POST" id="form" enctype="multipart/form-data">
+                    <div class="box">
+                        <div class="box-header">
+                            <h4 class="box-title">Novo Produto</h4>
+                            <div class="box-tools">
+                                <input type="submit" value="Salvar">
                             </div>
-                        </form>
+                        </div>
+                        <div class="box-body">
 
+                            <div class="form-group">
+                                <label for="p_name">Nome do produto</label>
+                                <input  type="text" id="p_name" name="name" />
+                                <p class="erro"><%= errors.name %></p>
+                            </div>
+            
+                            <div class="form-group">
+                                <label for="p_cat">Categoria</label>
+                                <select  name="category" id="p_cat" >
+                                  <option value="1" selected></option>
+                                  <option value="po-facial">Pó Facial</option>
+                                  <option value="lip-oil">Lip Oil</option>
+                                  <option value="bruma">Bruma</option>
+                                  <option value="iluminador">Iluminador</option>
+                                </select>
+                                <p class="erro"><%= errors.category %></p>
+                            </div>
+            
+                            <div class="form-group">
+                                <label for="p_brand">Marca</label>
+                                <select name="brand" id="p_brand" >
+                                        <option value="" selected></option>
+                                        <option value="bergamia">Bergamia</option>
+                                        <option value="khor-cosmetics">Khor Cosmetics</option>
+                                        <option value="weleda">Weleda</option>
+                                        <option value="souvie">Souvie</option>
+                                        <option value="care-natural">Care Natural</option>
+                                </select>
+                                <p class="erro"><%= errors.brand %></p>
+                            </div>
+            
+                            <div class="form-group">
+                                <label for="p_description">Descrição do Produto</label>
+                                <textarea id="p_description" name="description"></textarea>
+                                <p class="erro"><%= errors.description %></p>
+                            </div>
+            
+                            <div class="form-group">
+                                <label for="p_stock">Estoque Disponível</label>
+                                <input type="number" id="p_stock" name="stock" />
+                                <p class="erro"><%= errors.stock %></p>
+                                
+                            </div>
+            
+                            <div class="form-group">
+                                <label for="p_price">Preço</label>
+                                <input  type="text"  id="p_price" name="price" />
+                                <p class="erro"><%= errors.price %></p>
+                                
+                            </div>       
+                            
+                            <div class="image-product">
+                                <label>Imagens do Produto</label><br/>
+                            </div>
+
+                            <div class="products_files_area">
+                                <input type="file" name="images" multiple/>
+                                <p class="erro"><%= errors.images %></p>
+                            </div>
+
+            
+                        </div>
+                    </div>
+                </form>
+            
             </div>
         </div>
     </main>
 </body>
-
 </html>

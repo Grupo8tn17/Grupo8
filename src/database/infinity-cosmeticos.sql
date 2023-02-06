@@ -1,0 +1,104 @@
+CREATE DATABASE infinity_cosmeticos;
+
+USE infinity_cosmeticos;
+
+CREATE TABLE produtos (
+	idprodutos INT UNSIGNED PRIMARY KEY AUTO_INCREMENT NOT NULL, 
+    titulo VARCHAR(255) NOT NULL, 
+    descricao LONGTEXT NOT NULL, 
+    valor DECIMAL(5,2) NOT NULL, 
+    quantidade INT NOT NULL, 
+    imagem VARCHAR(255) NOT NULL,
+    marca VARCHAR(150) NOT NULL, 
+    categorias_idcategorias INT UNSIGNED NOT NULL, 
+    carrinho_idcarrinho INT UNSIGNED NOT NULL,
+    FOREIGN KEY (categorias_idcategorias) REFERENCES categorias(idcategorias),
+    FOREIGN KEY (carrinho_idcarrinho) REFERENCES carrinho(idcarrinho)
+);
+
+CREATE TABLE categorias (
+	idcategorias INT UNSIGNED PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    nome VARCHAR(45) NOT NULL
+);
+
+CREATE TABLE carrinho ( 
+	idcarrinho INT UNSIGNED PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    valor_total DECIMAL(5,2) NOT NULL, 
+    quantidade INT NOT NULL
+);
+
+ALTER TABLE carrinho 
+	ADD COLUMN  usuarios_idusuarios INT UNSIGNED NOT NULL;
+    
+ALTER TABLE carrinho ADD CONSTRAINT usuarios_idusuarios
+FOREIGN KEY (usuarios_idusuarios) REFERENCES usuarios(idusuarios);
+
+CREATE TABLE usuarios (
+	idusuarios INT UNSIGNED PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    nome VARCHAR(150) NOT NULL, 
+    sobrenome VARCHAR(150) NOT NULL,
+    email VARCHAR(100) NOT NULL, 
+    senha VARCHAR(255) NOT NULL, 
+    documento_usuario INT(20) NOT NULL, 
+    telefone INT(11) NOT NULL,
+    data_nascimento DATE NOT NULL,
+    idadmin INT NOT NULL
+);
+
+CREATE TABLE pedidos (
+	idpedidos INT UNSIGNED PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    codigo_pedido INT NOT NULL, 
+    data_pedido DATE NOT NULL
+);
+
+CREATE TABLE historico_pedidos (
+	idhistorico_pedidos INT UNSIGNED PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    status_pedido VARCHAR(150) NOT NULL,
+    pedidos_idpedidos INT UNSIGNED NOT NULL,
+    FOREIGN KEY (pedidos_idpedidos) REFERENCES pedidos(idpedidos) 
+);
+
+CREATE TABLE forma_pagamentos (
+	idforma_pagamentos INT UNSIGNED PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    nome VARCHAR(150) NOT NULL, 
+    carrinho_idcarrinho INT UNSIGNED NOT NULL,
+    carrinho_usuarios_idusuarios INT UNSIGNED NOT NULL,
+    pedidos_idpedidos INT UNSIGNED NOT NULL,
+    FOREIGN KEY (carrinho_idcarrinho) REFERENCES carrinho(idcarrinho),
+    FOREIGN KEY (carrinho_usuarios_idusuarios) REFERENCES carrinho(usuarios_idusuarios)
+);
+
+CREATE TABLE enderecos (
+	idenderecos INT UNSIGNED PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    logradouro VARCHAR(150) NOT NULL, 
+    endereco_numero INT(5) NOT NULL, 
+    complemento VARCHAR(150),
+    cep INT(8) NOT NULL, 
+    bairro VARCHAR(150) NOT NULL,
+    cidade VARCHAR(150) NOT NULL, 
+    estado VARCHAR(2) NOT NULL, 
+    pais VARCHAR(150) NOT NULL, 
+    usuarios_idusuarios INT UNSIGNED NOT NULL,
+    carrinho_idcarrinho INT UNSIGNED NOT NULL,
+    carrinho_usuarios_idusuarios INT UNSIGNED NOT NULL,
+    FOREIGN KEY (usuarios_idusuarios) REFERENCES usuarios(idusuarios),
+    FOREIGN KEY (carrinho_idcarrinho) REFERENCES carrinho(idcarrinho),
+    FOREIGN KEY (carrinho_usuarios_idusuarios) REFERENCES carrinho(usuarios_idusuarios)
+);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

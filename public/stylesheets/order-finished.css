@@ -157,6 +157,7 @@
   padding-left: 1rem;
   padding-right: 0.5rem;
   border-radius: 0 120px 0 120px;
+
   transition: 0.3s ease;
   cursor: pointer;
 }
