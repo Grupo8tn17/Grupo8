@@ -3,6 +3,7 @@ var router = express.Router();
 const indexController = require('../controllers/indexController');
 const userController = require('../controllers/userController');
 const cartConctroller = require('../controllers/cartController');
+const productsController = require('../controllers/productsController');
 
 
 router.get('/', indexController.index);

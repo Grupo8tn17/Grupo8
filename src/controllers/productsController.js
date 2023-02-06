@@ -1,3 +1,4 @@
+const { products } = require('../models/productsModel');
 const productsModel = require('../models/productsModel')
 
 module.exports = {
@@ -7,8 +8,8 @@ module.exports = {
     }, 
 
     descriptionProduct: (req, res) => {
-        const listProducts = productsModel.products();
-        let products =  productsModel.findByParams(req)
-        res.render('product-description', {products: products, listporduct: listProducts, css: ['style.css', 'product-description.css'], js: ['product-description.js', 'addCart.js'] })
+        const listproducts = productsModel.products();
+        const productsId = productsModel.findByParams(req);
+        res.render('product-description', {listproducts: listproducts, productsId: productsId, css: ['style.css', 'product-description.css'], js: ['product-description.js', 'addCart.js'] })
     },
 }
