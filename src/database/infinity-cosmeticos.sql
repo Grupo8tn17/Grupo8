@@ -16,6 +16,15 @@ CREATE TABLE produtos (
     FOREIGN KEY (carrinho_idcarrinho) REFERENCES carrinho(idcarrinho)
 );
 
+ALTER TABLE produtos 
+ADD COLUMN ativo TINYINT NOT NULL;
+
+ALTER TABLE produtos 
+ADD COLUMN marcas_idmarca INT UNSIGNED NOT NULL;
+
+ALTER TABLE produtos ADD CONSTRAINT marcas_idmarca
+FOREIGN KEY (marcas_idmarca) REFERENCES marcas(idmarca);
+
 CREATE TABLE categorias (
 	idcategorias INT UNSIGNED PRIMARY KEY AUTO_INCREMENT NOT NULL,
     nome VARCHAR(45) NOT NULL
@@ -33,6 +42,9 @@ ALTER TABLE carrinho
 ALTER TABLE carrinho ADD CONSTRAINT usuarios_idusuarios
 FOREIGN KEY (usuarios_idusuarios) REFERENCES usuarios(idusuarios);
 
+ALTER TABLE carrinho
+ADD COLUMN cupom_desconto VARCHAR(45);
+
 CREATE TABLE usuarios (
 	idusuarios INT UNSIGNED PRIMARY KEY AUTO_INCREMENT NOT NULL,
     nome VARCHAR(150) NOT NULL, 
@@ -44,6 +56,9 @@ CREATE TABLE usuarios (
     data_nascimento DATE NOT NULL,
     idadmin INT NOT NULL
 );
+
+ALTER TABLE usuarios
+ADD COLUMN foto_usuario VARCHAR(100) NOT NULL;
 
 CREATE TABLE pedidos (
 	idpedidos INT UNSIGNED PRIMARY KEY AUTO_INCREMENT NOT NULL,
@@ -84,6 +99,33 @@ CREATE TABLE enderecos (
     FOREIGN KEY (usuarios_idusuarios) REFERENCES usuarios(idusuarios),
     FOREIGN KEY (carrinho_idcarrinho) REFERENCES carrinho(idcarrinho),
     FOREIGN KEY (carrinho_usuarios_idusuarios) REFERENCES carrinho(usuarios_idusuarios)
+);
+
+CREATE TABLE marcas (
+	idmarca INT UNSIGNED PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    nome VARCHAR(150) NOT NULL, 
+    cnpj INT(20) NOT NULL,
+    endereco VARCHAR(150) NOT NULL
+);
+
+CREATE TABLE produtos_ofertas (
+	idprodutos_ofertas INT UNSIGNED PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    oferta TINYINT NOT NULL, 
+    valor_oferta DECIMAL(5,2) NOT NULL
+);
+
+CREATE TABLE produtos_has_produtos_ofertas (
+	id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    produtos_idprodutos INT UNSIGNED NOT NULL,
+    produtos_categorias_idcategorias INT UNSIGNED NOT NULL,
+    produtos_carrinho_idcarrinho INT UNSIGNED NOT NULL,
+    produtos_marcas_idmarca INT UNSIGNED NOT NULL,
+    produtos_ofertas_idprodutos_ofertas INT UNSIGNED NOT NULL,
+    FOREIGN KEY (produtos_idprodutos) REFERENCES produtos(idprodutos),
+    FOREIGN KEY (produtos_categorias_idcategorias) REFERENCES produtos(categorias_idcategorias),
+    FOREIGN KEY (produtos_carrinho_idcarrinho) REFERENCES produtos(carrinho_idcarrinho),
+    FOREIGN KEY (produtos_marcas_idmarca) REFERENCES produtos(marcas_idmarca),
+    FOREIGN KEY (produtos_ofertas_idprodutos_ofertas) REFERENCES produtos_ofertas(idprodutos_ofertas)
 );
 
 

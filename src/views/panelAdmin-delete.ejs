@@ -75,12 +75,12 @@
                        
                             <div class="form-group">
                                 <label for="p_description">Descrição do Produto</label>
-                                <textarea id="p_description" name="description" disabled value="<%= product.descricao %> "></textarea>
+                                <textarea id="p_description" name="description" disabled ><%= product.descricao %></textarea>
                             </div>
             
                             <div class="form-group">
                                 <label for="p_stock">Estoque Disponível</label>
-                                <input type="number" id="p_stock" name="stock" disabled value="<%= product.quantidade %> "/>
+                                <input type="number" id="p_stock" name="stock" disabled value="<%= product.quantidade %>"/>
                             </div>
             
                             <div class="form-group">

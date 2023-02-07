@@ -1,5 +1,6 @@
 const { products, findProducts } = require('../models/productsModel');
 const productsModel = require('../models/productsModel');
+const { validationResult } = require('express-validator');
 
 module.exports = {
     indexAdmin: (req, res) => {
@@ -8,16 +9,26 @@ module.exports = {
 
     adminProducts: (req, res) => {
         const products = productsModel.products();
-        res.render('panelAdmin-addProducts', {products});
+        return res.render('panelAdmin-addProducts', {products, errors: {}});
     }, 
 
     addProducts: (req, res) => {
-        res.render('panelAdmin-add');
+       return res.render('panelAdmin-add', {errors: {}});
     },
 
     createProducts: (req, res) => {
-        productsModel.productsCreate(req);
-        res.redirect('/admin/products');
+        /*let { errors } = validationResult(req);
+
+        if (errors.length) {
+        const errosFormatados = {};
+        errors.forEach(erro => errosFormatados[erro.param] = erro.msg);
+        console.log(errosFormatados)
+        return res.render('panelAdmin-add', { errors: errosFormatados, servico: null });
+        } */
+            productsModel.productsCreate(req);
+            return res.redirect('/admin/products');
+
+        
     }, 
     
     deleteView: (req, res) => {
