@@ -56,20 +56,20 @@
 
                             <div class="form-group">
                                 <label for="p_name">Nome do produto</label>
-                                <input  type="text" id="p_name" name="name" />
-                                <p class="erro"><%= errors.name %></p>
+                                <input  type="text" id="p_name" name="name" value="<%= product?.name %>"/>
+                                <p class="msgError"><%= errors.name %></p>
                             </div>
             
                             <div class="form-group">
                                 <label for="p_cat">Categoria</label>
-                                <select  name="category" id="p_cat" >
-                                  <option value="1" selected></option>
-                                  <option value="po-facial">Pó Facial</option>
-                                  <option value="lip-oil">Lip Oil</option>
-                                  <option value="bruma">Bruma</option>
-                                  <option value="iluminador">Iluminador</option>
+                                <select  name="category" id="p_cat">
+                                  <option value="" <% if (!product) { %>selected <% } %>></option>
+                                  <option value="po-facial" <% if (product?.category == "po-facial") { %>selected <% } %>>Pó Facial</option>
+                                  <option value="lip-oil" <% if (product?.category == "lip-oil") { %>selected <% } %>>Lip Oil</option>
+                                  <option value="bruma" <% if (product?.category == "bruma") { %>selected <% } %>>Bruma</option>
+                                  <option value="iluminador" <% if (product?.category == "iluminador") { %>selected <% } %>>Iluminador</option>
                                 </select>
-                                <p class="erro"><%= errors.category %></p>
+                                <p class="msgError"><%= errors.category %></p>
                             </div>
             
                             <div class="form-group">
@@ -82,26 +82,26 @@
                                         <option value="souvie">Souvie</option>
                                         <option value="care-natural">Care Natural</option>
                                 </select>
-                                <p class="erro"><%= errors.brand %></p>
+                                <p class="msgError"><%= errors.brand %></p>
                             </div>
             
                             <div class="form-group">
                                 <label for="p_description">Descrição do Produto</label>
-                                <textarea id="p_description" name="description"></textarea>
-                                <p class="erro"><%= errors.description %></p>
+                                <textarea id="p_description" name="description"><%= product?.description %></textarea>
+                                <p class="msgError"><%= errors.description %></p>
                             </div>
             
                             <div class="form-group">
                                 <label for="p_stock">Estoque Disponível</label>
-                                <input type="number" id="p_stock" name="stock" />
-                                <p class="erro"><%= errors.stock %></p>
+                                <input type="number" id="p_stock" name="stock" value="<%= product?.stock %>"/>
+                                <p class="msgError"><%= errors.stock %></p>
                                 
                             </div>
             
                             <div class="form-group">
                                 <label for="p_price">Preço</label>
-                                <input  type="text"  id="p_price" name="price" />
-                                <p class="erro"><%= errors.price %></p>
+                                <input  type="text"  id="p_price" name="price" value="<%= product?.price %>" />
+                                <p class="msgError"><%= errors.price %></p>
                                 
                             </div>       
                             
@@ -111,7 +111,7 @@
 
                             <div class="products_files_area">
                                 <input type="file" name="images" multiple/>
-                                <p class="erro"><%= errors.images %></p>
+                                <p class="msgError"><%= errors.images %></p>
                             </div>
 
             

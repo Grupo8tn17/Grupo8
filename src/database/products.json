@@ -178,5 +178,17 @@
         "parcelamento": "5x de R$ 11,80",
         "quantidade": "39",
         "imagem": "Desodorante-de-Pedra-Natural-Stick-Kristall-Sensitive-90g---Alva.webp"
+    },
+    {
+        "id": 17,
+        "titulo": "Batom",
+        "marca": "bergamia",
+        "categoria": "po-facial",
+        "descricao": "ddddddddddddd",
+        "valor": "20,00",
+        "quantidade": "50",
+        "imagem": "1676066177427-1675721613322-purabioglitter-pasta-vermelha.jpg",
+        "imagem2": "",
+        "imagem3": ""
     }
 ]
