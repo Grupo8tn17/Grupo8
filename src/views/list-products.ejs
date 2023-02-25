@@ -159,18 +159,19 @@
 
                 <section id="list-products">    
                     <div class="container">
+
+                        <% for ( let itemProducts of products) { %> 
                         <div class="cards">
                             <section>
                                 <img src="/public/img/product-1.png" alt="">
                             </section>
                             <footer class="footer-card">
-                                <span>Óleo Vegetal de Groselha Negra 120ml - Laszlo</span>
+                                <span><%= itemProducts.titulo %> }</span>
                                 <h3>R$ 104,00</h3>
                                 <span>6x 17,33 sem juros</span>
                             </footer>
                         </div>
-                            <!-- Parametros compartilhados -->
-                        <% for (let itemProducts of products) { %>
+
                         <div class="cards">
                             <section>
                                 <img src="/public/img/product-1.png" alt="">
