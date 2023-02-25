@@ -180,7 +180,6 @@
         "imagem": "Desodorante-de-Pedra-Natural-Stick-Kristall-Sensitive-90g---Alva.webp"
     },
     {
-<<<<<<< HEAD
         "id": 13,
         "titulo": "Protetor Solar Natural Facial e Corporal FPS 30 UVA 15 100g (nova fórmula)",
         "marca": "Khor Cosmetics",
@@ -256,17 +255,5 @@
         "parcelamento": "5x de R$ 11,80",
         "quantidade": "86",
         "imagem": "lip-balm-tintet-believe-lafes.webp"
-=======
-        "id": 17,
-        "titulo": "Batom",
-        "marca": "bergamia",
-        "categoria": "po-facial",
-        "descricao": "ddddddddddddd",
-        "valor": "20,00",
-        "quantidade": "50",
-        "imagem": "1676066177427-1675721613322-purabioglitter-pasta-vermelha.jpg",
-        "imagem2": "",
-        "imagem3": ""
->>>>>>> dev-lucilia
     }
 ]
