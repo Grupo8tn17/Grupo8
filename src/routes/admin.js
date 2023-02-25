@@ -2,7 +2,8 @@ const express = require('express');
 const router = express.Router();
 const adminController = require('../controllers/adminController');
 const upload = require('../middleware/upload-img');
-const adminFormValidation = require('../middleware/admin-form-validation');const upload = require('../middleware/upload-img')
+const adminFormValidation = require('../middleware/admin-form-validation');
+
 
 router.get('/', adminController.indexAdmin);
 router.get('/products', adminController.adminProducts);
