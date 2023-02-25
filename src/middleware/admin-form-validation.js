@@ -20,8 +20,5 @@ module.exports = [
 
     check('price')
     .notEmpty().withMessage('O campo "Preço" não pode estar vazio').bail()
-    .isCurrency({ thousands_separator: '.', decimal_separator: ',', digits_after_decimal: [2] }).withMessage('O campo "Preço" deve ser preenchido corretamente - ex. 0,00'),
-
-    check('images')
-    .notEmpty().withMessage('Precisa inserir a imagem do produto'),
+    .isCurrency({ thousands_separator: '.', decimal_separator: ',', digits_after_decimal: [2] }).withMessage('O campo "Preço" deve ser preenchido corretamente - ex. 0,00')  
 ]

@@ -10,7 +10,7 @@ router.get('/products', adminController.adminProducts);
 
 router.get('/add', adminController.addProducts);
 //inserir middleware nesta rota:
-router.post('/create', adminFormValidation, upload.array("images", 3),  adminController.createProducts);
+router.post('/create', upload.array("images", 3), adminFormValidation, adminController.createProducts);
 
 router.get('/delete/:id', adminController.deleteView);
 router.delete('/delete/:id', adminController.deleteProducts);
