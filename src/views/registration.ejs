@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -57,12 +58,26 @@
 
 <<<<<<< HEAD
     <form class="registrationForm" action="/public/views/Login/login.html">
+=======
+<%- include('partials/alternative-header') %>
+
+  <main>
+    <header id="new-customer">
+>>>>>>> dev-kaique:src/views/registration.html
+      <h1>Cadastro de Novo Cliente</h1>
+      <hr />
+      <h2>Dados Pessoais</h2>
+    </div>
+
+    <form class="registrationForm" action="/login">
+>>>>>>> dev-danieli
 
       <section id="personal-data">
 
         <div id="first-new-customer">
 
           <div class="data">
+<<<<<<< HEAD
 =======
     <form action="/">
       
@@ -77,6 +92,12 @@
           </div>
 
 <<<<<<< HEAD
+=======
+            <label for="name"></label>
+            <input type="text" id="fullName" name="name" placeholder="Nome Completo:" />
+          </div>
+
+>>>>>>> dev-danieli
           <div class="data">
             <label for="email"></label>
             <input type="email" id="email" name="email" required="required" placeholder="E-mail:" />
@@ -86,6 +107,7 @@
           <div class="data">
             <label for="cpf"></label>
             <input type="text" id="cpf" required="required" placeholder="CPF:">
+<<<<<<< HEAD
 =======
           <div class="dice">
             <label for="email"></label>
@@ -96,11 +118,16 @@
             <label for="cpf"></label>
             <input type="text" id="cpf" minlength="14" maxlength="14" required="required" placeholder="CPF:">
 >>>>>>> 0d762c1baf70fff3fa63679fb446022a34a7156b
+=======
+>>>>>>> dev-danieli
           </div>
 
           <div class="small-data">
             <label for="tel"></label>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> dev-danieli
             <input type="text" id="tel" required="required" placeholder="Tel Celular:" />
 
             <label for="cep"></label>
@@ -112,6 +139,7 @@
         <div id="second-new-customer">
 
           <div class="data">
+<<<<<<< HEAD
 =======
             <input type="text" id="tel" minlength="14" maxlength="14" required="required" placeholder="Tel Celular:" />
 
@@ -136,11 +164,21 @@
 >>>>>>> 0d762c1baf70fff3fa63679fb446022a34a7156b
             <label for="pwd2"></label>
             <input type="password" id="pwd2" name="pwd2" required="required"
+=======
+            <label for="pwd1"></label>
+            <input type="password" id="pwd1" name="pwd1" placeholder="Crie sua senha de acesso:" />
+          </div>
+
+          <div class="data">
+            <label for="pwd2"></label>
+            <input type="password" id="pwd2" name="pwd2" 
+>>>>>>> dev-danieli
               placeholder="Confirme sua senha de acesso:" />
           </div>
 
           <div class="checkbox">
             <input type="checkbox" name="promotional-email" id="promotional-email" value="true">
+<<<<<<< HEAD
             <label for="promotional-email">Desejo receber e-mails promocionais</label>
           </div>
 
@@ -150,6 +188,16 @@
             <label for="privacy-policy">Concordo com a <a
                 href="../PoliticasPrivacidade/politicaPrivacidadeCookiesUso.html">política de privacidade</a> e os
               <a href="../PoliticasPrivacidade/politicaPrivacidadeCookiesUso.html#terms-use">termos de
+=======
+            <label for="promotional-email">Desejo receber e-mails promocionais.</label>
+          </div>
+
+          <div class="checkbox">
+            <input type="checkbox" name="privacy-policy" id="privacy-policy" required="required" value="true">
+            <label for="privacy-policy">Concordo com a <a
+                href="/privacy-policy">política de privacidade</a> e os
+              <a href="/privacy-policy">termos de
+>>>>>>> dev-danieli
                 uso</a>.</label>
           </div>
 
@@ -158,6 +206,7 @@
           </div>
 
         </div>
+<<<<<<< HEAD
 =======
             <input type="checkbox" name="privacy-policy" id="privacy-policy" value="true">
             <label for="privacy-policy">Concordo com a <a
@@ -171,12 +220,15 @@
 
         </section>
 >>>>>>> 0d762c1baf70fff3fa63679fb446022a34a7156b
+=======
+>>>>>>> dev-danieli
 
       </section>
 
     </form>
 
   </main>
+<<<<<<< HEAD
 <<<<<<< HEAD
   <footer class="footerAlternative">
     <div class="footerAlternative-start">
@@ -220,3 +272,6 @@
 </body>
 
 </html>
+=======
+  <%- include('partials/alternative-footer') %>
+>>>>>>> dev-danieli

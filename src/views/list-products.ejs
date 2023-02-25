@@ -1,75 +1,5 @@
-<!DOCTYPE html>
-<html lang="PT-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/0ad644d1e0.js" crossorigin="anonymous"></script>
-    <link rel="shortcut icon" href="/public/img/infinityCosmeticos.ico"image/x-icon" />
-    <link rel="stylesheet" href="/stylesheets/list-products.css">
-    <link rel="stylesheet" href="/stylesheets/style.css">
-    <script src="/javascripts/list-products.js" defer></script>
-    <title>Infinity Cosméticos</title>
-</head>
-<body>
-    <div class="banner-frete"><a>GRÁTIS ACIMA DE R$ 249,90 - TODO BRASIL</a></div>
-    <header id="header">
-        <nav class="nav-bar">
-            <div class="mobile-menu-icon">
-                <button id="button-menu">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
-                    </svg>
-                </button>
-            </div>
-            <div class="nav-list">
-                <button id="button-closed">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
-                        <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
-                    </svg>
-                </button>
-                <ul>
-                   <li class="nav-item"><a href="#" class="nav-link">+Categorias</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link">Pó Facial</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link">Lip Oil</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link">Bruma</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link">Iluminador</a></li>
-                </ul>
-            </div>
-            <div class="logo">
-                <a href="../../../index.html"><img src="/public/img/Logo3PNG.png" alt="Logo"></a>
-            </div>
-            <div class="nav-search">
-                <input type="text" placeholder="Pesquisar Produtos...">
-                <button class="button-lupa">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
-                    </svg>
-                </button>
-            </div>
-            <div class="nav-icons">
-            
-                <div class="icon-user">
-                    <a href="../Login/login.html">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
-                            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
-                            <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
-                        </svg>
-                    </a>
-                </div>
-                <div class="icon-phone">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-telephone" viewBox="0 0 16 16">
-                        <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
-                    </svg>
-                </div>
-                <div class="icon-cart">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-cart2" viewBox="0 0 16 16">
-                        <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"/>
-                    </svg>
-                </div>
-            </div>
-        </nav>
-    </header>
+<%- include('partials/header') %>
+
     <main>
         <div class="container-principal">
             <asside>
@@ -160,12 +90,14 @@
                 <section id="list-products">    
                     <div class="container">
 
-                        <% for ( let itemProducts of products) { %> 
-                        <div class="cards">
+                        <% for ( let itemProducts of products) { %>
+                    <a href="/products/description/<%= itemProducts.id %> "> 
+                        <div id="product" class="cards" >
                             <section>
-                                <img src="/public/img/product-1.png" alt="">
+                                <img src="/images/products/<%= itemProducts.imagem %> " alt="">
                             </section>
                             <footer class="footer-card">
+<<<<<<< HEAD
                                 <span><%= itemProducts.titulo %> }</span>
                                 <h3>R$ 104,00</h3>
                                 <span>6x 17,33 sem juros</span>
@@ -183,87 +115,19 @@
                                 <span>6x 17,33 sem juros</span>
                             </footer>
                         <% } %> </div> 
+=======
+                                <span><%= itemProducts.titulo %></span>
+                                <h3><%= itemProducts.valor %></h3>
+                                <span><%= itemProducts.parcelamento %> </span>
+                            </footer>
+                        </div>
+                    </a>    
+                        <% } %>                        
+>>>>>>> dev-danieli
                     </div>
                 </section>    
             </div> 
         </div>   
     </main>
-    <footer>
-        <div class="footer-start">
-          <div class="footer-icon">
-            <img src="/public/img/infinityCosmeticosLogoFooter.png" alt="">
-          </div>
-          <div class="footer-links">
-    
-            <div class="footer-linksup">
-              <div class="footer-institutional">
-                <h3>Institucional</h3>
-                <ul>
-                  <li><a href="#">Atendimento</a></li>
-                  <li><a href="#">Politica de Privacidade</a></li>
-                  <li><a href="#">Termos e Condições</a></li>
-                  <li><a href="#">Politica de Entrega</a></li>
-                  <li><a href="#">Trocas e Devoluções</a></li>
-                </ul>
-              </div>
-    
-              <div class="footer-contact">
-                <h3>Contato</h3>
-                <ul>
-                  <li><a href="https://chat.whatsapp.com/FjdF5cHSeSyJIcPrKWDZmL" target="_blank"><i
-                        class="fa-brands fa-whatsapp"></i> (11)948584656</a></li>
-                  <li><a href="#">sac@grupoinfinity.com.br</a></li>
-                </ul>
-                <span>Atendimento 24 horas</span>
-              </div>
-    
-              <div class="footer-sociallinks">
-                <h3>Redes sociais</h3>
-                <div class="sociallinks-boxone">
-                  <ul>
-                    <li><a href=""><i class="fa-brands fa-facebook-f"></i></a></li>
-                    <li><a href="https://github.com/Grupo8tn17" target="_blank"><i class="fa-brands fa-github"></i></a></li>
-                  </ul>
-                </div>
-                <div class="sociallinks-boxtwo">
-                  <ul>
-                    <li><a href=""><i class="fa-brands fa-instagram"></i></a></li>
-                    <li><a href=""><i class="fa-brands fa-twitter"></i></a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-    
-            <div class="footer-linksdown">
-              <div class="footer-payment">
-                <h3>Pagamento</h3>
-                <ul>
-                  <li><i class="fa-brands fa-cc-visa" title="VISA"></i></li>
-                  <li><i class="fa-brands fa-cc-mastercard" title="Mastercard"></i></li>
-                  <li><i class="fa-brands fa-cc-amex" title="American Express"></i></li>
-                  <li><i class="fa-brands fa-cc-diners-club" title="Diners Club"></i></li>
-                  <li><img
-                      src="https://i1.wp.com/remaxdobrasil.com.br/wp-content/uploads/2020/06/boleto-icone-branco.png?ssl=1"
-                      title="Boleto" alt="Icone de pagamento em boleto"></i></li>
-                </ul>
-              </div>
-    
-              <div class="footer-securitycertificate">
-                <h3>Compra segura</h3>
-                <ul>
-                  <li><img src="https://logodownload.org/wp-content/uploads/2016/09/pagseguro-logo-4-1.png"
-                      alt="Icone PagSeguro"></li>
-                </ul>
-    
-    
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="footer-end">
-          <span>Copyright &copy; 2002 - Infinity Cosméticos Ltda. Todos os direitos reservados. CNPJ 26.226.155/0001-34 -
-            Av. Domingos Odália Filho, 301 - Sala: 14/106 - Centro Osasco, 06010-060, São Paulo - Brasil</span>
-        </div>
-      </footer>
-</body>
-</html>
+
+    <%- include('partials/footer') %>

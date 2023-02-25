@@ -1,199 +1,272 @@
-@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,400;0,700;0,900;1,100;1,400;1,700;1,900&display=swap");
-@import url("footer.css");
-@import url("index.css");
-@import url("style.css");
-@import url("productDescription.css"); 
-
-
-body {
-  width: 100%;
-  display: flex;
-}
-
-.primeira {
-  padding-top: 3rem;
-    font-size: 100%;
+.container {
     width: 100%;
-    background: --offwhite-darkborder #dbcea6;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    justify-content: space-around;
-    gap: 2rem; 
-    font-family: "Lato", sans-serif;
   }
-
-.primeira1 { 
-    width: 70%;
-    font-size: 90%;
-    background: --offwhite-darkborder #dbcea6;
+  
+  .links-filter {
+    text-decoration: none;
+    list-style: none;
+    font-size: 1rem;
+    padding: 1.2rem;
+    background-color: white;
+    width: 100%;
     display: flex;
-    flex-direction:column;
-    align-items: flex-start;
+    align-items: center;
     justify-content: flex-start;
-    gap: 1rem; 
- }
-
- .primeira2 {
+  }
+  
+  .products {
     width: 100%;
+    height: 32rem;
+    background-color: white;
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  
+  .products-left {
+    width: 30rem;
+    display: flex;
     align-items: center;
-    justify-content: space-between;
- }
-
- .primeira3 { font-size: 90%;
-  background: --offwhite-darkborder #dbcea6;
-  display: flex;
-  flex-direction:column;
-  align-items: flex-start;
-  justify-content: space-around;
-   gap: 1rem; 
- }
-
-.imagemProduto{
-  height: 20rem;
-}
-
-.selection-color {
-  display: flex;
-}
-
-.selection-color ul {
-  display: flex;
-}
-
-.selection-color ul li {
-  display: flex;
-  
-}
-
-.top {
-  background-color: #4e6122;
-  width: 13rem;
-  height:2rem;
-  border: none;
-  box-shadow: 4px 5px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 20px;
-  font-family: "Lato", sans-serif;
-  font-weight: 600;
-  font-size: 0,5rem;
-  color: #0a0a0a}
-
-.segunda {font-size: 100%;
-  
-  background: --offwhite-darkborder #dbcea6;
-  display: flex;
-  flex-direction: column;
-  align-items: flex start;
-  justify-content: space-around;
-  gap: 2rem; 
-  margin: 4rem;
-}
-
-.segunda1 {font-size: 100%;
-  background: --offwhite-darkborder #dbcea6;
-  display: flex;
-  flex-direction: column;
-  align-items: flex start;
-  justify-content: space-around;
-  gap: 0.8rem; 
-  font-family: "Lato", sans-serif;
-  font-style: oblique;
-
-}
-  
-.segunda2{font-size: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: flex start;
-  justify-content: space-around;
-  gap: 0.8rem; 
-  margin-top: 2rem;
-  font-family: "Lato", sans-serif;
-
-}
- 
-.conteudo-secundario-paragrafo{font-size: 80%;}
-
-.productDescription {font-weight: 700;
-font-size: 102%;
-color: #4e6122;}
-
-.avaliation {font-weight: 700;
-  font-size: 102%;
-  color: #4e6122;}
-
-.avaliationsubtitle {font-weight: 700;
-    font-size: 90%;
-    color: #4e6122;}
-
-.heading1{font-weight: 700;
-  font-size: 70%;
-  color: #4e6122;}
-
-.primeira1-1{font-weight: 900;
-  font-size: 150%;
-  color: #4e6122;}
-
-  .pesquisaCep{font-weight: 400;
-    font-size: 90%;
-    color: #4e6122;
+    justify-content: center;
+    overflow: hidden;
   }
-
-.texto1{font-weight: 700;
-    font-size: 90%;
-    color: #090909;
+  
+  .products-left img {
+    transform-origin: center center;
+    object-fit: cover;
+    width: 25.5rem;
+    height: 28rem;
   }
-
-  .primeira1-3{display: flex;
+  
+  .products-rigth {
+    width: 30rem;
+    display: flex;
+    flex-direction: column;
+    margin-left: 5.7rem;
+    padding: 0 1rem;
+  }
+  
+  .products-reference {
+    width: 100%;
+    display: flex;
+    margin-bottom: 0.5rem;
+  }
+  
+  .products-categories {
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+  
+  .products-categories a {
+    list-style: none;
+    color: var(--bg-midlecolor);
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-right: 1rem;
+  }
+  
+  .products-categories span {
+    color: var(--gray);
+  }
+  
+  .products-favorite img {
+    width: 1.5rem;
+    margin-right: 2rem;
+  }
+  
+  .title-product {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.3rem;
+  }
+  
+  .title-product h3 {
+    font-size: 1.3rem;
+    max-width: 28rem;
+    max-height: 5rem;
+  }
+  
+  .title-product img {
+    width: 1.5rem;
+    margin-right: 1.2rem;
+    margin-left: 1rem;
+  }
+  
+  .stars-rating {
+    margin-top: 1.1rem;
+    display: flex;
+    align-items: center;
+  }
+  
+  .stars-rating img {
+    width: 0.75rem;
+    height: 0.75rem;
+  }
+  
+  .stars-rating span {
+    font-size: 0.75rem;
+    margin-left: 0.35rem;
+  }
+  
+  .product-price {
+    display: flex;
+    flex-direction: column;
+    margin-top: 4rem;
+    margin-bottom: 3rem;
+  }
+  
+  .product-price h5 {
+    text-decoration: line-through;
+    font-size: 0.75rem;
+    color: #777;
+    margin-bottom: 1.5rem;
+  }
+  
+  .product-price span {
+    font-size: 0.87rem;
+  }
+  
+  .product-price strong {
+    font-size: 1.25rem;
+    font-weight: 900;
+    color: var(--bg-midlecolor);
+    margin-left: 0.1rem;
+  }
+  
+  .product-add {
+    display: flex;
+    margin-bottom: 1.5rem;
+  }
+  
+  .product-add button {
+    background-color: var(--bg-darkcolor);
+    border: none;
+    border-radius: 0.25rem;
+    color: white;
+    width: 18.5rem;
+    height: 2.8rem;
+    cursor: pointer;
+  }
+  
+  .button-add button {
+    border: none;
+    background-color: #e2e2e2;
+    width: 2.4rem;
+    height: 2.8rem;
+    border-radius: 0.25rem;
+    font-size: 1.2rem;
+    color: black;
+    cursor: pointer;
+  }
+  
+  .button-add {
+    background-color: #e2e2e2;
+    font-size: 1.2rem;
+    margin-right: 1rem;
+  }
+  
+  .calculator-freight {
+    display: flex;
+    flex-direction: column;
+    width: 27.25rem;
+    height: 5rem;
+    background-color: var(--gray);
+    padding: 0.75rem;
+    border-radius: 0.25rem;
+  }
+  
+  .freight-header {
+    display: flex;
+    align-items: center;
+  }
+  
+  .freight-header img {
+    width: 1.5rem;
+  }
+  
+  .freight-header span {
+    font-size: 0.87rem;
+    font-weight: bold;
+    margin-left: 0.5rem;
+  }
+  
+  .freight-field {
+    display: flex;
+    align-items: center;
+  }
+  
+  .freight-field input {
+    width: 16.3rem;
+    height: 2.06rem;
+    border: none;
+    border-radius: 0.25rem;
+  }
+  
+  .freight-field button {
+    margin-left: 1rem;
+    padding: 0.5rem;
+    background-color: var(--bg-midlecolor);
+    color: white;
+    border: none;
+    font-size: 0.9rem;
+    border-radius: 0.25rem;
+  }
+  
+  .products-tables {
+    width: 98%;
+  }
+  
+  .assessments {
+    width: 100%;
+    background-color: white;
+    height: 4rem;
+    color: var(--bg-darkcolor);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem 0;
+    border-radius: 0.25rem;
+  }
+  
+  .assessments button {
+    margin-left: 10rem;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.6rem;
+  }
+  
+  .description-product {
+    display: flex;
     flex-direction: row;
-    align-content: center;}
-
-  .preço{font-weight: 700;
-    font-size:150%;
-    color: #4e6122;
-    font-style: italic;
   }
-.preçoParcelado {font-weight: 400;
-  font-size:100%;
-  color: #4e6122;
- 
-}
-
-.cor{font-weight: 700;
-  font-size: 90%;
-  color: #090909;
-}
-
-.segunda2-1{font-size: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: flex start;
-  justify-content: space-around;
-  gap: 0.8rem; 
-  margin-top: 2rem;
-  font-family: "Lato", sans-serif;
-}
-
-.red {
-    width: 2rem;
-    height: 2rem;
-    border: 0.1rem solid red;
-    background-color: red;
-}
-
-.pink {
-    width: 2rem;
-    height: 2rem;
-    border: 0.1rem solid pink;
-    background-color: pink;
-}
-
-.purple {
-    width: 2rem;
-    height: 2rem;
-
-    border: 0.1rem solid purple;
-    background-color: purple;
-}
+  
+  .products-composition {
+    display: flex;
+    flex-direction: column;
+    animation: 1s;
+  }
+  
+  .product-information {
+    background-color: white;
+    border-radius: 0.25rem;
+    padding: 0.73rem;
+    margin-bottom: 1rem;
+  }
+  
+  .product-information h3 {
+    font-size: 1.88rem;
+    margin-bottom: 1rem;
+  }
+  
+  .container-rating {
+    animation: 1s;
+  }
