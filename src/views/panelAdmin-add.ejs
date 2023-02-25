@@ -45,6 +45,8 @@
                 <h3>Adicionar Produtos</h3>
   
                 <form  action="/admin/create" method="POST" id="form" enctype="multipart/form-data">
+
+                <form  action="/admin/create" method="POST" id="form" enctype="multipart/form-data">
                     <div class="box">
                         <div class="box-header">
                             <h4 class="box-title">Novo Produto</h4>
@@ -57,6 +59,7 @@
                             <div class="form-group">
                                 <label for="p_name">Nome do produto</label>
                                 <input  type="text" id="p_name" name="name" />
+                                <p class="erro"><%= errors.name %></p>
                             </div>
             
                             <div class="form-group">
@@ -68,6 +71,7 @@
                                   <option value="bruma">Bruma</option>
                                   <option value="iluminador">Iluminador</option>
                                 </select>
+                                <p class="erro"><%= errors.category %></p>
                             </div>
             
                             <div class="form-group">
@@ -80,21 +84,27 @@
                                         <option value="souvie">Souvie</option>
                                         <option value="care-natural">Care Natural</option>
                                 </select>
+                                <p class="erro"><%= errors.brand %></p>
                             </div>
             
                             <div class="form-group">
                                 <label for="p_description">Descrição do Produto</label>
                                 <textarea id="p_description" name="description"></textarea>
+                                <p class="erro"><%= errors.description %></p>
                             </div>
             
                             <div class="form-group">
                                 <label for="p_stock">Estoque Disponível</label>
                                 <input type="number" id="p_stock" name="stock" />
+                                <p class="erro"><%= errors.stock %></p>
+                                
                             </div>
             
                             <div class="form-group">
                                 <label for="p_price">Preço</label>
                                 <input  type="text"  id="p_price" name="price" />
+                                <p class="erro"><%= errors.price %></p>
+                                
                             </div>       
                             
                             <div class="image-product">
@@ -102,7 +112,8 @@
                             </div>
 
                             <div class="products_files_area">
-                                <input type="file" name="images" multiple/>
+                                <input type="file" name="images" multiplemultiple/>
+                                <p class="erro"><%= errors.images %></p>
                             </div>
 
             

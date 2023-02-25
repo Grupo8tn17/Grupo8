@@ -1,5 +1,6 @@
 const { products, findProducts } = require('../models/productsModel');
 const productsModel = require('../models/productsModel');
+const { validationResult } = require('express-validator');
 
 module.exports = {
     indexAdmin: (req, res) => {
@@ -12,10 +13,20 @@ module.exports = {
     }, 
 
     addProducts: (req, res) => {
-        res.render('panelAdmin-add');
+        //inlcui array de erros
+        res.render('panelAdmin-add', { errors: {} });
     },
 
     createProducts: (req, res) => {
+        //inclusão middleware de validacao:
+        let { errors } = validationResult(req);
+
+    if (errors.length) {
+      const errosFormatados = {};
+      errors.forEach(erro => errosFormatados[erro.param] = erro.msg);
+
+      return res.render('panelAdmin-add', { errors: errosFormatados, servico: null });
+    }
         productsModel.productsCreate(req);
         res.redirect('/admin/products');
     }, 
