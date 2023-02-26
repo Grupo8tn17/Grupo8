@@ -4,7 +4,7 @@ const path = require('path');
 
 module.exports = {
     products: () => {
-        return products
+        return JSON.parse(fs.readFileSync(path.resolve(__dirname, '../database/products.json')))
     }, 
 
     productsCreate: (req) => {
@@ -65,6 +65,17 @@ module.exports = {
       const newProduct = product.filter(products => products.id != id);
 
       fs.writeFileSync(path.join(__dirname, '../database/products.json'), JSON.stringify(newProduct, null, 4))
+      if(product.imagem){
+        fs.unlinkSync(__dirname, "../../public/images/" + products.imagem);
+      }
+
+      if(product.imagem2){
+        fs.unlinkSync(__dirname, "../../public/images/" + products.imagem2);
+      }
+
+      if(product.imagem3){
+        fs.unlinkSync(__dirname, "../../public/images/" + products.imagem3);
+      }      
     }
-}
+  }
 
