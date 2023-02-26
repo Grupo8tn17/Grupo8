@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/panelAdmin-add.css">
+    <script src="/javascripts/panelAdmin-validation.js" defer></script>
+    <link rel="stylesheet" href="/stylesheets/panelAdmin-addProducts.css">
+    <script src="https://kit.fontawesome.com/0ad644d1e0.js" crossorigin="anonymous"></script>
+    <title>Painel Administrativo - Infinity Cosméticos</title>
+</head>
+<body>
+    <header>
+        <div class="info-header">
+            <div class="logo">
+                <head>Infinity Cosméticos</head>
+            </div>
+            <div class="header-icon-search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+        </div>    
+        <div class="info-header">
+            <i class="fa-solid fa-envelope"></i>
+            <i class="fa-solid fa-user"></i>
+        </div>
+    </header>
+    <main>
+        <div class="sidebar">
+            <h3 class="title-sidebar"><a href="/admin">Home</a></h3>
+            <nav>
+                <h3>Produtos</h3>
+                <a class="link-sidebar" href=""><i class="fa-solid fa-plus"></i> Categorias</a>
+                <a class="link-sidebar" href=""><i class="fa-solid fa-plus"></i> Marca</a>
+                <a class="link-sidebar" href="/admin/products"><i class="fa-solid fa-plus"></i> Produtos</a>
+            </nav>
+            <nav>
+                <h3>Usuários</h3>
+                <a class="link-sidebar" href=""><i class="fa-solid fa-plus"></i> Usuários</a>
+                <a class="link-sidebar" href=""><i class="fa-solid fa-plus"></i> Permissões</a>
+            </nav>
+        </div>
+        <div class="content-products">
+            <div class="container-products">
+                <h3>Adicionar Produtos</h3>
+  
+                <form  action="/admin/create" method="POST" id="form" enctype="multipart/form-data">
+
+                <form  action="/admin/create" method="POST" id="form" enctype="multipart/form-data">
+                    <div class="box">
+                        <div class="box-header">
+                            <h4 class="box-title">Novo Produto</h4>
+                            <div class="box-tools">
+                                <input type="submit" value="Salvar">
+                            </div>
+                        </div>
+                        <div class="box-body">
+
+                            <div class="form-group">
+                                <label for="p_name">Nome do produto</label>
+                                <input  type="text" id="p_name" name="name" value="<%= product?.name %>"/>
+                                <p class="msgError"><%= errors.name %></p>
+                            </div>
+            
+                            <div class="form-group">
+                                <label for="p_cat">Categoria</label>
+                                <select  name="category" id="p_cat">
+                                  <option value="" <% if (!product) { %>selected <% } %>></option>
+                                  <option value="po-facial" <% if (product?.category == "po-facial") { %>selected <% } %>>Pó Facial</option>
+                                  <option value="lip-oil" <% if (product?.category == "lip-oil") { %>selected <% } %>>Lip Oil</option>
+                                  <option value="bruma" <% if (product?.category == "bruma") { %>selected <% } %>>Bruma</option>
+                                  <option value="iluminador" <% if (product?.category == "iluminador") { %>selected <% } %>>Iluminador</option>
+                                </select>
+                                <p class="msgError"><%= errors.category %></p>
+                            </div>
+            
+                            <div class="form-group">
+                                <label for="p_brand">Marca</label>
+                                <select name="brand" id="p_brand" >
+                                        <option value="" selected></option>
+                                        <option value="bergamia">Bergamia</option>
+                                        <option value="khor-cosmetics">Khor Cosmetics</option>
+                                        <option value="weleda">Weleda</option>
+                                        <option value="souvie">Souvie</option>
+                                        <option value="care-natural">Care Natural</option>
+                                </select>
+                                <p class="msgError"><%= errors.brand %></p>
+                            </div>
+            
+                            <div class="form-group">
+                                <label for="p_description">Descrição do Produto</label>
+                                <textarea id="p_description" name="description"><%= product?.description %></textarea>
+                                <p class="msgError"><%= errors.description %></p>
+                            </div>
+            
+                            <div class="form-group">
+                                <label for="p_stock">Estoque Disponível</label>
+                                <input type="number" id="p_stock" name="stock" value="<%= product?.stock %>"/>
+                                <p class="msgError"><%= errors.stock %></p>
+                                
+                            </div>
+            
+                            <div class="form-group">
+                                <label for="p_price">Preço</label>
+                                <input  type="text"  id="p_price" name="price" value="<%= product?.price %>" />
+                                <p class="msgError"><%= errors.price %></p>
+                                
+                            </div>       
+                            
+                            <div class="image-product">
+                                <label>Imagens do Produto</label><br/>
+                            </div>
+
+                            <div class="products_files_area">
+                                <input type="file" name="images" multiple/>
+                                <p class="msgError"><%= errors.images %></p>
+                            </div>
+
+            
+                        </div>
+                    </div>
+                </form>
+            
+            </div>
+        </div>
+    </main>
+</body>
+</html>

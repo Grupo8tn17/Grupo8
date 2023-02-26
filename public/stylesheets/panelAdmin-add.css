@@ -1,0 +1,104 @@
+.content-products {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    background-color: #f4f4f4;
+    height: 100%;
+    padding: 2rem;
+}
+
+.container-products h3 {
+    font-size: 2rem;
+    margin-bottom: 3rem;
+}
+
+.box-tools input {
+    border: none;
+    color: white;
+    font-weight: bold;
+    background-color: #28a745;
+    padding: 6px 12px;
+    border-radius: 0.25rem;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+
+.container-products .box-body {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    width: 100%;
+    justify-content: center;
+    border: 1px solid rgba(0, 0, 0, .125);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    width: 98%;
+    padding-left: 2rem;
+}
+
+.form-group label {
+    margin-top: 2rem;
+    margin-bottom: .5rem;
+}
+
+.form-group input {
+    height: 2.8rem;
+    border: 1px solid rgba(0, 0, 0, .225);
+    border-radius: .25rem;
+    font-size: 1.2rem;
+}
+
+.form-group select {
+    height: 2.8rem;
+    border: 1px solid rgba(0, 0, 0, .225);
+    border-radius: .25rem;
+}
+
+.form-group option {
+    font-size: 1.2rem;
+}
+
+.form-group textarea {
+    height: 10rem;
+    border: 1px solid rgba(0, 0, 0, .225);
+    border-radius: .25rem;
+    font-size: 1.2rem;
+}
+
+.image-product {
+    margin-top: 2rem;
+}
+
+.image-product label {
+    margin-top: 2rem;
+    padding-left: 2rem;
+}
+
+.products_files_area {
+    margin: 2rem 0;
+}
+
+.products_files_area input {
+    padding-left: 2rem;
+}
+
+.error {
+    margin-top: .5rem;
+    border-radius: .25rem;
+    padding: .7rem;
+    color: #721c24;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+}
+
+p.msgError {
+    min-height: 1rem;
+    font-style: italic;
+    color: red;
+    padding: .5rem;
+    margin-left: 1.5rem;
+}

@@ -175,7 +175,7 @@ main hr {
     padding: 20px;
     margin: 1rem;
     background-color: rgba(255, 255, 255, 30%);
-
+    cursor: pointer;
 }
 
 .container .cards:hover {
@@ -343,6 +343,8 @@ main hr {
         align-items: center;
         padding: 20px;
         margin: 1rem;
+        max-width: 20rem;
+        height: 30rem;
         background-color: rgba(255, 255, 255, 30%);
     
     }
