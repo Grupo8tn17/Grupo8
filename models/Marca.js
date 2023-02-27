@@ -8,15 +8,15 @@ const criarMarcaModel = (sequelize, dataTypes) => {
       },
   
     nome: {
-        type: DataTypes.STRING,
+        type: dataTypes.STRING,
         allowNull: false
     },
     cnpj: {
-        type: DataTypes.INTEGER(20),
+        type: dataTypes.INTEGER(20),
         allowNull: false
     },
     endereco: {
-        type: DataTypes.STRING,
+        type: dataTypes.STRING,
         allowNull: false
     },
 

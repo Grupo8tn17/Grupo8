@@ -18,7 +18,11 @@ const criarCarrinhoModel = (sequelize, dataTypes) => {
     cupom_desconto: {
     type: dataTypes.STRING,
     allowNull: true
-}
+},
+idusuarios: {
+  type: dataTypes.INTEGER.UNSIGNED,
+  allowNull: false
+},
 
     };
   
@@ -29,8 +33,16 @@ const criarCarrinhoModel = (sequelize, dataTypes) => {
     
   
     const Carrinho = sequelize.define('Carrinho', colunas, opcoes);
+
+    Carrinho.associate = (models) => {
+      Carrinho.belongsTo(models.Usuario, {
+                       
+        as: 'usuarios', 
+        foreignKey: 'idusuarios'
+      });
   
     return Carrinho;
   };
+  }
   
   module.exports = criarCarrinhoModel;

@@ -16,7 +16,7 @@ const criarProdutoModel = (sequelize, dataTypes) => {
         allowNull: false
     },
     valor: {
-        type: DataTypes.DECIMAL(10, 2),
+        type: dataTypes.DECIMAL(10, 2),
         allowNull: false
     },
     quantidade: {
@@ -32,11 +32,22 @@ const criarProdutoModel = (sequelize, dataTypes) => {
         allowNull: false
     },
     ativo: {
-        type: DataTypes.TINYINT,
+        type: dataTypes.TINYINT,
         allowNull: false
     },
+    idcarrinho: {
+      type: dataTypes.INTEGER.UNSIGNED,
+      allowNull: false
+},
+   idcategorias: {
+  type: dataTypes.INTEGER.UNSIGNED,
+  allowNull: false
+},
+  idmarca: {
+  type: dataTypes.INTEGER.UNSIGNED,
+  allowNull: false
+},
 
-    
     };
   
     const opcoes = {
@@ -54,22 +65,24 @@ const criarProdutoModel = (sequelize, dataTypes) => {
         });
 
         Produto.associate = (models) => {
-            Produto.hasMany(models.Categoria, {
+            Produto.belongsTo(models.Categoria, {
                              
               as: 'categorias', 
               foreignKey: 'idcategorias'
             });
 
       Produto.associate = (models) => {
-          Produto.hasMany(models.Marca, {
+          Produto.belongsTo(models.Marca, {
                                  
              as: 'marcas', 
             foreignKey: 'idmarcas'
             });
 
     return Produto;
+        }
+     }
+  }
+
   };
-  }
-  }
-  }
+
   module.exports = criarProdutoModel;
