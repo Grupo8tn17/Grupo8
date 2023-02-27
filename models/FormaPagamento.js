@@ -7,10 +7,18 @@ const criarFormaPagamentoModel = (sequelize, dataTypes) => {
         allowNull: false
       },
   
-    nome: {
-        type: DataTypes.STRING,
+    idcarrinho: {
+        type: dataTypes.INTEGER.UNSIGNED,
         allowNull: false
     },
+    idpedidos: {
+      type: dataTypes.INTEGER.UNSIGNED,
+      allowNull: false
+  },
+  idusuarios: {
+    type: dataTypes.INTEGER.UNSIGNED,
+    allowNull: false
+},
 
     };
   
@@ -20,8 +28,31 @@ const criarFormaPagamentoModel = (sequelize, dataTypes) => {
     };
   
     const FormaPagamento = sequelize.define('FormaPagamento', colunas, opcoes);
+
+    FormaPagamento.associate = (models) => {
+      FormaPagamento.belongsTo(models.Pedido, {
+                       
+        as: 'pedidos', 
+        foreignKey: 'idpedidos'
+      });
+
+      HistoricoPedido.associate = (models) => {
+        HistoricoPedido.belongsTo(models.Carrinho, {
+                         
+          as: 'carrinho', 
+          foreignKey: 'idcarrinho'
+        });
+
+        HistoricoPedido.associate = (models) => {
+          HistoricoPedido.belongsTo(models.Usuario, {
+                           
+            as: 'usuarios', 
+            foreignKey: 'idusuarios'
+          });
   
     return FormaPagamento;
   };
-  
+  }
+  }
+  }
   module.exports = criarFormaPagamentoModel;

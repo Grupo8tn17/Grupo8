@@ -6,6 +6,26 @@ const criarProdutoHasProdutoOfertaModel = (sequelize, dataTypes) => {
         autoIncrement: true,
         allowNull: false
       },
+      idprodutos: {
+        type: dataTypes.INTEGER.UNSIGNED,
+        allowNull: false
+      },
+      idcategorias: {
+        type: dataTypes.INTEGER.UNSIGNED,
+        allowNull: false
+      },
+      idcarrinho: {
+        type: dataTypes.INTEGER.UNSIGNED,
+        allowNull: false
+      },
+      idmarca: {
+        type: dataTypes.INTEGER.UNSIGNED,
+        allowNull: false
+      },
+      idprodutos_ofertas: {
+        type: dataTypes.INTEGER.UNSIGNED,
+        allowNull: false
+      },
 
     };
   
@@ -15,8 +35,43 @@ const criarProdutoHasProdutoOfertaModel = (sequelize, dataTypes) => {
     };
   
     const ProdutoHasProdutoOferta = sequelize.define('ProdutoHasProdutoOferta', colunas, opcoes);
-  
+
+    ProdutoHasProdutoOferta.associate = (models) => {
+      ProdutoHasProdutoOferta.belongsTo(models.Produto, {
+                       
+        as: 'produtos', 
+        foreignKey: 'idprodutos'
+      });
+      ProdutoHasProdutoOferta.associate = (models) => {
+        ProdutoHasProdutoOferta.belongsTo(models.Categoria, {
+                         
+          as: 'categorias', 
+          foreignKey: 'idcategorias'
+        });
+        ProdutoHasProdutoOferta.associate = (models) => {
+          ProdutoHasProdutoOferta.belongsTo(models.Carrinho, {
+                           
+            as: 'carrinho', 
+            foreignKey: 'idcarrinho'
+          });
+          ProdutoHasProdutoOferta.associate = (models) => {
+            ProdutoHasProdutoOferta.belongsTo(models.Marca, {
+                             
+              as: 'marcas', 
+              foreignKey: 'idmarca'
+            });
+            ProdutoHasProdutoOferta.associate = (models) => {
+              ProdutoHasProdutoOferta.belongsTo(models.ProdutoOferta, {
+                               
+                as: 'produtos_ofertas', 
+                foreignKey: 'idprodutos_ofertas'
+              });
     return ProdutoHasProdutoOferta;
   };
+  }
+}
+}
+}
+}
   
   module.exports = criarProdutoHasProdutoOfertaModel;

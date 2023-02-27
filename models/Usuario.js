@@ -32,16 +32,16 @@ const criarUsuarioModel = (sequelize, dataTypes) => {
         allowNull: false
     },
     data_nascimento: {
-        type: DataTypes.DATE,
+        type: dataTypes.DATE,
         allowNull: false
     },
     idadmin: {
-        type: DataTypes.INTEGER,
+        type: dataTypes.INTEGER,
         allowNull: false
     },
     
     foto_usuario: {
-      type: DataTypes.STRING,
+      type: dataTypes.STRING,
       allowNull: false
   }
     

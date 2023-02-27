@@ -8,9 +8,14 @@ const criarHistoricoPedidoModel = (sequelize, dataTypes) => {
       },
   
     status_pedido: {
-        type: DataTypes.STRING,
+        type: dataTypes.STRING,
         allowNull: false
     },
+    idpedidos: {
+      type: dataTypes.INTEGER.UNSIGNED,
+      allowNull: false
+  },
+
 
     };
   
@@ -20,8 +25,16 @@ const criarHistoricoPedidoModel = (sequelize, dataTypes) => {
     };
   
     const HistoricoPedido = sequelize.define('HistoricoPedido', colunas, opcoes);
+
+    HistoricoPedido.associate = (models) => {
+      HistoricoPedido.belongsTo(models.Pedido, {
+                       
+        as: 'pedidos', 
+        foreignKey: 'idpedidos'
+      });
   
     return HistoricoPedido;
+    }
   };
   
   module.exports = criarHistoricoPedidoModel;
