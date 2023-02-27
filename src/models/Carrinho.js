@@ -8,7 +8,7 @@ const criarCarrinhoModel = (sequelize, dataTypes) => {
       },
   
     valor_total: {
-        type: DataTypes.DECIMAL(5, 2),
+        type: dataTypes.DECIMAL(5, 2),
         allowNull: false
     },
     quantidade: {
