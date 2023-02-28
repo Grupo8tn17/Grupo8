@@ -38,7 +38,16 @@ const criarEnderecoModel = (sequelize, dataTypes) => {
     pais: {
         type: dataTypes.STRING,
         allowNull: false
-    }
+    },
+    idusuarios: {
+      type: dataTypes.INTEGER.UNSIGNED,
+      allowNull: false
+  },
+  idcarrinho: {
+    type: dataTypes.INTEGER.UNSIGNED,
+    allowNull: false
+},
+
 
     
     };
@@ -49,8 +58,22 @@ const criarEnderecoModel = (sequelize, dataTypes) => {
     };
   
     const Endereco = sequelize.define('Endereco', colunas, opcoes);
+
+    Endereco.associate = (models) => {
+      Endereco.belongsTo(models.Usuario, {
+                       
+        as: 'usuarios', 
+        foreignKey: 'idusuarios'
+      });
   
+      Endereco.belongsTo(models.Carrinho, {
+                         
+          as: 'carrinho', 
+          foreignKey: 'idcarrinho'
+        });
     return Endereco;
-  };
+
   
+  }
+  }
   module.exports = criarEnderecoModel;

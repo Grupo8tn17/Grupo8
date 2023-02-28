@@ -32,4 +32,4 @@ const criarMarcaModel = (sequelize, dataTypes) => {
     return Marca;
   };
   
-  module.exports = criarMarcaModel;
+  module.exports = criarMarcaPagamentoModel;
