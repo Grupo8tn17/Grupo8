@@ -25,5 +25,10 @@ router.delete('/delete/:id', adminController.deleteProducts);
 router.get('/update/:id', adminController.updateProducts);
 router.put('/update/:id', adminController.update)
 
+router.get('/categorias', adminController.adminCategorias);
+router.get('/categorias/add', adminController.addCategoria);
+
+router.post('/categorias/create', adminController.createCategoria);
+
 
 module.exports = router;

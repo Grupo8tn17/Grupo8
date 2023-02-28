@@ -10,7 +10,7 @@ const criarCategoriaModel = (sequelize, dataTypes) => {
       nome: {
         type: dataTypes.STRING,
         allowNull: false
-      },
+      }
     };
   
     const opcoes = {
