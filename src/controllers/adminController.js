@@ -1,14 +1,14 @@
-const { products, findProducts } = require('../models/productsModel');
-const productsModel = require('../models/productsModel');
+const { Produto } = require('../models');
 const { validationResult } = require('express-validator');
+const { json } = require('sequelize');
 
 module.exports = {
   indexAdmin: (req, res) => {
     res.render("panelAdmin-home");
   },
 
-  adminProducts: (req, res) => {
-    const products = productsModel.products();
+  adminProducts: async (req, res) => {
+    const products = await Produto.findAll();
     res.render("panelAdmin-addProducts", { products });
   },
 
@@ -17,9 +17,16 @@ module.exports = {
     res.render("panelAdmin-add", { errors: {}, product: {} });
   },
 
-  createProducts: (req, res) => {
+  createProducts: async (req, res) => {
+    const { titulo, marca, descricao, quantidade, valor, ativo} = req.body;
+
+    let imagem = [];
+
+    
+
+    console.log(imagem);
     //inclusão middleware de validacao:
-    let { errors } = validationResult(req);
+    /*let { errors } = validationResult(req);
     console.log(errors)
    
     if (errors.length) {
@@ -31,41 +38,47 @@ module.exports = {
         product: req.body,
       });
     }
-    productsModel.productsCreate(req);
+    await Produto.create({ titulo, marca, descricao, quantidade, valor, imagem, ativo});*/
     res.redirect('/admin/products');
   },
 
-  deleteView: (req, res) => {
+  deleteView: async (req, res) => {
     const { id } = req.params;
     let product = null;
 
     if (id) {
-      product = productsModel.findProducts(id);
+      product = await Produto.findByPk(id);
     }
 
     return res.render("panelAdmin-delete", { product });
   },
 
-  deleteProducts: (req, res) => {
+  deleteProducts: async (req, res) => {
     const { id } = req.params;
-    productsModel.deleteProduct(id);
+    
+    await Produto.destroy({
+      where : {id},
+    })
     return res.redirect("/admin/products");
   },
 
-  updateProducts: (req, res) => {
+  updateProducts: async (req, res) => {
     const { id } = req.params;
     let product = null;
 
     if (id) {
-      product = productsModel.findProducts(id);
+      product = await Produto.findByPk(id);
     }
     return res.render("panelAdmin-updateProduct", { product });
   },
 
-  update: (req, res) => {
+  update: async (req, res) => {
     const { id } = req.params;
+    const { titulo, marca, descricao, quantidade, valor, imagem} = req.body;
 
-    productsModel.updateProducts(id, req.body);
+    await Produto.update({ titulo, marca, descricao, quantidade, valor, imagem}, {
+      where : {id}
+    })
     return res.redirect("/admin/products");
   },
 };

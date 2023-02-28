@@ -79,6 +79,8 @@
 }
 
 .products_files_area {
+    display: flex;
+    justify-content: space-between;
     margin: 2rem 0;
 }
 
@@ -95,18 +97,22 @@
     border: 1px solid #f5c6cb;
 }
 
-<<<<<<< HEAD
-.errors {
-    min-height: 2rem;
-    font-style: italic;
-    color: red;
-    margin: 0.5rem;
-=======
 p.msgError {
     min-height: 1rem;
     font-style: italic;
     color: red;
     padding: .5rem;
     margin-left: 1.5rem;
->>>>>>> developer
+}
+
+.products-ativo {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    
+}
+
+.products-ativo input {
+    margin-left: 1rem;
+    margin-right: 15rem;
 }
