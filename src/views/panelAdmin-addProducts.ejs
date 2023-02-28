@@ -61,14 +61,14 @@
                         </tr>
                         <tr>
                             <% for (let product of products) { %>
-                            <td class="table-id"><%= product.id %></td>
+                            <td class="table-id"><%= product.idprodutos %></td>
                             <td class="table-name"><%= product.titulo %></td>
                             <td class="table-inventory"><%= product.quantidade %> </td>
                             <td class="table-picture"><img src="/images/products/<%= product.imagem %> " alt=""></td>
                             <td class="table-price"><%= product.valor %></td>
                             <td class="table-action">
-                                <a class="action-edit" href="/admin/update/<%= product.id %> ">Editar</a>
-                                <a class="action-delete" href="/admin/delete/<%= product.id %> ">Excluir</a>                              
+                                <a class="action-edit" href="/admin/update/<%= product.idprodutos %> ">Editar</a>
+                                <a class="action-delete" href="/admin/delete/<%= product.idprodutos %> ">Excluir</a>                              
                             </td>
                         </tr>
                         <% } %>

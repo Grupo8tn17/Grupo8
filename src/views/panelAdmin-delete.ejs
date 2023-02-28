@@ -1,45 +1,5 @@
-<!DOCTYPE html>
-<html lang="PT-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/stylesheets/panelAdmin-delete.css">
-    <link rel="stylesheet" href="/stylesheets/panelAdmin-add.css">
-    <script src="/javascripts/panelAdmin-delete.js" defer></script>
-    <script src="https://kit.fontawesome.com/0ad644d1e0.js" crossorigin="anonymous"></script>
-    <title>Painel Administrativo - Infinity Cosméticos</title>
-</head>
-<body>
-    <header>
-        <div class="info-header">
-            <div class="logo">
-                <head>Infinity Cosméticos</head>
-            </div>
-            <div class="header-icon-search">
-                <i class="fa-solid fa-magnifying-glass"></i>
-            </div>
-        </div>    
-        <div class="info-header">
-            <i class="fa-solid fa-envelope"></i>
-            <i class="fa-solid fa-user"></i>
-        </div>
-    </header>
-    <main>
-        <div class="sidebar">
-            <h3 class="title-sidebar"><a href="/admin">Home</a></h3>
-            <nav>
-                <h3>Produtos</h3>
-                <a class="link-sidebar" href=""><i class="fa-solid fa-plus"></i> Categorias</a>
-                <a class="link-sidebar" href=""><i class="fa-solid fa-plus"></i> Marca</a>
-                <a class="link-sidebar" href="/admin/products"><i class="fa-solid fa-plus"></i> Produtos</a>
-            </nav>
-            <nav>
-                <h3>Usuários</h3>
-                <a class="link-sidebar" href=""><i class="fa-solid fa-plus"></i> Usuários</a>
-                <a class="link-sidebar" href=""><i class="fa-solid fa-plus"></i> Permissões</a>
-            </nav>
-        </div>
+<%- include('partials/panelAdmin-header') %>
+
         <div class="content-products">
             <div class="container-products">
                 <h3>Excluir Produto</h3>
@@ -75,12 +35,12 @@
                        
                             <div class="form-group">
                                 <label for="p_description">Descrição do Produto</label>
-                                <textarea id="p_description" name="description" disabled value="<%= product.descricao %> "></textarea>
+                                <textarea id="p_description" name="description" disabled ><%= product.descricao %></textarea>
                             </div>
             
                             <div class="form-group">
                                 <label for="p_stock">Estoque Disponível</label>
-                                <input type="number" id="p_stock" name="stock" disabled value="<%= product.quantidade %> "/>
+                                <input type="number" id="p_stock" name="stock" disabled value="<%= product.quantidade %>"/>
                             </div>
             
                             <div class="form-group">

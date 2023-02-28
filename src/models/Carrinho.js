@@ -41,8 +41,8 @@ idusuarios: {
         foreignKey: 'idusuarios'
       });
   
-    return Carrinho;
   };
+  return Carrinho;
   }
   
   module.exports = criarCarrinhoModel;
