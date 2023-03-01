@@ -18,7 +18,7 @@ router.delete('/delete/:id', adminController.deleteProducts);
 
 router.get('/update/:id', adminController.updateProducts);
 router.put('/update/:id', adminController.update)
-router.post('/create',upload.array("imagem", 3),  adminController.createProducts);
+router.post('/create', upload.array("imagem", 3),  adminController.createProducts);
 
 router.get('/delete/:id', adminController.deleteView);
 router.delete('/delete/:id', adminController.deleteProducts);

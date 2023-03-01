@@ -62,14 +62,14 @@ console.log(req.body);
 
   deleteView: async (req, res) => {
     const { id } = req.params;
-    let product = null;
+    const  {titulo, descricao, valor, quantidade} = req.body;
+    
 
-    if (id) {
-      product = await Produto.findByPk(id);
-    }
+     const product = await Produto.findByPk(id);
+    
 
     return res.render("panelAdmin-delete", {
-      product: {},
+      product,
       css: ["panelAdmin-delete.css", "panelAdmin-add.css"],
       js: ["panelAdmin-delete.js"],
     });
@@ -77,10 +77,12 @@ console.log(req.body);
 
   deleteProducts: async (req, res) => {
     const { id } = req.params;
+   
 
     await Produto.destroy({
-      where: { id },
+      where: { idprodutos: id },
     });
+    
     return res.redirect("/admin/products");
   },
 
