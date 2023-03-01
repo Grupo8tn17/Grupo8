@@ -28,8 +28,11 @@ router.put('/update/:id', adminController.update)
 
 router.get('/categorias', adminController.adminCategorias);
 router.get('/categorias/add', adminController.addCategoria);
-
 router.post('/categorias/create', adminController.createCategoria);
+
+router.get('/marcas', adminController.adminMarcas);
+router.get('/marcas/add', adminController.addMarcas);
+router.post('/marcas/create', adminController.createMarcas);
 
 
 module.exports = router;

@@ -6,7 +6,7 @@ module.exports = {
   indexAdmin: async (req, res) => {
     const product = await Produto.findAll();
 
-    return res.render("panelAdm-home", {
+    return res.render("painelAdm-home", {
       product,
       css: ["panelAdmin-add.css", "panelAdmin-addProducts.css"],
       js: [],
@@ -138,4 +138,23 @@ console.log(req.body);
 
     res.redirect("/admin/categorias");
   },
+
+  adminMarcas: async (req, res) => {
+    const marcas = await Marca.findAll();
+    return res.render('panelAdmin-Marcas', {marcas, css: ["panelAdmin-add.css", "panelAdmin-addProducts.css"],
+    js: ["panelAdmin-validation.js"]})
+  }, 
+
+  addMarcas: (req, res) => {
+    res.render('panelAdmin-addMarcas', {erros: {}, marcas: {}, css: ["panelAdmin-add.css", "panelAdmin-addProducts.css"],
+    js: ["panelAdmin-validation.js"]})
+  }, 
+
+  createMarcas: async (req, res) => {
+    const {nome, cnpj, endereco} = req.body;
+
+    await Marca.create({nome, cnpj, endereco});
+
+    return res.redirect('/admin/marcas');
+  }
 };
