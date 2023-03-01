@@ -1,6 +1,6 @@
 const criarMarcaModel = (sequelize, dataTypes) => {
     const colunas = {
-      idmarca: {
+      idmarcas: {
         type: dataTypes.INTEGER.UNSIGNED,
         primaryKey: true,
         autoIncrement: true,
@@ -12,7 +12,7 @@ const criarMarcaModel = (sequelize, dataTypes) => {
         allowNull: false
     },
     cnpj: {
-        type: dataTypes.INTEGER(20),
+        type: dataTypes.INTEGER(14),
         allowNull: false
     },
     endereco: {

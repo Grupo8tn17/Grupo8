@@ -27,10 +27,7 @@ const criarProdutoModel = (sequelize, dataTypes) => {
       type: dataTypes.STRING,
       allowNull: false
     },
-    marca: {
-      type: dataTypes.STRING,
-      allowNull: false
-    },
+  
     ativo: {
       type: dataTypes.TINYINT,
       allowNull: false
@@ -47,7 +44,7 @@ const criarProdutoModel = (sequelize, dataTypes) => {
       type: dataTypes.INTEGER.UNSIGNED,
       allowNull: false
     },
-    marcas_idmarca: {
+    marcas_idmarcas: {
       type: dataTypes.INTEGER.UNSIGNED,
       allowNull: false
     },
@@ -72,7 +69,7 @@ const criarProdutoModel = (sequelize, dataTypes) => {
     Produto.belongsTo(models.Marca, {
 
       as: 'marcas',
-      foreignKey: 'marcas_idmarca'
+      foreignKey: 'marcas_idmarcas'
     });
   }
 

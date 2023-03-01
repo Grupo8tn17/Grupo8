@@ -1,10 +1,12 @@
 //const { products } = require('../models/productsModel');
 //const productsModel = require('../models/productsModel')
+const { Produto, Categoria } = require('../models');
 
 module.exports = {
-    listProducts: (req, res) => {
+    listProducts: async(req, res) => {
        // const products = productsModel.products();
-        return res.render('list-products', {  products: products,css: ['style.css', 'list-products.css'], js: '' });
+       const products = await Produto.findAll()
+        return res.render('list-products', {  products: products, css: ['style.css', 'list-products.css'], js: '' });
     }, 
 
     descriptionProduct: (req, res) => {
