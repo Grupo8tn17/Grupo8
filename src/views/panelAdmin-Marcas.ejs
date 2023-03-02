@@ -21,8 +21,10 @@
                             <td class="table-id"><%= marca.idmarcas %></td>
                             <td class="table-name"><%= marca.nome %></td>
                             <td class="table-action">
-                                <a class="action-edit" href="/admin/update/<%= marca.idmarcas %> ">Editar</a>
-                                <a class="action-delete" href="/admin/delete/<%= marca.idmarcas %> ">Excluir</a>                              
+                                <a class="action-edit" href="/admin/marcas/update/<%= marca.idmarcas %>">Editar</a>
+                                <form  action="/admin/marcas/delete/<%= marca.idmarcas %>?_method=DELETE" method="POST" id="form">
+                                <button class="action-delete">Excluir</button>
+                                </form>                           
                             </td>
                         </tr>
                         <% } %>

@@ -3,9 +3,17 @@
 
         <div class="content-products">
             <div class="container-products">
+                <% if (marcas) { %>
+                <h3>Editar Marcas</h3>
+                <% } else { %>    
                 <h3>Adicionar Marca</h3>
+                <% } %>
   
+                <% if (marcas) { %>
+                    <form  action="/admin/marcas/update/<%= marcas.idmarcas %>?_method=PUT" method="POST" id="form">
+                <% } else { %>
                 <form  action="/admin/marcas/create" method="POST" id="form">
+                <% } %>
                     <div class="box">
                         <div class="box-header">
                             <h4 class="box-title">Nova Marca</h4>
@@ -17,15 +25,15 @@
 
                             <div class="form-group">
                                 <label for="p_name">Nome da Marca</label>
-                                <input  type="text" id="p_name" name="nome" />
+                                <input  type="text" id="p_name" name="nome" value="<%= marcas?.nome %>" />
                             </div>
                             <div class="form-group">
                                 <label for="p_name">CNPJ</label>
-                                <input  type="number" id="p_name" name="cnpj" />
+                                <input  type="number" id="p_name" name="cnpj" value="<%= marcas?.cnpj %>"/>
                             </div>
                             <div class="form-group">
                                 <label for="p_name">Endereço</label>
-                                <input  type="text" id="p_name" name="endereco" />
+                                <input  type="text" id="p_name" name="endereco" value="<%= marcas?.endereco %>"/>
                             </div>
                         </div>
                     </div>

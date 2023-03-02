@@ -71,7 +71,7 @@ console.log(req.body);
     return res.render("panelAdmin-delete", {
       product,
       css: ["panelAdmin-delete.css", "panelAdmin-add.css"],
-      js: ["panelAdmin-delete.js"],
+      js: ["panelAdmin-delete.js"]
     });
   },
 
@@ -87,27 +87,45 @@ console.log(req.body);
   },
 
   updateProducts: async (req, res) => {
+    const categorias = await Categoria.findAll();
+    const marcas = await Marca.findAll();
     const { id } = req.params;
     let product = null;
 
-    if (id) {
-      product = await Produto.findByPk(id);
-    }
-    return res.render("panelAdmin-updateProduct", {
-      product: {},
+    product = await Produto.findByPk(id);
+
+    res.render("panelAdmin-updateProduct", {
+      product,
+      categorias,
+      marcas,
+      errors: {},
       css: ["panelAdmin-add.css", "panelAdmin-addProducts.css"],
       js: ["panelAdmin-validation.js"],
-    });
+    })
   },
 
   update: async (req, res) => {
     const { id } = req.params;
-    const { titulo, marca, descricao, quantidade, valor, imagem } = req.body;
+    const { titulo, marca, categoria, descricao, quantidade, valor, ativo } = req.body;
+    const imagem = req.files[0] ? req.files[0].filename : "";
+    const imagem2 = req.files[1] ? req.files[1].filename : "";
+    const imagem3 = req.files[2] ? req.files[2].filename : "";
+
 
     await Produto.update(
-      { titulo, marca, descricao, quantidade, valor, imagem },
+      { titulo,
+        marcas_idmarcas: marca,
+        categorias_idcategorias: categoria,
+        descricao,
+        quantidade,
+        valor,
+        imagem,
+        ativo,
+        imagem2,
+        imagem3
+      },
       {
-        where: { id },
+        where: { idprodutos: id },
       }
     );
     return res.redirect("/admin/products");
@@ -115,6 +133,7 @@ console.log(req.body);
 
   adminCategorias: async (req, res) => {
     const categorias = await Categoria.findAll();
+    
     return res.render("panelAdmin-Categoria", {
       categorias,
       css: ["panelAdmin-add.css", "panelAdmin-addProducts.css"],
@@ -125,7 +144,7 @@ console.log(req.body);
   addCategoria: (req, res) => {
     res.render("panelAdmin-addCategoria", {
       erros: {},
-      categorias: {},
+      categorias: false,
       css: ["panelAdmin-add.css", "panelAdmin-addProducts.css"],
       js: ["panelAdmin-validation.js"],
     });
@@ -139,6 +158,40 @@ console.log(req.body);
     res.redirect("/admin/categorias");
   },
 
+  updateCategoriaView: async (req, res) => {
+    const {id} = req.params;
+    const {nome} = req.body;
+    let categorias = await Categoria.findByPk(id);
+
+    await Categoria.update({ nome}, {where: {idcategorias: id}})
+    res.render('panelAdmin-addCategoria', {categorias, css: ["panelAdmin-add.css", "panelAdmin-addProducts.css"],    js: ["panelAdmin-validation.js"]})
+  },
+
+  updateCategoria: async  (req, res) => {
+    const {id} = req.params;
+    const {nome} = req.body;
+
+    await Categoria.update({
+      nome
+    },
+    {
+      where: {idcategorias: id}
+    });
+
+    return res.redirect("/admin/categorias");
+  },
+
+  deleteCategoria: async (req, res) => {
+    const {id} = req.params;
+
+    await Categoria.destroy({
+      where: {idcategorias: id}
+    });
+
+    res.redirect('/admin/categorias');
+    
+  },
+
   adminMarcas: async (req, res) => {
     const marcas = await Marca.findAll();
     return res.render('panelAdmin-Marcas', {marcas, css: ["panelAdmin-add.css", "panelAdmin-addProducts.css"],
@@ -146,7 +199,7 @@ console.log(req.body);
   }, 
 
   addMarcas: (req, res) => {
-    res.render('panelAdmin-addMarcas', {erros: {}, marcas: {}, css: ["panelAdmin-add.css", "panelAdmin-addProducts.css"],
+    res.render('panelAdmin-addMarcas', {erros: {}, marcas: false, css: ["panelAdmin-add.css", "panelAdmin-addProducts.css"],
     js: ["panelAdmin-validation.js"]})
   }, 
 
@@ -156,5 +209,29 @@ console.log(req.body);
     await Marca.create({nome, cnpj, endereco});
 
     return res.redirect('/admin/marcas');
+  },
+
+  updateMarcasView: async (req, res) => {
+    const {id} = req.params;
+    let marcas = await Marca.findByPk(id);
+
+    res.render('panelAdmin-addMarcas', {marcas, css: ["panelAdmin-add.css", "panelAdmin-addProducts.css"],
+    js: ["panelAdmin-validation.js"]})
+  }, 
+
+  updateMarcas: async (req, res) => {
+    const {id} = req.params;
+    const {nome, cnpj, endereco} = req.body;
+
+    await Marca.update({nome, cnpj, endereco}, {where: {idmarcas:id}});
+    return res.redirect('/admin/marcas');
+  }, 
+
+  deleteMarcas: async (req, res) => {
+    const {id} = req.params;
+
+    await Marca.destroy({ where: {idmarcas: id}})
+
+    res.redirect('/admin/marcas');
   }
 };

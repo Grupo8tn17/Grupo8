@@ -21,12 +21,15 @@
                             <td class="table-id"><%= categoria.idcategorias %></td>
                             <td class="table-name"><%= categoria.nome %></td>
                             <td class="table-action">
-                                <a class="action-edit" href="/admin/update/<%= categoria.idcategorias %> ">Editar</a>
-                                <a class="action-delete" href="/admin/delete/<%= categoria.idcategorias %> ">Excluir</a>                              
+                                <a class="action-edit" href="/admin/categorias/update/<%= categoria.idcategorias %>">Editar</a>
+                                <form action="/admin/categorias/delete/<%= categoria.idcategorias %>?_method=DELETE" method="POST" id="form">
+                                <button type="submit" class="action-delete">Excluir</button>
+                                </form>
+                                                              
                             </td>
                         </tr>
-                        <% } %>
                     </table>
+                    <% } %>
                 </div>
                 </div>
             </div>

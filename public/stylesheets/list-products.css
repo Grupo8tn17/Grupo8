@@ -10,6 +10,7 @@ body {
 
 
 main * {
+    width: 100%;
     display: flex;
     flex-flow: column;
     align-items: center;
@@ -209,7 +210,12 @@ main hr {
         display: none;
     }
 
+    main {
+        width: 100%;
+    }
+
     main .container-principal {
+        width: 100%;
         align-items: flex-start;
         padding: 0;
         display: grid;
@@ -220,8 +226,8 @@ main hr {
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
-        margin-left: 2rem;
-        padding: 4rem;
+        margin-left: 1rem;
+        padding: 1rem;
         width: 100%;
     }
     
@@ -247,19 +253,30 @@ main hr {
         align-items: flex-start;
     
     }
-    
-    main asside ul li {
+
+    .list-filter {
+        width: 100%;
         display: flex;
-        flex-direction: row;
-        align-items: flex-start;
         justify-content: flex-start;
-        padding: .1rem;
     }
     
-    main asside ul li .itens-checkbox {
+    main asside ul li {
+        width: 100%;
         display: flex;
         flex-direction: row;
         align-items: center;
+        justify-content: center;
+        padding: .1rem;
+    }
+
+
+    
+    main asside ul li .itens-checkbox {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
     }
     
     main asside ul li .itens-checkbox label {
@@ -319,7 +336,7 @@ main hr {
     }
     
     .container-order .section-filter {
-        width: 100%;
+        width: 80%;
         display: flex;
         align-items: center;
         justify-content: space-around;
