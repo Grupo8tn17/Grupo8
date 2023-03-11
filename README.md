@@ -1,4 +1,4 @@
-<a><img src="public/images/LogoInfinity.svg"></a>
+<a><img src="/public/images/Logo3PNG.png"></a>
 <h1 align="center">
 Infinity Cosméticos
 </h1>
