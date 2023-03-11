@@ -149,16 +149,12 @@
     },
     {
         "id": 11,
-        "titulo": "Kit com 3 unidades da Pasta Dental Natural Menta e Melaleuca sem Flúor",
-        "marca": "Boni Natural",
-        "categoria": [
-            "corpo",
-            "banho",
-            "pasta dental"
-        ],
+        "titulo": "Kit com 3 unidades da Pasta Dental   ",
+        "marca": " ",
+        "categoria": " ",
         "descrição": " O Kit com 3 unidades da Pasta Dental Natural sem Flúor de Menta e Melaleuca da Boni Natural possui uma fórmula natural exclusiva que mata 99,9% das bactérias causadoras dos males bucais. Composta de xilitol, extratos e óleos essenciais naturais de menta, proporcionando um hálito mais refrescante e melaleuca, ou tea tree, que possui grande ação antisséptica e antibacteriana. É uma pasta de dente vegana e auxilia na prevenção de caries, placa e mau hálito.oreto de alumínio ou complexos de alumínio-zircônio.",
         "composição": "",
-        "valor": "35,97",
+        "valor": "5,00",
         "parcelamento": "3x de R$ 11,99",
         "quantidade": "33",
         "imagem": "kit-com-3-unidades-da-pasta-dental-natural-menta-e-melaleuca-sem-fluor-90g-boni-natural.webp"
@@ -178,5 +174,82 @@
         "parcelamento": "5x de R$ 11,80",
         "quantidade": "39",
         "imagem": "Desodorante-de-Pedra-Natural-Stick-Kristall-Sensitive-90g---Alva.webp"
+    },
+    {
+        "id": 13,
+        "titulo": "Protetor Solar Natural Facial e Corporal FPS 30 UVA 15 100g (nova fórmula)",
+        "marca": "Khor Cosmetics",
+        "categoria": [
+            "cosmético",
+            "proteção solar"
+        ],
+        "descrição": "",
+        "composição": "",
+        "valor": "137,80",
+        "parcelamento": "6x de R$ 22,96",
+        "quantidade": "59",
+        "imagem": "Protetor-Solar-Natural-Facial-e-Corporal-FPS-30-UVA-15-100g-Khor-Cosmetics.webp"
+    },
+    {
+        "id": 14,
+        "titulo": "Glitter Natural e Biodegradável em Pasta 35ml",
+        "marca": "Pura Bioglitter",
+        "categoria": [
+            "cosmético",
+            "sombra",
+            "glitter"
+        ],
+        "descrição": " O Glitter Natural, Biodegradável e Vegano em Pasta da Pura Bioglitter é elaborado com ingredientes naturais biodegradáveis a base de algas, minerais, óleo de rícino e babosa (aloe vera). Além de te fazer brilhar, cuida da sua pele e não agride o meio ambiente. O Glitter Cremoso em Pasta pode ser usado no corpo, na face, nos olhos e na boca. Disponível em 8 cores deslumbrantes de alta fixação e luminosidade. Ideais para te fazer arrasar em qualquer maquiagem.",
+        "composição": "Aqua, *Aloe barbadensis leaf juice, Xanthan gum, Glyceryl stearate, Cetearyl Alcohol, Stearic acid, Sodium cocoyl glutamate, Cetyl alcohol, Caprylic/capric triglyceride, Callendula officinalis flower oil, Cetearyl olivate, Sorbitan olivaate, Glyceryl caprylate, Heptyl undecylenate, Butyrospermum parkii (shea) butter extract, Argania spinosa kernel oil, Spent grain wax, Tocopherol, Hydrogenated vegetable oil, Titanium dioxide, Silica, Zinc oxide, *Ocimum basilicum flower water, Lonicera caprifolium extract, Lonicera japônica (honeysuckle) flower extract, Chamomilla recutita flower extract, Porphyra umbilicalis extract, Sodium lactate, Sodium benzoate, Lavandula officinalis flower oil, Glycerin, Alcohol, Pyrus malus (apple) fruit extract, Vanilla planifólia fruit extract, Rubus idaeus (raspberry) leaf extract, Rubus fructicosus (blackberry) fruit extact, Vitis vinífera (grape) fruit extract, Prunus armeniaca (apricot) fruit extract and Citric acid",
+        "valor": "35,00",
+        "parcelamento": "3x de R$ 11,66",
+        "quantidade": "59",
+        "imagem": "purabioglitter-pasta-vermelha.jpg"
+    },
+    {
+        "id": 15,
+        "titulo": "Máscara de Cílios Vegana e Natural Bionutritivo 4ml",
+        "marca": "Bioart",
+        "categoria": [
+            "cosmético",
+            "máscara de cílios",
+            "glitter"
+        ],
+        "descrição": "O Rímel Natural e Vegano da Bioart, também chamado de Máscara de Cílios Bionutritiva é rica em argila, vitamina E, óleo de rícino, um excelente estimulante do crescimento dos pelos e baru - rico em ácido oléico e linoleico – que possui alto poder de hidratação além de estimular o fortalecimento do pelo. Este rímel proporciona mais leveza e proteção aos cílios, podendo ser utilizado também para ressaltar a cor das sobrancelhas. ",
+        "composição": "",
+        "valor": "70,00",
+        "parcelamento": "6x de R$ 11,66",
+        "quantidade": "36",
+        "imagem": "mascara-de-cilios-vegana-e-natural-bionutritivo.webp"
+    },
+    {
+        "id": 16,
+        "titulo": "Bálsamo Hidratante Labial 5g",
+        "marca": "Elemento Mineral",
+        "categoria": [
+            "cosmético",
+            "protetor labial"
+        ],
+        "descrição": " O Bálsamo Hidratante Labial Natural da Elemento Mineral restaura e protege contra o ressecamento e danos do calor e do frio intenso, com uma excelente formula nutritiva composta por manteiga de karité, óleo de coco palmiste que doam hidratação e nutrição e os óleos essenciais que trazem benefícios e perfume natural de jasmim, rosa, cardamomo, galbanum, melão, abeto, jacinto e ylang. ",
+        "composição": "",
+        "valor": "39,90",
+        "parcelamento": "3x de R$ 13,30",
+        "quantidade": "86",
+        "imagem": "elemento-mineral-balsamo-hidratante-labial-5g.webp"
+    },
+    {
+        "id": 17,
+        "titulo": " Hidratante Labial Natural com Cor 4,25g",
+        "marca": "Lafes",
+        "categoria": [
+            "cosmético",
+            "protetor labial"
+        ],
+        "descrição": "O Hidratante Labial Vegano Natural com Cor da Lafes é orgânico e 100% natural, formulado com cera de abelha orgânica e óleos naturais para garantir a hidratação dos lábios sem o uso de substâncias químicas nocivas. Sua fórmula contém vitamina E (ação antioxidante) e seus ativos formam uma camada protetora nos lábios, mantendo a umidade e protegendo-os das agressões externas.",
+        "composição": "",
+        "valor": "59,00",
+        "parcelamento": "5x de R$ 11,80",
+        "quantidade": "86",
+        "imagem": "lip-balm-tintet-believe-lafes.webp"
     }
 ]

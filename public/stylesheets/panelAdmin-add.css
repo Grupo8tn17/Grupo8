@@ -79,6 +79,8 @@
 }
 
 .products_files_area {
+    display: flex;
+    justify-content: space-between;
     margin: 2rem 0;
 }
 
@@ -101,4 +103,16 @@ p.msgError {
     color: red;
     padding: .5rem;
     margin-left: 1.5rem;
+}
+
+.products-ativo {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    
+}
+
+.products-ativo input {
+    margin-left: 1rem;
+    margin-right: 15rem;
 }

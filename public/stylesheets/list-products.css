@@ -175,11 +175,7 @@ main hr {
     padding: 20px;
     margin: 1rem;
     background-color: rgba(255, 255, 255, 30%);
-<<<<<<< HEAD
     cursor: pointer;
-=======
-
->>>>>>> 815320044c41239ed604b605f56f564f1938137a
 }
 
 .container .cards:hover {
@@ -347,11 +343,8 @@ main hr {
         align-items: center;
         padding: 20px;
         margin: 1rem;
-<<<<<<< HEAD
         max-width: 20rem;
         height: 30rem;
-=======
->>>>>>> 815320044c41239ed604b605f56f564f1938137a
         background-color: rgba(255, 255, 255, 30%);
     
     }

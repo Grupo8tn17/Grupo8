@@ -1,0 +1,36 @@
+<%- include('partials/panelAdmin-header') %>
+
+        <div class="content">
+            <div class="container">
+                <h3>Categorias</h3>
+                <div class="box-header">
+                    <h4 class="box-title">Categorias</h3>
+                    <div class="box-tools">
+                        <a href="/admin/categorias/add">Adicionar</a>
+                    </div>
+                </div>
+                <div class="box-body">
+                    <table class="box-table">
+                        <tr>
+                            <th class="table-id">ID</th>
+                            <th class="table-name">Nome da Categoria</th>
+                            <th class="table-action">Ações</th>
+                        </tr>
+                        <tr>
+                            <% for (let categoria of categorias) { %>
+                            <td class="table-id"><%= categoria.idcategorias %></td>
+                            <td class="table-name"><%= categoria.nome %></td>
+                            <td class="table-action">
+                                <a class="action-edit" href="/admin/update/<%= categoria.idcategorias %> ">Editar</a>
+                                <a class="action-delete" href="/admin/delete/<%= categoria.idcategorias %> ">Excluir</a>                              
+                            </td>
+                        </tr>
+                        <% } %>
+                    </table>
+                </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

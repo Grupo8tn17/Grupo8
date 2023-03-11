@@ -1,4 +1,4 @@
-<%- include('partials/alternative-header') %>
+<%- include('partials/header') %>
     <main>
         <!-- Cabeçalho do Carrinho -->
         <div class="meu-carrinho">
@@ -43,22 +43,28 @@
             <div class="entrega">
                 <h2><strong>ENTREGA</strong></h2>
                 <h3>Veja as opções de entrega para seus itens,
+        <section>
+            <div class="entrega">
+                <h2><strong>ENTREGA</strong></h2>
+                <h3>Veja as opções de entrega para seus itens,
                     com todos os prazos e valores.</h3>
-                <form class="cep">
-                    <label for="cep">CEP: </label>
-                    <input type="text" name="cep" id="cep" placeholder="11111-111">
-                    <button type="">Calcular frete</button>
+                    <form class="cep">
+                        <label for="cep">CEP: </label>
+                        <input type="text" name="cep" id="cep" placeholder="11.111-111">
+                        <button type="">Calcular frete</button>
+                    </form>
+                    <form>
+                        <label for="cupom-desconto">Cupom de Desconto: </label>
+                        <input type="text" name="cupom-desconto" id="cupom-desconto" placeholder="Digite o seu cupom">
+                        <button> Aplicar Desconto</button>
+                    </form>
+                </div>
+                <form class="form-fechar-pedido" >
+                    <button class="btn-f">Fechar Pedido</button>
+                    <button class="btn-f"> 
+                        <a href="/products">Escolher Mais Produtos</a>
+                    </button>
                 </form>
-                <form>
-                    <label for="cupom-desconto">Cupom de Desconto: </label>
-                    <input type="text" name="cupom-desconto" id="cupom-desconto" placeholder="Digite o seu cupom">
-                    <button> Aplicar Desconto</button>
-                </form>
-            </div>
-            <form class="form-fechar-pedido">
-                <button class="btn-f">Fechar Pedido</button>
-                <button class="btn-f">Escolher Mais Produtos </button>
-            </form>
-        </section>
-    </main>
-    <%- include('partials/alternative-footer') %>
+            </section>
+        </main>
+        <%- include('partials/alternative-footer') %>
