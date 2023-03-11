@@ -1,6 +1,5 @@
-<a><img align="center" height="180em" src="/public/images/Logo3PNG.png"></a>
 <h1 align="center">
-Infinity Cosméticos
+<a><img align="center" height="100em" src="/public/images/Logo3PNG.png"></a>Infinity Cosméticos
 </h1>
 
 <h2 align="center">
