@@ -1,5 +1,5 @@
+<a><img align="center" height="180em" src="/public/images/Logo3PNG.png"></a>
 <h1 align="center">
-<a><img height="180em" src="/public/images/Logo3PNG.png"></a>
 Infinity Cosméticos
 </h1>
 
