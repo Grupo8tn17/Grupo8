@@ -16,8 +16,9 @@
                             <th class="table-name">Nome da Categoria</th>
                             <th class="table-action">Ações</th>
                         </tr>
+                        <% for (let categoria of categorias) { %>
                         <tr>
-                            <% for (let categoria of categorias) { %>
+                            
                             <td class="table-id"><%= categoria.idcategorias %></td>
                             <td class="table-name"><%= categoria.nome %></td>
                             <td class="table-action">
@@ -27,9 +28,11 @@
                                 </form>
                                                               
                             </td>
+                            
                         </tr>
+                        <% } %>
                     </table>
-                    <% } %>
+
                 </div>
                 </div>
             </div>

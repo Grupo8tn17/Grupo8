@@ -85,7 +85,7 @@
     <div class="container-produtos">
       <div class="container-order">    
         <section class="section-filter">
-          <span>Home / Todos os produtos</span>
+          <span>Home / Tratamentos</span>
           <div class="order">
             <span>Ordenar por:</span>
             <select name="Ordenar" id="ordenar">
@@ -100,23 +100,23 @@
 
       <section id="list-products">
         <div class="container">
-          <% for ( let itemProducts of products) { %>
-          <a href="/products/description/<%= itemProducts.idprodutos %> ">
+         <% product.forEach(products => { %>
+          <a href="/products/description/<%= products.idprodutos %> ">
             <div id="product" class="cards">
               <section>
                 <img
-                  src="/images/products/<%= itemProducts.imagem %> "
+                  src="/images/products/<%= products.imagem %> "
                   alt=""
                 />
               </section>
               <footer class="footer-card">
-                <span><%= itemProducts.titulo %></span>
+                <span><%= products.titulo %></span>
                 <h3 id="valor">R$ <%= products.valor %></h3>
-                <span id="parcelamento"></span>
+                <span id="parcelamento"><%= products.parcelamento %> </span>
               </footer>
             </div>
           </a>
-       <% } %>
+       <% });  %>
         </div>
       </section>
     </div>

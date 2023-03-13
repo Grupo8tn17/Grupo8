@@ -9,7 +9,6 @@
     </div>
     <div class="products">
       <% for(let product of listproducts) { %>
-        <% if (product.id == productsId.id ) { %>
           <div class="products-left">
             <img id="img-product" src="/images/products/<%= product.imagem %> " alt="Imagem do Produto">
           </div>
@@ -19,7 +18,7 @@
                 <a href="">
                   <%= product.marca %>
                 </a>
-                <span class="code-product">Ref: <%= product.id %></span>
+                <span class="code-product">Ref: <%= product.idprodutos %></span>
               </div>
               <div class="products-favorite">
                 <img src="/images/icon-whishlist-add-v2.png" alt="">
@@ -51,7 +50,7 @@
                 <span class="quantity-products" id="qtdProducts">1</span>
                 <button id="button-larger">+</button>
               </div>
-              <button class="add-cart" id="add-cart"><a href="/cart">Adicionar</a></button>
+              <a href="/cart"><button class="add-cart" id="add-cart">Adicionar</button></a>
             </div>
             <div class="calculator-freight">
               <div class="freight-header">
@@ -124,12 +123,8 @@
         </div>
       </div>
     </div>
-    <div class="container-rating">
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, cum ut! Soluta similique blanditiis numquam ex
-        quasi laboriosam neque iure voluptatem, nam voluptatum velit accusantium modi dolorem, quos quisquam temporibus?
-      </p>
-    </div>
-    <% } %>
+    
+
       <% } %>
   </div>
   <%- include('partials/footer') %>

@@ -20,6 +20,10 @@ router.get('/checkout/order-finished', indexController.onderFinished);
 
 router.get('/privacy-policy', indexController.privacyPolicy);
 
+router.get('/cabelos', productsController.indexCabelos);
+
+router.get('/tratamentos', productsController.indexTratamentos);
+
 module.exports = router;
 
 

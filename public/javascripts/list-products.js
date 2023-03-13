@@ -1,5 +1,3 @@
-<<<<<<< HEAD:app.js
-=======
 const header = document.getElementById('header');
 const main = document.getElementsByTagName('main');
 const navList = document.querySelector(' .nav-bar .nav-list');
@@ -49,4 +47,3 @@ buttonClosedFilter.addEventListener('click', function (){
         menuFilter.setAttribute('style', 'margin-left: 0%')
     }
 })
->>>>>>> origin/developer:public/views/list-product/app.js

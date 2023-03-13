@@ -1,4 +1,3 @@
-
 body {
     width: 100%;
     display: flex;
@@ -10,7 +9,6 @@ body {
 
 
 main * {
-    width: 100%;
     display: flex;
     flex-flow: column;
     align-items: center;
@@ -193,13 +191,15 @@ main hr {
 .container .cards .footer-card {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     color: black;
+    font-weight: bold;
     background-color: rgba(255, 255, 255, 30%);
 }
 
 .container .cards .footer-card h3 {
     margin-top: 2.5rem;
+    font-weight: bold;
     color: #4E6122;
 }
 
@@ -210,12 +210,7 @@ main hr {
         display: none;
     }
 
-    main {
-        width: 100%;
-    }
-
     main .container-principal {
-        width: 100%;
         align-items: flex-start;
         padding: 0;
         display: grid;
@@ -226,8 +221,8 @@ main hr {
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
-        margin-left: 1rem;
-        padding: 1rem;
+        margin-left: 2rem;
+        padding: 4rem;
         width: 100%;
     }
     
@@ -253,30 +248,19 @@ main hr {
         align-items: flex-start;
     
     }
-
-    .list-filter {
-        width: 100%;
-        display: flex;
-        justify-content: flex-start;
-    }
     
     main asside ul li {
-        width: 100%;
         display: flex;
         flex-direction: row;
-        align-items: center;
-        justify-content: center;
+        align-items: flex-start;
+        justify-content: flex-start;
         padding: .1rem;
     }
-
-
     
     main asside ul li .itens-checkbox {
-        width: 100%;
         display: flex;
         flex-direction: row;
         align-items: center;
-        justify-content: flex-start;
     }
     
     main asside ul li .itens-checkbox label {
@@ -336,7 +320,7 @@ main hr {
     }
     
     .container-order .section-filter {
-        width: 80%;
+        width: 100%;
         display: flex;
         align-items: center;
         justify-content: space-around;

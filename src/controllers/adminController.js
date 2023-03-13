@@ -43,8 +43,27 @@ module.exports = {
     const imagem2 = req.files[1] ? req.files[1].filename : "";
     const imagem3 = req.files[2] ? req.files[2].filename : "";
 
+    const categorias = await Categoria.findAll();
+    const marcas = await Marca.findAll();
+
     //inclusão middleware de validacao:
-console.log(req.body);
+    let { errors } = validationResult(req);
+
+    console.log(errors, 'passou por aqui');
+
+    if (errors.length) {
+      const errorsFormated = {};
+      errors.forEach((error) => (errorsFormated[error.param] = error.msg));
+      
+      return res.render('panelAdmin-add', {
+        categorias, 
+        marcas,
+        errors: errorsFormated,
+        product: req.body,
+        css: ["panelAdmin-add.css", "panelAdmin-addProducts.css"],
+        js: ['panelAdmin-validation.js']
+      });
+    }
     await Produto.create({
       titulo,
       marcas_idmarcas: marca,

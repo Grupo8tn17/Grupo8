@@ -19,7 +19,7 @@
                             <div class="form-group">
                                 <label for="p_name">Nome do produto</label>
                                 <input  type="text" id="p_name" name="titulo" value="<%= product?.name %>"/>
-                                <p class="msgError"><%= errors.name %></p>
+                                <p class="msgError"><%= errors.titulo %></p>
                             </div>
             
                             <div class="form-group">
@@ -63,14 +63,14 @@
                             <div class="form-group">
                                 <label for="p_stock">Estoque Disponível</label>
                                 <input type="number" id="p_stock" name="quantidade" value="<%= product?.stock %>"/>
-                                <p class="msgError"><%= errors.stock %></p>
+                                <p class="msgError"><%= errors.quantidade %></p>
                                 
                             </div>
             
                             <div class="form-group">
                                 <label for="p_price">Preço</label>
                                 <input  type="text"  id="p_price" name="valor" value="<%= product?.price %>" />
-                                <p class="msgError"><%= errors.price %></p>
+                                <p class="msgError"><%= errors.valor %></p>
                                 
                             </div>       
                             
@@ -80,7 +80,7 @@
 
                             <div class="products_files_area">
                                 <input type="file" name="imagem" multiple />
-                                <p class="msgError"><%= errors.image %></p>
+                                <p class="msgError"><%= errors.imagem %></p>
                                 <div class="products-ativo">
                                     <label for="ativo">Ativo</label>
                                     <input type="radio" name="ativo" id="ativo">
