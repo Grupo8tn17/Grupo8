@@ -16,20 +16,19 @@
                             <th class="table-name">Nome da Categoria</th>
                             <th class="table-action">Ações</th>
                         </tr>
+                        <% for (let categoria of categorias) { %>
                         <tr>
-                            <% for (let categoria of categorias) { %>
                             <td class="table-id"><%= categoria.idcategorias %></td>
                             <td class="table-name"><%= categoria.nome %></td>
                             <td class="table-action">
                                 <a class="action-edit" href="/admin/categorias/update/<%= categoria.idcategorias %>">Editar</a>
                                 <form action="/admin/categorias/delete/<%= categoria.idcategorias %>?_method=DELETE" method="POST" id="form">
                                 <button type="submit" class="action-delete">Excluir</button>
-                                </form>
-                                                              
+                                </form>                              
                             </td>
                         </tr>
+                        <% } %>
                     </table>
-                    <% } %>
                 </div>
                 </div>
             </div>
