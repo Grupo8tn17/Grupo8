@@ -2,9 +2,9 @@
 @import url("footer.css");
 @import url("header.css");
 @import url("footerAlternative.css");
+@import url("footerAlternative.css");
 @import url("../views/index/index.css");
 @import url("../views/orderFinished/orderFinished.css");
-
 
 :root {
   --bg-lightcolor: #d0e1aa;
