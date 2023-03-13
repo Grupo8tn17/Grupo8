@@ -1,0 +1,38 @@
+<%- include('partials/panelAdmin-header') %>
+
+        <div class="content">
+            <div class="container">
+                <h3>Marcas</h3>
+                <div class="box-header">
+                    <h4 class="box-title">Marcas</h3>
+                    <div class="box-tools">
+                        <a href="/admin/marcas/add">Adicionar</a>
+                    </div>
+                </div>
+                <div class="box-body">
+                    <table class="box-table">
+                        <tr>
+                            <th class="table-id">ID</th>
+                            <th class="table-name">Nome da Marca</th>
+                            <th class="table-action">Ações</th>
+                        </tr>
+                        <tr>
+                            <% for (let marca of marcas) { %>
+                            <td class="table-id"><%= marca.idmarcas %></td>
+                            <td class="table-name"><%= marca.nome %></td>
+                            <td class="table-action">
+                                <a class="action-edit" href="/admin/marcas/update/<%= marca.idmarcas %>">Editar</a>
+                                <form  action="/admin/marcas/delete/<%= marca.idmarcas %>?_method=DELETE" method="POST" id="form">
+                                <button class="action-delete">Excluir</button>
+                                </form>                           
+                            </td>
+                        </tr>
+                        <% } %>
+                    </table>
+                </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

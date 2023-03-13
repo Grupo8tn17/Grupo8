@@ -18,7 +18,7 @@ const criarProdutoHasProdutoOfertaModel = (sequelize, dataTypes) => {
       type: dataTypes.INTEGER.UNSIGNED,
       allowNull: false
     },
-    idmarca: {
+    idmarcas: {
       type: dataTypes.INTEGER.UNSIGNED,
       allowNull: false
     },
@@ -57,7 +57,7 @@ const criarProdutoHasProdutoOfertaModel = (sequelize, dataTypes) => {
     ProdutoHasProdutoOferta.belongsTo(models.Marca, {
 
       as: 'marcas',
-      foreignKey: 'idmarca'
+      foreignKey: 'idmarcas'
     });
 
     ProdutoHasProdutoOferta.belongsTo(models.ProdutoOferta, {
