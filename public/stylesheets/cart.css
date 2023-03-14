@@ -11,22 +11,6 @@
   --gray: #b5c1b8;
 }
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 1rem auto;
-  font: "Lato";
-  background-color: var(--offwhite);
-}
-
 .meu-carrinho {
   width: 100%;
   display: flex;
@@ -156,6 +140,8 @@ form .btn-f {
 
 .cart-empty {
   text-align: center;
+  width: 100%;
+  height: 50vh;
 }
 
 .cart-empty h1 {
@@ -166,7 +152,7 @@ form .btn-f {
 .cart-empty p {
   color: var(--gray);
   font-size: 1.5rem;
-  padding-bottom: 5rem;
+  padding-bottom: 5rem;  
 }
 
 .img-cart {

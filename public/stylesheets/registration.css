@@ -12,6 +12,9 @@
   --darkorange: darkorange;
 }
 
+main {
+  width: 100%;
+}
 #new-customer {
   margin: 1rem;
   padding: 3rem 0.5rem 0.5rem 0.5rem;
@@ -63,15 +66,13 @@
   width: 100%;
 }
 
-#first-new-customer,
-#second-new-customer {
+#first-new-customer{
   display: flex;
   flex-direction: column;
   align-content: center;
   justify-content: center;
   padding: 2rem;
   width: 65rem;
-  height: 30rem;
   box-shadow: 4px 4px 4px 4px var(--gray);
 }
 
@@ -90,6 +91,8 @@
 .small-data {
   display: flex;
   justify-content: space-between;
+  padding-left: 1rem;
+  margin-bottom: 2rem;
 }
 .small-data input {
   background-color: #ffff;
