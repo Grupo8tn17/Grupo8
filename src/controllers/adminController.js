@@ -37,18 +37,13 @@ module.exports = {
       console.log(erro);
       
       if (erro?.name === "SequelizeConnectionRefusedError"){
-        res.render("painelAdm-home", {
-          errors: {server: ERRO_500},
-          css: ["panelAdmin-add.css", "panelAdmin-addProducts.css"],
-          js: [],
+        res.render("panelAdmin-addProducts", {
+          errors:{server: ERRO_500},
+          products: [],
+          css: ["panelAdmin-addProducts.css"],
+          js: ["panelAdmin-delete.js"],
         });
       }
-    
-    res.render("painelAdm-home", {
-      errors: {server: ERRO_500},
-      css: ["panelAdmin-add.css", "panelAdmin-addProducts.css"],
-      js: [],
-    });
     }
     
   },
@@ -164,10 +159,11 @@ module.exports = {
     } catch (erro) {
       console.log(erro);
       if (erro?.name === "SequelizeConnectionRefusedError"){
-        res.render("painelAdm-home", {
-          errors: {server: ERRO_500},
-          css: ["panelAdmin-add.css", "panelAdmin-addProducts.css"],
-          js: [],
+        res.render("panelAdmin-addProducts", {
+          errors:{server: ERRO_500},
+          products: [],
+          css: ["panelAdmin-addProducts.css"],
+          js: ["panelAdmin-delete.js"],
         });
       } 
     }
@@ -219,10 +215,11 @@ module.exports = {
       console.log(erro);
     
       if (erro?.name === "SequelizeConnectionRefusedError"){
-        res.render("painelAdm-home", {
-          errors: {server: ERRO_500},
-          css: ["panelAdmin-add.css", "panelAdmin-addProducts.css"],
-          js: [],
+        res.render("panelAdmin-addProducts", {
+          errors:{server: ERRO_500},
+          products: [],
+          css: ["panelAdmin-addProducts.css"],
+          js: ["panelAdmin-delete.js"],
         });
       } 
       
