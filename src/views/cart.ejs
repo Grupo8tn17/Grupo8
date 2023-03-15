@@ -45,7 +45,7 @@
 
             <section class="container-entrega">
 
-                <form class="form-entrega">
+                <form class="form-entrega" action="/entregas/frete" method="GET">
 
                     <div class="entrega entrega-left">
                         <span class="img-entrega"><i class="fa-solid fa-truck-fast"></i></span>
@@ -57,7 +57,7 @@
                         <input type="text" name="cep" id="cep" placeholder="CEP">
                         <button type="">Calcular frete</button>
                         <div class="frete-entrega">
-                            <p>Valor do frete: R$ </p>
+                            <p>Valor do frete: R$ <%= valorFrete  %> </p>
                             <p>Prazo de entrega: </p>
                         </div>
 
