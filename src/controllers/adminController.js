@@ -1,6 +1,6 @@
 const { Produto, Categoria, Marca } = require("../models");
 const { validationResult } = require("express-validator");
-const { json } = require("sequelize");
+
 
 const ERRO_500 = "Erro interno do servidor!";
 const ERRO_404 = "Produto não encontrado!";
@@ -14,6 +14,7 @@ class NotFoundError extends Error {
 }
 
 module.exports = {
+  //renderiza a view home do administrador
   indexAdmin: async (req, res) => {
     const product = await Produto.findAll();
 
@@ -23,16 +24,29 @@ module.exports = {
       js: [],
     });
   },
-
-  adminProducts: async (req, res) => {
-    const products = await Produto.findAll();
+//renderiza a view admin produtos / listar produto
+   async adminProducts (req, res)  {
+    try{
+      const products = await Produto.findAll();
     res.render("panelAdmin-addProducts", {
+      errors:{},
       products,
       css: ["panelAdmin-addProducts.css"],
       js: ["panelAdmin-delete.js"],
     });
+    } catch (erro) {
+      console.log(erro);
+      const products = await Produto.findAll();
+    res.render("panelAdmin-addProducts", {
+      errors: { server: ERRO_500 },
+      products,
+      css: ["panelAdmin-addProducts.css"],
+      js: ["panelAdmin-delete.js"],
+    });
+    }
+    
   },
-
+//renderiza a view novo produto
   addProducts: async (req, res) => {
     const categorias = await Categoria.findAll();
     const marcas = await Marca.findAll();
@@ -61,7 +75,7 @@ module.exports = {
     });
   },
 
-
+//criar um produto
   async createProducts(req, res) {
     try {
       let { errors } = validationResult(req);
@@ -115,10 +129,10 @@ module.exports = {
       if (erro?.name === "SequelizeValidationError") {
         return res.render("panelAdmin-add", resposta);
       }
-    
+      return res.render("panelAdmin-add", resposta);
     }
   },
-
+//renderiza a view excluir produto
   deleteView: async (req, res) => {
     const { id } = req.params;
     const { titulo, descricao, valor, quantidade } = req.body;
@@ -131,17 +145,28 @@ module.exports = {
       js: ["panelAdmin-delete.js"],
     });
   },
+// exclui um produto
+   async  deleteProducts (req, res)  {
+    try{
+      const { id } = req.params;
 
-  deleteProducts: async (req, res) => {
-    const { id } = req.params;
+      await Produto.destroy({
+        where: { idprodutos: id },
+      });
+  
+      return res.redirect("/admin/products");
+    } catch (erro) {
+      console.log(erro);
+      const { id } = req.params;
 
-    await Produto.destroy({
-      where: { idprodutos: id },
-    });
-
-    return res.redirect("/admin/products");
+      await Produto.destroy({
+        where: { idprodutos: id },
+      });
+  
+      return res.redirect("/admin/products", {errors: {sever:ERRO_500}});
+    }
   },
-
+//renderiza a view editar produto
   updateProducts: async (req, res) => {
     const categorias = await Categoria.findAll();
     const marcas = await Marca.findAll();
@@ -159,9 +184,10 @@ module.exports = {
       js: ["panelAdmin-validation.js"],
     });
   },
-
-  update: async (req, res) => {
-    const { id } = req.params;
+// edita um produto
+  async update (req, res)  {
+    try{
+      const { id } = req.params;
     const { titulo, marca, categoria, descricao, quantidade, valor, ativo } =
       req.body;
 
@@ -183,7 +209,27 @@ module.exports = {
       }
     );
     return res.redirect("/admin/products");
+    } catch (erro) {
+      console.log(erro);
+      const categorias = await Categoria.findAll();
+      const marcas = await Marca.findAll();
+      const resposta = {
+        categorias,
+        marcas,
+        errors: { server: ERRO_400 },
+        product: {},
+        css: ["panelAdmin-add.css", "panelAdmin-addProducts.css"],
+        js: ["panelAdmin-validation.js"],
+      };
+
+      if (erro?.name === "SequelizeValidationError") {
+        return res.render("panelAdmin-add", resposta);
+      }
+      return res.render("panelAdmin-add", resposta);
+    }
   },
+
+  //Categorias
 
   adminCategorias: async (req, res) => {
     const categorias = await Categoria.findAll();
