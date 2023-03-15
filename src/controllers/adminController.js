@@ -34,24 +34,22 @@ module.exports = {
   },
 
   addProducts: async (req, res) => {
-   
     const categorias = await Categoria.findAll();
     const marcas = await Marca.findAll();
-    
-        //inclusão middleware de validacao:
-        let { errors } = validationResult(req);
-        console.log(errors, 'erro add produto')
-    
-        if (errors.length) {
-         
-          const errorsFormated = {};
-          errors.forEach((error) => (errorsFormated[error.param] = error.msg));
-    
-          return res.render('panelAdmin-add', {
-            errors: errorsFormated,
-            product: req.body,
-          });
-        }
+
+    //inclusão middleware de validacao:
+    let { errors } = validationResult(req);
+    console.log(errors, "erro add produto");
+
+    if (errors.length) {
+      const errorsFormated = {};
+      errors.forEach((error) => (errorsFormated[error.param] = error.msg));
+
+      return res.render("panelAdmin-add", {
+        errors: errorsFormated,
+        product: req.body,
+      });
+    }
 
     res.render("panelAdmin-add", {
       categorias,
@@ -63,88 +61,63 @@ module.exports = {
     });
   },
 
-  // createProducts: async (req, res) => {
-  //   const { titulo, marca, categoria, descricao, quantidade, valor, ativo } =
-  //     req.body;
-  //   const imagem = req.files[0] ? req.files[0].filename : "";
-  //   const imagem2 = req.files[1] ? req.files[1].filename : "";
-  //   const imagem3 = req.files[2] ? req.files[2].filename : "";
 
-    //inclusão middleware de validacao:
-    // console.log(req.body);
-    // await Produto.create({
-    //   titulo,
-    //   marcas_idmarcas: marca,
-    //   categorias_idcategorias: categoria,
-    //   descricao,
-    //   quantidade,
-    //   valor,
-    //   imagem,
-    //   ativo,
-    //   imagem2,
-    //   imagem3,
-    // });
-    // res.redirect("/admin/products");
+  async createProducts(req, res) {
+    try {
+      let { errors } = validationResult(req);
+      console.log(errors, "erro add produto");
 
-    async createProducts(req, res){
-      try {
+      if (errors.length) {
+        const errorsFormated = {};
+        errors.forEach((error) => (errorsFormated[error.param] = error.msg));
 
-        let { errors } = validationResult(req);
-        console.log(errors, 'erro add produto')
-    
-        if (errors.length) {
-         
-          const errorsFormated = {};
-          errors.forEach((error) => (errorsFormated[error.param] = error.msg));
-    
-          return res.render('panelAdmin-add', {
-            marcas: await Marca.findAll(),  
-            categorias: await Categoria.findAll(),
-            errors: errorsFormated,
-            product: req.body,
-            css: ["panelAdmin-add.css", "panelAdmin-addProducts.css"],
-            js: ["panelAdmin-validation.js"],
-          });
-        }
-
-        const { titulo, marca, categoria, descricao, quantidade, valor, ativo } = req.body;
-        const imagem = req.files[0] ? req.files[0].filename : "";
-        const imagem2 = req.files[1] ? req.files[1].filename : "";
-        const imagem3 = req.files[2] ? req.files[2].filename : "";
-        await Produto.create({
-            titulo,
-            marcas_idmarcas: marca,
-            categorias_idcategorias: categoria,
-            descricao,
-            quantidade,
-            valor,
-            imagem,
-            ativo,
-            imagem2,
-            imagem3,
-          });
-        return res.redirect('/admin/products')
-      } catch (erro) {
-        console.log(erro);
-        const categorias = await Categoria.findAll();
-        const marcas = await Marca.findAll();
-        const resposta = {
-          categorias,
-          marcas,
-          errors:  {server: ERRO_400},
-          product: {},
+        return res.render("panelAdmin-add", {
+          marcas: await Marca.findAll(),
+          categorias: await Categoria.findAll(),
+          errors: errorsFormated,
+          product: req.body,
           css: ["panelAdmin-add.css", "panelAdmin-addProducts.css"],
           js: ["panelAdmin-validation.js"],
-        }
-
-        if(erro?.name === 'SequelizeValidationError') {
-          return res.render("panelAdmin-add", resposta );
-        }
-        return  res.render('panelAdmin-add', resposta);
+        });
       }
-    },
 
- 
+      const { titulo, marca, categoria, descricao, quantidade, valor, ativo } =
+        req.body;
+      const imagem = req.files[0] ? req.files[0].filename : "";
+      const imagem2 = req.files[1] ? req.files[1].filename : "";
+      const imagem3 = req.files[2] ? req.files[2].filename : "";
+      await Produto.create({
+        titulo,
+        marcas_idmarcas: marca,
+        categorias_idcategorias: categoria,
+        descricao,
+        quantidade,
+        valor,
+        imagem,
+        ativo,
+        imagem2,
+        imagem3,
+      });
+      return res.redirect("/admin/products");
+    } catch (erro) {
+      console.log(erro);
+      const categorias = await Categoria.findAll();
+      const marcas = await Marca.findAll();
+      const resposta = {
+        categorias,
+        marcas,
+        errors: { server: ERRO_400 },
+        product: {},
+        css: ["panelAdmin-add.css", "panelAdmin-addProducts.css"],
+        js: ["panelAdmin-validation.js"],
+      };
+
+      if (erro?.name === "SequelizeValidationError") {
+        return res.render("panelAdmin-add", resposta);
+      }
+    
+    }
+  },
 
   deleteView: async (req, res) => {
     const { id } = req.params;
@@ -191,9 +164,7 @@ module.exports = {
     const { id } = req.params;
     const { titulo, marca, categoria, descricao, quantidade, valor, ativo } =
       req.body;
-    const imagem = req.files[0] ? req.files[0].filename : "";
-    const imagem2 = req.files[1] ? req.files[1].filename : "";
-    const imagem3 = req.files[2] ? req.files[2].filename : "";
+
 
     await Produto.update(
       {
@@ -203,10 +174,9 @@ module.exports = {
         descricao,
         quantidade,
         valor,
-        imagem,
+        
         ativo,
-        imagem2,
-        imagem3,
+       
       },
       {
         where: { idprodutos: id },

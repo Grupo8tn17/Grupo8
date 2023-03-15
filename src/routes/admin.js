@@ -16,8 +16,8 @@ router.post('/products', upload.array("imagem", 3), adminController.createProduc
 router.get('/delete/:id', adminController.deleteView);
 router.delete('/delete/:id', adminController.deleteProducts);
 
-router.get('/update/:id', upload.array("imagem", 3), adminController.updateProducts);
-router.put('/update/:id', upload.array("imagem", 3), adminController.update)
+router.get('/update/:id', adminController.updateProducts);
+router.put('/update/:id', adminController.update)
 router.post('/create', upload.array("imagem", 3), adminFormValidation, adminController.createProducts);
 
 router.get('/delete/:id', adminController.deleteView);
