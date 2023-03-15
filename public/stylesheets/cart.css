@@ -11,6 +11,11 @@
   --gray: #b5c1b8;
 }
 
+main {
+  width: 100%;
+  height: 100%;
+}
+
 .meu-carrinho {
   width: 100%;
   display: flex;
@@ -75,7 +80,7 @@ span {
   gap: 0.2rem;
 }
 
-button {
+.entrega button {
   text-transform: uppercase;
   background-color: var(--bg-darkcolor);
   color: var(--offwhite);
@@ -98,16 +103,51 @@ input {
   box-shadow: 1px 1px 2px 2px var(--gray);
 }
 
+.form-entrega {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
 .entrega {
-  background-color: var(--bg-lightcolor);
-  color: #4e6122;
+  width: 40%;
+  height: 15rem;
+  margin: auto;
+  background-color: var(--offwhite);
+  color: var(--bg-darkcolor);
   font-weight: bold;
   text-align: center;
   padding: 0.5rem;
-  margin: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
   border-radius: 0.3rem;
-  box-shadow: 1px 1px 2px 2px var(--gray);
+  box-shadow: 4px 4px 4px 4px var(--gray);
   border-radius: 0.3rem;
+}
+
+.img-entrega{
+  color: var(--bg-darkcolor);
+  font-size: 2rem;
+ }
+
+.text-black{
+  color:black;
+}
+
+.text-column{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: .5rem;
+  font-size: 20px;
+}
+
+.text-total{
+  margin-top: 1rem;
 }
 
 .cep label {
@@ -120,20 +160,35 @@ input {
   border-radius: 0.3rem;
 }
 
-.entrega button {
+form .btn-f {
   min-width: 25rem;
   margin: 0.2rem;
   box-shadow: 1px 1px 2px 2px var(--gray);
   border-radius: 0.3rem;
+  text-transform: uppercase;
+  background-color: var(--bg-darkcolor);
+  color: var(--offwhite);
+  cursor: pointer;
+  padding: 0.5rem;
+  text-align: center;
+  font-weight: 700;
+  border-radius: 1rem;
+  border: none;
 }
 
-form .btn-f {
-  min-width: 25rem;
-  margin: 0.2rem;
+.frete-entrega{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: .5rem;
 }
 
 .form-fechar-pedido {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
   text-align: center;
+  margin-bottom: 1rem;
 }
 
 /*Inicio estilo carrinho vazio*/
@@ -152,7 +207,7 @@ form .btn-f {
 .cart-empty p {
   color: var(--gray);
   font-size: 1.5rem;
-  padding-bottom: 5rem;  
+  padding-bottom: 5rem;
 }
 
 .img-cart {
@@ -165,4 +220,17 @@ form .btn-f {
 
 .cart-invisible {
   display: none;
+}
+
+/* inserir linha divisória, inserir no html */
+
+hr {
+  border: 0;
+  height: 0.2rem;
+  background-image: linear-gradient(
+    to right,
+    transparent,
+    #4e6122,
+    transparent
+  );
 }
