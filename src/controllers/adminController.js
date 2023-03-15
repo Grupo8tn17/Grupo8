@@ -16,10 +16,9 @@ class NotFoundError extends Error {
 module.exports = {
   //renderiza a view home do administrador
   indexAdmin: async (req, res) => {
-    const product = await Produto.findAll();
 
     return res.render("painelAdm-home", {
-      product,
+      errors: {},
       css: ["panelAdmin-add.css", "panelAdmin-addProducts.css"],
       js: [],
     });
@@ -36,12 +35,19 @@ module.exports = {
     });
     } catch (erro) {
       console.log(erro);
-      const products = await Produto.findAll();
-    res.render("panelAdmin-addProducts", {
-      errors: { server: ERRO_500 },
-      products,
-      css: ["panelAdmin-addProducts.css"],
-      js: ["panelAdmin-delete.js"],
+      
+      if (erro?.name === "SequelizeConnectionRefusedError"){
+        res.render("painelAdm-home", {
+          errors: {server: ERRO_500},
+          css: ["panelAdmin-add.css", "panelAdmin-addProducts.css"],
+          js: [],
+        });
+      }
+    
+    res.render("painelAdm-home", {
+      errors: {server: ERRO_500},
+      css: ["panelAdmin-add.css", "panelAdmin-addProducts.css"],
+      js: [],
     });
     }
     
@@ -79,7 +85,7 @@ module.exports = {
   async createProducts(req, res) {
     try {
       let { errors } = validationResult(req);
-      console.log(errors, "erro add produto");
+      console.log(errors);
 
       if (errors.length) {
         const errorsFormated = {};
@@ -157,13 +163,13 @@ module.exports = {
       return res.redirect("/admin/products");
     } catch (erro) {
       console.log(erro);
-      const { id } = req.params;
-
-      await Produto.destroy({
-        where: { idprodutos: id },
-      });
-  
-      return res.redirect("/admin/products", {errors: {sever:ERRO_500}});
+      if (erro?.name === "SequelizeConnectionRefusedError"){
+        res.render("painelAdm-home", {
+          errors: {server: ERRO_500},
+          css: ["panelAdmin-add.css", "panelAdmin-addProducts.css"],
+          js: [],
+        });
+      } 
     }
   },
 //renderiza a view editar produto
@@ -211,22 +217,17 @@ module.exports = {
     return res.redirect("/admin/products");
     } catch (erro) {
       console.log(erro);
-      const categorias = await Categoria.findAll();
-      const marcas = await Marca.findAll();
-      const resposta = {
-        categorias,
-        marcas,
-        errors: { server: ERRO_400 },
-        product: {},
-        css: ["panelAdmin-add.css", "panelAdmin-addProducts.css"],
-        js: ["panelAdmin-validation.js"],
-      };
-
-      if (erro?.name === "SequelizeValidationError") {
-        return res.render("panelAdmin-add", resposta);
-      }
-      return res.render("panelAdmin-add", resposta);
+    
+      if (erro?.name === "SequelizeConnectionRefusedError"){
+        res.render("painelAdm-home", {
+          errors: {server: ERRO_500},
+          css: ["panelAdmin-add.css", "panelAdmin-addProducts.css"],
+          js: [],
+        });
+      } 
+      
     }
+   
   },
 
   //Categorias
