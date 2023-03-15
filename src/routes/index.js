@@ -4,7 +4,9 @@ const indexController = require('../controllers/indexController');
 const userController = require('../controllers/userController');
 const cartConctroller = require('../controllers/cartController');
 const productsController = require('../controllers/productsController');
+const entregasRouter = require('./entregas');
 
+router.use('/entregas', entregasRouter);
 
 router.get('/', indexController.index);
 

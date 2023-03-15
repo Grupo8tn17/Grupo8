@@ -1,6 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,400;0,700;0,900;1,100;1,400;1,700;1,900&display=swap");
-@import url('/public/css/headerAlternative.css');
-@import url('/public/css/footer.css');
 
 :root {
   --bg-lightcolor: #d0e1aa;
@@ -14,22 +12,12 @@
   --darkorange: darkorange;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  text-decoration: none;
-  list-style: none;
-  font-family: "Lato", sans-serif;
+main {
+  width: 100%;
 }
-
-body {
-  background-color: var(--offwhite);
-}
-
 #new-customer {
-  margin: 2rem;
-  padding: 4rem 0.5rem 0.5rem 0.5rem;
+  margin: 1rem;
+  padding: 3rem 0.5rem 0.5rem 0.5rem;
 }
 
 #new-customer h1 {
@@ -78,15 +66,13 @@ body {
   width: 100%;
 }
 
-#first-new-customer,
-#second-new-customer {
+#first-new-customer{
   display: flex;
   flex-direction: column;
   align-content: center;
   justify-content: center;
   padding: 2rem;
   width: 65rem;
-  height: 30rem;
   box-shadow: 4px 4px 4px 4px var(--gray);
 }
 
@@ -105,6 +91,8 @@ body {
 .small-data {
   display: flex;
   justify-content: space-between;
+  padding-left: 1rem;
+  margin-bottom: 2rem;
 }
 .small-data input {
   background-color: #ffff;

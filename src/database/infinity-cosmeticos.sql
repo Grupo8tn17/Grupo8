@@ -1,6 +1,6 @@
 CREATE DATABASE infinity_cosmeticos;
 
-USE infinity_cosmeticos;
+USE infinity_cosmeticos; 
 
 CREATE TABLE produtos (
 	idprodutos INT UNSIGNED PRIMARY KEY AUTO_INCREMENT NOT NULL, 
@@ -11,12 +11,12 @@ CREATE TABLE produtos (
     imagem VARCHAR(255) NOT NULL,
     marca VARCHAR(150) NOT NULL, 
     categorias_idcategorias INT UNSIGNED NOT NULL,
-    marcas_idmarca INT UNSIGNED NOT NULL,
+    marcas_idmarcas INT UNSIGNED NOT NULL,
     ativo TINYINT NOT NULL,
     imagem2 VARCHAR(255) NOT NULL,
     imagem3 VARCHAR(255) NOT NULL,
     FOREIGN KEY (categorias_idcategorias) REFERENCES categorias(idcategorias),
-    FOREIGN KEY (marcas_idmarca) REFERENCES marcas(idmarca)
+    FOREIGN KEY (marcas_idmarcas) REFERENCES marcas(idmarcas)
 );
 
 
@@ -89,9 +89,9 @@ CREATE TABLE enderecos (
 );
 
 CREATE TABLE marcas (
-	idmarca INT UNSIGNED PRIMARY KEY AUTO_INCREMENT NOT NULL,
+	idmarcas INT UNSIGNED PRIMARY KEY AUTO_INCREMENT NOT NULL,
     nome VARCHAR(150) NOT NULL, 
-    cnpj INT(20) NOT NULL,
+    cnpj INT(14) NOT NULL,
     endereco VARCHAR(150) NOT NULL
 );
 
@@ -105,11 +105,11 @@ CREATE TABLE produtos_has_produtos_ofertas (
 	id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT NOT NULL,
     produtos_idprodutos INT UNSIGNED NOT NULL,
     produtos_categorias_idcategorias INT UNSIGNED NOT NULL,
-    produtos_marcas_idmarca INT UNSIGNED NOT NULL,
+    produtos_marcas_idmarcas INT UNSIGNED NOT NULL,
     produtos_ofertas_idprodutos_ofertas INT UNSIGNED NOT NULL,
     FOREIGN KEY (produtos_idprodutos) REFERENCES produtos(idprodutos),
     FOREIGN KEY (produtos_categorias_idcategorias) REFERENCES produtos(categorias_idcategorias),
-    FOREIGN KEY (produtos_marcas_idmarca) REFERENCES produtos(marcas_idmarca),
+    FOREIGN KEY (produtos_marcas_idmarcas) REFERENCES produtos(marcas_idmarcas),
     FOREIGN KEY (produtos_ofertas_idprodutos_ofertas) REFERENCES produtos_ofertas(idprodutos_ofertas)
 );
 
