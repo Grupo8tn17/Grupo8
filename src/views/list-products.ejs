@@ -101,21 +101,17 @@
       <section id="list-products">
         <div class="container">
           <% for ( let itemProducts of products) { %>
-          <a href="/products/description/<%= itemProducts.idprodutos %> ">
-            <div id="product" class="cards">
-              <section>
-                <img
-                  src="/images/products/<%= itemProducts.imagem %> "
-                  alt=""
-                />
-              </section>
-              <footer class="footer-card">
-                <span><%= itemProducts.titulo %></span>
-                <h3 id="valor">R$ <%= products.valor %></h3>
-                <span id="parcelamento"></span>
-              </footer>
-            </div>
-          </a>
+          <div class="indexProductsProducts">
+            <a href="/products/description/<%= itemProducts.idprodutos %> "> <img
+                src="/images/products/<%= itemProducts.imagem %> "
+                alt="">
+              <p class="indexProductsDescription"><%= itemProducts.titulo %></p>
+              <p class="indexProductsOldPrice">R$ 45,00</p>
+              <p class="indexProductsPrice">R$ <%= itemProducts.valor %></p>
+              <p class="indexProductsSubPrice"><sub>3x de R$ 10,85 Sem juros</sub></p>
+            </a>
+          </div>
+          
        <% } %>
         </div>
       </section>

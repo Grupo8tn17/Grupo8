@@ -1,27 +1,6 @@
-<<<<<<< HEAD
-<%- include('partials/alternative-header') %>
-=======
-<!DOCTYPE html>
-<html lang="pt-BR">
-
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lato&family=Rajdhani&display=swap" rel="stylesheet">
-  <link rel="shortcut icon" href="/public/img/infinityCosmeticos.ico" type="image/x-icon" />
-  <link rel="stylesheet" href="/stylesheets/login.css">
-  <link rel="stylesheet" href="/stylesheets/style.css">
-  <script src="/stylesheets/login.js" defer></script>
-  <title>Formulário de Login e Cadastro</title>
-</head>
-
 <%- include('partials/alternative-header') %>
 
-
-  <main>
+<main>
 
     <div id="login">
       <h1>Registre-se</h1>
@@ -36,7 +15,7 @@
         <h2>LOGIN</h2>
 
 
-        <form action="/user/user-panel">
+        <form action="/login" method="POST">
 
           <div class="input">
             <label for="email"></label>
@@ -45,7 +24,7 @@
 
           <div class="input">
             <label for="pwd"></label>
-            <input type="password" id="pwd" name="pwd" placeholder="Senha"  />
+            <input type="password" id="pwd" name="senha" placeholder="Senha"  />
           </div>
           <div class="first-login-buttom">
             <p>

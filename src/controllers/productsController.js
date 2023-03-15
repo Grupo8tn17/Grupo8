@@ -16,22 +16,22 @@ module.exports = {
     },
 
     indexCabelos: async (req, res) => {
-        let product = await Produto.findAll({
+        let products = await Produto.findAll({
             include: [{
                 model: Categoria, as: 'categorias',
                 attributes: ['nome'], where: {nome: 'Cabelo'}
             }], 
         });
-        res.render('products-cabelos', {product, products: '', css: ['style.css', 'list-products.css'], js: ['parcelamento.js'] });
+        res.render('list-products', {products, css: ['style.css', 'list-products.css'], js: ['parcelamento.js'] });
     }, 
 
     indexTratamentos: async (req, res) => {
-        let product = await Produto.findAll({
+        let products = await Produto.findAll({
             include: [{
                 model: Categoria, as: 'categorias',
                 attributes: ['nome'], where: {nome: 'Tratamentos'}
             }], 
         });
-        res.render('products-tratamentos', {product, products: '', css: ['style.css', 'list-products.css'], js: '' });
+        res.render('list-products', {products, css: ['style.css', 'list-products.css'], js: '' });
     }
 }

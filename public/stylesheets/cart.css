@@ -1,31 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family= Lato:ital, wght @0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900 & display=swap");
-
-:root {
-  --bg-lightcolor: #d0e1aa;
-  --bg-midlelightcolor: #bfd68b;
-  --bg-midlecolor: #9ab669;
-  --bg-darkcolor: #4e6122;
-  --offwhite: #f7f4eb;
-  --offwhite-lightborder: #fffaf0;
-  --offwhite-darkborder: #dbcea6;
-  --gray: #b5c1b8;
-}
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 1rem auto;
-  font: "Lato";
-  background-color: var(--offwhite);
-}
+@import url(/public/css/style.css);
 
 .meu-carrinho {
   width: 100%;

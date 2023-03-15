@@ -49,8 +49,6 @@ module.exports = {
     //inclusão middleware de validacao:
     let { errors } = validationResult(req);
 
-    console.log(errors, 'passou por aqui');
-
     if (errors.length) {
       const errorsFormated = {};
       errors.forEach((error) => (errorsFormated[error.param] = error.msg));

@@ -148,6 +148,15 @@ header {
   background-color: #bfd68b;
 }
 
+.navbar-products a {
+  text-decoration: none;
+  color: white;
+}
+
+.navbar-products a:hover {
+  color: #4e6122;
+}
+
 .navbar-products img {
   width: 1.5rem;
   height: 1.5rem;
@@ -170,6 +179,11 @@ header {
   cursor: pointer;
 }
 
-.navbar-listcategories li:hover {
+.navbar-listcategories li a:hover {
   color: #4e6122;
+}
+
+.navbar-listcategories li a {
+  text-decoration: none;
+  color: white;
 }
