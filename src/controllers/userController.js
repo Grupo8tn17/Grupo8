@@ -5,30 +5,56 @@ const session = require('express-session');
 
 module.exports = {
     indexLogin: (req, res) => {
-        return res.render('login', {css: ['style.css', 'login.css'], js: ''})
+        return res.render('login', {erroAuth: {}, errors: {}, css: ['style.css', 'login.css'], js: ''})
     }, 
 
     logarUsuario: async (req, res) => {
         const { email, senha} = req.body;
-        let usuario = await Usuario.findAll({ where: {email: email}});
-        console.log(JSON.stringify(usuario, null, 2));
+        let usuarios = await Usuario.findAll({ where: {email: email}});
 
-        /*if(email == usuario.email) {
-            await bcrypt.compare(senha, usuario.senha, (erro, result) => {
-                if(result) {
-                    req.session.login = usuario.idusuarios
-                    console.log("Deu certo!");
-                    res.redirect('/user-panel');
-                } else {
-                    console.log(erro)
-                }
-            })
-            
-        }*/
+        usuarios.forEach(usuario => {
+            if(email == usuario.email) {
+                bcrypt.compare(senha, usuario.senha, (erro, result) => {
+                    if(result) {
+                        req.session.login = usuario.idusuarios
+                        console.log("Deu certo!", req.session.login);
+                        console.log(usuarios);
+                        res.render('user-panel', {usuarios, css: ['style.css', 'user-panel.css'], js: ''});
+                    } else {
+                        console.log('Deu erro aqui!')
+                    }
+                })
+                
+            } else {
+                return res.render('/login', console.log("Email não encontrado"));
+            }
+        })
+
+        
+
+        
     },
 
-    userPanel: (req, res) => {
-        res.render('user-panel', {css: ['style.css', 'user-panel.css'], js: ''});
+    deslogarUsuario: (req, res) => {
+        if(req.session.login){
+            req.session.destroy();
+            res.redirect('/');
+        }
+        
+
+    },
+
+    userPanel: async (req, res) => {
+        console.log(req.session.login);
+        if(req.session.login) {
+            let idLogin = req.session.login;
+            let usuarios = await Usuario.findByPk(idLogin);
+            console.log(usuarios);
+            res.render('user-panel', {usuarios, css: ['style.css', 'user-panel.css'], js: ''});
+        } else {
+            res.redirect('/login');
+        }
+        
     }, 
 
     registrate: (req, res) => {

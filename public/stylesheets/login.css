@@ -71,7 +71,7 @@ body {
   justify-content: center;
   padding: 2rem;
   width: 65rem;
-  height: 25rem;
+  height: 35rem;
   box-shadow: 4px 4px 4px 4px var(--gray);
 }
 
@@ -203,4 +203,12 @@ transform: translateX(-2px);
 #buttonGoogle img {
   max-width: 2.5rem;
   border-radius: 1rem;
+}
+
+.input p.msgError {
+  min-height: 1rem;
+  font-style: italic;
+  color: red;
+  padding: .5rem;
+  margin-left: 1.5rem;
 }

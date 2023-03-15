@@ -12,7 +12,8 @@ router.get('/', indexController.index);
 router.get('/cart', cartConctroller.mostraCarrinho);
 
 router.get('/login', userController.indexLogin);
-router.post('/login', userController.logarUsuario);
+router.post('/user-panel', userController.logarUsuario);
+router.get('/user-panel', userController.userPanel);
 
 //Cadastro Usuário
 router.get('/registrate', userController.registrate);
@@ -27,6 +28,8 @@ router.get('/privacy-policy', indexController.privacyPolicy);
 router.get('/cabelos', productsController.indexCabelos);
 
 router.get('/tratamentos', productsController.indexTratamentos);
+
+router.get('/sair', userController.deslogarUsuario);
 
 module.exports = router;
 
