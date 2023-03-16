@@ -5,7 +5,7 @@ module.exports = [
     .notEmpty().withMessage('O campo "Nome do produto" não pode estar vazio').bail()
     .isLength({ min: 2, max: 100}).withMessage('O campo "Nome" deve pussuir entre 2 e 100 caracteres'),
 
-    check('category')
+    check('categoria')
     .notEmpty().withMessage('O campo "Categoria" não pode estar vazio'),
 
     check('marca')

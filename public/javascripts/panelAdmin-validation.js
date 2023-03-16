@@ -1,4 +1,4 @@
-/* const form = document.getElementById('form');
+ const form = document.getElementById('form');
 
 const removeError = function () {
     const errorSpans = document.querySelectorAll('span.error');
@@ -30,4 +30,4 @@ form.addEventListener('submit', function(event) {
     if(!hasError) {
         this.submit();
     }
-}) */
+}) 
