@@ -33,5 +33,15 @@ module.exports = {
             }], 
         });
         res.render('list-products', {products, css: ['style.css', 'list-products.css'], js: '' });
+    }, 
+
+    indexMaquiagem: async (req, res) => {
+        let products = await Produto.findAll({
+            include: [{
+                model: Categoria, as: 'categorias',
+                attributes: ['nome'], where: {nome: 'Maquiagem'}
+            }], 
+        });
+        res.render('list-products', {products, css: ['style.css', 'list-products.css'], js: '' });
     }
 }

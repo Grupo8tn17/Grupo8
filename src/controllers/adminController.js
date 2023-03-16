@@ -1,4 +1,4 @@
-const { Produto, Categoria, Marca } = require("../models");
+const { Produto, Categoria, Marca, Usuario } = require("../models");
 const { validationResult } = require("express-validator");
 const { json } = require("sequelize");
 
@@ -250,5 +250,33 @@ module.exports = {
     await Marca.destroy({ where: {idmarcas: id}})
 
     res.redirect('/admin/marcas');
+  },
+
+  adminUsuarios: async (req, res) => {
+    const usuarios = await Usuario.findAll({where: {idadmin: 1}});
+    
+    return res.render("panelAdmin-usuarios", {
+      usuarios,
+      css: ["panelAdmin-add.css", "panelAdmin-addProducts.css"],
+      js: ["panelAdmin-validation.js"],
+    });
+  },
+
+  addUsuarios: (req, res) => {
+    res.render('panelAdmin-addUsuarios', {errors: {}, css: ["panelAdmin-add.css", "panelAdmin-addProducts.css"],
+    js: ["panelAdmin-validation.js"]})
+  },
+
+  createUsuarios: async (req, res) => {
+    const {nome, sobrenome, email, documento_usuario, telefone, senha} = req.body;
+
+        if(email) {
+            const hashSenha = await bcrypt.hash(senha, 10);
+            await Usuario.create({nome, sobrenome, email, documento_usuario, telefone, senha: hashSenha, idadmin: 1});
+            res.redirect("/admin");
+        }
+
   }
+
+
 };

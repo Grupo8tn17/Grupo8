@@ -5,7 +5,7 @@ const session = require('express-session');
 
 module.exports = {
     indexLogin: (req, res) => {
-        return res.render('login', {erroAuth: {}, errors: {}, css: ['style.css', 'login.css'], js: ''})
+        return res.render('login', {erro: {}, errors: {}, css: ['style.css', 'login.css'], js: ''})
     }, 
 
     logarUsuario: async (req, res) => {
@@ -21,12 +21,15 @@ module.exports = {
                         console.log(usuarios);
                         res.render('user-panel', {usuarios, css: ['style.css', 'user-panel.css'], js: ''});
                     } else {
-                        console.log('Deu erro aqui!')
+                        let erro = {
+                            msg: "Não foi possível realizar o login!"
+                        }
+                        return res.render('login', {erro, errors: {}, css: ['style.css', 'login.css'], js: ''});
                     }
                 })
                 
             } else {
-                return res.render('/login', console.log("Email não encontrado"));
+                
             }
         })
 
@@ -48,7 +51,7 @@ module.exports = {
         console.log(req.session.login);
         if(req.session.login) {
             let idLogin = req.session.login;
-            let usuarios = await Usuario.findByPk(idLogin);
+            let usuarios = await Usuario.findAll({where: {idusuarios: idLogin}});
             console.log(usuarios);
             res.render('user-panel', {usuarios, css: ['style.css', 'user-panel.css'], js: ''});
         } else {

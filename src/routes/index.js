@@ -29,6 +29,8 @@ router.get('/cabelos', productsController.indexCabelos);
 
 router.get('/tratamentos', productsController.indexTratamentos);
 
+router.get('/maquiagem', productsController.indexMaquiagem);
+
 router.get('/sair', userController.deslogarUsuario);
 
 module.exports = router;

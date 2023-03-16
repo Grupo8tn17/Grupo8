@@ -40,5 +40,9 @@ router.get('/marcas/update/:id', adminController.updateMarcasView);
 router.put('/marcas/update/:id', adminController.updateMarcas);
 router.delete('/marcas/delete/:id', adminController.deleteMarcas);
 
+router.get('/usuarios', adminController.adminUsuarios);
+router.get('/usuarios/add', adminController.addUsuarios);
+router.post('/usuarios/create', adminController.createUsuarios);
+
 
 module.exports = router;
