@@ -6,6 +6,10 @@ const adminFormValidation = require('../middleware/admin-form-validation');
 
 
 router.get('/', adminController.indexAdmin);
+router.post('/', adminController.logarAdmin);
+
+router.get('/login', adminController.loginAdmin);
+
 
 router.get('/products', adminController.adminProducts);
 
@@ -43,6 +47,8 @@ router.delete('/marcas/delete/:id', adminController.deleteMarcas);
 router.get('/usuarios', adminController.adminUsuarios);
 router.get('/usuarios/add', adminController.addUsuarios);
 router.post('/usuarios/create', adminController.createUsuarios);
-
+router.get('/usuarios/update/:id', adminController.updateUsuariosView);
+router.put('/usuarios/update/:id', adminController.updateUsuarios);
+router.delete('/usuarios/delete/:id', adminController.deleteUsuarios);
 
 module.exports = router;

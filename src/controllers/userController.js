@@ -17,8 +17,6 @@ module.exports = {
                 bcrypt.compare(senha, usuario.senha, (erro, result) => {
                     if(result) {
                         req.session.login = usuario.idusuarios
-                        console.log("Deu certo!", req.session.login);
-                        console.log(usuarios);
                         res.render('user-panel', {usuarios, css: ['style.css', 'user-panel.css'], js: ''});
                     } else {
                         let erro = {
@@ -48,7 +46,6 @@ module.exports = {
     },
 
     userPanel: async (req, res) => {
-        console.log(req.session.login);
         if(req.session.login) {
             let idLogin = req.session.login;
             let usuarios = await Usuario.findAll({where: {idusuarios: idLogin}});

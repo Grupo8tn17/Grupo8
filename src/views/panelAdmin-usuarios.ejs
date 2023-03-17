@@ -21,8 +21,8 @@
                             <td class="table-id"><%= usuario.idusuarios %></td>
                             <td class="table-name"><%= usuario.nome %></td>
                             <td class="table-action">
-                                <a class="action-edit" href="/admin/marcas/update/<%= usuario.idusuarios %>">Editar</a>
-                                <form  action="/admin/marcas/delete/<%= usuario.idusuarios %>?_method=DELETE" method="POST" id="form">
+                                <a class="action-edit" href="/admin/usuarios/update/<%= usuario.idusuarios %>">Editar</a>
+                                <form  action="/admin/usuarios/delete/<%= usuario.idusuarios %>?_method=DELETE" method="POST" id="form">
                                 <button class="action-delete">Excluir</button>
                                 </form>                           
                             </td>
