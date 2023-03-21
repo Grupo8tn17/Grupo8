@@ -1,4 +1,4 @@
-<%- include('partials/alternative-header') %>
+<%- include('partials/cabecalho-alternativo') %>
 
 <main>
 
@@ -15,7 +15,7 @@
         <h2>LOGIN</h2>
 
 
-        <form action="/user-panel" method="POST">
+        <form action="/painel" method="POST">
           <p class="msgError"><%= erro.msg %></p>
           <div class="input">
             <label for="email"></label>
@@ -47,7 +47,7 @@
         </div>
 
         <div id="buttonRegister">
-          <a href="/registrate"><button type="submit">Clique e cadastre-se</button></a>
+          <a href="/cadastro"><button type="submit">Clique e cadastre-se</button></a>
         </div>
 
         <aside id="desc">
@@ -62,4 +62,4 @@
 
   </main>
 
-  <%- include('partials/alternative-footer') %>
+  <%- include('partials/rodape-alternativo') %>

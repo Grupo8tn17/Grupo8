@@ -8,15 +8,15 @@ module.exports = {
         return res.render('index', {usuarios: {}, productBatom, productPoFacial, css: ['style.css', 'index.css'], js: 'home.js' });
     },
 
-    order: (req, res) => {
-        res.render('order', {css: ['style.css', 'order.css'], js: '' });
+    compra: (req, res) => {
+        res.render('compra', {css: ['style.css', 'compra.css'], js: '' });
     }, 
 
-    onderFinished: (req, res) => {
-        res.render('order-finished', {css: ['style.css', 'order-finished.css'], js: '' })
+    finalizacaoCompra: (req, res) => {
+        res.render('finalizacao-compra', {css: ['style.css', 'finaliza-compra.css'], js: '' })
     }, 
 
-    privacyPolicy: (req, res) => {
-        res.render('privacy-policy', {css: ['style.css', 'privacy-policy.css'], js: '' })
+    mostraPoliticaPrivacidade: (req, res) => {
+        res.render('politica-privacidade', {css: ['style.css', 'politica-privacidade.css'], js: '' })
     }
 }

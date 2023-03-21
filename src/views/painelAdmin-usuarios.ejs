@@ -1,28 +1,28 @@
-<%- include('partials/panelAdmin-header') %>
+<%- include('partials/painelAdmin-cabecalho') %>
 
         <div class="content">
             <div class="container">
-                <h3>Marcas</h3>
+                <h3>Usuários</h3>
                 <div class="box-header">
-                    <h4 class="box-title">Marcas</h3>
+                    <h4 class="box-title">Usuários</h3>
                     <div class="box-tools">
-                        <a href="/admin/marcas/add">Adicionar</a>
+                        <a href="/admin/usuarios/adiciona">Adicionar</a>
                     </div>
                 </div>
                 <div class="box-body">
                     <table class="box-table">
                         <tr>
                             <th class="table-id">ID</th>
-                            <th class="table-name">Nome da Marca</th>
+                            <th class="table-name">Nome do Usuario</th>
                             <th class="table-action">Ações</th>
                         </tr>
                         <tr>
-                            <% for (let marca of marcas) { %>
-                            <td class="table-id"><%= marca.idmarcas %></td>
-                            <td class="table-name"><%= marca.nome %></td>
+                            <% for (let usuario of usuarios) { %>
+                            <td class="table-id"><%= usuario.idusuarios %></td>
+                            <td class="table-name"><%= usuario.nome %></td>
                             <td class="table-action">
-                                <a class="action-edit" href="/admin/marcas/update/<%= marca.idmarcas %>">Editar</a>
-                                <form  action="/admin/marcas/delete/<%= marca.idmarcas %>?_method=DELETE" method="POST" id="form">
+                                <a class="action-edit" href="/admin/usuarios/editar/<%= usuario.idusuarios %>">Editar</a>
+                                <form  action="/admin/usuarios/excluir/<%= usuario.idusuarios %>?_method=DELETE" method="POST" id="form">
                                 <button class="action-delete">Excluir</button>
                                 </form>                           
                             </td>

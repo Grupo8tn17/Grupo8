@@ -1,4 +1,4 @@
-<%- include('partials/header') %>
+<%- include('partials/cabecalho') %>
 
   <div id="banner">
     <img class="firstBanner" src="https://cdn.shopify.com/s/files/1/0525/6934/2107/files/Desk_DUO_1.jpg?v=1669027223"
@@ -58,7 +58,7 @@
     <% productBatom.forEach(productsBatom =>{  %>
     <div class="indexProductsProducts">
       
-      <a href="/products/description/<%= productsBatom.idprodutos %>"> 
+      <a href="/produtos/descricao-produto/<%= productsBatom.idprodutos %>"> 
         <img
           src="/images/products/<%= productsBatom.imagem %>"
           alt="">
@@ -97,7 +97,7 @@
           <li><i class="fa-solid fa-chess-queen"></i> Produtos Oficiais</li>
           <li><i class="fa-solid fa-paw"></i> CrueltyFree and Vegan</li>
         </ul>
-        <a href="/products"><button>ir para as compras</button></a>
+        <a href="/produtos"><button>ir para as compras</button></a>
       </div>
     </div>
   </div>
@@ -114,7 +114,7 @@
     <% productPoFacial.forEach(productsPoFacial =>{  %>
       <div class="indexProductsProducts">
         
-        <a href="/products/description/<%= productsPoFacial.idprodutos %>"> 
+        <a href="/produtos/descricao-produto/<%= productsPoFacial.idprodutos %>"> 
           <img
             src="/images/products/<%= productsPoFacial.imagem %>"
             alt="">
@@ -137,7 +137,7 @@
           poderosa
           que habita em você.
         </p>
-        <a href="/products"><button>
+        <a href="/produtos"><button>
           comprar agora
         </button></a>
       </div>
@@ -179,4 +179,4 @@
 
 
 
-  <%- include('partials/footer') %>
+  <%- include('partials/rodape') %>

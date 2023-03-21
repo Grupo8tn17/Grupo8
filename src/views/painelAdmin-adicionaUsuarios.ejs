@@ -1,11 +1,11 @@
-<%- include('partials/panelAdmin-header') %>
+<%- include('partials/painelAdmin-cabecalho') %>
 
 <div class="content-products">
     <div class="container-products"> 
         <% if (usuario) { %>
-            <form  action="/admin/usuarios/update/<%= usuario.idusuarios %>?_method=PUT" method="POST" id="form">
+            <form  action="/admin/usuarios/editar/<%= usuario.idusuarios %>?_method=PUT" method="POST" id="form">
         <% } else { %>
-        <form  action="/admin/usuarios/create" method="POST" id="form">
+        <form  action="/admin/usuarios/adiciona" method="POST" id="form">
             <% } %>
             <div class="box">
                 <div class="box-header">

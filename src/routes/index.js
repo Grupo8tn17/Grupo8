@@ -1,37 +1,40 @@
 var express = require('express');
 var router = express.Router();
 const indexController = require('../controllers/indexController');
-const userController = require('../controllers/userController');
-const cartConctroller = require('../controllers/cartController');
-const productsController = require('../controllers/productsController');
-const cadastroUserValidation = require('../middleware/cadastro-user-validation');
+const usuarioController = require('../controllers/usuarioController');
+const carrinhoController = require('../controllers/carrinhoController');
+const produtoController = require('../controllers/produtoController');
+const validacaoCadastroUsuario = require('../middleware/validacao-cadastro-usuario');
 
 //Home
 router.get('/', indexController.index);
 
-router.get('/cart', cartConctroller.mostraCarrinho);
+router.get('/carrinho', carrinhoController.mostraCarrinho);
+router.get('/endereco', carrinhoController.obterEnderecoPorCep);
+router.get('/frete', carrinhoController.calcularFrete);
 
-router.get('/login', userController.indexLogin);
-router.post('/user-panel', userController.logarUsuario);
-router.get('/user-panel', userController.userPanel);
+
+router.get('/login', usuarioController.mostraLogin);
+router.post('/painel', usuarioController.logarUsuario);
+router.get('/painel', usuarioController.mostraPainelUsuario);
 
 //Cadastro Usuário
-router.get('/registrate', userController.registrate);
-router.post('/registrate/create', cadastroUserValidation, userController.createUser);
+router.get('/cadastro', usuarioController.mostraCadastro);
+router.post('/cadastro/adiciona', validacaoCadastroUsuario, usuarioController.adicionaUsuario);
 
-router.get('/checkout/order', indexController.order);
+router.get('/checkout/order', indexController.compra);
 
-router.get('/checkout/order-finished', indexController.onderFinished);
+router.get('/checkout/order-finished', indexController.finalizacaoCompra);
 
-router.get('/privacy-policy', indexController.privacyPolicy);
+router.get('/politica-privacidade', indexController.mostraPoliticaPrivacidade);
 
-router.get('/cabelos', productsController.indexCabelos);
+router.get('/cabelos', produtoController.mostraCabelos);
 
-router.get('/tratamentos', productsController.indexTratamentos);
+router.get('/tratamentos', produtoController.mostraTratamentos);
 
-router.get('/maquiagem', productsController.indexMaquiagem);
+router.get('/maquiagem', produtoController.mostraMaquiagem);
 
-router.get('/sair', userController.deslogarUsuario);
+router.get('/sair', usuarioController.deslogarUsuario);
 
 module.exports = router;
 

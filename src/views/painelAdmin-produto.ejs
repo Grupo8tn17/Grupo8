@@ -1,4 +1,4 @@
-<%- include('partials/panelAdmin-header') %>
+<%- include('partials/painelAdmin-cabecalho') %>
 
         <div class="content">
             <div class="container">
@@ -6,7 +6,7 @@
                 <div class="box-header">
                     <h4 class="box-title">Produtos</h3>
                     <div class="box-tools">
-                        <a href="/admin/add">Adicionar</a>
+                        <a href="/admin/adiciona">Adicionar</a>
                     </div>
                 </div>
                 <div class="box-body">
@@ -27,8 +27,8 @@
                             <td class="table-picture"><img src="/images/products/<%= product.imagem %> " alt=""></td>
                             <td class="table-price"><%= product.valor %></td>
                             <td class="table-action">
-                                <a class="action-edit" href="/admin/update/<%= product.idprodutos %> ">Editar</a>
-                                <a class="action-delete" href="/admin/delete/<%= product.idprodutos %> ">Excluir</a>                              
+                                <a class="action-edit" href="/admin/editar/<%= product.idprodutos %> ">Editar</a>
+                                <a class="action-delete" href="/admin/excluir/<%= product.idprodutos %> ">Excluir</a>                              
                             </td>
                         </tr>
                         <% } %>

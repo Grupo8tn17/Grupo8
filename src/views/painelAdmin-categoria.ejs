@@ -1,4 +1,4 @@
-<%- include('partials/panelAdmin-header') %>
+<%- include('partials/painelAdmin-cabecalho') %>
 
         <div class="content">
             <div class="container">
@@ -6,7 +6,7 @@
                 <div class="box-header">
                     <h4 class="box-title">Categorias</h3>
                     <div class="box-tools">
-                        <a href="/admin/categorias/add">Adicionar</a>
+                        <a href="/admin/categorias/formulario">Adicionar</a>
                     </div>
                 </div>
                 <div class="box-body">
@@ -22,8 +22,8 @@
                             <td class="table-id"><%= categoria.idcategorias %></td>
                             <td class="table-name"><%= categoria.nome %></td>
                             <td class="table-action">
-                                <a class="action-edit" href="/admin/categorias/update/<%= categoria.idcategorias %>">Editar</a>
-                                <form action="/admin/categorias/delete/<%= categoria.idcategorias %>?_method=DELETE" method="POST" id="form">
+                                <a class="action-edit" href="/admin/categorias/editar/<%= categoria.idcategorias %>">Editar</a>
+                                <form action="/admin/categorias/excluir/<%= categoria.idcategorias %>?_method=DELETE" method="POST" id="form">
                                 <button type="submit" class="action-delete">Excluir</button>
                                 </form>
                                                               

@@ -51,3 +51,4 @@ productsBox.addEventListener('mouseleave', function () {
     imgProduct.style.transform = 'scale(1)';
 })
 
+

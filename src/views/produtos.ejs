@@ -1,4 +1,4 @@
-<%- include('partials/header') %>
+<%- include('partials/cabecalho') %>
 
 <main>
   <div class="container-principal">
@@ -102,7 +102,7 @@
         <div class="container">
           <% for ( let itemProducts of products) { %>
           <div class="indexProductsProducts">
-            <a href="/products/description/<%= itemProducts.idprodutos %> "> <img
+            <a href="/produtos/descricao-produto/<%= itemProducts.idprodutos %> "> <img
                 src="/images/products/<%= itemProducts.imagem %> "
                 alt="">
               <p class="indexProductsDescription"><%= itemProducts.titulo %></p>
@@ -119,4 +119,4 @@
   </div>
 </main>
 
-<%- include('partials/footer') %>
+<%- include('partials/rodape') %>

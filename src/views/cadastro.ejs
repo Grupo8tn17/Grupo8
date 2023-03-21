@@ -1,4 +1,4 @@
-<%- include('partials/alternative-header') %>
+<%- include('partials/cabecalho-alternativo') %>
 
   <main>
     <div id="new-customer">
@@ -7,7 +7,7 @@
       <h2>Dados Pessoais</h2>
     </div>
 
-    <form method="POST" action="/registrate/create" class="registrationForm">
+    <form method="POST" action="/cadastro/adiciona" class="registrationForm">
 
       <section id="personal-data">
 
@@ -68,8 +68,8 @@
 
           <div class="checkbox">
             <input type="checkbox" name="privacy-policy" id="privacy-policy" required="required" value="true">
-            <label for="privacy-policy">Concordo com a <a href="/privacy-policy">política de privacidade</a> e os
-              <a href="/privacy-policy">termos de uso</a>.</label>
+            <label for="privacy-policy">Concordo com a <a href="/politica-privacidade">política de privacidade</a> e os
+              <a href="/politica-privacidade">termos de uso</a>.</label>
           </div>
 
           <div class="personal-data-button">
@@ -82,4 +82,4 @@
     </form>
   </main>
 
-  <%- include('partials/alternative-footer') %>
+  <%- include('partials/rodape-alternativo') %>

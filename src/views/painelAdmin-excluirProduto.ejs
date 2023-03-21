@@ -1,4 +1,4 @@
-<%- include('partials/panelAdmin-header') %>
+<%- include('partials/painelAdmin-cabecalho') %>
 
         <div class="content-products">
             <div class="container-products">
@@ -19,8 +19,8 @@
                                         <div class="modal-body">
                                             <p>Tem certeza que deseja Excluir esse Registro? </p>
                                             <div class="modal-buttons">                                            
-                                            <a id="close-modal" class="button-cancel" href="/admin/products">Cancelar</a>  
-                                            <form  action="/admin/delete/<%= product.idprodutos %>?_method=DELETE " method="POST" id="form">                                   
+                                            <a id="close-modal" class="button-cancel" href="/admin/produtos">Cancelar</a>  
+                                            <form  action="/admin/excluir/<%= product.idprodutos %>?_method=DELETE " method="POST" id="form">                                   
                                                 <input type="submit" class="button-delete" value="Excluir" id="">   
                                             </form>                                 
                                             </div>

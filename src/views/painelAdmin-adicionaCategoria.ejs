@@ -1,4 +1,4 @@
-<%- include('partials/panelAdmin-header') %>
+<%- include('partials/painelAdmin-cabecalho') %>
 
 
         <div class="content-products">
@@ -10,9 +10,9 @@
                 <% } %>    
                     
                  <% if (categorias) { %>
-                    <form action="/admin/categorias/update/<%= categorias.idcategorias%>?_method=PUT" method="POST" id="form">
+                    <form action="/admin/categorias/editar/<%= categorias.idcategorias%>?_method=PUT" method="POST" id="form">
                  <% } else { %>    
-                    <form  action="/admin/categorias/create" method="POST" id="form">
+                    <form  action="/admin/categorias/adiciona" method="POST" id="form">
                 <% } %>
                     <div class="box">
                         <div class="box-header">
