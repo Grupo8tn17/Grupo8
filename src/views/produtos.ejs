@@ -2,85 +2,40 @@
 
 <main>
   <div class="container-principal">
-    <asside>
-      <div class="menu-filter" id="menu-filter">
-        <button id="button-closed-filter">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="45"
-            height="45"
-            fill="currentColor"
-            class="bi bi-x"
-            viewBox="0 0 16 16"
-          >
-            <path
-              d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"
-            />
-          </svg>
-        </button>
-        <h3>Filtros</h3>
-        <button class="button-clear">Limpar Filtros</button>
-        <span>Categorias</span>
-        <div class="list-filter">
-          <ul>
-            <li>
-              <div class="itens-checkbox">
-                <input type="checkbox" name="Batom" id="" />
-                <label for="batom">Batom</label>
-              </div>
-            </li>
-            <li>
-              <div class="itens-checkbox">
-                <input type="checkbox" name="Blush" id="" />
-                <label for="blush">Blush</label>
-              </div>
-            </li>
-            <li>
-              <div class="itens-checkbox">
-                <input type="checkbox" name="bruma" id="" />
-                <label for="bruma">Bruma</label>
-              </div>
-            </li>
-            <li>
-              <div class="itens-checkbox">
-                <input type="checkbox" name="contorno" id="" />
-                <label for="contorno">Contorno</label>
-              </div>
-            </li>
-            <li>
-              <div class="itens-checkbox">
-                <input type="checkbox" name="esponja" id="" />
-                <label for="esponja">Esponja</label>
-              </div>
-            </li>
-            <li>
-              <div class="itens-checkbox">
-                <input type="checkbox" name="iluminador" id="" />
-                <label for="iluminador">Iluminador</label>
-              </div>
-            </li>
-            <li>
-              <div class="itens-checkbox">
-                <input type="checkbox" name="lip-oil" id="" />
-                <label for="lip-oil">Lip Oil</label>
-              </div>
-            </li>
-            <li>
-              <div class="itens-checkbox">
-                <input type="checkbox" name="po-facial" id="" />
-                <label for="po-facial">Pó Facial</label>
-              </div>
-            </li>
-            <li>
-              <div class="itens-checkbox">
-                <input type="checkbox" name="sombras" id="" />
-                <label for="sombras">Sombras</label>
-              </div>
-            </li>
-          </ul>
-        </div>
+    <div class="menu-filter">
+      <h3>Filtros</h3>
+      <div class="list-filter">
+          <li class="item">
+            <div class="item-icon categorias">
+              <a href="">Categorias</a><button><i class="fa-solid fa-angle-down"></i></button>
+            </div>
+              <ul class="item-ul-categorias removed">
+                <li>
+                  <% for(let categorias of categoria) { %>
+                  <div class="item-input">
+                    <input type="checkbox" name="<%= categorias.nome %>" id="cabelos">
+                    <label for="<%= categorias.nome %>"><%= categorias.nome %></label>
+                  </div>
+                 <% } %>
+                </li>
+              </ul>
+          </li>
+          <li class="item">
+            <div class="item-icon marcas">
+              <a href="">Marcas</a><button><i class="fa-solid fa-angle-down"></i></button>
+            </div>
+              <ul class="item-ul-marcas removed">
+                <li>
+                  <% for (let marcas of marca) { %>
+                  <div class="item-input">
+                    <input type="checkbox" name="<%= marcas.nome %>" id="cabelos">
+                    <label for="<%= marcas.nome %>"><%= marcas.nome %></label>
+                  </div>
+                  <% } %>
+                </li>
+              </ul>
       </div>
-    </asside>
+    </div>  
     <button id="button-filter">Filtrar</button>
     <div class="container-produtos">
       <div class="container-order">    

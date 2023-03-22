@@ -21,88 +21,81 @@ main .container-principal {
     margin-top: 2rem;
 }
 
-
-main asside .menu-filter{
-   display: flex;
-   justify-content: flex-start;
-   position: fixed;
-   background-color: #4E6122;
-   height: 100vh;
-   width: 50%;
-   left: 0;
-   top: 0;
-   z-index: 100;
-   animation: 1s;
-   margin-left: -100%;
-}
-
-@keyframes showSidebar {
-    from {margin-left: -100%;}
-    top {margin-left: 0;}
-}
-
-.menu-filter #button-closed-filter {
-    display: flex;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    color: #fff;
-    padding: 2rem 0;    
+.menu-filter {
+    border-radius: 0.25rem;
+    border: .5px solid #c3c3c3;
+    margin-left: 2rem;
 }
 
 .menu-filter h3 {
-    color: #fff;
-    margin-bottom: 2rem;
-} 
+    display: flex;
+    align-items: flex-start;
+    font-size: 1.3rem;
+    width: 100%;    
+    padding: 1.5rem;
+    border-bottom: 1px solid #c3c3c3;
+}
 
-.menu-filter span {
+.list-filter {
     width: 100%;
     display: flex;
     align-items: flex-start;
-    color: white;
-    margin-left: 1.5rem;
-    margin-bottom: 1rem;
-    text-align: start;
 }
 
-.menu-filter .button-clear {
-    background-color: #BFD68B;
-    border: none;
-    padding: .5rem;
-    width:  100%;
-    color: white;
-    cursor: pointer;
-    width: 90%;
+.list-filter .item {
+    display: flex;
+    align-items: flex-start;
     font-weight: bold;
-    margin-bottom: 2rem;
+    width: 100%;
+    border-bottom: .5px solid #c3c3c3;
+    padding: 1rem;
 }
 
-.menu-filter ul {
+.item-icon {
+    width: 100%;
     display: flex;
-    width: 90%;
-    align-items: flex-start;
-    margin: 1rem;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
 }
 
-.menu-filter ul li {
-    display: flex;
+.item-icon a {
+    text-decoration: none;
+    color: black;
+}
+
+.item-icon button {
+    text-decoration: none;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.removed{
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    justify-content: flex-start;
     align-items: flex-start;
 }
 
-.menu-filter .itens-checkbox {
+.item-input {
+    margin-top: 1rem;
+    margin-bottom: .5rem;
+    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    align-items: flex-start;
-    width: 100%;
 }
 
-.menu-filter .itens-checkbox label {
-
-    margin-left: .6rem;
-    color: white;
+.item-input input {
+    margin-right: .5rem;
 }
 
+.item-input label {
+    font-weight: 500;
+    font-size: 1rem;
+}
 
 main #button-filter {
     z-index: 10;
@@ -228,96 +221,12 @@ main hr {
         grid-template-columns: 20% 80%;
     }
     
-    main asside {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        margin-left: 2rem;
-        padding: 4rem;
-        width: 100%;
-    }
-    
-    main asside h3 {
-        padding: 1rem;
-    }
-    
-    main asside button {
-        background-color: #4E6122;
-        border: none;
-        padding: .5rem;
-        width:  100%;
-        color: white;
-    }
-    
-    main asside span {
-        padding: 1rem;
-    }
-    
-    main asside ul {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-    
-    }
-    
-    main asside ul li {
-        display: flex;
-        flex-direction: row;
-        align-items: flex-start;
-        justify-content: flex-start;
-        padding: .1rem;
-    }
-    
-    main asside ul li .itens-checkbox {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-    }
-    
-    main asside ul li .itens-checkbox label {
-        padding-left: .5rem;
-    }
+
 
     main #button-filter {
         display: none;
     }
-
-    main asside .menu-filter{
-        display: flex;
-        justify-content: flex-start;
-        position: static;
-        background-color: initial;
-        width: 100%;
-        margin-left: 0;
-        z-index: 0;
-     }
-
-     .menu-filter h3 {
-        color: black;
-        margin-bottom: 2rem;
-        display: flex;
-        align-items: flex-start;
-        width: 100%;
-    } 
-
-    .menu-filter .button-clear {
-        background-color: #4E6122;
-    }
-
-    .menu-filter span {
-        color: black;
-        font-weight: bold;
-        padding: 0;
-    }
-
-    .menu-filter .itens-checkbox label {
-        color: black;
-        font-weight: 500;
-    }
-
-     .menu-filter #button-closed-filter {
-        display: none;
-     }
+    
     
     main .container-produtos {
         display: flex;

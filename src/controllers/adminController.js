@@ -3,6 +3,8 @@ const { validationResult } = require("express-validator");
 const { json } = require("sequelize");
 const bcrypt = require("bcrypt");
 
+
+
 module.exports = {
 
   loginAdmin: (req, res) => {
