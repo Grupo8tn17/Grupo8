@@ -1,0 +1,40 @@
+<%- include('partials/painelAdmin-cabecalho') %>
+
+        <div class="content-products">
+            <div class="container-products">
+                <% if(categorias) {%>
+                <h3>Editar Categoria</h3>
+                <% } else { %>    
+                <h3>Adicionar Categoria</h3>
+                <% } %>    
+                    
+                 <% if (categorias) { %>
+                    <form action="/admin/categorias/editar/<%= categorias.idcategorias%>?_method=PUT" method="POST" id="form">
+                 <% } else { %>    
+                    <form  action="/admin/categorias/adiciona" method="POST" id="form">
+                <% } %>
+                    <div class="box">
+                        <div class="box-header">
+                            
+                            
+                            <h4 class="box-title">Nova Categoria</h4>
+                            <div class="box-tools">
+                                <input type="submit" value="Salvar">
+                            </div>
+                        </div>
+                        <div class="box-body">
+
+                            <div class="form-group">
+                                <label for="p_name">Nome da Categoria</label>
+                                
+                                <input  type="text" id="p_name" name="nome" value="<%= categorias?.nome %>"/>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            
+            </div>
+        </div>
+    </main>
+</body>
+</html>

@@ -71,7 +71,7 @@ body {
   justify-content: center;
   padding: 2rem;
   width: 65rem;
-  height: 25rem;
+  height: 35rem;
   box-shadow: 4px 4px 4px 4px var(--gray);
 }
 
@@ -142,6 +142,14 @@ transform: translateX(-2px);
   align-items: center;
 }
 
+.first-login-buttom a {
+  color: black;
+}
+
+.first-login-buttom a:hover {
+  text-decoration: underline;
+}
+
 #first-login button {
   width: 17rem;
   height: 3rem;
@@ -149,6 +157,7 @@ transform: translateX(-2px);
   text-align: center;
   color: #f7f4eb;
   border-radius: 3rem;
+  cursor: pointer;
 }
 
 #second-login {
@@ -171,6 +180,7 @@ transform: translateX(-2px);
   justify-content: center;
   align-items: center;
   gap: 2rem 1rem;
+  cursor: pointer;
 }
 
 #desc {
@@ -193,4 +203,12 @@ transform: translateX(-2px);
 #buttonGoogle img {
   max-width: 2.5rem;
   border-radius: 1rem;
+}
+
+.input p.msgError {
+  min-height: 1rem;
+  font-style: italic;
+  color: red;
+  padding: .5rem;
+  margin-left: 1.5rem;
 }

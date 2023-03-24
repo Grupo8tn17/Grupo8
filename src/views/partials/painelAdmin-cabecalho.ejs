@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <% for(let i = 0; i < css.length; i ++) { %>
+        <link rel="stylesheet" href="/stylesheets/<%= css[i] %>">
+    <% } %>    
+        <% for(let i = 0; i < js.length; i ++) { %>
+            <script src="/javascripts/<%= js[i] %>" defer></script>
+            <% } %>
+    <script src="https://kit.fontawesome.com/0ad644d1e0.js" crossorigin="anonymous"></script>
+    <title>Painel Administrativo - Infinity Cosméticos</title>
+</head>
+<body>
+    <header>
+        <div class="info-header">
+            <div class="header-logo">
+                <a href="/admin"><img src="/images/Logo3PNG.png" alt=""></a>          
+              <a href="/admin"><span><strong>Infinity</strong> Cosméticos</span></a>
+            </div>
+        </div>    
+        <div class="info-header">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <i class="fa-solid fa-envelope"></i>
+            <i class="fa-solid fa-user"></i>
+        </div>
+        
+    </header>
+    
+    <main>
+        
+        <div class="sidebar">
+            <nav>    
+                <a class="link-sidebar" href="/admin">
+                    <img src="/images/home.png" alt="">
+                    <span>Home</span>
+                </a>          
+                <a class="link-sidebar" href="/admin/categorias">
+                    <img src="/images/category.png" alt="">
+                    <span>Categorias</span>
+                </a>
+                <a class="link-sidebar" href="/admin/marcas">
+                    <img src="/images/brand.png" alt="">
+                    <span>Marcas</span>
+                </a>
+                <a class="link-sidebar" href="/admin/produtos">
+                    <img src="/images/product.png" alt="">
+                    <span>Produtos</span>
+                </a>
+                <a class="link-sidebar" href="/admin/usuarios">
+                    <img src="/images/user.png" alt="">
+                    <span>Usuarios</span>
+                </a>
+            </nav>
+        </div>

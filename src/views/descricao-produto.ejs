@@ -1,0 +1,82 @@
+<%- include('partials/cabecalho') %>
+
+  <div class="container">
+    <div class="links-filter">
+      <a href="">Home ></a>
+      <a href="">Marcas de A-Z ></a>
+      <a href="">Gestante e Bebê ></a>
+      <a href="">Bebê</a>
+    </div>
+    <div class="products">
+      <% for(let product of listproducts) { %>
+          <div class="products-left">
+            <img id="img-product" src="/images/products/<%= product.imagem %> " alt="Imagem do Produto">
+          </div>
+          <div class="products-rigth">
+            <div class="products-reference">
+              <div class="products-categories">
+                <a href="">
+                  <%= product.marca %>
+                </a>
+                <span class="code-product">Ref: <%= product.idprodutos %></span>
+              </div>
+              <div class="products-favorite">
+                <img src="/images/icon-whishlist-add-v2.png" alt="">
+              </div>
+            </div>
+            <div class="title-product">
+              <h3>
+                <%= product.titulo%>
+              </h3>
+              <img src="/images/compartilhar.png" alt="">
+            </div>
+            <div class="stars-rating">
+              <img src="/images/estrela.png" alt="">
+              <img src="/images/estrela.png" alt="">
+              <img src="/images/estrela.png" alt="">
+              <img src="/images/estrela.png" alt="">
+              <img src="/images/estrela.png" alt="">
+              <span>9 Avaliações</span>
+            </div>
+            <div class="product-price">
+              <h5>De: 19,90</h5>
+              <span>Por:<strong>R$ <span id="price">
+                    <%= product.valor%>
+                  </span> </strong></span>
+            </div>
+            <div class="product-add">
+              <div class="button-add">
+                <button id="button-small">-</button>
+                <span class="quantity-products" id="qtdProducts">1</span>
+                <button id="button-larger">+</button>
+              </div>
+              <a href="/carrinho"><button class="add-cart" id="add-cart">Adicionar</button></a>
+            </div>
+            <div class="calculator-freight">
+              <div class="freight-header">
+                <img src="/images/caminhao-de-entrega.png" alt="">
+                <span>Consulte o frete e a disponibilidade</span>
+              </div>
+              <div class="freight-field">
+                <input type="number">
+                <button>Calcular</button>
+              </div>
+            </div>
+          </div>
+    </div>
+    <div class="products-tables">
+      <div class="assessments">
+        <button id="rating">Avaliações</button>
+        <button id="info-product">Informações do produto</button>
+      </div>
+      <div class="description-product">
+        <div class="products-composition">
+          <%= product.descricao %>
+        </div>
+      </div>
+    </div>
+    
+
+      <% } %>
+  </div>
+  <%- include('partials/rodape') %>

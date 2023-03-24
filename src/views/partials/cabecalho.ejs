@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://kit.fontawesome.com/a332a576a0.js" crossorigin="anonymous"></script>
+  <link rel="shortcut icon" href="images/infinityCosmeticos.ico" type="image/x-icon" />
+  <% for(let i = 0; i < css.length; i ++) { %>
+  <link rel="stylesheet" href="/stylesheets/<%= css[i] %>">
+  <% } %> 
+  <% for (let i = 0; i < js.length; i ++) { %> 
+  <script src="/javascripts/<%= js[i] %>" defer></script>
+  <% } %> 
+  <title>Infinity Cosmeticos</title>
+</head>
+
+<body>
+    <div class="banner-frete"><a>GRÁTIS ACIMA DE R$ 249,90 - TODO BRASIL</a></div>
+    <header id="header">
+      <div class="header-principal">
+        <div class="container-header">
+        <div class="header-logo">
+            <a href="/"><img src="/images/Logo3PNG.png" alt=""></a>          
+          <a href="/"><span><strong>Infinity</strong> Cosméticos</span></a>
+        </div>
+        <div class="header-search">
+          <input class="header-input" type="search" name="pesquisa" placeholder="Pesquisar Produto...">
+          <button><img src="/images/lupa-arredondada.png" alt=""></button>
+        </div>  
+        <div class="header-links">
+          <div class="links-favorites">
+            <img src="/images/coracao.png" alt="">
+            <a href="/login">Lista de Desejos</a>
+          </div>
+          <div class="links-account">
+            <img src="/images/account2.png" alt="">
+            <a href="/painel">Minha Conta</a>
+          </div>
+          <div class="links-cart">
+            <a href="/carrinho"><img src="/images/shopping-bag.png" alt=""></a>
+          </div>
+        </div>
+        </div>
+        <div class="navbar">
+          <div class="navbar-products">
+            <a href="/produtos"><img src="/images/menu-arredondado.png" alt=""></a>
+            <a href="/produtos"><span>Todos os departamentos</span></a>
+          </div>
+          <div class="navbar-listcategories">
+            <li><a href="/cabelos">Cabelos</a></li>
+            <li><a href="/tratamentos">Tratamentos</a></li>
+            <li><a href="/corpoebanho">Corpo e Banho</a></li>
+            <li><a href="/maquiagem">Maquiagem</a></li>
+            <li><a href="/aromaterapia">Aromaterapia</a></li>
+          </div>
+        </div>
+      </div>
+    </header>
