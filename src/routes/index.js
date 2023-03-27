@@ -34,6 +34,10 @@ router.get('/tratamentos', produtoController.mostraTratamentos);
 
 router.get('/maquiagem', produtoController.mostraMaquiagem);
 
+router.get('/corpoebanho', produtoController.mostrarCorpoeBanho);
+
+router.get('/aromaterapia', produtoController.mostarAromaterapia);
+
 router.get('/sair', usuarioController.deslogarUsuario);
 
 module.exports = router;
