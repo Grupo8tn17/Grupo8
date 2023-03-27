@@ -16,7 +16,7 @@ module.exports = {
       const { cep } = req.query;
       const endereco = await pesquisaPorCep(cep);
 
-      return res.render('cart', endereco);
+      return res.render('carrinho', {css: ['style.css', 'cart.css', 'headerAlternative.css'], js: ["cart.js"], endereco});
       
     } catch (erro) {
       console.log(erro);
@@ -35,7 +35,7 @@ module.exports = {
         const regiaoConhecida = uf in valoresFretePorRegiao;
         const valorFrete = valoresFretePorRegiao [regiaoConhecida ? uf : 'Outros'];
 
-        return res.render('cart', {css: ['style.css', 'cart.css', 'headerAlternative.css'], js: ["cart.js"],  valorFrete });
+        return res.render('carrinho', {css: ['style.css', 'carrinho.css'], js: ["carrinho.js"],  valorFrete });
         
     } catch (erro) {
         console.log(erro);
