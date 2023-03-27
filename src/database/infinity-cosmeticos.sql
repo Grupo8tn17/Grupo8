@@ -47,6 +47,7 @@ CREATE TABLE usuarios (
     foto_usuario VARCHAR(100) NOT NULL
 );
 
+
 CREATE TABLE pedidos (
 	idpedidos INT UNSIGNED PRIMARY KEY AUTO_INCREMENT NOT NULL,
     codigo_pedido INT NOT NULL, 
