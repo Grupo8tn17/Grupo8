@@ -45,9 +45,23 @@ module.exports = {
   },
 
   adicionaProduto: async (req, res) => {
-    //inlcui array de erros
     const categorias = await Categoria.findAll();
     const marcas = await Marca.findAll();
+
+    //inclusão middleware de validacao:
+    let { errors } = validationResult(req);
+    console.log(errors, 'erro add produto')
+
+    if (errors.length) {
+
+      const errorsFormated = {};
+      errors.forEach((error) => (errorsFormated[error.param] = error.msg));
+
+      return res.render('painelAdmin-adicionaProduto', {
+        errors: errorsFormated,
+        product: req.body,
+      });
+    }
 
     res.render("painelAdmin-adicionaProduto", {
       categorias,
@@ -223,7 +237,8 @@ module.exports = {
 
   mostraDescricaoProduto: async (req, res) => {
     const { id } = req.params;
-    const listproducts = await Produto.findAll({ where: { idprodutos: id } });
+    const listproducts = await Produto.findAll({include: [{
+      model: Categoria, as: 'categorias'}, {model: Marca, as: 'marcas'}], where: { idprodutos: id } });
     res.render('descricao-produto', { listproducts: listproducts, css: ['style.css', 'descricao-produto.css'], js: ['descricao-produto.js', 'adiciona-carrinho.js'] })
   },
 
@@ -236,7 +251,11 @@ module.exports = {
         attributes: ['nome'], where: { nome: 'Cabelos' }
       }],
     });
-    res.render('produtos', {categoria: categoria, marca: marca, products, css: ['style.css', 'produtos.css'], js: ['parcelamento.js'] });
+    if(products == []) {
+      return res.render('erro-404', {categoria: categoria, marca: marca, products: products, css: ['style.css', 'produtos.css'], js: [] });
+    } else {
+      return res.render('produtos', {categoria: categoria, marca: marca, products, css: ['style.css', 'produtos.css'], js: ['produtos.js'] });
+    }
   },
 
   mostraTratamentos: async (req, res) => {
@@ -248,7 +267,27 @@ module.exports = {
         attributes: ['nome'], where: { nome: 'Tratamentos' }
       }],
     });
-    res.render('produtos', {categoria: categoria, marca: marca, products, css: ['style.css', 'produtos.css'], js: '' });
+    if(products == []) {
+      return res.render('erro-404', {categoria: categoria, marca: marca, products: products, css: ['style.css', 'produtos.css'], js: [] });
+    } else {
+      return res.render('produtos', {categoria: categoria, marca: marca, products, css: ['style.css', 'produtos.css'], js: ['produtos.js'] });
+    }
+  },
+
+  mostrarCorpoeBanho: async (req, res) => {
+    const categoria = await Categoria.findAll();
+    const marca = await Marca.findAll()
+    let products = await Produto.findAll({
+      include: [{
+        model: Categoria, as: 'categorias',
+        attributes: ['nome'], where: { nome: 'Corpo e Banho' }
+      }],
+    });
+    if(products == []) {
+      return res.render('erro-404', {categoria: categoria, marca: marca, products: products, css: ['style.css', 'produtos.css'], js: [] });
+    } else {
+      return res.render('produtos', {categoria: categoria, marca: marca, products, css: ['style.css', 'produtos.css'], js: ['produtos.js'] });
+    }
   },
 
   mostraMaquiagem: async (req, res) => {
@@ -260,6 +299,28 @@ module.exports = {
         attributes: ['nome'], where: { nome: 'Maquiagem' }
       }],
     });
-    res.render('produtos', {categoria: categoria, marca: marca, products, css: ['style.css', 'produtos.css'], js: '' });
+    if(products == []) {
+      return res.render('erro-404', {categoria: categoria, marca: marca, products: products, css: ['style.css', 'produtos.css'], js: [] });
+    } else {
+      return res.render('produtos', {categoria: categoria, marca: marca, products, css: ['style.css', 'produtos.css'], js: ['produtos.js'] });
+    }
+  },
+
+  mostarAromaterapia: async (req, res) => {
+    const categoria = await Categoria.findAll();
+    const marca = await Marca.findAll()
+    let products = await Produto.findAll({
+      include: [{
+        model: Categoria, as: 'categorias',
+        attributes: ['nome'], where: { nome: 'Aromaterapia' }
+      }],
+    });
+
+    if(products == []) {
+      return res.render('erro-404', {categoria: categoria, marca: marca, products: products, css: ['style.css', 'produtos.css'], js: [] });
+    } else {
+      return res.render('produtos', {categoria: categoria, marca: marca, products, css: ['style.css', 'produtos.css'], js: ['produtos.js'] });
+    }
+    
   }
 }
