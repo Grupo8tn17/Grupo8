@@ -1,0 +1,73 @@
+<%- include('partials/cabecalho') %>
+
+<main>
+  <div class="container-principal">
+    <div class="menu-filter">
+      <h3>Filtros</h3>
+      <div class="list-filter">
+        <li class="item">
+          <div class="item-icon categorias">
+            <a href="">Categorias</a
+            ><button><i class="fa-solid fa-angle-down"></i></button>
+          </div>
+          <ul class="item-ul-categorias removed">
+            <li>
+              <% for(let categorias of categoria) { %>
+              <div class="item-input">
+                <input
+                  type="checkbox"
+                  name="<%= categorias.nome %>"
+                  id="cabelos"
+                />
+                <label for="<%= categorias.nome %>"
+                  ><%= categorias.nome %></label
+                >
+              </div>
+              <% } %>
+            </li>
+          </ul>
+        </li>
+        <li class="item">
+          <div class="item-icon marcas">
+            <a href="">Marcas</a
+            ><button><i class="fa-solid fa-angle-down"></i></button>
+          </div>
+          <ul class="item-ul-marcas removed">
+            <li>
+              <% for (let marcas of marca) { %>
+              <div class="item-input">
+                <input type="checkbox" name="<%= marcas.nome %>" id="cabelos" />
+                <label for="<%= marcas.nome %>"><%= marcas.nome %></label>
+              </div>
+              <% } %>
+            </li>
+          </ul>
+        </li>
+      </div>
+    </div>
+    <button id="button-filter">Filtrar</button>
+    <div class="container-produtos">
+      <div class="container-order">
+        <section class="section-filter">
+          <span>Home / </span>
+          <div class="order">
+            <span>Ordenar por:</span>
+            <select name="Ordenar" id="ordenar">
+              <option value="" selected>Lançamento</option>
+              <option value="">Batom</option>
+              <option value="">Blush</option>
+            </select>
+          </div>
+        </section>
+      </div>
+      <hr />
+      <div class="container">
+        <img src="/images/produto-nao-encontrado.png" alt="">
+        <h1>Produto Não Encontrado</h1>
+        <h4>Mas temos um monte de produtos que você vai adorar...</h4>
+      </div>
+    </div>
+  </div>
+</main>
+
+<%- include('partials/rodape') %>

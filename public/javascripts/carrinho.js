@@ -105,7 +105,7 @@ function buildCart() {
     cartProduct.innerHTML +=
       '<tr id="' +
       objectCart[i].id +
-      '" class="item-product">' +
+      '"<div class="item-product">' +
       '<td class="id" style="min-width: 7rem;">' +
       objectCart[i].id +
       "</td>" +
@@ -123,7 +123,7 @@ function buildCart() {
       toReal(objectCart[i].price) +
       "</span></td>" +
       '<td style="width: 10rem;"> ' +
-      "<div>" +
+      '<div class="button-add">'  +
       '<button class="btnAdd">+</button>' +
       '<span class="quantity">' +
       objectCart[i].quantity +
@@ -139,7 +139,8 @@ function buildCart() {
       '<td style="width: 8rem;">' +
       '<button class="btnRemove"> X </button>' +
       "</td>" +
-      "</tr>";
+      "</tr>" +
+      "<hr/>";
   }
 }
 

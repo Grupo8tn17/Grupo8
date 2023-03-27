@@ -2,7 +2,7 @@
 
 <div class="content-products">
     <div class="container-products"> 
-        <% if (usuario) { %>
+        <% if (!usuario) { %>
             <form  action="/admin/usuarios/editar/<%= usuario.idusuarios %>?_method=PUT" method="POST" id="form">
         <% } else { %>
         <form  action="/admin/usuarios/adiciona" method="POST" id="form">
