@@ -61,15 +61,6 @@ module.exports = {
 
   async  criaProdutos (req, res) {
     try {
-      const { titulo, marca, categoria, descricao, quantidade, valor, ativo } = req.body;
-      const imagem = req.files[0] ? req.files[0].filename : "";
-      const imagem2 = req.files[1] ? req.files[1].filename : "";
-      const imagem3 = req.files[2] ? req.files[2].filename : "";
-
-      const categorias = await Categoria.findAll();
-      const marcas = await Marca.findAll();
-
-      //inclusão middleware de validacao:
       let { errors } = validationResult(req);
 
       if (errors.length) {
@@ -77,31 +68,34 @@ module.exports = {
         errors.forEach((error) => (errorsFormated[error.param] = error.msg));
 
         return res.render('painelAdmin-adicionaProduto', {
-          categorias,
-          marcas,
+          marcas: await Marca.findAll(),
+          categorias: await Categoria.findAll(),
           errors: errorsFormated,
           product: req.body,
           css: ["painelAdmin-adiciona.css", "painelAdmin-adiciona-produto.css"],
           js: ['painelAdmin-validacao.js']
         });
       }
-
+      const { titulo, marca, categoria, descricao, quantidade, valor, ativo } =
+      req.body;
+      const imagem = req.files[0] ? req.files[0].filename : "";
+      const imagem2 = req.files[1] ? req.files[1].filename : "";
+      const imagem3 = req.files[2] ? req.files[2].filename : "";
       await Produto.create({
-        titulo,
-        marcas_idmarcas: marca,
-        categorias_idcategorias: categoria,
-        descricao,
-        quantidade,
-        valor,
-        imagem,
-        ativo,
-        imagem2,
-        imagem3,
-      });
+      titulo,
+      marcas_idmarcas: marca,
+      categorias_idcategorias: categoria,
+      descricao,
+      quantidade,
+      valor,
+      imagem,
+      ativo,
+      imagem2,
+      imagem3,
+    });
       res.redirect("/admin/produtos");
 
     } catch (erro) {
-
       console.log(erro);
       const categorias = await Categoria.findAll();
       const marcas = await Marca.findAll();
@@ -109,9 +103,9 @@ module.exports = {
         categorias,
         marcas,
         errors: { server: ERRO_400 },
-        product: {},
+        products: [],
         css: ["painelAdmin-adiciona.css", "painelAdmin-adiciona-produto.css"],
-          js: ['painelAdmin-validacao.js'],
+        js: ["panelAdmin-validation.js"],
       };
 
       if (erro?.name === "SequelizeValidationError") {
@@ -119,7 +113,6 @@ module.exports = {
       }
       return res.render("painelAdmin-produto", resposta);
     }
-
   },
 
   mostraExcluirProduto: async (req, res) => {
@@ -184,10 +177,6 @@ module.exports = {
     try{
       const { id } = req.params;
     const { titulo, marca, categoria, descricao, quantidade, valor, ativo } = req.body;
-    const imagem = req.files[0] ? req.files[0].filename : "";
-    const imagem2 = req.files[1] ? req.files[1].filename : "";
-    const imagem3 = req.files[2] ? req.files[2].filename : "";
-
 
     await Produto.update(
       {
@@ -197,10 +186,7 @@ module.exports = {
         descricao,
         quantidade,
         valor,
-        imagem,
-        ativo,
-        imagem2,
-        imagem3
+        ativo
       },
       {
         where: { idprodutos: id },
@@ -213,7 +199,7 @@ module.exports = {
         res.render("painelAdmin-produto", {
           errors:{server: ERRO_500},
           products: [],
-          css: ["painelAdmin-adiciona.css", "painelAdmin-adiciona-produto.css"],
+          css: ["painelAdmin-adiciona-produto.css"],
           js: ['painelAdmin-validacao.js'],
         });
       } 

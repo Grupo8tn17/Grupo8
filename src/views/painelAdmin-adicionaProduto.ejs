@@ -30,7 +30,7 @@
                                   <% categorias.forEach(categoria => { %>
                                     <option
                                          value="<%= categoria.idcategorias %>" 
-                                        <% if (product?.categorias_idcategorias == categoria.idcategorias) { %>selected <% } %>
+                                        <% if (product?.categorias_idcategorias == categoria.idcategoria) { %>selected <% } %>
                                     >
                                         <%= categoria.nome %>
                                     </option>
