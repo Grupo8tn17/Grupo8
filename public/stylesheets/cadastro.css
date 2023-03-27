@@ -92,10 +92,6 @@ main {
   display: flex;
   width: 100%;
   justify-content: space-between;
-<<<<<<< HEAD:public/stylesheets/registration.css
-  padding-left: 1rem;
-=======
->>>>>>> dev-danieli:public/stylesheets/cadastro.css
   margin-bottom: 2rem;
 }
 .small-data input {

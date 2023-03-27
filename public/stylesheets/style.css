@@ -1,8 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,400;0,700;0,900;1,100;1,400;1,700;1,900&display=swap");
-@import url("footer.css");
-@import url("header.css");
-@import url("footerAlternative.css");
-@import url("footerAlternative.css");
+@import url("rodape.css");
+@import url("cabecalho.css");
+@import url("rodape-alternativo.css");
 @import url("../views/index/index.css");
 @import url("../views/orderFinished/orderFinished.css");
 

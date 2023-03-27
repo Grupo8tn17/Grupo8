@@ -50,11 +50,20 @@
   border-radius: 50%;
 }
 
-.produtosPosBanner {
+.produtosPosBanner a {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.produtosPosBanner a span {
+  color: black;
+  font-weight: bold;
+}
+
+.produtosPosBanner a span:hover {
+  text-decoration: underline;
 }
 
 .indexProducts {
@@ -89,8 +98,9 @@
   color: #000;
 }
 
-.indexProductsProducts img {
+.indexProductsProducts a img {
   width: 18rem;
+  height: 20rem;
   border: 0.2rem solid var(--offwhite-lightborder);
 }
 
@@ -100,6 +110,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin: 1rem 0;
 }
 
 .indexProductsProducts a {
