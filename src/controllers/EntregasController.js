@@ -35,7 +35,7 @@ module.exports = {
         const regiaoConhecida = uf in valoresFretePorRegiao;
         const valorFrete = valoresFretePorRegiao [regiaoConhecida ? uf : 'Outros'];
 
-        return res.render('carrinho', {css: ['style.css', 'carrinho.css'], js: ["carrinho.js"],  valorFrete });
+        return res.render('cart', {css: ['style.css', 'cart.css', 'headerAlternative.css'], js: ["cart.js"],  valorFrete });
         
     } catch (erro) {
         console.log(erro);
