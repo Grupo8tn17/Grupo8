@@ -5,6 +5,7 @@
         <!-- Cabeçalho do Carrinho -->
         <div class="meu-carrinho">
             <h1>Meu Carrinho</h1>
+            <hr />
             <table>
                 <thead>
                     <tr>
@@ -55,16 +56,15 @@
 
                     <label for="cep"></label>
                     <input type="text" name="cep" id="cep" placeholder="CEP">
-                    <button type="">Calcular frete</button>
-                    <div class="frete-entrega">
-                        <p>Valor do frete: R$ <%= valorFrete  %> </p>
-                        <p>Prazo de entrega: </p>
-                    </div>
+                    <button class="btn-calcular-frete">Calcular frete</button>
+                    <p class="frete-entrega"> <%= valorFrete[0].frete.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) %> </p>
+                    <p class="frete-entrega"> <%= valorFrete[0].prazo %> </p> 
+                    
 
                     <h3>Insira aqui seu cupom de desconto:</h3>
                     <label for="cupom-desconto"></label>
                     <input type="text" name="cupom-desconto" id="cupom-desconto" placeholder="Cupom de desconto">
-                    <button> Aplicar Desconto</button>
+                    <button class="btn-aplicar-desc"> Aplicar Desconto</button>
                 </div>
 
                 <div class="entrega entrega-right">
@@ -91,7 +91,7 @@
 
             <form class="form-fechar-pedido">
                 <button class="btn-f">
-                    <p><a href="/products"></a>Escolher Mais Produtos</p>
+                    <p><a href="/produtos"></a>Escolher Mais Produtos</p>
                 </button>
             
                 <button class="btn-f">
