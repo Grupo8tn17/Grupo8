@@ -10,7 +10,6 @@ const validacaoCadastroUsuario = require('../middleware/validacao-cadastro-usuar
 router.get('/', indexController.index);
 
 router.get('/carrinho', carrinhoController.mostraCarrinho);
-router.get('/endereco', carrinhoController.obterEnderecoPorCep);
 router.get('/frete', carrinhoController.calcularFrete);
 
 

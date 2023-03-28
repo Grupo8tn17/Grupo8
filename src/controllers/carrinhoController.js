@@ -34,26 +34,26 @@ let fretePorEstado = [
   {uf: "SC", frete: 24.50, prazo: "10 dia úteis" },  
 ];
 
-const fretePorEstado2 = {
-    'SP': 'R$ 19,90',
-    'RS': 'R$ 39,90',
-    'Outros': 'R$ 49,90'    
-}
 
 module.exports = {
-    mostraCarrinho: (req, res) => {
-        res.render('carrinho', {css: ['style.css', 'carrinho.css', 'cabecalho-alternativo.css'], js: ["carrinho.js"], valorFrete: null})
-    },
+  mostraCarrinho: (req, res) => {
+    res.render("carrinho", {
+      css: ["style.css", "carrinho.css", "cabecalho-alternativo.css"],
+      js: ["carrinho.js"],
+      valorFrete: null,
+    });
+  },
 
-    
-
-   obterEnderecoPorCep: async (req, res) => {
+  calcularFrete: async (req, res) => {
     try {
       const { cep } = req.query;
-      const endereco = await pesquisaPorCep(cep);
-
-      return res.render('carrinho', endereco);
-      
+      const { uf } = await pesquisaPorCep(cep);
+      const valorFrete = fretePorEstado.filter((item) => item.uf === uf);
+      return res.render("carrinho", {
+        css: ["style.css", "carrinho.css", "cabecalho-alternativo.css"],
+        js: ["carrinho.js"],
+        valorFrete,
+      });
     } catch (erro) {
       console.log(erro);
       if (erro?.name === "NOT_FOUND") {
@@ -63,22 +63,4 @@ module.exports = {
       return res.status(500).json({ mensagem: ERRO_500 });
     }
   },
-
-   calcularFrete: async (req, res) => {
-    try {
-        const { cep } = req.query;
-        const { uf } = await pesquisaPorCep(cep);            
-        const valorFrete = fretePorEstado.filter(item => item.uf === uf)             
-        return res.render('carrinho', {css: ['style.css', 'carrinho.css', 'cabecalho-alternativo.css'], js: ["carrinho.js"], valorFrete});
-        
-    } catch (erro) {
-        console.log(erro);
-        if (erro?.name === "NOT_FOUND") {
-        return res.status(404).json({ mensagem: erro.message });
-      }
-
-      return res.status(500).json({ mensagem: ERRO_500 });
-    }       
-    
-  }
 };
