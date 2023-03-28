@@ -3,7 +3,6 @@ var router = express.Router();
 const indexController = require('../controllers/indexController');
 const usuarioController = require('../controllers/usuarioController');
 const carrinhoController = require('../controllers/carrinhoController');
-const entregasController = require('../controllers/EntregasController');
 const produtoController = require('../controllers/produtoController');
 const validacaoCadastroUsuario = require('../middleware/validacao-cadastro-usuario');
 
@@ -11,8 +10,8 @@ const validacaoCadastroUsuario = require('../middleware/validacao-cadastro-usuar
 router.get('/', indexController.index);
 
 router.get('/carrinho', carrinhoController.mostraCarrinho);
-router.get('/endereco', entregasController.obterEnderecoPorCep);
-router.get('/frete', entregasController.calcularFrete);
+router.get('/endereco', carrinhoController.obterEnderecoPorCep);
+router.get('/frete', carrinhoController.calcularFrete);
 
 
 router.get('/login', usuarioController.mostraLogin);
