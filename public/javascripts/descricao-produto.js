@@ -8,19 +8,7 @@ const buttonLarger = document.getElementById('button-larger');
 var qtdProducts = document.getElementById('qtdProducts');
 const productsBox = document.querySelector('.products-left')
 const imgProduct = document.getElementById('img-product');
-const valor = document.querySelector('#price');
-const valorPromo = document.querySelector('#old-price');
 
-
-
-window.addEventListener('load', function (e) {
-   let valorAtualizado =  valor.innerText.replace(".", ",");
-   console.log(valor);
-   valor.innerHTML = valorAtualizado;
-
-   let valorAntigo = parseFloat(valorAtualizado) + 10;
-   valorPromo.innerHTML = "De: " + valorAntigo + ",00";
-});
 
 buttonAssessments.addEventListener('click', function () {
     if(!showSidebar) {

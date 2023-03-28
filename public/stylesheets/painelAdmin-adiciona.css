@@ -75,16 +75,17 @@
 
 .image-product label {
     margin-top: 2rem;
-    margin-bottom: 2rem;
-    margin-left: 2rem;
+    padding-left: 2rem;
 }
 
 .products_files_area {
     display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 4rem;
-    margin-left: 2rem;
+    justify-content: space-between;
+    margin: 2rem 0;
+}
+
+.products_files_area input {
+    padding-left: 2rem;
 }
 
 .error {
@@ -106,12 +107,12 @@ p.msgError {
 
 .products-ativo {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
-    gap: 1rem;
+    
 }
 
-.products-ativo input, label {
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+.products-ativo input {
+    margin-left: 1rem;
+    margin-right: 15rem;
 }

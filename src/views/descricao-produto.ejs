@@ -1,11 +1,11 @@
 <%- include('partials/cabecalho') %>
 
   <div class="container">
-    <% for(let products of listproducts) { %>
     <div class="links-filter">
-      <a href="">Home</a> >
-      <a href=""> <%= products.categorias.nome %></a>
-      <% } %>
+      <a href="">Home ></a>
+      <a href="">Marcas de A-Z ></a>
+      <a href="">Gestante e Bebê ></a>
+      <a href="">Bebê</a>
     </div>
     <div class="products">
       <% for(let product of listproducts) { %>
@@ -16,7 +16,7 @@
             <div class="products-reference">
               <div class="products-categories">
                 <a href="">
-                  <%= product.marcas.nome %>
+                  <%= product.marca %>
                 </a>
                 <span class="code-product">Ref: <%= product.idprodutos %></span>
               </div>
@@ -38,17 +38,9 @@
               <img src="/images/estrela.png" alt="">
               <span>9 Avaliações</span>
             </div>
-            <div class="images-icone">
-              <img src="/images/vegano.png" alt="">
-              <img src="/images/organico.png" alt="">
-              <img src="/images/livre.png" alt="">
-              <img src="/images/crueldade-livre.png" alt="">
-              <img src="/images/nao-toxico.png" alt="">
-              <img src="/images/sem-gluten.png" alt="">
-            </div>
             <div class="product-price">
-              <h5 id="old-price"></h5>
-              <span>Por: <strong>R$ <span id="price">
+              <h5>De: 19,90</h5>
+              <span>Por:<strong>R$ <span id="price">
                     <%= product.valor%>
                   </span> </strong></span>
             </div>
