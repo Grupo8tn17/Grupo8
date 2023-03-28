@@ -1,0 +1,43 @@
+<%- include('partials/painelAdmin-cabecalho') %>
+
+        <div class="content">
+            <div class="container">
+                <h3>Produtos</h3>
+                <div class="box-header">
+                    <h4 class="box-title">Produtos</h3>
+                        <h4><%= errors.server %></h4>
+                    <div class="box-tools">
+                        <a href="/admin/adiciona">Adicionar</a>
+                    </div>
+                </div>
+                <div class="box-body">
+                    <table class="box-table">
+                        <tr>
+                            <th class="table-id">ID</th>
+                            <th class="table-name">Nome do Produto</th>
+                            <th class="table-inventory">Estoque</th>
+                            <th class="table-picture">Foto</th>
+                            <th class="table-price">Preço</th>
+                            <th class="table-action">Ações</th>
+                        </tr>
+                        <tr>
+                            <% for (let product of products) { %>
+                            <td class="table-id"><%= product.idprodutos %></td>
+                            <td class="table-name"><%= product.titulo %></td>
+                            <td class="table-inventory"><%= product.quantidade %> </td>
+                            <td class="table-picture"><img src="/images/products/<%= product.imagem %> " alt=""></td>
+                            <td class="table-price"><%= product.valor %></td>
+                            <td class="table-action">
+                                <a class="action-edit" href="/admin/editar/<%= product.idprodutos %> ">Editar</a>
+                                <a class="action-delete" href="/admin/excluir/<%= product.idprodutos %> ">Excluir</a>                              
+                            </td>
+                        </tr>
+                        <% } %>
+                    </table>
+                </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

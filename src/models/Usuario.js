@@ -24,16 +24,16 @@ const criarUsuarioModel = (sequelize, dataTypes) => {
         allowNull: false
     },
     documento_usuario: {
-        type: dataTypes.INTEGER(20),
+        type: dataTypes.STRING(20),
         allowNull: false
     },
     telefone: {
-        type: dataTypes.INTEGER(11),
+        type: dataTypes.STRING(11),
         allowNull: false
     },
     data_nascimento: {
         type: dataTypes.DATE,
-        allowNull: false
+        allowNull: true
     },
     idadmin: {
         type: dataTypes.INTEGER,
@@ -42,7 +42,7 @@ const criarUsuarioModel = (sequelize, dataTypes) => {
     
     foto_usuario: {
       type: dataTypes.STRING,
-      allowNull: false
+      allowNull: true
   }
     
     };

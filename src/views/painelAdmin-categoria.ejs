@@ -1,0 +1,42 @@
+<%- include('partials/painelAdmin-cabecalho') %>
+
+        <div class="content">
+            <div class="container">
+                <h3>Categorias</h3>
+                <div class="box-header">
+                    <h4 class="box-title">Categorias</h3>
+                    <div class="box-tools">
+                        <a href="/admin/categorias/formulario">Adicionar</a>
+                    </div>
+                </div>
+                <div class="box-body">
+                    <table class="box-table">
+                        <tr>
+                            <th class="table-id">ID</th>
+                            <th class="table-name">Nome da Categoria</th>
+                            <th class="table-action">Ações</th>
+                        </tr>
+                        <% for (let categoria of categorias) { %>
+                        <tr>
+                            
+                            <td class="table-id"><%= categoria.idcategorias %></td>
+                            <td class="table-name"><%= categoria.nome %></td>
+                            <td class="table-action">
+                                <a class="action-edit" href="/admin/categorias/editar/<%= categoria.idcategorias %>">Editar</a>
+                                <form action="/admin/categorias/excluir/<%= categoria.idcategorias %>?_method=DELETE" method="POST" id="form">
+                                <button type="submit" class="action-delete">Excluir</button>
+                                </form>
+                                                              
+                            </td>
+                            
+                        </tr>
+                        <% } %>
+                    </table>
+
+                </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

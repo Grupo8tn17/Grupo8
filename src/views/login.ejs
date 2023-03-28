@@ -1,5 +1,4 @@
-<%- include('partials/header') %>
-
+<%- include('partials/cabecalho-alternativo') %>
 
   <main>
 
@@ -16,16 +15,18 @@
         <h2>LOGIN</h2>
 
 
-        <form action="/user/user-panel">
-
+        <form action="/painel" method="POST">
+          <p class="msgError"><%= erro.msg %></p>
           <div class="input">
             <label for="email"></label>
-            <input type="email" id="email" name="email" placeholder="E-mail" />
+            <input type="email" id="email" name="email" placeholder="E-mail"  /> 
+            <p class="msgError"><%= errors.email %></p>
           </div>
 
           <div class="input">
             <label for="pwd"></label>
-            <input type="password" id="pwd" name="pwd" placeholder="Senha" />
+            <input type="password" id="pwd" name="senha" placeholder="Senha"  />
+            <p class="msgError"><%= errors.senha %></p>
           </div>
           <div class="first-login-buttom">
             <p>
@@ -46,7 +47,7 @@
         </div>
 
         <div id="buttonRegister">
-          <a href="/registrate"><button type="submit">Clique e cadastre-se</button></a>
+          <a href="/cadastro"><button type="submit">Clique e cadastre-se</button></a>
         </div>
 
         <aside id="desc">
@@ -61,4 +62,4 @@
 
   </main>
 
-  <%- include('partials/alternative-footer') %>
+  <%- include('partials/rodape-alternativo') %>

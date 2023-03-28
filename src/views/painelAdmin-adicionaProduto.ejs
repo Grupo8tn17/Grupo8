@@ -1,0 +1,99 @@
+<%- include('partials/painelAdmin-cabecalho') %>
+
+        <div class="content-products">
+            <div class="container-products">
+                <h3>Adicionar Produtos</h3>
+  
+                <form  action="/admin/adiciona" method="POST" id="form" enctype="multipart/form-data">
+
+                <form  action="/admin/adiciona" method="POST" id="form" enctype="multipart/form-data">
+                    <div class="box">
+                        <div class="box-header">
+                            <h4 class="box-title">Novo Produto</h4>
+                            <h4 class="msgError"> <%= errors.server%> </h4>
+                            <div class="box-tools">
+                                <input type="submit" value="Salvar">
+                            </div>
+                        </div>
+                        <div class="box-body">
+
+                            <div class="form-group">
+                                <label for="p_name">Nome do produto</label>
+                                <input  type="text" id="p_name" name="titulo" value="<%= product?.name %>"/>
+                                <p class="msgError"><%= errors.titulo %></p>
+                            </div>
+            
+                            <div class="form-group">
+                                <label for="p_cat">Categoria</label>
+                                <select  name="categoria" id="p_cat">
+                                    <option value="" <% if (!product) { %>selected <% } %>></option>
+                                  <% categorias.forEach(categoria => { %>
+                                    <option
+                                         value="<%= categoria.idcategorias %>" 
+                                        <% if (product?.categorias_idcategorias == categoria.idcategoria) { %>selected <% } %>
+                                    >
+                                        <%= categoria.nome %>
+                                    </option>
+                                  <% }) %>
+                                </select>
+                                
+                            </div>
+            
+                            <div class="form-group">
+                                <label for="p_marca">Marca</label>
+                                <select  name="marca" id="p_marca">
+                                    <option value="" <% if (!product) { %>selected <% } %>></option>
+                                  <% marcas.forEach(marca => { %>
+                                    <option
+                                         value="<%= marca.idmarcas %>" 
+                                        <% if (product?.marcas_idmarca == marca.idmarca) { %>selected <% } %>
+                                    >
+                                        <%= marca.nome %>
+                                    </option>
+                                  <% }) %>
+                                </select>
+                                
+                            </div>
+            
+                            <div class="form-group">
+                                <label for="p_description">Descrição do Produto</label>
+                                <textarea id="p_description" name="descricao"><%= product?.description %></textarea>
+                                <p class="msgError"><%= errors.descricao %></p>
+                            </div>
+            
+                            <div class="form-group">
+                                <label for="p_stock">Estoque Disponível</label>
+                                <input type="number" id="p_stock" name="quantidade" value="<%= product?.stock %>"/>
+                                <p class="msgError"><%= errors.quantidade %></p>
+                                
+                            </div>
+            
+                            <div class="form-group">
+                                <label for="p_price">Preço</label>
+                                <input  type="text"  id="p_price" name="valor" value="<%= product?.price %>" />
+                                <p class="msgError"><%= errors.valor %></p>
+                                
+                            </div>       
+                            
+                            <div class="image-product">
+                                <label>Imagens do Produto</label><br/>
+                            </div>
+
+                            <div class="products_files_area">
+                                <input type="file" name="imagem" multiple />
+                                <p class="msgError"><%= errors.imagem %></p>
+                                <div class="products-ativo">
+                                    <label for="ativo">Ativo</label>
+                                    <input type="radio" name="ativo" id="ativo">
+                                </div>                                
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            
+            </div>
+        </div>
+    </main>
+</body>
+</html>
