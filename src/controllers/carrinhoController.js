@@ -13,5 +13,7 @@ const valoresFretePorRegiao = {
 module.exports = {
     mostraCarrinho: (req, res) => {
         res.render('carrinho', {css: ['style.css', 'carrinho.css', 'cabecalho-alternativo.css'], js: ["carrinho.js"], valorFrete: null})
-    }
+    },
+
+    
 };
