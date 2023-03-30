@@ -13,7 +13,7 @@ const criarHistoricoPedidoModel = (sequelize, dataTypes) => {
     },
 
     data_compra: {
-      types: dataTypes.DATE,
+      type: dataTypes.DATE,
       allowNull: false
     },
 
