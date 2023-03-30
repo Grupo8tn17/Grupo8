@@ -5,9 +5,9 @@ const ERRO_404 = 'Cep não encontrado!';
 const ERRO_400 = 'Request inválido!';
 
 const valoresFretePorRegiao = {
-    'SP': 'R$ 19,90',
-    'RS': 'R$ 39,90',
-    'Outros': 'R$ 49,90'    
+    'SP': '19,90',
+    'RS': '39,90',
+    'Outros': '49,90'    
 }
 
 module.exports = {
@@ -16,7 +16,7 @@ module.exports = {
       const { cep } = req.query;
       const endereco = await pesquisaPorCep(cep);
 
-      return res.render('carrinho', {css: ['style.css', 'cart.css', 'headerAlternative.css'], js: ["cart.js"], endereco});
+      return res.render('cart', {css: ['style.css', 'carrinho.css'], js: ["carrinho.js"],  endereco });
       
     } catch (erro) {
       console.log(erro);

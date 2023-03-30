@@ -301,8 +301,8 @@ module.exports = {
         attributes: ['nome'], where: { nome: 'Aromaterapia' }
       }],
     });
-
-    if(products == []) {
+    console.log(products);
+    if(!products) {
       return res.render('erro-404', {categoria: categoria, marca: marca, products: products, css: ['style.css', 'produtos.css'], js: [] });
     } else {
       return res.render('produtos', {categoria: categoria, marca: marca, products, css: ['style.css', 'produtos.css'], js: ['produtos.js'] });

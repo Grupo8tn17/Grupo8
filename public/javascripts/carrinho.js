@@ -68,6 +68,7 @@ function updateItemQtd(id, quantity) {
       localStorage.setItem("cart", JSON.stringify(productsCart));
     }
     updateTotal();
+    somaTotal();
   });
 }
 
@@ -79,6 +80,7 @@ function removeItem() {
   productsCart = productsCart.filter((item) => item.id != id);
   localStorage.setItem("cart", JSON.stringify(productsCart));
   updateTotal();
+  somaTotal();
   if (productsCart.length < 1) {
     showEmptyCart();
   }
@@ -174,3 +176,19 @@ btnRemoveList.forEach(function (btnRemove) {
 updateTotal();
 
 showEmptyCart();
+
+function somaTotal () {
+var totalCompra = document.querySelector('.total');
+var cupomDesconto = document.querySelector('.cupom-desconto').innerText.replace(',', '.');
+var valorFrete = document.querySelector('.valor-frete').innerText.replace(',', '.');
+var resultadoFinal = document.querySelector('.resultado').innerText.replace(',', '.');
+
+  console.log(cupomDesconto, valorFrete)
+  let resultado = parseInt(cupomDesconto) + parseFloat(valorFrete) + parseFloat(resultadoFinal);
+  
+  totalCompra.innerHTML = resultado.toFixed(2).replace('.', ',');
+  console.log(resultado);
+
+}
+
+somaTotal();
