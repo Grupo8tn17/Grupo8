@@ -13,44 +13,5 @@ const valoresFretePorRegiao = {
 module.exports = {
     mostraCarrinho: (req, res) => {
         res.render('carrinho', {css: ['style.css', 'carrinho.css', 'cabecalho-alternativo.css'], js: ["carrinho.js"], valorFrete: null})
-    },
-
-    
-
-   obterEnderecoPorCep: async (req, res) => {
-    try {
-      const { cep } = req.query;
-      const endereco = await pesquisaPorCep(cep);
-
-      return res.render('carrinho', endereco);
-      
-    } catch (erro) {
-      console.log(erro);
-      if (erro?.name === "NOT_FOUND") {
-        return res.status(404).json({ mensagem: erro.message });
-      }
-
-      return res.status(500).json({ mensagem: ERRO_500 });
-    }
-  },
-
-   calcularFrete: async (req, res) => {
-    try {
-        const { cep } = req.query;
-        const { uf } = await pesquisaPorCep(cep);
-        const regiaoConhecida = uf in valoresFretePorRegiao;
-        const valorFrete = valoresFretePorRegiao [regiaoConhecida ? uf : 'Outros'];
-
-        return res.render('carrinho', {css: ['style.css', 'carrinho.css', 'cabecalho-alternativo.css'], js: ["carrinho.js"], valorFrete});
-        
-    } catch (erro) {
-        console.log(erro);
-        if (erro?.name === "NOT_FOUND") {
-        return res.status(404).json({ mensagem: erro.message });
-      }
-
-      return res.status(500).json({ mensagem: ERRO_500 });
-    }       
-    
-  }
+    },    
 };

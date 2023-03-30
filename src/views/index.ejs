@@ -15,31 +15,31 @@
 
   <div class="selecaoProdutosPosBanner">
     <div class="produtosPosBanner">
-      <a href=""><img
+      <a href="/maquiagem"><img
         src="/images/photo-1609357912333-27872db33d5c.avif"
         alt="">
       <span>Pó Facial</span></a>
     </div>
     <div class="produtosPosBanner">
-      <a href=""><img
+      <a href="/maquiagem"><img
         src="/images/photo-1654977631007-498a9b2c5235.avif"
         alt="">
       <span>Batom e Balm</span></a>
     </div>
     <div class="produtosPosBanner">
-      <a href=""><img
+      <a href="/maquiagem"><img
         src="/images/photo-1519699047748-de8e457a634e.avif"
         alt="">
       <span>Blush</span></a>
     </div>
     <div class="produtosPosBanner">
-      <a href=""><img
+      <a href="/maquiagem"><img
         src="/images/pexels-photo-13474565.jpeg"
         alt="">
       <span>Lip Oil</span></a>
     </div>
     <div class="produtosPosBanner">
-      <a href="/products"><img
+      <a href="/produtos"><img
         src="/images/pexels-photo-13440123.jpeg"
         alt="">
       <span>Mais Produtos</span></a>
@@ -64,7 +64,7 @@
           alt="">
         <p class="indexProductsDescription"> <%= productsBatom.titulo %><br><%= productsBatom.marcas.nome %></p>
         <p class="indexProductsOldPrice">R$ 95,00</p>
-        <p class="indexProductsPrice">R$ <%= productsBatom.valor %></p>
+        <p class="indexProductsPrice price">R$ <%= productsBatom.valor %></p>
         <p class="indexProductsSubPrice"><sub>5x de R$ 14,20 Sem juros</sub></p>
       </a>
       
@@ -119,8 +119,8 @@
             src="/images/products/<%= productsPoFacial.imagem %>"
             alt="">
           <p class="indexProductsDescription"> <%= productsPoFacial.titulo %><br><%= productsPoFacial.marcas.nome %></p>
-          <p class="indexProductsOldPrice">R$ 95,00</p>
-          <p class="indexProductsPrice">R$ <%= productsPoFacial.valor %></p>
+          <p class="indexProductsOldPrice" id="old-price"></p>
+          <p class="indexProductsPrice price" >R$ <%= productsPoFacial.valor %></p>
           <p class="indexProductsSubPrice"><sub>5x de R$ 14,20 Sem juros</sub></p>
         </a>
         

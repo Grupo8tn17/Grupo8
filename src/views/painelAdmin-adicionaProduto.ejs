@@ -30,13 +30,13 @@
                                   <% categorias.forEach(categoria => { %>
                                     <option
                                          value="<%= categoria.idcategorias %>" 
-                                        <% if (product?.categorias_idcategorias == categoria.idcategorias) { %>selected <% } %>
+                                        <% if (product?.categorias_idcategorias == categoria.idcategoria) { %>selected <% } %>
                                     >
                                         <%= categoria.nome %>
                                     </option>
                                   <% }) %>
                                 </select>
-                                <p class="msgError"><%= errors.categoria %></p>
+                                
                             </div>
             
                             <div class="form-group">
@@ -52,7 +52,7 @@
                                     </option>
                                   <% }) %>
                                 </select>
-                                <p class="msgError"><%= errors.marca %></p>
+                                
                             </div>
             
                             <div class="form-group">

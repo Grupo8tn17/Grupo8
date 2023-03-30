@@ -9,6 +9,17 @@ const menuFilterCategorias = document.querySelector('.item-ul-categorias');
 const menuFilterMarcas = document.querySelector('.item-ul-marcas');
 const buttonClosedFilter = document.getElementById('button-closed-filter');
 var showSidebar = false;
+var valores = document.querySelectorAll('.price');
+var valorAntigo = document.querySelectorAll('.price');
+const valorPromo = document.querySelectorAll('#old-price');
+
+
+window.addEventListener('load', function (e) {
+  valores.forEach(valor => {
+    valor.innerText = valor.innerText.replace(".", ",");
+  })
+        
+  });
 
 
 
