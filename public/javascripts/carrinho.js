@@ -38,7 +38,7 @@ function addItem() {
 
 function calcularTotal() {
   const subtotais = document.querySelectorAll(".subtotal");
-  let resultado = 0;
+  let resultado = 0;  
   subtotais.forEach((subtotal) => {
     let preco = subtotal.innerText.replace(",", ".");
     resultado += parseFloat(preco);
@@ -47,8 +47,17 @@ function calcularTotal() {
   return resultado.toFixed(2).replace(".", ",");
 }
 
+function calcularTotalCompra(){
+  let subtotal = resultado;
+  let frete = valorFrete;
+  let totalCompra = subtotal + frete;
+  return totalCompra.toFixed(2).replace(".", ",");
+}
+
 function updateTotal() {
   document.querySelector(".resultado").innerText = calcularTotal();
+  document.querySelector(".subTot").innerText = "R$ " + calcularTotal();
+  document.querySelector(".total-compra").innerText = calcularTotalCompra();
 }
 
 function toReal(price) {

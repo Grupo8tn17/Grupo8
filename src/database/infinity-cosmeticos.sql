@@ -2,36 +2,16 @@ CREATE DATABASE infinity_cosmeticos;
 
 USE infinity_cosmeticos; 
 
-CREATE TABLE produtos (
-	idprodutos INT UNSIGNED PRIMARY KEY AUTO_INCREMENT NOT NULL, 
-    titulo VARCHAR(255) NOT NULL, 
-    descricao LONGTEXT NOT NULL, 
-    valor DECIMAL(5,2) NOT NULL, 
-    quantidade INT NOT NULL, 
-    imagem VARCHAR(255) NOT NULL,
-    marca VARCHAR(150) NOT NULL, 
-    categorias_idcategorias INT UNSIGNED NOT NULL,
-    marcas_idmarcas INT UNSIGNED NOT NULL,
-    ativo TINYINT NOT NULL,
-    imagem2 VARCHAR(255) NOT NULL,
-    imagem3 VARCHAR(255) NOT NULL,
-    FOREIGN KEY (categorias_idcategorias) REFERENCES categorias(idcategorias),
-    FOREIGN KEY (marcas_idmarcas) REFERENCES marcas(idmarcas)
+CREATE TABLE marcas (
+	idmarcas INT UNSIGNED PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    nome VARCHAR(150) NOT NULL, 
+    cnpj INT(14) NOT NULL,
+    endereco VARCHAR(150) NOT NULL
 );
-
 
 CREATE TABLE categorias (
 	idcategorias INT UNSIGNED PRIMARY KEY AUTO_INCREMENT NOT NULL,
     nome VARCHAR(45) NOT NULL
-);
-
-CREATE TABLE carrinho ( 
-	idcarrinho INT UNSIGNED PRIMARY KEY AUTO_INCREMENT NOT NULL,
-    valor_total DECIMAL(5,2) NOT NULL, 
-    quantidade INT NOT NULL,
-    usuarios_idusuarios INT UNSIGNED NOT NULL,
-    cupom_desconto VARCHAR(45),
-    FOREIGN KEY (usuarios_idusuarios) REFERENCES usuarios(idusuarios)
 );
 
 CREATE TABLE usuarios (
@@ -54,11 +34,26 @@ CREATE TABLE pedidos (
     data_pedido DATE NOT NULL
 );
 
+CREATE TABLE produtos_ofertas (
+	idprodutos_ofertas INT UNSIGNED PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    oferta TINYINT NOT NULL, 
+    valor_oferta DECIMAL(5,2) NOT NULL
+);
+
 CREATE TABLE historico_pedidos (
 	idhistorico_pedidos INT UNSIGNED PRIMARY KEY AUTO_INCREMENT NOT NULL,
     status_pedido VARCHAR(150) NOT NULL,
     pedidos_idpedidos INT UNSIGNED NOT NULL,
     FOREIGN KEY (pedidos_idpedidos) REFERENCES pedidos(idpedidos) 
+);
+
+CREATE TABLE carrinho ( 
+	idcarrinho INT UNSIGNED PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    valor_total DECIMAL(5,2) NOT NULL, 
+    quantidade INT NOT NULL,
+    usuarios_idusuarios INT UNSIGNED NOT NULL,
+    cupom_desconto VARCHAR(45),
+    FOREIGN KEY (usuarios_idusuarios) REFERENCES usuarios(idusuarios)
 );
 
 CREATE TABLE forma_pagamentos (
@@ -69,6 +64,24 @@ CREATE TABLE forma_pagamentos (
     pedidos_idpedidos INT UNSIGNED NOT NULL,
     FOREIGN KEY (carrinho_idcarrinho) REFERENCES carrinho(idcarrinho),
     FOREIGN KEY (carrinho_usuarios_idusuarios) REFERENCES carrinho(usuarios_idusuarios)
+);
+
+
+CREATE TABLE produtos (
+	idprodutos INT UNSIGNED PRIMARY KEY AUTO_INCREMENT NOT NULL, 
+    titulo VARCHAR(255) NOT NULL, 
+    descricao LONGTEXT NOT NULL, 
+    valor DECIMAL(5,2) NOT NULL, 
+    quantidade INT NOT NULL, 
+    imagem VARCHAR(255) NOT NULL,
+    marca VARCHAR(150) NOT NULL, 
+    categorias_idcategorias INT UNSIGNED NOT NULL,
+    marcas_idmarcas INT UNSIGNED NOT NULL,
+    ativo TINYINT NOT NULL,
+    imagem2 VARCHAR(255) NOT NULL,
+    imagem3 VARCHAR(255) NOT NULL,
+    FOREIGN KEY (categorias_idcategorias) REFERENCES categorias(idcategorias),
+    FOREIGN KEY (marcas_idmarcas) REFERENCES marcas(idmarcas)
 );
 
 CREATE TABLE enderecos (
@@ -87,19 +100,6 @@ CREATE TABLE enderecos (
     FOREIGN KEY (usuarios_idusuarios) REFERENCES usuarios(idusuarios),
     FOREIGN KEY (carrinho_idcarrinho) REFERENCES carrinho(idcarrinho),
     FOREIGN KEY (carrinho_usuarios_idusuarios) REFERENCES carrinho(usuarios_idusuarios)
-);
-
-CREATE TABLE marcas (
-	idmarcas INT UNSIGNED PRIMARY KEY AUTO_INCREMENT NOT NULL,
-    nome VARCHAR(150) NOT NULL, 
-    cnpj INT(14) NOT NULL,
-    endereco VARCHAR(150) NOT NULL
-);
-
-CREATE TABLE produtos_ofertas (
-	idprodutos_ofertas INT UNSIGNED PRIMARY KEY AUTO_INCREMENT NOT NULL,
-    oferta TINYINT NOT NULL, 
-    valor_oferta DECIMAL(5,2) NOT NULL
 );
 
 CREATE TABLE produtos_has_produtos_ofertas (

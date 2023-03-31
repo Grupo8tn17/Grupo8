@@ -12,6 +12,8 @@ module.exports = {
       url: `/cep/v1/${cep}`,
     });
 
+    console.log(data)
+
     /*   se não retornar dados cria mensagem de erro */
 
     if (!data) throw new Error("Cep não encontrado");

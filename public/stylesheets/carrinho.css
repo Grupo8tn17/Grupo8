@@ -20,14 +20,26 @@ main {
   width: 100%;
   display: flex;
   flex-direction: column;
-  margin-top: 2rem;
+  margin-top: 1rem;
 }
 
 .meu-carrinho h1 {
   color: var(--bg-darkcolor);
+  font-size: 3rem;
   text-align: center;
   margin: 1rem;
 }
+
+.meu-carrinho hr {
+  border: 0;
+  height: 0.2rem;
+  background-image: linear-gradient(
+    to right,
+    transparent,
+    #4e6122,
+    transparent
+  );
+ }
 
 table {
   display: flex;
@@ -44,7 +56,8 @@ table {
   justify-content: center;
   justify-content: center;
   width: 100%;
-  margin-top: 1rem;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
 }
 
 table thead {
@@ -102,6 +115,11 @@ table td {
   padding: 0.5rem 0rem;
 }
 
+.resultado, .total{
+font-weight: 900;
+
+}
+
 table td:last-child{
   width: 10rem;
   margin-right: 12rem;
@@ -113,7 +131,7 @@ td div {
   justify-content: center;
   align-items: center;
   gap: 0.2rem;
-}
+ }
 
 .cart-product {
   display: flex;
@@ -137,7 +155,8 @@ span {
   width: 100%;
 }
 
-.entrega button {
+
+.entrega button, table td button {
   text-transform: uppercase;
   background-color: var(--bg-darkcolor);
   color: var(--offwhite);
@@ -195,6 +214,10 @@ input {
   color:black;
 }
 
+.text-red{
+  color: red;
+}
+
 .text-column{
   display: flex;
   flex-direction: row;
@@ -232,6 +255,10 @@ form .btn-f {
   border-radius: 1rem;
   border: none;
 }
+
+a {
+  color: var(--offwhite);
+ } 
 
 .frete-entrega{
   display: flex;
@@ -279,15 +306,4 @@ form .btn-f {
   display: none;
 }
 
-/* inserir linha divisória, inserir no html */
 
-hr {
-  border: 0;
-  height: 0.2rem;
-  background-image: linear-gradient(
-    to right,
-    transparent,
-    #4e6122,
-    transparent
-  );
-}

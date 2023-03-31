@@ -5,6 +5,7 @@
         <!-- Cabeçalho do Carrinho -->
         <div class="meu-carrinho">
             <h1>Meu Carrinho</h1>
+            
             <table>
                 <thead>
                     <tr>
@@ -54,16 +55,23 @@
 
                     <label for="cep"></label>
                     <input type="text" name="cep" id="cep" placeholder="CEP">
-                    <button type="">Calcular frete</button>
-                    <div class="frete-entrega">
-                        <p>Valor do frete: R$ <%= valorFrete  %> </p>
-                        <p>Prazo de entrega: </p>
-                    </div>
+                    <button class="btn-calcular-frete">Calcular frete</button>
 
+                    <% if (valorFrete==null) { %>
+                        <p class="text-red">
+                            <%= "Cep não encontrado" %>
+                        </p>
+                        <% } else { %>
+                            <p class="frete-entrega text-black">
+                                <%= "Valor do frete: " + valorFrete?.toLocaleString('pt-br',{style: 'currency' , currency: 'BRL' })
+                                    + " - Prazo de entrega: " + prazo %>
+                            </p>
+                            <% } %>
+                    
                     <h3>Insira aqui seu cupom de desconto:</h3>
                     <label for="cupom-desconto"></label>
                     <input type="text" name="cupom-desconto" id="cupom-desconto" placeholder="Cupom de desconto">
-                    <button> Aplicar Desconto</button>
+                    <button class="btn-aplicar-desc"> Aplicar Desconto</button>
                 </div>
 
                 <div class="entrega entrega-right">
@@ -78,23 +86,31 @@
                     </div>
                     <div class="text-column">
                         <p>Frete</p>
-                        <p class="text-black valor-frete"><%= valorFrete %></p>
+                        <% if (valorFrete==null) { %>
+                            <p class="text-black">R$ 0,00</p>
+                        
+                            <% } else { %>
+                                <p class="text-black">
+                                    <%= valorFrete?.toLocaleString('pt-br',{style: 'currency' , currency: 'BRL' }) %>
+                                </p>
+                                <% } %>
+                        
                     </div>
-                    <div class="text-column text-total">
+                    <hr />
+                    <div class="text-column text-total">                        
                         <p>TOTAL</p>
                         <p class="text-black total">00,00</p>
                     </div>
                 </div>
             </form>
-
-
+            
             <form class="form-fechar-pedido">
                 <button class="btn-f">
-                    <p><a href="/products"></a>Escolher Mais Produtos</p>
+                    <a href="/produtos">Escolher Mais Produtos</a>
                 </button>
             
                 <button class="btn-f">
-                    <p><a href="/checkout/order"></a>Finalizar pedido</p>
+                    <a href="/checkout/order">Finalizar pedido</a>
                 </button>
             </form>
 
