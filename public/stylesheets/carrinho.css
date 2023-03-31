@@ -115,6 +115,11 @@ table td {
   padding: 0.5rem 0rem;
 }
 
+.resultado, .total{
+font-weight: 900;
+
+}
+
 table td:last-child{
   width: 10rem;
   margin-right: 12rem;
@@ -126,7 +131,7 @@ td div {
   justify-content: center;
   align-items: center;
   gap: 0.2rem;
-}
+ }
 
 .cart-product {
   display: flex;
@@ -209,6 +214,10 @@ input {
   color:black;
 }
 
+.text-red{
+  color: red;
+}
+
 .text-column{
   display: flex;
   flex-direction: row;
@@ -246,6 +255,10 @@ form .btn-f {
   border-radius: 1rem;
   border: none;
 }
+
+a {
+  color: var(--offwhite);
+ } 
 
 .frete-entrega{
   display: flex;
@@ -293,4 +306,4 @@ form .btn-f {
   display: none;
 }
 
-/* inserir linha divisória, inserir no html */
+
