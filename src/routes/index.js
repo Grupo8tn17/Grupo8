@@ -18,6 +18,8 @@ router.get('/frete', entregasController.calcularFrete);
 router.get('/login', usuarioController.mostraLogin);
 router.post('/painel', usuarioController.logarUsuario);
 router.get('/painel', usuarioController.mostraPainelUsuario);
+//Meus Pedidos
+router.get('/meus-pedidos/:id', usuarioController.mostrarHistorico);
 
 //Cadastro Usuário
 router.get('/cadastro', usuarioController.mostraCadastro);

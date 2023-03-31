@@ -1,4 +1,7 @@
 const {Usuario} = require('../models');
+const {Pedido} = require('../models');
+const {HistoricoPedido} = require('../models');
+const {Produto} = require('../models');
 const bcrypt = require('bcrypt');
 const { validationResult } = require("express-validator");
 const session = require('express-session');
@@ -30,10 +33,6 @@ module.exports = {
                 
             }
         })
-
-        
-
-        
     },
 
     deslogarUsuario: (req, res) => {
@@ -41,8 +40,6 @@ module.exports = {
             req.session.destroy();
             res.redirect('/');
         }
-        
-
     },
 
     mostraPainelUsuario: async (req, res) => {
@@ -54,7 +51,6 @@ module.exports = {
         } else {
             res.redirect('/login');
         }
-        
     }, 
 
     mostraCadastro: (req, res) => {
@@ -81,7 +77,6 @@ module.exports = {
             await Usuario.create({nome, sobrenome, email, documento_usuario, telefone, senha: hashSenha, idadmin: 0});
             res.redirect("/login");
         }
-
     },
 
     mostraUsuarioAdmin: async (req, res) => {
@@ -122,7 +117,6 @@ module.exports = {
             js: ["painelAdmin-validacao.js"]
           })
         }
-    
       },
     
       formularioEditarUsuarioAdmin: async (req, res) => {
@@ -151,5 +145,16 @@ module.exports = {
         await Usuario.destroy({where: {idusuarios: id}});
     
         return res.redirect('/admin/usuarios');
+      },
+//contollers dos Pedidos
+      mostrarHistorico: async (req, res) => {
+        const {id} = req.params;
+        const usuarios = await Usuario.findAll({where: {idusuarios: id}})
+        //falta puxar os pedidos 
+
+        console.log(usuarios[0].nome);
+
+        return res.render('meus-pedidos', { usuarios, pedidos, css: ['style.css', 'painel-usuario.css'], js: "" });
       }
 }
+
