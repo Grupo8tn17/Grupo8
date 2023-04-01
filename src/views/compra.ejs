@@ -70,7 +70,11 @@
         </div>
 
         <div class="orderResume">
-
+            <% produtos.forEach(produto => { %>
+             
+            
+            <p><%= produto.title %></p>
+            <% }) %>
             <h3>Resumo da Compra</h3>
             <div class="orderResume-resume">
                 <p>1 Produto </p>

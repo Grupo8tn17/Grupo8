@@ -73,11 +73,10 @@
                         <p class="text-black resultado"></p>
                     </div>
                     <div class="text-column">
-                        <p>Cupom de desconto</p>
-                        <p class="text-black cupom-desconto">00,00</p>
-                    </div>
-                    <div class="text-column">
                         <p>Frete</p>
+                        <% if (!valorFrete) { %>
+                        <p class="text-black valor-frete">00,00</p> 
+                        <% } %>
                         <p class="text-black valor-frete"><%= valorFrete %></p>
                     </div>
                     <div class="text-column text-total">
@@ -88,15 +87,18 @@
             </form>
 
 
-            <form class="form-fechar-pedido">
+            <div class="form-fechar-pedido">
                 <button class="btn-f">
                     <p><a href="/products"></a>Escolher Mais Produtos</p>
                 </button>
             
-                <button class="btn-f">
-                    <p><a href="/checkout/order"></a>Finalizar pedido</p>
-                </button>
-            </form>
+                <form action="/checkout/order" method="POST" class="form-finaliza">
+                    <input type="hidden" name="produtos" id="produtosCarrinho" value="">
+                    <button type="submit" class="btn-f">
+                        <p>Finalizar pedido</p>
+                    </button>
+                </form>
+            </div>
 
         </section>
 

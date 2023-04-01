@@ -9,7 +9,9 @@ module.exports = {
     },
 
     compra: (req, res) => {
-        res.render('compra', {css: ['style.css', 'compra.css'], js: '' });
+        let {produtos} = req.body;
+        let parsedProdutos = JSON.parse(produtos);
+        res.render('compra', {produtos: parsedProdutos, css: ['style.css', 'compra.css'], js: [] });
     }, 
 
     finalizacaoCompra: (req, res) => {

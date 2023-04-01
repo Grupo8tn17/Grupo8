@@ -125,7 +125,7 @@ function buildCart() {
       toReal(objectCart[i].price) +
       "</span></td>" +
       '<td style="width: 10rem;"> ' +
-      '<div class="button-add">'  +
+      '<div class="button-add">' +
       '<button class="btnAdd">+</button>' +
       '<span class="quantity">' +
       objectCart[i].quantity +
@@ -177,18 +177,39 @@ updateTotal();
 
 showEmptyCart();
 
-function somaTotal () {
-var totalCompra = document.querySelector('.total');
-var cupomDesconto = document.querySelector('.cupom-desconto').innerText.replace(',', '.');
-var valorFrete = document.querySelector('.valor-frete').innerText.replace(',', '.');
-var resultadoFinal = document.querySelector('.resultado').innerText.replace(',', '.');
+function somaTotal() {
+  var totalCompra = document.querySelector('.total');
+  var cupomDesconto = document.querySelector('.cupom-desconto').innerText.replace(',', '.');
+  var valorFrete = document.querySelector('.valor-frete').innerText.replace(',', '.');
+  var resultadoFinal = document.querySelector('.resultado').innerText.replace(',', '.');
 
   console.log(cupomDesconto, valorFrete)
   let resultado = parseInt(cupomDesconto) + parseFloat(valorFrete) + parseFloat(resultadoFinal);
-  
+
   totalCompra.innerHTML = resultado.toFixed(2).replace('.', ',');
   console.log(resultado);
 
 }
 
 somaTotal();
+
+function pegarProdutos() {
+  const formFinaliza = document.querySelector('.form-finaliza');
+  let produtosCarrinho = document.querySelector('#produtosCarrinho');
+
+  formFinaliza.addEventListener('submit', (e) => {
+    e.preventDefault();
+    let objectCart = JSON.parse(localStorage.getItem("cart") || []);
+
+    if(!objectCart.length) {
+      alert('Carrinho Vazio!');
+      return
+    }
+    
+    produtosCarrinho.value = JSON.stringify(objectCart);
+    formFinaliza.submit();
+  })
+}
+
+pegarProdutos();
+
