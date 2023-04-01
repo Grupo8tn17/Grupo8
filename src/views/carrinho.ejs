@@ -56,18 +56,17 @@
                     <input type="text" name="cep" id="cep" placeholder="CEP">
                     <button type="">Calcular frete</button>
                     <div class="frete-entrega">
-                        <p>Valor do frete: R$ <%= valorFrete  %> </p>
-                        <p>Prazo de entrega: </p>
+                        <i class="fa-solid fa-truck-fast"></i>
+                        <div class="info-entrega">
+                            <p>Receba em até 4 dias úteis</p>
+                            <h3>Após o pagamento confirmado</h3>
+                        </div>
+                        <p>R$ <%= valorFrete %></p>
                     </div>
-
-                    <h3>Insira aqui seu cupom de desconto:</h3>
-                    <label for="cupom-desconto"></label>
-                    <input type="text" name="cupom-desconto" id="cupom-desconto" placeholder="Cupom de desconto">
-                    <button> Aplicar Desconto</button>
                 </div>
 
                 <div class="entrega entrega-right">
-                    <h2>TOTAL DA COMPRA:</h2>
+                    <h2>TOTAL DA COMPRA</h2>
                     <div class="text-column">
                         <p>Subtotal</p>
                         <p class="text-black resultado"></p>

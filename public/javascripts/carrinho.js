@@ -179,12 +179,10 @@ showEmptyCart();
 
 function somaTotal() {
   var totalCompra = document.querySelector('.total');
-  var cupomDesconto = document.querySelector('.cupom-desconto').innerText.replace(',', '.');
   var valorFrete = document.querySelector('.valor-frete').innerText.replace(',', '.');
   var resultadoFinal = document.querySelector('.resultado').innerText.replace(',', '.');
 
-  console.log(cupomDesconto, valorFrete)
-  let resultado = parseInt(cupomDesconto) + parseFloat(valorFrete) + parseFloat(resultadoFinal);
+  let resultado = parseFloat(valorFrete) + parseFloat(resultadoFinal);
 
   totalCompra.innerHTML = resultado.toFixed(2).replace('.', ',');
   console.log(resultado);

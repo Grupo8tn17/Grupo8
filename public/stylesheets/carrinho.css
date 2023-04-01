@@ -160,6 +160,14 @@ input {
   box-shadow: 1px 1px 2px 2px var(--gray);
 }
 
+.dados-pedido {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
 .form-entrega {
   width: 100%;
   display: flex;
@@ -184,6 +192,32 @@ input {
   border-radius: 0.3rem;
   box-shadow: 4px 4px 4px 4px var(--gray);
   border-radius: 0.3rem;
+}
+
+.entrega .text-total {
+  margin-top: 4rem;
+}
+
+.entrega .resultado {
+  margin-bottom: 1rem;
+}
+
+.entrega h2 {
+  margin-bottom: 1rem;
+}
+
+.entrega-left .frete-entrega {
+  margin-top: 2rem;
+}
+
+.entrega-left .frete-entrega p {
+  font-size: 1.3rem;
+}
+
+.entrega-left .frete-entrega h3 {
+  color: var(--gray);
+  font-weight: 500;
+  font-size: .9rem;
 }
 
 .img-entrega{
@@ -234,10 +268,22 @@ input {
 }
 
 .frete-entrega{
+  width: 70%;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
+  align-items: center;
   margin: .5rem;
+  margin-left: 6.8rem;
+}
+
+.frete-entrega i {
+  font-size: 1.5rem;
+}
+
+.frete-entrega p {
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 
 .form-fechar-pedido {
