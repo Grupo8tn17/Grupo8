@@ -1,6 +1,16 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 
+:root {
+    --bg-lightcolor: #d0e1aa;
+    --bg-midlelightcolor: #bfd68b;
+    --bg-midlecolor: #9ab669;
+    --bg-darkcolor: #4e6122;
+    --offwhite: #f7f4eb;
+    --offwhite-lightborder: #fffaf0;
+    --offwhite-darkborder: #dbcea6;
+    --gray: #b5c1b8;
+  }
 
 *{
     margin: 0;
@@ -9,32 +19,38 @@
     font-family: 'lato';
 
 }
+
 body{
-   background-color: #f7f4eb ;
+   background-color: var(-offwhite);
 }
-
-header{
-    color:#fff;
-    padding-top: 0.625rem;
-    text-align: center;
-    padding-bottom: 0.625rem;
-    background-color: #4e6022;
-}
-
-.titulo-painel hr {
-    border: 0;
-    height: 0.2rem;
-    background-image: linear-gradient(to right,transparent,var(--bg-darkcolor),transparent);
-  }
 
 .titulo-painel{
     width: 100%;
     padding-top: 1.25rem;
     text-align: center;
     padding-bottom: 0.625rem;
-    color: #4e6022;
+    color: var(--bg-darkcolor);
 }
-.container{
+
+.painel-container main{
+    grid-area: main;
+}
+
+.titulo-painel h1{
+    font-size: 3rem;
+    color: var(--bg-darkcolor);
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.titulo-painel hr {
+    border: 0;
+    height: 0.2rem;
+    background-image: linear-gradient(to right,transparent,var(--bg-darkcolor),transparent);
+    margin-bottom: 1rem;
+  }
+
+.painel-container{
     width: 95%;
     margin: auto;
     display: grid;
@@ -43,188 +59,234 @@ header{
     padding-bottom: 1.25rem;
     grid-template-areas: "aside main main main main main";
 }
-/* Início do main */
-.container main{
-    grid-area: main;
+
+.introduction {
+  font-size: 1.5rem;
+  font-style: italic;
+  text-align: center;
+  font-weight: 700;
 }
 
-/* Início do Primeiro Produto */
-.container main .produtos{
-    height: 100vh;
-    overflow-y: scroll;
-    margin-bottom: 20px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-    
+.introduction h3{
+    color: var(--bg-darkcolor);
+    padding: 1rem;
 }
-.container main .produtos .produto01{
-    padding: 0.625rem;
-    background-color: #fff;
-    box-shadow: 0.016rem 0.016rem 0.069rem 0.016rem rgb(201, 201, 201);
-    border-radius: 30px;
-    margin: 30px 0;
+
+.introduction p{
+    color: var(--gray);
+    padding: .5rem;
 }
-.container main .produtos .produto01 .cont-produto01{
-    display: flex;
+
+.dados-usuario{
+    width: 100%;
+    display: flex; 
+    flex-direction: column;   
+    justify-content: center;
+    flex-wrap: wrap;
     align-items: center;
-}
-.container main .produtos .produto01 .cont-produto01 figure{
-    margin-right: 1.875rem;
-}
-.container main .produtos .produto01 .cont-produto01 figure img{
-    width: 9.25rem;
-}
-.container main .produtos .produto01 .cont-produto01 .info-produto01 h4{
-    font-size: 2rem;
-}
-.container main .produtos .produto01 .cont-produto01 .info-produto01 p span{
-    font-size: 1.563rem;
-}
-/* Fim do Primeiro Produto */
-/* Início do Segundo Produto */
-.container main .produtos .produto02{
-    padding: 0.625rem;
-    margin-top: 1.25rem;
-    margin-bottom: 2.5rem;
-    background-color: #fff;
-    box-shadow: 0.016rem 0.016rem 0.069rem 0.016rem rgb(201, 201, 201);
-    border-radius: 30px;
-    margin: 30px 0;
-}
-.container main .produtos .produto02 .cont-produto02{
-    display: flex;
-    align-items: center;
-}
-.container main .produtos .produto02 .cont-produto02 figure{
-    margin-right: 1.875rem;
-}
-.container main .produtos .produto02 .cont-produto02 figure img{
-    width: 9.25rem;
-}
-.container main .produtos .produto02 .cont-produto02 .info-produto02 h4{
-    font-size: 2rem;
-}
-.container main .produtos .produto02 .cont-produto02 .info-produto02 p span{
-    font-size: 1.563rem;
-}
-/* Fim do Segundo Produto */
-
-/* Início dos Dados Pessoais */
-.container main .dadospessoais{
-    padding: 30px;
-    background-color: #fff;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-    
-    
+    align-content: center;
+    margin: 2rem;
 }
 
-.container main .dadospessoais h2{
+.estilo-div{
+    width: 50%;
     text-align: center;
-    margin-bottom: 1.25rem;
+    min-width:35vw;
+    padding: 1rem;
+    margin: 1rem;
+    box-shadow: 1px 3px 3px 3px var(--gray);
 }
-.container main .grupo-dados{
-    display: grid;
-    grid-template-areas: "dados01 dados02";
+
+.estilo-div h2{
+    font-size: 2rem;
+    color: var(--bg-darkcolor);
+    font-weight: 700;
+    padding-bottom: 1rem;
 }
-.container main .grupo-dados .dados01{
-    grid-area: dados01;
-}
-.container main .grupo-dados .dados02{
-    grid-area: dados02;
-}
-.container main .dadospessoais button{
-    width: 12.5rem;
-    padding: 0.625rem;
-    border-radius: 0.563rem;
+
+.estilo-div hr {
+    border: 0;
+    height: 0.2rem;
+    background-image: linear-gradient(to right,transparent,var(--bg-darkcolor),transparent);
+    margin-bottom: 1rem;
+  }
+
+  .estilo-div b{
+    font-size: 1.5rem;
+    color: var(--bg-darkcolor);
+  }
+
+  .estilo-div p{
+    font-size: 1.3rem;
+    font-weight: 600;
+  }
+
+  .estilo-div button {
+    width: 18rem;
+    height: 2.5rem;
+    background-color: var(--bg-darkcolor);
     border: none;
+    border-radius: 3rem;
+    margin-top: 0.8rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+    transition: all 0.15s ease-in-out;
+    font-size: 1.3rem;
+    text-align: center;
+    color: var(--offwhite);
     cursor: pointer;
-    background-color: #4e6022;
-    
-}
-.container main .dadospessoais button:hover{
-    background-color: #d0e1aa;
-    transition-duration: 1s ;
-}
-/* Fim dos Dados Pessoais */
+  }
+
+  .estilo-div button:hover {
+   filter: brightness(115%);
+  -webkit-transform: translateX(-2px);
+  transform: translateX(-2px);  
+  }
+
+
 /* Início Aside */
-.container aside{
+
+.painel-container aside{
     grid-area: aside;
 }
-.container aside .nav-usuario{
+.aside-user{
+    height: 100%;
     padding: 0.625rem;
-    background-color: #fff;
-    box-shadow: 0.016rem 0.016rem 0.063 #000;
-}
-.container aside .nav-usuario figure{
-    text-align: center;
-}
-.container aside .nav-usuario h3{
-    text-align: center;
-    margin-bottom: 1.25rem;
-}
-.container aside .nav-usuario figure img{
-    width: 9.375rem;
+    background-color: var(-offwhite);
+    box-shadow: 1px 3px 3px 3px var(--gray);
 }
 
-.container aside .nav-usuario nav ul{
-    list-style: none;
-    
+.aside-user figure{
+    width: 100%;
+    text-align: center;
+    padding-bottom: 1.5rem;        
 }
-.container aside .nav-usuario nav ul li{
+
+.icon-user {
+    width: 9rem;
+    font-size: 4rem;
+    color: var(--offwhite);
+    background-color: var(--bg-darkcolor);
+    text-align: center;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    margin: 1rem;
+    border-radius: 50%;
+}
+
+.name-user{
+    text-align: center;    
+    color: var(--bg-darkcolor);
+    font-size: 1.7rem;
+    margin-bottom: 3rem;
+}
+
+.options-user{
+    list-style: none;    
+}
+
+.options-user li{
     margin-top: 0.625rem;
-    margin-bottom: 0.625rem;
-    
-}
-.container aside .nav-usuario nav ul li a{
-    color: #000;
-    font-size: 1.063rem;
-    text-decoration: none;
-    
-}
-
-.container aside .nav-usuario nav ul li a:hover{
-    color:#4e6022;
-    transition-duration: 500ms;
-}
-
-.container aside .nav-usuario nav ul li a i{
-    font-size: 1.25rem;
+    margin-bottom: 0.625rem;    
 }
 
 
-/* Fim Aside */
-/* Rodape */
-/* footer{
-    color: #fff;
-    padding-top: 0.625rem;
-    text-align: center;
-    padding-bottom: 0.625rem;
-    background-color: #4e6022;
-} */
+.options-user li a{
+    color: var(--gray);
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.options-user hr{
+    width: 100%;   
+    border: .03rem solid var(--gray);
+}
+
+
+.list-icon i{
+    font-size: 2.5rem;
+    color: var(--bg-darkcolor);
+    padding: 1rem 2rem 1rem 1rem;
+}
+
+.list-icon:hover{
+    color: var(--bg-darkcolor);
+}
+
+/* Início modal dados pessoais */
+
+dialog::backdrop{
+    background-color: rgb(0 0 0 / .4);
+}
+
+dialog{
+    background-color: var(-offwhite);
+    border: none;
+    border-radius: 1rem;    
+    box-shadow: 1px 3px 3px 3px var(--bg-darkcolor);
+    width: 65%;
+    height: 65%;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+dialog h1{
+    text-align: center;    
+    color: var(--bg-darkcolor);
+    font-size: 1.7rem;
+    padding: 1rem; 
+}
+
+dialog hr {
+    border: 0;
+    height: 0.2rem;
+    background-image: linear-gradient(to right,transparent,var(--bg-darkcolor),transparent);
+    margin-bottom: 2rem;
+}
+
+dialog form{
+    display: flex; 
+    flex-direction: column;   
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: center;
+}
+
+dialog form input {
+    background-color: #ffff;
+    border: none;
+    width: 70%;
+    height: 4rem;
+    padding-left: 1rem;
+    margin-bottom: 2rem;
+    box-shadow: 5px 4px 4px var(--gray);
+    font-size: 1.5rem;
+    transition: all 0.15s ease-in-out;
+}
+
+dialog form label{
+    font-size: 1.3rem;
+    color: var(--bg-darkcolor);
+    font-weight: 700;
+}
+
+
+/* Responsividade */
 
 @media(max-width: 986px){
-    .container{
+    .painel-container{
         grid-template-areas: "aside ." "main main";
     }
-    .container aside{
+    .painel-container aside{
         margin-bottom: 1.25rem
     }
 }
-@media(max-width: 732px){
-    .container main .produtos .produto01 .cont-produto01 figure img{
-        width: 9.375rem;
-    }
-    .container main .produtos .produto01 .cont-produto01 .info-produto01 h4{
-        font-size: 1.2rem;
-    }
-    .container main .produtos .produto02 .cont-produto02 figure img{
-        width: 9.375rem;
-    }
-    .container main .produtos .produto02 .cont-produto02 .info-produto02 h4{
-        font-size: 1.2rem;
-    }
-}
+
 @media(max-width: 430px){
-    .container main .grupo-dados{
+    .painel-container main .grupo-dados{
         grid-template-areas: "dados01" "dados02";
     }
 }

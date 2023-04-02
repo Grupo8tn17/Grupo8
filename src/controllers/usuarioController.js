@@ -20,7 +20,7 @@ module.exports = {
                 bcrypt.compare(senha, usuario.senha, (erro, result) => {
                     if(result) {
                         req.session.login = usuario.idusuarios
-                        res.render('painel', {usuarios, css: ['style.css', 'painel-usuario.css'], js: ''});
+                        res.render('painel', {usuarios, css: ['style.css', 'painel-usuario.css'], js: ['painel-usuario.js']});
                     } else {
                         let erro = {
                             msg: "Não foi possível realizar o login!"
@@ -47,7 +47,7 @@ module.exports = {
             let idLogin = req.session.login;
             let usuarios = await Usuario.findAll({where: {idusuarios: idLogin}});
             console.log(usuarios);
-            res.render('painel', {usuarios, css: ['style.css', 'painel-usuario.css'], js: ''});
+            res.render('painel', {usuarios, css: ['style.css', 'painel-usuario.css'], js: ['painel-usuario.js']});
         } else {
             res.redirect('/login');
         }
@@ -58,7 +58,7 @@ module.exports = {
     },
 
     adicionaUsuario: async (req, res) => {
-        const {nome, sobrenome, email, documento_usuario, telefone, senha, senha2} = req.body;
+        const {nome, sobrenome, email, documento_usuario, telefone, data_nascimento, senha, senha2} = req.body;
   
         let { errors } = validationResult(req);
 
@@ -74,7 +74,7 @@ module.exports = {
 
         if(senha == senha2) {
             const hashSenha = await bcrypt.hash(senha, 10);
-            await Usuario.create({nome, sobrenome, email, documento_usuario, telefone, senha: hashSenha, idadmin: 0});
+            await Usuario.create({nome, sobrenome, email, documento_usuario, telefone, data_nascimento, senha: hashSenha, idadmin: 0});
             res.redirect("/login");
         }
     },
