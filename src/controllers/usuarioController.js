@@ -17,7 +17,7 @@ module.exports = {
                 bcrypt.compare(senha, usuario.senha, (erro, result) => {
                     if(result) {
                         req.session.login = usuario.idusuarios
-                        res.render('painel', {usuarios, css: ['style.css', 'painel-usuario.css'], js: ''});
+                        return res.redirect('/');
                     } else {
                         let erro = {
                             msg: "Não foi possível realizar o login!"

@@ -55,30 +55,27 @@
                     <label for="cep"></label>
                     <input type="text" name="cep" id="cep" placeholder="CEP">
                     <button type="">Calcular frete</button>
+                    <% if (valorFrete) { %>
                     <div class="frete-entrega">
-                        <p>Valor do frete: R$ <%= valorFrete  %> </p>
-                        <p>Prazo de entrega: </p>
+                        <i class="fa-solid fa-truck-fast"></i>
+                        <div class="info-entrega">
+                            <p>Receba em até <%= prazo %></p>
+                            <h3>Após o pagamento confirmado</h3>
+                        </div>
+                        <p><%= valorFrete?.toLocaleString('pt-br',{style: 'currency' , currency: 'BRL' }) %></p>
                     </div>
-
-                    <h3>Insira aqui seu cupom de desconto:</h3>
-                    <label for="cupom-desconto"></label>
-                    <input type="text" name="cupom-desconto" id="cupom-desconto" placeholder="Cupom de desconto">
-                    <button> Aplicar Desconto</button>
+                    <% } %>
                 </div>
 
                 <div class="entrega entrega-right">
-                    <h2>TOTAL DA COMPRA:</h2>
+                    <h2>TOTAL DA COMPRA</h2>
                     <div class="text-column">
                         <p>Subtotal</p>
                         <p class="text-black resultado"></p>
                     </div>
                     <div class="text-column">
-                        <p>Cupom de desconto</p>
-                        <p class="text-black cupom-desconto">00,00</p>
-                    </div>
-                    <div class="text-column">
                         <p>Frete</p>
-                        <p class="text-black valor-frete"><%= valorFrete %></p>
+                        <p class="text-black valor-frete"><%= valorFrete?.toFixed(2).replace('.', ',') %></p>
                     </div>
                     <div class="text-column text-total">
                         <p>TOTAL</p>
@@ -88,15 +85,18 @@
             </form>
 
 
-            <form class="form-fechar-pedido">
+            <div class="form-fechar-pedido">
                 <button class="btn-f">
                     <p><a href="/products"></a>Escolher Mais Produtos</p>
                 </button>
             
-                <button class="btn-f">
-                    <p><a href="/checkout/order"></a>Finalizar pedido</p>
-                </button>
-            </form>
+                <form action="/checkout/order" method="POST" class="form-finaliza">
+                    <input type="hidden" name="produtos" id="produtosCarrinho" value="">
+                    <button type="submit" class="btn-f">
+                        <p>Finalizar pedido</p>
+                    </button>
+                </form>
+            </div>
 
         </section>
 
