@@ -148,13 +148,13 @@ module.exports = {
       },
 //contollers dos Pedidos
       mostrarHistorico: async (req, res) => {
-        const {id} = req.params;
-        const usuarios = await Usuario.findAll({where: {idusuarios: id}})
-        //falta puxar os pedidos 
+       
+          const {id} = req.params;
+          const usuarios = await Usuario.findAll({where: {idusuarios: id}});
+          
 
-        console.log(usuarios[0].nome);
+        return res.render('meus-pedidos', { usuarios, css: ['style.css', 'painel-usuario.css', 'meus-pedidos.css'], js: "" });
 
-        return res.render('meus-pedidos', { usuarios, pedidos:{}, css: ['style.css', 'painel-usuario.css'], js: "" });
-      }
+     }
 }
 
