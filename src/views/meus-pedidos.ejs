@@ -9,69 +9,22 @@
             <!-- início do main -->
             <main>
                                
-                
+                <% if (!pedidos) { %>
+                    <h4 class="msgError"> <%= errors.server %> </h4>
+                <% } else { %>
                 <!-- Início da Section   Produtos -->
                 <section class="produtos">
                     <!-- inicio do Scroll -->
                     <div class="scroll">
                         <!-- Início do Produto 1 -->
                         <div class="produto01">
-                            <span>
-                                <label>Produto</label>
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                <label>#0000000001</label>
-                            </span><br><br>
-                            <div class="cont-produto01">
-                                <figure>
-                                    <img src="/images/img-produto01.jpeg">
-                                </figure>
-                                <div class="info-produto01">
-                                    <h3>Creme Facial + Protetor Solar - Sweet Rose</h3><br>
-                                    <p><strong>R$ 250,00 - x1</strong></p>
-                                </div>
-                            </div>
+                            <div> pedido.pedidos_idpedidos </div>
+                            <div>pedido.data_compra</div>
+                            <div>pedido.status_pedido</div>
                         </div>
+    
                         <!-- Fim do Produto 1 -->
-                        
-                        <!-- Início do Produto 2 -->
-                        <div class="produto02">
-                            <span>
-                                <label>Produto</label>
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                <label>#0000000002</label>
-                            </span><br><br>
-                            <div class="cont-produto02">
-                                <figure>
-                                    <img src="/images/img-produto02.jpeg">
-                                </figure>
-                                <div class="info-produto02">
-                                    <h3>Oléo Terapêutico - Brisa do Mar</h3><br>
-                                    <p><strong>R$ 250,00 - x1</strong></p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Fim do Produto 2 -->
-                        
-                        <!-- Inicio do produto 3 -->
-                        <div class="produto02">
-                            <span>
-                                <label>Produto</label>
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                <label>#0000000002</label>
-                            </span><br><br>
-                        <div class="cont-produto02">
-                            <figure>
-                                <img src="/images/img-produto02.jpeg">
-                            </figure>
-                            <div class="info-produto02">
-                                <h3>Oléo Terapêutico - Brisa do Mar</h3><br>
-                                <p><strong>R$ 250,00 - x1</strong></p>
-                            </div>
-                        </div>
-                        <!-- fim do produto 3 -->
+                <% } %>                        
                     </div>
                     <!-- fim do scroll -->
                 </div>
