@@ -182,10 +182,12 @@ function somaTotal() {
   var valorFrete = document.querySelector('.valor-frete').innerText.replace(',', '.');
   var resultadoFinal = document.querySelector('.resultado').innerText.replace(',', '.');
 
-  let resultado = parseFloat(valorFrete) + parseFloat(resultadoFinal);
+  if(valorFrete) {
+    let resultado = parseFloat(valorFrete) + parseFloat(resultadoFinal);
 
   totalCompra.innerHTML = resultado.toFixed(2).replace('.', ',');
-  console.log(resultado);
+  }
+  
 
 }
 

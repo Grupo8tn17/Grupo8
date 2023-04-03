@@ -55,14 +55,16 @@
                     <label for="cep"></label>
                     <input type="text" name="cep" id="cep" placeholder="CEP">
                     <button type="">Calcular frete</button>
+                    <% if (valorFrete) { %>
                     <div class="frete-entrega">
                         <i class="fa-solid fa-truck-fast"></i>
                         <div class="info-entrega">
-                            <p>Receba em até 4 dias úteis</p>
+                            <p>Receba em até <%= prazo %></p>
                             <h3>Após o pagamento confirmado</h3>
                         </div>
-                        <p>R$ <%= valorFrete %></p>
+                        <p><%= valorFrete?.toLocaleString('pt-br',{style: 'currency' , currency: 'BRL' }) %></p>
                     </div>
+                    <% } %>
                 </div>
 
                 <div class="entrega entrega-right">
@@ -73,10 +75,7 @@
                     </div>
                     <div class="text-column">
                         <p>Frete</p>
-                        <% if (!valorFrete) { %>
-                        <p class="text-black valor-frete">00,00</p> 
-                        <% } %>
-                        <p class="text-black valor-frete"><%= valorFrete %></p>
+                        <p class="text-black valor-frete"><%= valorFrete?.toFixed(2).replace('.', ',') %></p>
                     </div>
                     <div class="text-column text-total">
                         <p>TOTAL</p>

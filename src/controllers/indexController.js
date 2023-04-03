@@ -1,4 +1,4 @@
-const {Produto, Categoria, Marca} = require('../models');
+const {Produto, Categoria, Marca, Usuario} = require('../models');
 const {Op} = require('sequelize');
 
 module.exports = {
@@ -8,10 +8,19 @@ module.exports = {
         return res.render('index', {usuarios: {}, productBatom, productPoFacial, css: ['style.css', 'index.css'], js: ['home.js'] });
     },
 
-    compra: (req, res) => {
-        let {produtos} = req.body;
-        let parsedProdutos = JSON.parse(produtos);
-        res.render('compra', {produtos: parsedProdutos, css: ['style.css', 'compra.css'], js: [] });
+    compra: async (req, res) => {
+        if(req.session.login) {
+            let {produtos} = req.body;
+            let parsedProdutos = JSON.parse(produtos);
+            let idUsuario = req.session.login;
+            let usuario = await Usuario.findAll({where: {idusuarios: idUsuario}});
+            console.log(usuario);
+            
+            res.render('compra', {usuario, produtos: parsedProdutos, css: ['style.css', 'compra.css'], js: [] });
+        } else {
+            return res.render('login', {erro: {}, errors: {}, css: ['style.css', 'login.css'], js: ''})
+        }
+        
     }, 
 
     finalizacaoCompra: (req, res) => {

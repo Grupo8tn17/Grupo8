@@ -65,10 +65,12 @@
                 <img src="/images/caminhao-de-entrega.png" alt="">
                 <span>Consulte o frete e a disponibilidade</span>
               </div>
-              <div class="freight-field">
-                <input type="number">
-                <button>Calcular</button>
-              </div>
+              <form action="/descricao-produto-frete" method="GET">
+                <div class="freight-field">
+                  <input type="text" name="cep" id="cep" placeholder="CEP">
+                  <button type="submit">Calcular</button>
+                </div>
+              </form>
             </div>
           </div>
     </div>
