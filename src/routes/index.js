@@ -23,7 +23,7 @@ router.get('/meus-pedidos/:id', usuarioController.mostrarHistorico);
 router.get('/cadastro', usuarioController.mostraCadastro);
 router.post('/cadastro/adiciona', validacaoCadastroUsuario, usuarioController.adicionaUsuario);
 
-router.get('/checkout/order', indexController.compra);
+router.post('/checkout/order', indexController.compra);
 
 router.get('/checkout/order-finished', indexController.finalizacaoCompra);
 

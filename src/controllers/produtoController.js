@@ -225,7 +225,7 @@ module.exports = {
     const { id } = req.params;
     const listproducts = await Produto.findAll({include: [{
       model: Categoria, as: 'categorias'}, {model: Marca, as: 'marcas'}], where: { idprodutos: id } });
-    res.render('descricao-produto', { listproducts: listproducts, css: ['style.css', 'descricao-produto.css'], js: ['descricao-produto.js', 'adiciona-carrinho.js'] })
+    res.render('descricao-produto', { valorFrete: null, prazo: null, listproducts: listproducts, css: ['style.css', 'descricao-produto.css'], js: ['descricao-produto.js', 'adiciona-carrinho.js'] })
   },
 
   mostraCabelos: async (req, res) => {
