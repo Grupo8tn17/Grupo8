@@ -154,7 +154,7 @@ module.exports = {
 
         console.log(usuarios[0].nome);
 
-        return res.render('meus-pedidos', { usuarios, pedidos, css: ['style.css', 'painel-usuario.css'], js: "" });
+        return res.render('meus-pedidos', { usuarios, pedidos:{}, css: ['style.css', 'painel-usuario.css'], js: "" });
       }
 }
 

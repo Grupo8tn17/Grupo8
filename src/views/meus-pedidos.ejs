@@ -1,14 +1,14 @@
 <%- include('partials/cabecalho-alternativo') %>
         <!-- Final do Cabeçalho --> 
-        <div class="titulo-painel">
-            <h1>Meus Pedidos</h1><hr> 
-            
-        </div>
+        
         <!-- Início do Container -->
-        <section class="container">
+        <section class="painel-container">
             <!-- início do main -->
             <main>
-                               
+                <div class="titulo-painel">
+                    <h1>Meus Pedidos</h1><hr> 
+                    
+                </div>         
                 
                 <!-- Início da Section   Produtos -->
                 <section class="produtos">
@@ -32,46 +32,7 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- Fim do Produto 1 -->
-                        
-                        <!-- Início do Produto 2 -->
-                        <div class="produto02">
-                            <span>
-                                <label>Produto</label>
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                <label>#0000000002</label>
-                            </span><br><br>
-                            <div class="cont-produto02">
-                                <figure>
-                                    <img src="/images/img-produto02.jpeg">
-                                </figure>
-                                <div class="info-produto02">
-                                    <h3>Oléo Terapêutico - Brisa do Mar</h3><br>
-                                    <p><strong>R$ 250,00 - x1</strong></p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Fim do Produto 2 -->
-                        
-                        <!-- Inicio do produto 3 -->
-                        <div class="produto02">
-                            <span>
-                                <label>Produto</label>
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                <label>#0000000002</label>
-                            </span><br><br>
-                        <div class="cont-produto02">
-                            <figure>
-                                <img src="/images/img-produto02.jpeg">
-                            </figure>
-                            <div class="info-produto02">
-                                <h3>Oléo Terapêutico - Brisa do Mar</h3><br>
-                                <p><strong>R$ 250,00 - x1</strong></p>
-                            </div>
-                        </div>
-                        <!-- fim do produto 3 -->
+                      
                     </div>
                     <!-- fim do scroll -->
                 </div>
@@ -82,21 +43,29 @@
             <!-- Fim do Main -->
             <!-- Início do Aside -->
             <aside>
-                <section class="nav-usuario">
-                <% usuarios.forEach(usuario => { %>
-                 
+                <section class="aside-user">
+                    <% usuarios.forEach(usuario=> { %>
                     <figure>
-                        <img src="/images/usuario.png" alt="Foto do Usuario">
+                        <i class="icon-user fa-solid fa-user"></i>
                     </figure>
                     
-                    <h3><%= usuario.nome + " " + usuario.sobrenome %></h3>
+                    <h3 class="name-user">
+                <%= usuario.nome + " " + usuario.sobrenome %>
+                    </h3>
                     
                     <nav>
-                        <ul>
-                            <li><a href="#"><i class="fa-solid fa-user"></i>&nbsp;&nbsp;&nbsp;Minha Conta</a><hr></li>
-                            <li><a href="#"><i class="fa-sharp fa-solid fa-clipboard-list"></i>&nbsp;&nbsp;&nbsp;&nbsp;Meus Pedidos</a><hr></li>
-                            <li><a href="#"><i class="fa-solid fa-address-card"></i>&nbsp;&nbsp;Meus Endereços</a><hr></li>
-                            <li><a href="/sair"><i class="fa-solid fa-right-from-bracket"></i>&nbsp;&nbsp;Sair</a><hr></li>
+                        <ul class="options-user">
+                            <li><a class="list-icon" href="/painel/#meus-dados"><i class="fa-solid fa-user"></i>Meus Dados</a></li>
+                            <hr>
+                            <li><a class="list-icon" href="/meus-pedidos/<%= usuario.idusuarios %>"><i
+                                        class="fa-sharp fa-solid fa-clipboard-list"></i>Meus Pedidos</a></li>
+                            <hr>
+                            <li><a class="list-icon" href="/painel/#meus-enderecos"><i class="fa-solid fa-address-card"></i>Meus Endereços</a>
+                            </li>
+                            <hr>
+                            <li><a class="list-icon" href="/sair"><i class="fa-solid fa-right-from-bracket"></i>Sair</a>
+                            </li>
+                            <hr>
                         </ul>
                     </nav>
                 <% }) %>
