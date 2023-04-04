@@ -48,13 +48,16 @@
             <form class="form-entrega" action="/frete" method="GET">
 
                 <div class="entrega entrega-left">
+                    <% if (erro) { %>
+                        <p class="msgError"><%= erro.msg %></p>
+                    <% } %>
                     <span class="img-entrega"><i class="fa-solid fa-truck-fast"></i></span>
                     <h2><strong>ENTREGA</strong></h2>
 
                     <h3>Insira o cep e veja o valor do frete e o prazo de entrega.</h3>
 
                     <label for="cep"></label>
-                    <input type="text" name="cep" id="cep" placeholder="CEP">
+                    <input type="text" name="cep" id="cep" placeholder="CEP" required>
                     <button type="">Calcular frete</button>
                     <% if (valorFrete) { %>
                     <div class="frete-entrega">
@@ -94,6 +97,8 @@
             
                 <form action="/checkout/order" method="POST" class="form-finaliza">
                     <input type="hidden" name="produtos" id="produtosCarrinho" value="">
+                    <input type="hidden" name="frete" value="<%= valorFrete %>">
+                    <input type="hidden" name="prazo" value="<%= prazo%>">
                     <button type="submit" class="btn-f">
                         <p>Finalizar pedido</p>
                     </button>

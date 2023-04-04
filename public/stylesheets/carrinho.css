@@ -353,3 +353,22 @@ a {
 }
 
 
+
+hr {
+  border: 0;
+  height: 0.2rem;
+  background-image: linear-gradient(
+    to right,
+    transparent,
+    #4e6122,
+    transparent
+  );
+}
+
+p.msgError {
+  min-height: 1rem;
+  font-style: italic;
+  color: red;
+  padding: .5rem;
+  margin-left: 1.5rem;
+}
