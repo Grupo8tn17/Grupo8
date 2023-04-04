@@ -1,4 +1,4 @@
-const {Produto, Categoria, Marca, Usuario} = require('../models');
+const {Produto, Categoria, Marca, Usuario, Endereco} = require('../models');
 const {Op} = require('sequelize');
 
 module.exports = {
@@ -9,17 +9,31 @@ module.exports = {
     },
 
     compra: async (req, res) => {
-        if(req.session.login) {
-            let {produtos} = req.body;
+        let {produtos, frete, prazo} = req.body;
+        
+        if(frete) {
             let parsedProdutos = JSON.parse(produtos);
-            let idUsuario = req.session.login;
-            let usuario = await Usuario.findAll({where: {idusuarios: idUsuario}});
-            console.log(usuario);
-            
-            res.render('compra', {usuario, produtos: parsedProdutos, css: ['style.css', 'compra.css'], js: [] });
+            if(req.session.login) {
+                let idUsuario = req.session.login;
+                let enderecos = await Endereco.findAll({include: [{model: Usuario, as: 'usuarios'}], where: {usuarios_idusuarios: idUsuario}})
+                return res.render('compra', {enderecos, produtos: parsedProdutos, frete, prazo, css: ['style.css', 'compra.css'], js: ['compra.js'] });
+            } else {
+                return res.render('login', {erro: {}, errors: {}, css: ['style.css', 'login.css'], js: ''})
+            }
         } else {
-            return res.render('login', {erro: {}, errors: {}, css: ['style.css', 'login.css'], js: ''})
+            let erro = {
+                msg: 'Favor preencher o campo de Frete'
+            }
+            return res.render("carrinho", {
+                css: ["style.css", "carrinho.css", "cabecalho-alternativo.css"],
+                js: ["carrinho.js"],
+                valorFrete: null,
+                prazo: null, 
+                erro      
+              });
         }
+
+        
         
     }, 
 
