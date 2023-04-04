@@ -41,7 +41,8 @@ module.exports = {
       css: ["style.css", "carrinho.css", "cabecalho-alternativo.css"],
       js: ["carrinho.js"],
       valorFrete: null,
-      prazo: null      
+      prazo: null, 
+      erro: []      
     });
   },
 
@@ -59,6 +60,7 @@ module.exports = {
         js: ["carrinho.js"],
         valorFrete,
         prazo,
+        erro: []
       });
     } catch (erro) {
       console.log(erro?.code);

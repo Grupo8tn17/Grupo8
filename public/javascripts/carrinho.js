@@ -108,7 +108,7 @@ function buildCart() {
       '<tr id="' +
       objectCart[i].id +
       '"<div class="item-product">' +
-      '<td class="id" style="min-width: 7rem;">' +
+      '<td class="id" style="min-width: 7rem;">Ref: ' +
       objectCart[i].id +
       "</td>" +
       "<td>" +
