@@ -5,6 +5,7 @@ const usuarioController = require('../controllers/usuarioController');
 const carrinhoController = require('../controllers/carrinhoController');
 const produtoController = require('../controllers/produtoController');
 const validacaoCadastroUsuario = require('../middleware/validacao-cadastro-usuario');
+const enderecoController = require('../controllers/enderecoController');
 
 //Home
 router.get('/', indexController.index);
@@ -24,6 +25,7 @@ router.get('/cadastro', usuarioController.mostraCadastro);
 router.post('/cadastro/adiciona', validacaoCadastroUsuario, usuarioController.adicionaUsuario);
 
 router.post('/checkout/order', indexController.compra);
+router.post('/adciona-endereco', enderecoController.adcionaEndereco);
 
 router.get('/checkout/order-finished', indexController.finalizacaoCompra);
 

@@ -58,11 +58,12 @@ module.exports = {
     },
 
     adicionaUsuario: async (req, res) => {
-        const {nome, sobrenome, email, documento_usuario, telefone, data_nascimento, senha, senha2} = req.body;
-  
+        const {nome, sobrenome, email, documento_usuario, telefone, senha, senha2} = req.body;
+        const usuario = await Usuario.findAll({where: {email: email}});
+        console.log(usuario);
         let { errors } = validationResult(req);
 
-        if (errors.length) {
+        if (errors.length ) {
         const errorsFormated = {};
         errors.forEach((error) => (errorsFormated[error.param] = error.msg));
         
@@ -72,11 +73,23 @@ module.exports = {
         });
         }
 
-        if(senha == senha2) {
+        if(!usuario) {
+          console.log('entrou no if do usuario');
+          if(senha == senha2) {
             const hashSenha = await bcrypt.hash(senha, 10);
             await Usuario.create({nome, sobrenome, email, documento_usuario, telefone, data_nascimento, senha: hashSenha, idadmin: 0});
             res.redirect("/login");
         }
+        } else {
+          let erro = {
+            msg: "Email já cadastrado!"
+          };
+
+          res.render('cadastro', {errors: {}, erro, css: ['style.css', 'cadastro.css'], js: ''});
+        }
+
+        
+
     },
 
     mostraUsuarioAdmin: async (req, res) => {
