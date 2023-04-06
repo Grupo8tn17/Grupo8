@@ -48,53 +48,38 @@
             <form class="form-entrega" action="/frete" method="GET">
 
                 <div class="entrega entrega-left">
+                    <% if (erro) { %>
+                        <p class="msgError"><%= erro.msg %></p>
+                    <% } %>
                     <span class="img-entrega"><i class="fa-solid fa-truck-fast"></i></span>
                     <h2><strong>ENTREGA</strong></h2>
 
                     <h3>Insira o cep e veja o valor do frete e o prazo de entrega.</h3>
 
                     <label for="cep"></label>
-                    <input type="text" name="cep" id="cep" placeholder="CEP">
-                    <button class="btn-calcular-frete">Calcular frete</button>
-
-                    <% if (valorFrete==null) { %>
-                        <p class="text-red">
-                            <%= "Cep não encontrado" %>
-                        </p>
-                        <% } else { %>
-                            <p class="frete-entrega text-black">
-                                <%= "Valor do frete: " + valorFrete?.toLocaleString('pt-br',{style: 'currency' , currency: 'BRL' })
-                                    + " - Prazo de entrega: " + prazo %>
-                            </p>
-                            <% } %>
-                    
-                    <h3>Insira aqui seu cupom de desconto:</h3>
-                    <label for="cupom-desconto"></label>
-                    <input type="text" name="cupom-desconto" id="cupom-desconto" placeholder="Cupom de desconto">
-                    <button class="btn-aplicar-desc"> Aplicar Desconto</button>
+                    <input type="text" name="cep" id="cep" placeholder="CEP" required>
+                    <button type="">Calcular frete</button>
+                    <% if (valorFrete) { %>
+                    <div class="frete-entrega">
+                        <i class="fa-solid fa-truck-fast"></i>
+                        <div class="info-entrega">
+                            <p>Receba em até <%= prazo %></p>
+                            <h3>Após o pagamento confirmado</h3>
+                        </div>
+                        <p><%= valorFrete?.toLocaleString('pt-br',{style: 'currency' , currency: 'BRL' }) %></p>
+                    </div>
+                    <% } %>
                 </div>
 
                 <div class="entrega entrega-right">
-                    <h2>TOTAL DA COMPRA:</h2>
+                    <h2>TOTAL DA COMPRA</h2>
                     <div class="text-column">
                         <p>Subtotal</p>
                         <p class="text-black resultado"></p>
                     </div>
                     <div class="text-column">
-                        <p>Cupom de desconto</p>
-                        <p class="text-black cupom-desconto">00,00</p>
-                    </div>
-                    <div class="text-column">
                         <p>Frete</p>
-                        <% if (valorFrete==null) { %>
-                            <p class="text-black">R$ 0,00</p>
-                        
-                            <% } else { %>
-                                <p class="text-black">
-                                    <%= valorFrete?.toLocaleString('pt-br',{style: 'currency' , currency: 'BRL' }) %>
-                                </p>
-                                <% } %>
-                        
+                        <p class="text-black valor-frete"><%= valorFrete?.toFixed(2).replace('.', ',') %></p>
                     </div>
                     <hr />
                     <div class="text-column text-total">                        
@@ -103,16 +88,22 @@
                     </div>
                 </div>
             </form>
-            
-            <form class="form-fechar-pedido">
+
+
+            <div class="form-fechar-pedido">
                 <button class="btn-f">
                     <a href="/produtos">Escolher Mais Produtos</a>
                 </button>
             
-                <button class="btn-f">
-                    <a href="/checkout/order">Finalizar pedido</a>
-                </button>
-            </form>
+                <form action="/checkout/order" method="POST" class="form-finaliza">
+                    <input type="hidden" name="produtos" id="produtosCarrinho" value="">
+                    <input type="hidden" name="frete" value="<%= valorFrete %>">
+                    <input type="hidden" name="prazo" value="<%= prazo%>">
+                    <button type="submit" class="btn-f">
+                        <p>Finalizar pedido</p>
+                    </button>
+                </form>
+            </div>
 
         </section>
 

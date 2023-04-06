@@ -38,7 +38,7 @@ function addItem() {
 
 function calcularTotal() {
   const subtotais = document.querySelectorAll(".subtotal");
-  let resultado = 0;  
+  let resultado = 0;
   subtotais.forEach((subtotal) => {
     let preco = subtotal.innerText.replace(",", ".");
     resultado += parseFloat(preco);
@@ -47,17 +47,8 @@ function calcularTotal() {
   return resultado.toFixed(2).replace(".", ",");
 }
 
-function calcularTotalCompra(){
-  let subtotal = resultado;
-  let frete = valorFrete;
-  let totalCompra = subtotal + frete;
-  return totalCompra.toFixed(2).replace(".", ",");
-}
-
 function updateTotal() {
   document.querySelector(".resultado").innerText = calcularTotal();
-  document.querySelector(".subTot").innerText = "R$ " + calcularTotal();
-  document.querySelector(".total-compra").innerText = calcularTotalCompra();
 }
 
 function toReal(price) {
@@ -117,7 +108,7 @@ function buildCart() {
       '<tr id="' +
       objectCart[i].id +
       '"<div class="item-product">' +
-      '<td class="id" style="min-width: 7rem;">' +
+      '<td class="id" style="min-width: 7rem;">Ref: ' +
       objectCart[i].id +
       "</td>" +
       "<td>" +
@@ -134,7 +125,7 @@ function buildCart() {
       toReal(objectCart[i].price) +
       "</span></td>" +
       '<td style="width: 10rem;"> ' +
-      '<div class="button-add">'  +
+      '<div class="button-add">' +
       '<button class="btnAdd">+</button>' +
       '<span class="quantity">' +
       objectCart[i].quantity +
@@ -186,18 +177,38 @@ updateTotal();
 
 showEmptyCart();
 
-function somaTotal () {
-var totalCompra = document.querySelector('.total');
-var cupomDesconto = document.querySelector('.cupom-desconto').innerText.replace(',', '.');
-var valorFrete = document.querySelector('.valor-frete').innerText.replace(',', '.');
-var resultadoFinal = document.querySelector('.resultado').innerText.replace(',', '.');
+function somaTotal() {
+  var totalCompra = document.querySelector('.total');
+  var valorFrete = document.querySelector('.valor-frete').innerText.replace(',', '.');
+  var resultadoFinal = document.querySelector('.resultado').innerText.replace(',', '.');
 
-  console.log(cupomDesconto, valorFrete)
-  let resultado = parseInt(cupomDesconto) + parseFloat(valorFrete) + parseFloat(resultadoFinal);
-  
+  if(valorFrete) {
+    let resultado = parseFloat(valorFrete) + parseFloat(resultadoFinal);
+
   totalCompra.innerHTML = resultado.toFixed(2).replace('.', ',');
-  console.log(resultado);
+  }
+  
 
 }
 
 somaTotal();
+
+function pegarProdutos() {
+  const formFinaliza = document.querySelector('.form-finaliza');
+  let produtosCarrinho = document.querySelector('#produtosCarrinho');
+
+  formFinaliza.addEventListener('submit', (e) => {
+    e.preventDefault();
+    let objectCart = JSON.parse(localStorage.getItem("cart") || []);
+
+    if(!objectCart.length) {
+      alert('Carrinho Vazio!');
+      return
+    }
+    
+    produtosCarrinho.value = JSON.stringify(objectCart);
+    formFinaliza.submit();
+  })
+}
+
+pegarProdutos();

@@ -1,4 +1,5 @@
 const { pesquisaPorCep } = require("../services/request/endereco");
+const { Produto, Categoria, Marca } = require('../models');
 
 const ERRO_500 = "Erro interno do servidor!";
 const ERRO_404 = "Cep não encontrado!";
@@ -40,7 +41,8 @@ module.exports = {
       css: ["style.css", "carrinho.css", "cabecalho-alternativo.css"],
       js: ["carrinho.js"],
       valorFrete: null,
-      prazo: null      
+      prazo: null, 
+      erro: []      
     });
   },
 
@@ -49,7 +51,7 @@ module.exports = {
       const { cep } = req.query;
       const { uf } = await pesquisaPorCep(cep);
       const selecaoEstado = fretePorEstado.filter((item) => item.uf === uf);
-      console.log(selecaoEstado)
+      
       let valorFrete = selecaoEstado[0]?.frete;
       let prazo = selecaoEstado[0]?.prazo; 
           
@@ -58,6 +60,7 @@ module.exports = {
         js: ["carrinho.js"],
         valorFrete,
         prazo,
+        erro: []
       });
     } catch (erro) {
       console.log(erro?.code);
@@ -78,4 +81,5 @@ module.exports = {
       return res.status(500).json({ mensagem: ERRO_500 });
     }
   },
+
 };

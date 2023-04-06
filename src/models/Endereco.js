@@ -42,8 +42,10 @@ const criarEnderecoModel = (sequelize, dataTypes) => {
     usuarios_idusuarios: {
       type: dataTypes.INTEGER.UNSIGNED,
       allowNull: false
-    },
-    
+    }
+
+
+
   };
 
   const opcoes = {
@@ -60,7 +62,6 @@ const criarEnderecoModel = (sequelize, dataTypes) => {
       foreignKey: 'usuarios_idusuarios'
     });
 
-    
   }
   return Endereco;
 }
