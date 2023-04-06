@@ -1,7 +1,7 @@
 const {Usuario} = require('../models');
 const {Pedido} = require('../models');
 const {HistoricoPedido} = require('../models');
-const {Produto} = require('../models');
+const {Produto, Endereco} = require('../models');
 const bcrypt = require('bcrypt');
 const { validationResult } = require("express-validator");
 const session = require('express-session');
@@ -13,14 +13,19 @@ module.exports = {
 
     logarUsuario: async (req, res) => {
         const { email, senha} = req.body;
-        let usuarios = await Usuario.findAll({ where: {email: email}});
-
-        usuarios.forEach(usuario => {
-            if(email == usuario.email) {
-                bcrypt.compare(senha, usuario.senha, (erro, result) => {
+        let usuario = await Usuario.findAll({where: {email: email}});
+      
+        console.log(usuario)
+        console.log(usuario[0].email, email)
+       
+            if(email == usuario[0].email) {                          
+                bcrypt.compare(senha, usuario[0].senha, async (erro, result) => {
                     if(result) {
-                        req.session.login = usuario.idusuarios
-                        res.render('painel', {usuarios, css: ['style.css', 'painel-usuario.css'], js: ['painel-usuario.js']});
+                        req.session.login = usuario[0].idusuarios 
+                       
+                        let enderecos = await Endereco.findAll({where: {usuarios_idusuarios: usuario[0].idusuarios}});                                             
+                          
+                     res.render('painel', {usuarios: usuario, enderecos, css: ['style.css', 'painel-usuario.css'], js: ['painel-usuario.js', "formata-data.js"]});
                     } else {
                         let erro = {
                             msg: "Não foi possível realizar o login!"
@@ -32,7 +37,7 @@ module.exports = {
             } else {
                 
             }
-        })
+      
     },
 
     deslogarUsuario: (req, res) => {
@@ -47,7 +52,7 @@ module.exports = {
             let idLogin = req.session.login;
             let usuarios = await Usuario.findAll({where: {idusuarios: idLogin}});
             console.log(usuarios);
-            res.render('painel', {usuarios, css: ['style.css', 'painel-usuario.css'], js: ['painel-usuario.js']});
+            res.render('painel', {usuarios, css: ['style.css', 'painel-usuario.css'], js: ['painel-usuario.js', "formata-data.js"]});
         } else {
             res.redirect('/login');
         }

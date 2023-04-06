@@ -29,114 +29,202 @@
                     <h2>Dados Pessoais</h2>
                     <hr>
 
-                    <b>Nome Completo:</b> <p><%= usuario.nome + " " + usuario.sobrenome%></p>
+                    <b>Nome Completo:</b>
+                    <p>
+                        <%= usuario.nome + " " + usuario.sobrenome%>
+                    </p>
                     <br>
 
-                    <b>E-Mail:</b> <p><%= usuario.email %></p>
+                    <b>E-Mail:</b>
+                    <p>
+                        <%= usuario.email %>
+                    </p>
                     <br>
 
-                    <b>CPF:</b> <p><%= usuario.documento_usuario %></p>
+                    <b>CPF:</b>
+                    <p>
+                        <%= usuario.documento_usuario %>
+                    </p>
                     <br>
 
-                    <b>Data de Nascimento:</b> <p><%= usuario.data_nascimento %></p>
-                    <br>              
-                                                     
-                    <b>Telefone:</b> <p><%= usuario.telefone %></p>
-                    <br> 
-                    
-                    <button class="editar-dados">Editar Dados Pessoais</button> 
-                    
+                    <b id="data-pedido">Data de Nascimento:</b>
+                    <p>
+                        <%= usuario.data_nascimento %>
+                    </p>
+                    <br>
+
+                    <b>Telefone:</b>
+                    <p>
+                        <%= usuario.telefone %>
+                    </p>
+                    <br>
+
+                    <button class="editar-dados">Editar Dados Pessoais</button>
+
                     <!-- Início modal de edição de dados pessoais-->
 
                     <dialog class="modal-dados">
 
                         <h1>Editar Meus Dados Pessoais</h1>
                         <hr>
-                    
-                        <form action="">
-                                               
+
+                        <form action="" method="POST" id="form">
+
                             <label for="nome">Nome:</label>
                             <input type="text" id="nome" name="nome" required="required" />
-                    
-                            <label for="sobrenome">Sobrenome:</label>                            
+
+                            <label for="sobrenome">Sobrenome:</label>
                             <input type="text" id="sobrenome" name="sobrenome" required="required" />
-                    
-                            <label for="email">E-mail:</label>                           
+
+                            <label for="email">E-mail:</label>
                             <input type="email" id="email" name="email" required="required" />
-                    
-                            <label for="cpf">CPF:</label>                           
-                            <input type="number" id="documento_usuario" name="documento_usuario" min="11" max="11" required="required" />
-                    
+
+                            <label for="cpf">CPF:</label>
+                            <input type="number" id="documento_usuario" name="documento_usuario" min="11" max="11"
+                                required="required" />
+
                             <label for="tel">Tel Celular:</label>
-                            <input type="number" id="telefone" name="telefone" min="11" max="11" required="required" placeholder="Inserir somente números"/>
-                                                        
+                            <input type="number" id="telefone" name="telefone" min="11" max="11" required="required"
+                                placeholder="Inserir somente números" />
+
                             <button class="salvar-dados">Salvar Alterações</button>
-                            <Button class="cancelar-dados">Cancelar</Button>
-                        </form>                        
-                    </dialog>                   
+                        </form>
+                        <Button onclick="closeDialog()" class="cancelar-dados">Cancelar</Button>
+                    </dialog>
                     <!-- Fim modal de edição de dados pessoais-->
-                                      
+
                 </div>
 
                 <div id="meus-enderecos" class="estilo-div">
 
+
                     <h2>Meus Endereços</h2>
                     <hr>
 
-                    <b>Logradouro:</b> <p>Rua + Numero + complemento </p>
-                    <br>
+                    <% for (let endereco of enderecos) { %>
 
-                    <b>Bairro:</b> <p>Tremembé</p>
-                    <br>
-                    
-                    <b>Cidade:</b> <p>São Paulo - SP</p>
-                    <br>
+                        <b>Logradouro:</b>
+                        <p>
+                            <%= endereco?.logradouro + ", " + endereco?.endereco_numero + " - " + endereco?.complemento
+                                %>
+                        </p>
+                        <br>
 
-                    <b>Cep</b> <p>000000-000</p>
-                    <br>
+                        <b>Bairro:</b>
+                        <p>
+                            <%= endereco?.bairro %>
+                        </p>
+                        <br>
 
-                    <button class="editar-endereco">Editar/Cadastrar Endereço</button> 
-                    
-                    <!-- Início modal de cadastro/edição de endereço -->
+                        <b>Cidade:</b>
+                        <p>
+                            <%= endereco?.cidade + " - " + endereco?.estado %>
+                        </p>
+                        <br>
 
-                    <dialog class="modal-endereco">
+                        <b>Cep</b>
+                        <p>
+                            <%= endereco?.cep %>
+                        </p>
+                        <br>
+                        <% } %>
+                                             
+                                                                    
+                        <button class="editar-endereco">Editar</button>
 
-                        <h1>Editar Meus Dados Pessoais</h1>
-                        <hr>
-                    
-                        <form action="">
+                        <!-- Início modal de Edição de endereço -->
+
+                        <dialog class="modal-endereco-editar">
+                            <% if (enderecos) { %>                     
+                           
+                            <h1> Editar Endereço </h1>
+                            <hr>
+                            <% } else { %>
+                                <h1> Não há nenhum endereço cadastrado </h1>
+                                <hr>
+                            <% } %>
+
+                            <form action="/painel/enderecos/<%= enderecos.idenderecos %>?_method=PUT" method="POST">
+                            </form>
+                            
+                            <% for (let endereco of enderecos) { %>
 
                             <label for="cep">CEP:</label>
-                            <input type="number" id="cep" name="cep" min="8" max="8" required="required" placeholder="Inserir somente números"/>
-                                               
+                            <input type="number" id="cep" name="cep" min="8" max="8" required="required"
+                                value="<%= endereco?.cep %>" placeholder="Inserir somente números" />
+
                             <label for="logradouro">Logradouro</label>
-                            <input type="text" id="logradouro" name="logradouro" required="required" />
-                    
-                            <label for="numero">Número:</label>                            
-                            <input type="number" id="numero" name="numero" required="required" />
-                                                                
-                            <label for="complemento">Complemento:</label>                           
-                            <input type="text" id="complemento" name="complemento" />
+                            <input type="text" id="logradouro" value="<%= endereco?.logradouro %>" name="logradouro"
+                                required="required" />
+
+                            <label for="numero">Número:</label>
+                            <input type="number" id="numero" value="<%= endereco?.endereco_numero %>" name="numero"
+                                required="required" />
+
+                            <label for="complemento">Complemento:</label>
+                            <input type="text" id="complemento" value="<%= endereco?.complemento %>"
+                                name="complemento" />
 
                             <label for="bairro">Bairro:</label>
-                            <input type="text" id="bairro" name="bairro" required="required"/>
-                    
+                            <input type="text" id="bairro" value="<%= endereco?.bairro %>" name="bairro"
+                                required="required" />
+
                             <label for="cidade">Cidade:</label>
-                            <input type="text" id="cidade" name="cidade" required="required"/>
+                            <input type="text" id="cidade" value="<%= endereco?.cidade %>" name="cidade"
+                                required="required" />
 
                             <label for="uf">UF:</label>
-                            <input type="text" id="uf" name="uf" required="required"/>
+                            <input type="text" id="uf" value="<%= endereco?.estado %>" name="uf" required="required" />
                             
-                            <button class="salvar-endereco">Salvar Alterações</button>
+                            <button class="salvar-endereco">Salvar</button>
+                            <% } %>
+                            </form>
+                            <Button onclick="closeDialog()" class="cancelar-endereco-editar">Cancelar</Button>
+                        </dialog>
+
+                           
+                            <!-- Fim modal de cadastro/edição de endereço -->
+                                                       
                             <button class="cadastrar-endereco">Cadastrar</button>
-                            <Button class="cancelar-endereco">Cancelar</Button>
-                        </form>                        
-                    </dialog> 
-                    
-                    <!-- Fim modal de cadastro/edição de endereço -->
+
+                            <!-- Início modal de cadastro de endereço -->
+
+                            <dialog class="modal-endereco-cadastro">
+
+                                <form action="/painel/enderecos" method="POST">
+
+                                    <label for="cep">CEP:</label>
+                                    <input type="number" id="cep" name="cep" min="8" max="8" required="required"
+                                        placeholder="Inserir somente números" />
+
+                                    <label for="logradouro">Logradouro</label>
+                                    <input type="text" id="logradouro" name="logradouro" required="required" />
+
+                                    <label for="numero">Número:</label>
+                                    <input type="number" id="numero" name="numero" required="required" />
+
+                                    <label for="complemento">Complemento:</label>
+                                    <input type="text" id="complemento" name="complemento" />
+
+                                    <label for="bairro">Bairro:</label>
+                                    <input type="text" id="bairro" required="required" />
+
+                                    <label for="cidade">Cidade:</label>
+                                    <input type="text" id="cidade" name="cidade" required="required" />
+
+                                    <label for="uf">UF:</label>
+                                    <input type="text" id="uf" name="uf" required="required" />
+
+                                    <button class="salvar-endereco">Cadastrar</button>
+
+                                </form>
+                                <Button onclick="closeDialog()" class="cancelar-endereco-cadastrar">Cancelar</Button>
+                            </dialog>
+                       
+                            
                 </div>
             </section>
-            
+
             <!-- Fim da Section dos Dados Pessoais -->
 
         </main>
@@ -159,7 +247,8 @@
                         <li><a class="list-icon" href="/meus-pedidos/<%= usuario.idusuarios %>"><i
                                     class="fa-sharp fa-solid fa-clipboard-list"></i>Meus Pedidos</a></li>
                         <hr>
-                        <li><a class="list-icon" href="#meus-enderecos"><i class="fa-solid fa-address-card"></i>Meus Endereços</a>
+                        <li><a class="list-icon" href="#meus-enderecos"><i class="fa-solid fa-address-card"></i>Meus
+                                Endereços</a>
                         </li>
                         <hr>
                         <li><a class="list-icon" href="/sair"><i class="fa-solid fa-right-from-bracket"></i>Sair</a>

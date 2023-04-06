@@ -2,9 +2,14 @@
 const btnAbreModalDados = document.querySelector(".editar-dados");
 const modalDados = document.querySelector(".modal-dados");
 const btnCancelarDados = document.querySelector(".cancelar-dados");
-const btnAbreModalEndereco = document.querySelector(".editar-endereco");
-const modalEndereco = document.querySelector(".modal-endereco");
-const btnCancelarEndereco = document.querySelector(".cancelar-endereco");
+
+const btnAbreModalEnderecoEditar = document.querySelector(".editar-endereco");
+const modalEnderecoEditar = document.querySelector(".modal-endereco-editar");
+const btnCancelarEnderecoEditar = document.querySelector(".cancelar-endereco-editar");
+
+const btnAbreModalEnderecoCadastrar = document.querySelector(".cadastrar-endereco");
+const modalEnderecoCadastro = document.querySelector(".modal-endereco-cadastro");
+const btnCancelarEnderecoCadastrar = document.querySelector(".cancelar-endereco-cadastrar")
  
 
 btnAbreModalDados.onclick = function () {
@@ -12,13 +17,23 @@ btnAbreModalDados.onclick = function () {
 }
 
 btnCancelarDados.onclick = function () {
-    modalDados.closest()
+    modalDados.close()
 }
 
-btnAbreModalEndereco.onclick = function () {
-    modalEndereco.showModal()
+btnAbreModalEnderecoEditar.onclick = function () {
+    modalEnderecoEditar.showModal()
 }
 
-btnCancelarEndereco.onclick = function () {
-    modalEndereco.closest()
+btnCancelarEnderecoEditar.onclick = function () {
+    modalEnderecoEditar.close()
+
+}
+
+btnAbreModalEnderecoCadastrar.onclick = function () {
+    modalEnderecoCadastro.showModal()
+}
+
+btnCancelarEnderecoCadastrar.onclick = function () {
+    modalEnderecoCadastro.close()
+
 }
