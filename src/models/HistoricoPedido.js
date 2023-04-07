@@ -40,13 +40,13 @@ const criarHistoricoPedidoModel = (sequelize, dataTypes) => {
     HistoricoPedido.belongsTo(models.Pedido, {
 
       as: 'pedidos',
-      foreignKey: 'idpedidos'
+      foreignKey: 'pedidos_idpedidos'
     });
   
     HistoricoPedido.belongsTo(models.Usuario, {
 
       as: 'usuarios',
-      foreignKey: 'idusuarios'
+      foreignKey: 'usuarios_idusuarios'
     });
 
   }

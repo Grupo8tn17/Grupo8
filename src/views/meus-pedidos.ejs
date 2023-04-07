@@ -1,84 +1,90 @@
 <%- include('partials/cabecalho-alternativo') %>
-        <!-- Final do Cabeçalho --> 
-        
-        <!-- Início do Container -->
-        <section class="painel-container">
-            <!-- início do main -->
-            <main>
-                <div class="titulo-painel">
-                    <h1>Meus Pedidos</h1><hr> 
-                    
-                </div>         
-                
-                <!-- Início da Section   Produtos -->
-                <section class="produtos">
-                
-                
-                     
-                    
-                  
-                      <!-- Início do Produto 1 -->
-                        <div class="pedido-lista estilo-div-historico">
-                            <div> 
-                                <h4 class="hr">cód.</h4>
-                               <span class="texto">id pedido</span>     
-                            </div>
-                            <div>
-                                <h4 class="hr">data da compra</h4>
-                                 <span class="texto">data_compra </span>
-                            </div>
-                            <div>
-                                <h4 class="hr">acompanhamento</h4>
-                                <span class="texto">status_pedido</span>
-                            </div>
-                            <div>
-                                <a href="/pedido/:id">
-                                    <button class="ver-pedido" type="submit">
-                                        ver pedido 
-                                    </button>
-                                </a>
-                            </div>
-                        </div>
-                     
-                   
-                
-                </section>
-                <!-- Fim da Section dos Produtos -->
+<!-- Final do Cabeçalho -->
 
-            </main>
-            <!-- Fim do Main -->
-            <!-- Início do Aside -->
-            <aside>
-                <section class="aside-user">
-                    <% usuarios.forEach(usuario=> { %>
-                    <figure>
-                        <i class="icon-user fa-solid fa-user"></i>
-                    </figure>
-                    
-                    <h3 class="name-user">
-                <%= usuario.nome + " " + usuario.sobrenome %>
-                    </h3>
-                    
-                    <nav>
-                        <ul class="options-user">
-                            <li><a class="list-icon" href="/painel/#meus-dados"><i class="fa-solid fa-user"></i>Meus Dados</a></li>
-                            <hr>
-                            <li><a class="list-icon" href="/meus-pedidos/<%= usuario.idusuarios %>"><i
-                                        class="fa-sharp fa-solid fa-clipboard-list"></i>Meus Pedidos</a></li>
-                            <hr>
-                            <li><a class="list-icon" href="/painel/#meus-enderecos"><i class="fa-solid fa-address-card"></i>Meus Endereços</a>
-                            </li>
-                            <hr>
-                            <li><a class="list-icon" href="/sair"><i class="fa-solid fa-right-from-bracket"></i>Sair</a>
-                            </li>
-                            <hr>
-                        </ul>
-                    </nav>
-                <% }) %>
-                </section>
-            </aside>
-            <!-- Fim do Aside -->
-        </section>
-        <!-- Fim do Container -->
-        <!-- Início do Rodape -->
-        <%- include('partials/rodape-alternativo') %>
+<!-- Início do Container -->
+<section class="painel-container">
+  <!-- início do main -->
+  <main>
+    <div class="titulo-painel">
+      <h1>Meus Pedidos</h1>
+      <hr />
+      <% if (!pedidos?.length) { %>
+      <h3>Você ainda não realizou pedidos.</h3>
+      <% } %>
+    </div>
+
+    <!-- Início da Section   Produtos -->
+    <section class="produtos">
+      <% for( let i= 0; i< pedidos.length; i++ ) { %>
+      <div class="pedido-lista estilo-div-historico">
+        <div>
+          <h4 class="hr">código do pedido</h4>
+          
+          <span class="texto"> 00<%= pedidos[i].idpedidos %> </span>
+          
+        </div>
+
+        <div>
+          <h4 class="hr">data da compra</h4>
+    
+          <span id="data-pedido" class="texto datas"> <%= pedidos[i].data_pedido %> </span>
+       
+        </div>
+        <div>
+          <a href="/pedido/:id">
+            <button class="ver-pedido" type="submit">ver pedido</button>
+          </a>
+        </div>
+      </div>
+      <% } %>
+    </section>
+    <!-- Fim da Section dos Produtos -->
+  </main>
+  <!-- Fim do Main -->
+  <!-- Início do Aside -->
+  <aside>
+    <section class="aside-user">
+      <% usuarios.forEach(usuario=> { %>
+      <figure>
+        <i class="icon-user fa-solid fa-user"></i>
+      </figure>
+
+      <h3 class="name-user"><%= usuario.nome + " " + usuario.sobrenome %></h3>
+
+      <nav>
+        <ul class="options-user">
+          <li>
+            <a class="list-icon" href="/painel/#meus-dados"
+              ><i class="fa-solid fa-user"></i>Meus Dados</a
+            >
+          </li>
+          <hr />
+          <li>
+            <a class="list-icon" href="/meus-pedidos/<%= usuario.idusuarios %>"
+              ><i class="fa-sharp fa-solid fa-clipboard-list"></i>Meus
+              Pedidos</a
+            >
+          </li>
+          <hr />
+          <li>
+            <a class="list-icon" href="/painel/#meus-enderecos"
+              ><i class="fa-solid fa-address-card"></i>Meus Endereços</a
+            >
+          </li>
+          <hr />
+          <li>
+            <a class="list-icon" href="/sair"
+              ><i class="fa-solid fa-right-from-bracket"></i>Sair</a
+            >
+          </li>
+          <hr />
+        </ul>
+      </nav>
+      <% }) %>
+    </section>
+  </aside>
+  <!-- Fim do Aside -->
+</section>
+<!-- Fim do Container -->
+<!-- Início do Rodape -->
+<%- include('partials/rodape-alternativo') %>

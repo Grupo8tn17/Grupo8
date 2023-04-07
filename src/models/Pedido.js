@@ -1,31 +1,40 @@
 const criarPedidoModel = (sequelize, dataTypes) => {
-    const colunas = {
-      idpedidos: {
-        type: dataTypes.INTEGER.UNSIGNED,
-        primaryKey: true,
-        autoIncrement: true,
-        allowNull: false
-      },
-  
-    codigo_pedido: {
-        type: dataTypes.INTEGER,
-        allowNull: false
+  const colunas = {
+    idpedidos: {
+      type: dataTypes.INTEGER.UNSIGNED,
+      primaryKey: true,
+      autoIncrement: true,
+      allowNull: false,
     },
-    data_pedido: {
-        type: dataTypes.DATE,
-        allowNull: false
- }
+    
+    usuarios_idusuarios: {
+      type: dataTypes.INTEGER.UNSIGNED,
+      allowNull: false,
+    },
 
-    };
-  
-    const opcoes = {
-      tableName: 'pedidos',
-      timestamps: false
-    };
-  
-    const Pedido = sequelize.define('Pedido', colunas, opcoes);
-  
-    return Pedido;
+    data_pedido: {
+      type: dataTypes.DATE,
+      allowNull: false,
+    },    
   };
+
+  const opcoes = {
+    tableName: "pedidos",
+    timestamps: false,
+  };
+
+  const Pedido = sequelize.define("Pedido", colunas, opcoes);
+
+  Pedido.associate = (models) => {
+    Pedido.belongsTo(models.Usuario, {
+
+      as: 'usuarios',
+      foreignKey: 'usuarios_idusuarios'
+    });
   
-  module.exports = criarPedidoModel;
+  }
+
+  return Pedido;
+};
+
+module.exports = criarPedidoModel;
