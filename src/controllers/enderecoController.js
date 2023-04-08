@@ -14,18 +14,7 @@ module.exports = {
         where: { usuarios_idusuarios: id },
       });
       console.log(enderecos)
-
-    /* const idUsuario = req.session.login; 
-    let enderecos;
-    const { id } = req.params;
-    if(id) { enderecos = await Endereco.findByPk(id);
-    console.log("consolelog do id do formendereco:", id)   
-         
-      res.render("painel-adicionaEndereco", {
-        enderecos,
-        css: ["style.css", "painel-formEndereco.css"],
-        js: [],
-      }); */
+   
       return res.render("painel-adicionaEndereco", {
         enderecos,
         usuarios,
@@ -37,8 +26,8 @@ module.exports = {
  
 
   adicionarEndereco: async (req, res) => {
-    const idUsuario = req.session.login;
-      console.log('idUsuario:', idUsuario)
+    const { id } = req.params;
+      console.log('id usuario do adicionar endereco', id)
         const {
         logradouro,
         endereco_numero,
@@ -49,7 +38,7 @@ module.exports = {
         estado,
         pais,
       } = req.body;    
-     console.log('logo apos o req body do adicionar endereco', logradouro)
+     
       await Endereco.create({
         logradouro,
         endereco_numero,
@@ -59,8 +48,9 @@ module.exports = {
         cidade,
         estado,
         pais,
-        usuarios_idusuarios: idUsuario,
+        usuarios_idusuarios: id,
       });
+      console.log(usuarios_idusuarios)
 
       res.redirect('/painel');     
   },
@@ -68,6 +58,7 @@ module.exports = {
  
   editarEndereco: async (req, res) => {    
     const { id } = req.params;
+    console.log('console do id editar endereco:', id)
       const {
         logradouro,
         endereco_numero,
@@ -91,7 +82,7 @@ module.exports = {
           pais,
         },
         {
-          where: { idenderecos: id },
+          where: { usuarios_idusuarios: id },
         }
       );
       res.redirect('/painel');   
@@ -101,7 +92,7 @@ module.exports = {
    const { id } = req.params;
 
       await Endereco.destroy({
-        where: { idenderecos: id },
+        where: { usuarios_idusuarios: id, },
       });
 
       res.redirect('/painel');    

@@ -19,6 +19,7 @@ router.post('/painel', usuarioController.logarUsuario);
 router.get('/painel', usuarioController.mostraPainelUsuario);
 //Meus Pedidos
 router.get('/meus-pedidos/:id', usuarioController.mostrarHistorico);
+//Formulário de edição/cadastro endereco
 router.get('/formEndereco/:id', enderecoController.formEndereco);
 
 //Cadastro Usuário
@@ -26,7 +27,7 @@ router.get('/cadastro', usuarioController.mostraCadastro);
 router.post('/cadastro/adiciona', validacaoCadastroUsuario, usuarioController.adicionaUsuario);
 
 router.post('/checkout/order', indexController.compra);
-/* router.post('/adciona-endereco', enderecoController.adcionaEndereco); */
+router.post('/adciona-endereco', enderecoController.adicionarEndereco);
 
 router.get('/checkout/order-finished', indexController.finalizacaoCompra);
 

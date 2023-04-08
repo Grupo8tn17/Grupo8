@@ -1,7 +1,7 @@
-const { Usuario, Endereco } = require("../models");
+const { Usuario } = require("../models");
 const { Pedido } = require("../models");
 const { HistoricoPedido } = require("../models");
-const { Produto } = require("../models");
+const { Produto, Endereco } = require("../models");
 const bcrypt = require("bcrypt");
 const { validationResult } = require("express-validator");
 const session = require("express-session");
@@ -16,45 +16,34 @@ module.exports = {
     });
   },
 
-  logarUsuario: async (req, res) => {
-    const { email, senha } = req.body;
-    let usuario = await Usuario.findAll({ where: { email: email } });
-
-    console.log(usuario);
-    console.log(usuario[0].email, email);
-
-    if (email == usuario[0].email) {
-      bcrypt.compare(senha, usuario[0].senha, async (erro, result) => {
-        if (result) {
-          req.session.login = usuario[0].idusuarios;
-
-          let enderecos = await Endereco.findAll({
-            where: { usuarios_idusuarios: usuario[0].idusuarios },
-          }); 
-                           
-
-         res.render("painel", {
-            usuarios: usuario,
-            enderecos,
-            css: ["style.css", "painel-usuario.css"],
-            js: ["painel-usuario.js", "formata-data.js"],
-          });
-
-        } else {
-          let erro = {
-            msg: "Não foi possível realizar o login!",
-          };
-          return res.render("login", {
-            erro,
-            errors: {},
-            css: ["style.css", "login.css"],
-            js: "",
-          });
-        }
-      });
-    } else {
-    }
-  },
+    logarUsuario: async (req, res) => {
+        const { email, senha} = req.body;
+        let usuario = await Usuario.findAll({where: {email: email}});
+      
+        console.log(usuario)
+        console.log(usuario[0].email, email)
+       
+            if(email == usuario[0].email) {                          
+                bcrypt.compare(senha, usuario[0].senha, async (erro, result) => {
+                    if(result) {
+                        req.session.login = usuario[0].idusuarios 
+                       
+                        let enderecos = await Endereco.findAll({where: {usuarios_idusuarios: usuario[0].idusuarios}});                                             
+                          
+                     res.render('painel', {usuarios: usuario, enderecos, css: ['style.css', 'painel-usuario.css'], js: ['painel-usuario.js', "formata-data.js"]});
+                    } else {
+                        let erro = {
+                            msg: "Não foi possível realizar o login!"
+                        }
+                        return res.render('login', {erro, errors: {}, css: ['style.css', 'login.css'], js: ''});
+                    }
+                })
+                
+            } else {
+                
+            }
+      
+    },
 
   deslogarUsuario: (req, res) => {
     if (req.session.login) {
@@ -63,22 +52,16 @@ module.exports = {
     }
   },
 
-  mostraPainelUsuario: async (req, res) => {
-    if (req.session.login) {
-      let idLogin = req.session.login;
-      let usuarios = await Usuario.findAll({ where: { idusuarios: idLogin } });
-      console.log(usuarios);
-      res.render("painel", {
-        usuarios,
-        css: ["style.css", "painel-usuario.css"],
-        js: ["painel-usuario.js", "formata-data.js"],
-      });
-    } else {
-      res.redirect("/login");
-    }
-  },
-
-  
+    mostraPainelUsuario: async (req, res) => {
+        if(req.session.login) {
+            let idLogin = req.session.login;
+            let usuarios = await Usuario.findAll({where: {idusuarios: idLogin}});
+            console.log(usuarios);
+            res.render('painel', {usuarios, css: ['style.css', 'painel-usuario.css'], js: ['painel-usuario.js', "formata-data.js"]});
+        } else {
+            res.redirect('/login');
+        }
+    }, 
 
   mostraCadastro: (req, res) => {
     res.render("cadastro", {
@@ -232,13 +215,32 @@ module.exports = {
   },
   //contollers dos Pedidos
   mostrarHistorico: async (req, res) => {
-    const { id } = req.params;
-    const usuarios = await Usuario.findAll({ where: { idusuarios: id } });
-
-    return res.render("meus-pedidos", {
-      usuarios,
-      css: ["style.css", "painel-usuario.css", "meus-pedidos.css"],
-      js: "",
-    });
+    try {
+      const { id } = req.params;
+      const usuarios = await Usuario.findAll({ where: { idusuarios: id } });
+      const pedidos = await Pedido.findAll({
+        where:{
+          usuarios_idusuarios: id
+        }
+      });
+      console.log(pedidos)
+      
+      return res.render("meus-pedidos", {
+        usuarios,
+        pedidos,
+        css: ["style.css", "painel-usuario.css", "meus-pedidos.css"],
+        js: ["formata-data.js"],
+      });
+    } catch (erro) {
+      console.log("aqui", erro);
+      
+      
+      return res.render("error", {
+        message: 'algo deu errado',
+        error: erro,
+        css: ["cabecalho-alternativo.css", "style.css"],
+        js: [],
+      });
+    }
   },
 };

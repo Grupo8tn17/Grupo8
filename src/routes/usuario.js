@@ -3,6 +3,9 @@ var router = express.Router();
 const usuarioController = require('../controllers/usuarioController');
 const enderecoController = require('../controllers/enderecoController');
 
+
+router.get('/painel', usuarioController.mostraPainelUsuario);
+
 router.get('/meus-pedidos:id', usuarioController.mostrarHistorico);
 
 router.get('/formEndereco/:id', enderecoController.formEndereco);

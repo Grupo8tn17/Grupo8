@@ -143,11 +143,6 @@ body{
   transform: translateX(-2px);  
   }
 
-  .add-button {
-    color: var(--offwhite);
-  }
-
-
 /* Início Aside */
 
 .painel-container aside{

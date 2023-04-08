@@ -44,6 +44,8 @@ const criarEnderecoModel = (sequelize, dataTypes) => {
       allowNull: false
     }
 
+
+
   };
 
   const opcoes = {

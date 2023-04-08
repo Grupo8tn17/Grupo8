@@ -47,8 +47,8 @@
                     </p>
                     <br>
 
-                    <b>Data de Nascimento:</b>
-                    <p id="data-pedido">
+                    <b id="data-pedido">Data de Nascimento:</b>
+                    <p>
                         <%= usuario.data_nascimento %>
                     </p>
                     <br>
@@ -60,7 +60,7 @@
                     <br>
 
                     <button class="editar-dados">
-                        <a class="add-button" href="/usuarios/editaUsuario/<%= usuario.idusuarios %>"> Editar Dados</a>                            
+                        <a class="add-button" href="/usuarios/editaUsuario/<%= usuario.idusuarios %>"> Editar Dados</a>
                     </button>
 
                 </div>
@@ -97,20 +97,21 @@
                             <%= endereco?.cep %>
                         </p>
                         <br>
+
                         <% } %>
 
-                            <button class="cadastrar-endereco">
-                                <a class="add-button" href="/formEndereco/<%= usuario.idusuarios %>">Adicionar</a>
-                            </button>
+                        <button class="cadastrar-endereco">
+                            <a class="add-button" href="/formEndereco/<%= usuario.idusuarios %>">Adicionar</a>
+                        </button>
 
-                            <button class="editar-endereco">
-                                <a class="add-button"
-                                    href="/formEndereco/<%= enderecos.idendereco %>">Editar</a>
-                            </button>
+                        <button class="editar-endereco">
+                            <a class="add-button" href="/formEndereco/<%= usuario.idusuarios %>">Editar</a>
+                        </button>
 
-                            <form action="/<%= enderecos.idendereco %>?_method=DELETE" method="post">
-                                <button class="excluir-endereco">Excluir</button>
-                            </form>
+                        <form action="/<%= enderecos.idendereco %>?_method=DELETE" method="post">
+                            <button class="excluir-endereco">Excluir</button>
+                        </form>
+                        
 
                 </div>
             </section>
