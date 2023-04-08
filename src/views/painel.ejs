@@ -100,15 +100,15 @@
                         <% } %>
 
                             <button class="cadastrar-endereco">
-                                <a class="add-button" href="/usuarios/formEndereco">Adicionar</a>
+                                <a class="add-button" href="/formEndereco/<%= usuario.idusuarios %>">Adicionar</a>
                             </button>
 
                             <button class="editar-endereco">
                                 <a class="add-button"
-                                    href="/usuarios/formEndereco/<%= enderecos.idendereco %>">Editar</a>
+                                    href="/formEndereco/<%= enderecos.idendereco %>">Editar</a>
                             </button>
 
-                            <form action="/usuarios/<%= enderecos.idendereco %>?_method=DELETE" method="post">
+                            <form action="/<%= enderecos.idendereco %>?_method=DELETE" method="post">
                                 <button class="excluir-endereco">Excluir</button>
                             </form>
 

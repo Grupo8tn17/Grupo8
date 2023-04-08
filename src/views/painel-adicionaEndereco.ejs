@@ -3,7 +3,7 @@
     <main>
 
         <div class="titulo-formEndereco">
-            <% if(enderecos.length) {%>
+            <% if(enderecos) {%>
                 <h1>Editar Endereço</h1>
                 <% } else { %>
                     <h1>Adicionar Endereço</h1>
@@ -14,7 +14,7 @@
         <section class="formEndereco-container">
 
             <div class="div-form">
-                <% if (enderecos.length) { %>
+                <% if (enderecos) { %>
                     <form action="/usuarios/editarEndereco/<%= enderecos.idendereco%>?_method=PUT" method="POST"
                         class="formEndereco-estilo">
 
@@ -31,8 +31,8 @@
                             <input type="text" id="logradouro" value="<%= endereco?.logradouro %>" name="logradouro"
                                 required="required" />
 
-                            <label for="numero">Número:</label>
-                            <input type="number" id="numero" value="<%= endereco?.endereco_numero %>" name="numero"
+                            <label for="endereco_numero">Número:</label>
+                            <input type="number" id="endereco_numero" value="<%= endereco?.endereco_numero %>" name="endereco_numero"
                                 required="required" />
 
                             <label for="complemento">Complemento:</label>
@@ -47,8 +47,8 @@
                             <input type="text" id="cidade" value="<%= endereco?.cidade %>" name="cidade"
                                 required="required" />
 
-                            <label for="uf">UF:</label>
-                            <input type="text" id="uf" value="<%= endereco?.estado %>" name="uf" required="required" />
+                            <label for="estado">UF:</label>
+                            <input type="text" id="estado" value="<%= endereco?.estado %>" name="estado" required="required" />
 
                             <button class="salvar-endereco" type="submit">Salvar</button>
                             <% } %>

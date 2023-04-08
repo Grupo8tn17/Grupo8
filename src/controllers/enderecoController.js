@@ -1,41 +1,44 @@
 const { Usuario, Endereco } = require("../models");
+const session = require("express-session");
 
-module.exports = {
-  listarEnderecos: async (req, res) => {
-    const idUsuario = req.session.login;
+module.exports = {  
+
+  formEndereco: async (req, res) => {
+    const { id } = req.params;
    
       const usuarios = await Usuario.findAll({
-        where: { idusuarios: idUsuario },
+        where: { idusuarios: id },
       });
 
       const enderecos = await Endereco.findAll({
-        where: { usuarios_idusuarios: idUsuario },
+        where: { usuarios_idusuarios: id },
       });
+      console.log(enderecos)
 
-      res.render("painel", {
-        usuarios,
-        enderecos,
-        css: ["style.css", "painel-usuario.css"],
-        js: ["painel-usuario.js"],
-      });    
-  },
-
-  formEndereco: async (req, res) => { 
+    /* const idUsuario = req.session.login; 
     let enderecos;
     const { id } = req.params;
-    if(id) enderecos = await Endereco.findByPk(id);
-    console.log(id)   
+    if(id) { enderecos = await Endereco.findByPk(id);
+    console.log("consolelog do id do formendereco:", id)   
          
       res.render("painel-adicionaEndereco", {
-        enderecos: [],
+        enderecos,
         css: ["style.css", "painel-formEndereco.css"],
         js: [],
-      }); 
-   },
+      }); */
+      return res.render("painel-adicionaEndereco", {
+        enderecos,
+        usuarios,
+        css: ["style.css", "painel-formEndereco.css"],
+        js: [],
+      });
+  },
+    
+ 
 
   adicionarEndereco: async (req, res) => {
     const idUsuario = req.session.login;
-      console.log('idUsuario', idUsuario)
+      console.log('idUsuario:', idUsuario)
         const {
         logradouro,
         endereco_numero,
@@ -46,7 +49,7 @@ module.exports = {
         estado,
         pais,
       } = req.body;    
-     
+     console.log('logo apos o req body do adicionar endereco', logradouro)
       await Endereco.create({
         logradouro,
         endereco_numero,
@@ -59,7 +62,7 @@ module.exports = {
         usuarios_idusuarios: idUsuario,
       });
 
-      res.redirect('/usuarios/painel');     
+      res.redirect('/painel');     
   },
 
  
@@ -91,7 +94,7 @@ module.exports = {
           where: { idenderecos: id },
         }
       );
-      res.redirect('/usuarios/painel');   
+      res.redirect('/painel');   
   },
 
   deletarEndereco: async (req, res) => {   
@@ -101,6 +104,6 @@ module.exports = {
         where: { idenderecos: id },
       });
 
-      res.redirect('/usuarios/painel');    
+      res.redirect('/painel');    
   },
 };

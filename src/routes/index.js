@@ -19,6 +19,7 @@ router.post('/painel', usuarioController.logarUsuario);
 router.get('/painel', usuarioController.mostraPainelUsuario);
 //Meus Pedidos
 router.get('/meus-pedidos/:id', usuarioController.mostrarHistorico);
+router.get('/formEndereco/:id', enderecoController.formEndereco);
 
 //Cadastro Usuário
 router.get('/cadastro', usuarioController.mostraCadastro);
