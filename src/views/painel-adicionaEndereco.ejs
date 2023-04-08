@@ -1,0 +1,92 @@
+<%- include('partials/cabecalho-alternativo') %>
+
+    <main>
+
+        <div class="titulo-formEndereco">
+            <% if(enderecos.length) {%>
+                <h1>Editar Endereço</h1>
+                <% } else { %>
+                    <h1>Adicionar Endereço</h1>
+                    <% } %>
+                        <hr>
+        </div>
+
+        <section class="formEndereco-container">
+
+            <div class="div-form">
+                <% if (enderecos.length) { %>
+                    <form action="/usuarios/editarEndereco/<%= enderecos.idendereco%>?_method=PUT" method="POST"
+                        class="formEndereco-estilo">
+
+
+
+                        <% for (let endereco of enderecos) { %>
+
+                            <label for="cep">CEP:</label>
+                            <input type="number" id="cep" name="cep" min="8" required="required"
+                                value="<%= endereco?.cep %>"
+                                placeholder="Neste campo deve ser inserido somente números" />
+
+                            <label for="logradouro">Logradouro</label>
+                            <input type="text" id="logradouro" value="<%= endereco?.logradouro %>" name="logradouro"
+                                required="required" />
+
+                            <label for="numero">Número:</label>
+                            <input type="number" id="numero" value="<%= endereco?.endereco_numero %>" name="numero"
+                                required="required" />
+
+                            <label for="complemento">Complemento:</label>
+                            <input type="text" id="complemento" value="<%= endereco?.complemento %>"
+                                name="complemento" />
+
+                            <label for="bairro">Bairro:</label>
+                            <input type="text" id="bairro" value="<%= endereco?.bairro %>" name="bairro"
+                                required="required" />
+
+                            <label for="cidade">Cidade:</label>
+                            <input type="text" id="cidade" value="<%= endereco?.cidade %>" name="cidade"
+                                required="required" />
+
+                            <label for="uf">UF:</label>
+                            <input type="text" id="uf" value="<%= endereco?.estado %>" name="uf" required="required" />
+
+                            <button class="salvar-endereco" type="submit">Salvar</button>
+                            <% } %>
+
+                                <% } else { %>
+                                    <form action="/usuarios/adicionaEndereco" method="POST" class="formEndereco-estilo">
+
+                                        <label for="cep">CEP:</label>
+                                        <input type="number" id="cep" name="cep" min="8" required="required"
+                                            placeholder="Neste campo deve ser inserido somente números" />
+
+                                        <label for="logradouro">Logradouro</label>
+                                        <input type="text" id="logradouro" name="logradouro" required="required" />
+
+                                        <label for="numero">Número:</label>
+                                        <input type="number" id="numero" name="numero" required="required" />
+
+                                        <label for="complemento">Complemento:</label>
+                                        <input type="text" id="complemento" name="complemento" />
+
+                                        <label for="bairro">Bairro:</label>
+                                        <input type="text" id="bairro" name="bairro" required="required" />
+
+                                        <label for="cidade">Cidade:</label>
+                                        <input type="text" id="cidade" name="cidade" required="required" />
+
+                                        <label for="uf">UF:</label>
+                                        <input type="text" id="uf" name="uf" required="required" />
+
+                                        <button class="salvar-endereco" type="submit">Cadastrar</button>
+
+                                        <% } %>
+
+                                    </form>
+            </div>
+
+        </section>
+
+    </main>
+
+    <%- include('partials/rodape-alternativo') %>

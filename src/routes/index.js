@@ -25,7 +25,7 @@ router.get('/cadastro', usuarioController.mostraCadastro);
 router.post('/cadastro/adiciona', validacaoCadastroUsuario, usuarioController.adicionaUsuario);
 
 router.post('/checkout/order', indexController.compra);
-router.post('/adciona-endereco', enderecoController.adcionaEndereco);
+/* router.post('/adciona-endereco', enderecoController.adcionaEndereco); */
 
 router.get('/checkout/order-finished', indexController.finalizacaoCompra);
 

@@ -1,90 +1,106 @@
-const Usuario = require('../models');
-const Endereco = require('../models');
+const { Usuario, Endereco } = require("../models");
 
-async function listarEnderecos(req, res) {
-    const idUsuario = req.session.login; 
-  
-    try {
+module.exports = {
+  listarEnderecos: async (req, res) => {
+    const idUsuario = req.session.login;
+   
       const usuarios = await Usuario.findAll({
-        where: {idusuarios: idUsuario}
+        where: { idusuarios: idUsuario },
       });
 
       const enderecos = await Endereco.findAll({
-        where: { idusuarios: idUsuario }
+        where: { usuarios_idusuarios: idUsuario },
       });
 
-      res.render('painel', {usuarios, enderecos, css: ['style.css', 'painel-usuario.css'], js: ['painel-usuario.js']});
+      res.render("painel", {
+        usuarios,
+        enderecos,
+        css: ["style.css", "painel-usuario.css"],
+        js: ["painel-usuario.js"],
+      });    
+  },
 
-    } catch (error) {
-      console.error(error);
-      res.status(500).json({ mensagem: 'Erro ao listar endereços' });
-    }
-  }    
+  formEndereco: async (req, res) => { 
+    let enderecos;
+    const { id } = req.params;
+    if(id) enderecos = await Endereco.findByPk(id);
+    console.log(id)   
+         
+      res.render("painel-adicionaEndereco", {
+        enderecos: [],
+        css: ["style.css", "painel-formEndereco.css"],
+        js: [],
+      }); 
+   },
 
-    async function criarEndereco(req, res) {
-             
-        try {
-        const { logradouro, endereco_numero, complemento, cep, bairro, cidade, estado, pais, usuarios_idusuarios } = req.body;
-        const { idUsuario } = req.session.login;
-        
-          await Endereco.create({
-            logradouro,
-            endereco_numero,
-            complemento,
-            cep,
-            bairro,
-            cidade,
-            estado,
-            pais,
-            usuarios_idusuarios: idUsuario
-          });
-          res.redirect('/painel');
-          
-        } catch (error) {
-          console.error(error);
-          res.status(500).json({ mensagem: 'Erro ao criar endereço' });
+  adicionarEndereco: async (req, res) => {
+    const idUsuario = req.session.login;
+      console.log('idUsuario', idUsuario)
+        const {
+        logradouro,
+        endereco_numero,
+        complemento,
+        cep,
+        bairro,
+        cidade,
+        estado,
+        pais,
+      } = req.body;    
+     
+      await Endereco.create({
+        logradouro,
+        endereco_numero,
+        complemento,
+        cep,
+        bairro,
+        cidade,
+        estado,
+        pais,
+        usuarios_idusuarios: idUsuario,
+      });
+
+      res.redirect('/usuarios/painel');     
+  },
+
+ 
+  editarEndereco: async (req, res) => {    
+    const { id } = req.params;
+      const {
+        logradouro,
+        endereco_numero,
+        complemento,
+        cep,
+        bairro,
+        cidade,
+        estado,
+        pais,
+      } = req.body;
+
+      await Endereco.update(
+        {
+          logradouro,
+          endereco_numero,
+          complemento,
+          cep,
+          bairro,
+          cidade,
+          estado,
+          pais,
+        },
+        {
+          where: { idenderecos: id },
         }
-    }
+      );
+      res.redirect('/usuarios/painel');   
+  },
 
-    async function atualizarEndereco(req, res) {
-        const idEndereco = req.params.id;
-        const { logradouro, endereco_numero, complemento, cep, bairro, cidade, estado, pais } = req.body;
-      
-        try {
-          const enderecoAtualizado = await Endereco.update({
-            logradouro,
-            endereco_numero,
-            complemento,
-            cep,
-            bairro,
-            cidade,
-            estado,
-            pais
-          }, {
-            where: { idenderecos: idEndereco }
-          });
-          res.status(200).json({ mensagem: 'Endereço atualizado com sucesso' });
-        } catch (error) {
-          console.error(error);
-          res.status(500).json({ mensagem: 'Erro ao atualizar endereço' });
-        }
-      }
+  deletarEndereco: async (req, res) => {   
+   const { id } = req.params;
 
-      async function deletarEndereco(req, res) {
-        const idEndereco = req.params.id;
-      
-        try {
-          await Endereco.destroy({
-            where: { idenderecos: idEndereco }
-          });
-          res.status(200).json({ mensagem: 'Endereço deletado com sucesso' });
-        } catch (error) {
-          console.error(error);
-          res.status(500).json({ mensagem: 'Erro ao deletar endereço' });
-        }
-      }
+      await Endereco.destroy({
+        where: { idenderecos: id },
+      });
 
-      
-    module.exports = { criarEndereco, listarEnderecos, atualizarEndereco, deletarEndereco };
-    
-    
+      res.redirect('/usuarios/painel');    
+  },
+};

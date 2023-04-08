@@ -8,9 +8,10 @@ router.get('/painel', usuarioController.mostraPainelUsuario);
 
 router.get('/meus-pedidos:id', usuarioController.mostrarHistorico);
 
-router.get('/endereco', enderecoController.listarEnderecos);
-router.post('/endereco', enderecoController.criarEndereco);
-router.get('/endereco/:id?', enderecoController.atualizarEndereco);
-router.delete('/endereco/:id?', enderecoController.deletarEndereco);
+router.get('/painel', enderecoController.listarEnderecos);
+router.get('/formEndereco/:id?', enderecoController.formEndereco);
+router.post('/adicionarEndereco', enderecoController.adicionarEndereco);
+router.put('/editarEndereco/:id', enderecoController.editarEndereco);
+router.delete('/deletarEndereco/:id', enderecoController.deletarEndereco);
 
 module.exports = router;

@@ -47,8 +47,8 @@
                     </p>
                     <br>
 
-                    <b id="data-pedido">Data de Nascimento:</b>
-                    <p>
+                    <b>Data de Nascimento:</b>
+                    <p id="data-pedido">
                         <%= usuario.data_nascimento %>
                     </p>
                     <br>
@@ -59,39 +59,9 @@
                     </p>
                     <br>
 
-                    <button class="editar-dados">Editar Dados Pessoais</button>
-
-                    <!-- Início modal de edição de dados pessoais-->
-
-                    <dialog class="modal-dados">
-
-                        <h1>Editar Meus Dados Pessoais</h1>
-                        <hr>
-
-                        <form action="" method="POST" id="form">
-
-                            <label for="nome">Nome:</label>
-                            <input type="text" id="nome" name="nome" required="required" />
-
-                            <label for="sobrenome">Sobrenome:</label>
-                            <input type="text" id="sobrenome" name="sobrenome" required="required" />
-
-                            <label for="email">E-mail:</label>
-                            <input type="email" id="email" name="email" required="required" />
-
-                            <label for="cpf">CPF:</label>
-                            <input type="number" id="documento_usuario" name="documento_usuario" min="11" max="11"
-                                required="required" />
-
-                            <label for="tel">Tel Celular:</label>
-                            <input type="number" id="telefone" name="telefone" min="11" max="11" required="required"
-                                placeholder="Inserir somente números" />
-
-                            <button class="salvar-dados">Salvar Alterações</button>
-                        </form>
-                        <Button onclick="closeDialog()" class="cancelar-dados">Cancelar</Button>
-                    </dialog>
-                    <!-- Fim modal de edição de dados pessoais-->
+                    <button class="editar-dados">
+                        <a class="add-button" href="/usuarios/editaUsuario/<%= usuario.idusuarios %>"> Editar Dados</a>                            
+                    </button>
 
                 </div>
 
@@ -128,100 +98,20 @@
                         </p>
                         <br>
                         <% } %>
-                                             
-                                                                    
-                        <button class="editar-endereco">Editar</button>
 
-                        <!-- Início modal de Edição de endereço -->
+                            <button class="cadastrar-endereco">
+                                <a class="add-button" href="/usuarios/formEndereco">Adicionar</a>
+                            </button>
 
-                        <dialog class="modal-endereco-editar">
-                            <% if (enderecos) { %>                     
-                           
-                            <h1> Editar Endereço </h1>
-                            <hr>
-                            <% } else { %>
-                                <h1> Não há nenhum endereço cadastrado </h1>
-                                <hr>
-                            <% } %>
+                            <button class="editar-endereco">
+                                <a class="add-button"
+                                    href="/usuarios/formEndereco/<%= enderecos.idendereco %>">Editar</a>
+                            </button>
 
-                            <form action="/painel/enderecos/<%= enderecos.idenderecos %>?_method=PUT" method="POST">
+                            <form action="/usuarios/<%= enderecos.idendereco %>?_method=DELETE" method="post">
+                                <button class="excluir-endereco">Excluir</button>
                             </form>
-                            
-                            <% for (let endereco of enderecos) { %>
 
-                            <label for="cep">CEP:</label>
-                            <input type="number" id="cep" name="cep" min="8" max="8" required="required"
-                                value="<%= endereco?.cep %>" placeholder="Inserir somente números" />
-
-                            <label for="logradouro">Logradouro</label>
-                            <input type="text" id="logradouro" value="<%= endereco?.logradouro %>" name="logradouro"
-                                required="required" />
-
-                            <label for="numero">Número:</label>
-                            <input type="number" id="numero" value="<%= endereco?.endereco_numero %>" name="numero"
-                                required="required" />
-
-                            <label for="complemento">Complemento:</label>
-                            <input type="text" id="complemento" value="<%= endereco?.complemento %>"
-                                name="complemento" />
-
-                            <label for="bairro">Bairro:</label>
-                            <input type="text" id="bairro" value="<%= endereco?.bairro %>" name="bairro"
-                                required="required" />
-
-                            <label for="cidade">Cidade:</label>
-                            <input type="text" id="cidade" value="<%= endereco?.cidade %>" name="cidade"
-                                required="required" />
-
-                            <label for="uf">UF:</label>
-                            <input type="text" id="uf" value="<%= endereco?.estado %>" name="uf" required="required" />
-                            
-                            <button class="salvar-endereco">Salvar</button>
-                            <% } %>
-                            </form>
-                            <Button onclick="closeDialog()" class="cancelar-endereco-editar">Cancelar</Button>
-                        </dialog>
-
-                           
-                            <!-- Fim modal de cadastro/edição de endereço -->
-                                                       
-                            <button class="cadastrar-endereco">Cadastrar</button>
-
-                            <!-- Início modal de cadastro de endereço -->
-
-                            <dialog class="modal-endereco-cadastro">
-
-                                <form action="/painel/enderecos" method="POST">
-
-                                    <label for="cep">CEP:</label>
-                                    <input type="number" id="cep" name="cep" min="8" max="8" required="required"
-                                        placeholder="Inserir somente números" />
-
-                                    <label for="logradouro">Logradouro</label>
-                                    <input type="text" id="logradouro" name="logradouro" required="required" />
-
-                                    <label for="numero">Número:</label>
-                                    <input type="number" id="numero" name="numero" required="required" />
-
-                                    <label for="complemento">Complemento:</label>
-                                    <input type="text" id="complemento" name="complemento" />
-
-                                    <label for="bairro">Bairro:</label>
-                                    <input type="text" id="bairro" required="required" />
-
-                                    <label for="cidade">Cidade:</label>
-                                    <input type="text" id="cidade" name="cidade" required="required" />
-
-                                    <label for="uf">UF:</label>
-                                    <input type="text" id="uf" name="uf" required="required" />
-
-                                    <button class="salvar-endereco">Cadastrar</button>
-
-                                </form>
-                                <Button onclick="closeDialog()" class="cancelar-endereco-cadastrar">Cancelar</Button>
-                            </dialog>
-                       
-                            
                 </div>
             </section>
 

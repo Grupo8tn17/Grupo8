@@ -143,6 +143,10 @@ body{
   transform: translateX(-2px);  
   }
 
+  .add-button {
+    color: var(--offwhite);
+  }
+
 
 /* Início Aside */
 
@@ -212,67 +216,6 @@ body{
 .list-icon:hover{
     color: var(--bg-darkcolor);
 }
-
-/* Início modal dados pessoais */
-
-dialog::backdrop{
-    background-color: rgb(0 0 0 / .4);
-}
-
-dialog{
-    background-color: var(-offwhite);
-    border: none;
-    border-radius: 1rem;    
-    box-shadow: 1px 3px 3px 3px var(--bg-darkcolor);
-    width: 65%;
-    height: 65%;
-    position: fixed;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-}
-
-dialog h1{
-    text-align: center;    
-    color: var(--bg-darkcolor);
-    font-size: 1.7rem;
-    padding: 1rem; 
-}
-
-dialog hr {
-    border: 0;
-    height: 0.2rem;
-    background-image: linear-gradient(to right,transparent,var(--bg-darkcolor),transparent);
-    margin-bottom: 2rem;
-}
-
-dialog form{
-    display: flex; 
-    flex-direction: column;   
-    justify-content: center;
-    flex-wrap: wrap;
-    align-items: center;
-    align-content: center;
-}
-
-dialog form input {
-    background-color: #ffff;
-    border: none;
-    width: 70%;
-    height: 4rem;
-    padding-left: 1rem;
-    margin-bottom: 2rem;
-    box-shadow: 5px 4px 4px var(--gray);
-    font-size: 1.5rem;
-    transition: all 0.15s ease-in-out;
-}
-
-dialog form label{
-    font-size: 1.3rem;
-    color: var(--bg-darkcolor);
-    font-weight: 700;
-}
-
 
 /* Responsividade */
 
