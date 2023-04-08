@@ -98,10 +98,14 @@
                
               <p>Quantidade: <%= produto.quantity %></p>
             </div>
-            <p class="valor-produto">R$ <% let preco = produto.quantity * produto.price %><%= preco.toFixed(2).replace('.',',') %></p>
+            <p class="valor-produto"><% let preco = produto.quantity * produto.price %><%= preco.toFixed(2).replace('.',',') %></p>
           </div>
           <% }) %>
         </div>
+      </div>
+      <div class="orderResume-delivery">
+        <p>Subtotal</p>
+        <p class="valor-sub"></p>
       </div>
       <div class="orderResume-delivery">
         <p>Frete</p>
@@ -120,15 +124,21 @@
 </div>
 <div class="orderButtons">
   <button class="button">
-    <a href="/public/views/list-product/list.product.html"
-      >Continuar comprando</a
-    >
+    <a href="/">Continuar comprando</a>
   </button >
-  <button class="button">
-    <a href="/public/views/orderFinished/orderFinished.html"
-      >Finalizar pedido</a
-    >
-  </button>
+  <form action="/checkout/order-finished" method="POST" class="form-finaliza">
+    <input type="hidden" class="subtotal" name="subtotal" value="">
+    <input type="hidden" class="total" name="total" value="">
+    <input type="hidden" class="frete-valor" name="valor_frete" value="">
+    <input type="hidden" name="data_pedido" class="data_pedido" value="">
+    <input type="hidden" name="produtosLocal" class="produto-local" value="">
+    <% produtos.forEach(produto => { %>
+      <input type="hidden" name="Arrayidprodutos" id="" value="<%= produto.id %>">
+      <input type="hidden" name="Arrayquantidades" id="" value="<%= produto.quantity %>">
+    <% }) %>
+    <button class="button" type="submit">Finalizar Pedido</button>
+  </form>
+  
 </div>
 
 <%- include('partials/rodape-alternativo') %>

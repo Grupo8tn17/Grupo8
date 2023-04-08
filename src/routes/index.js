@@ -5,7 +5,7 @@ const usuarioController = require('../controllers/usuarioController');
 const carrinhoController = require('../controllers/carrinhoController');
 const produtoController = require('../controllers/produtoController');
 const validacaoCadastroUsuario = require('../middleware/validacao-cadastro-usuario');
-const enderecoController = require('../controllers/enderecoController');
+const pedidosController = require('../controllers/pedidosController');
 
 //Home
 router.get('/', indexController.index);
@@ -22,10 +22,8 @@ router.get('/painel', usuarioController.mostraPainelUsuario);
 router.get('/cadastro', usuarioController.mostraCadastro);
 router.post('/cadastro/adiciona', validacaoCadastroUsuario, usuarioController.adicionaUsuario);
 
-router.post('/checkout/order', indexController.compra);
-router.post('/adciona-endereco', enderecoController.adcionaEndereco);
-
-router.get('/checkout/order-finished', indexController.finalizacaoCompra);
+router.post('/checkout/order', pedidosController.compra);
+router.post('/checkout/order-finished', pedidosController.finalizacaoCompra);
 
 router.get('/politica-privacidade', indexController.mostraPoliticaPrivacidade);
 

@@ -55,4 +55,68 @@ const pegaEndereco = async (cep) => {
     inputEstado.value = data.uf;
 }
 
+function somaTotal() {
+    let valorProdutos = document.querySelectorAll('.valor-produto');
+    const valorFrete = document.querySelector('.valor-frete');
+    let valorTotal = document.querySelector('.valor-total');
+    let valorSub = document.querySelector('.valor-sub');
+    let subtotal = document.querySelector('.subtotal');
+    let total = document.querySelector('.total');
+    let freteValor = document.querySelector('.frete-valor');
 
+    console.log()
+
+    window.addEventListener('load', (e) => {
+        e.preventDefault();
+        let soma = 0
+        for(let i = 0; i < valorProdutos.length; i++ ) {
+            soma = soma + parseFloat(valorProdutos[i].innerHTML);
+            
+        }
+        valorSub.innerHTML = soma.toFixed(2).replace('.', ',');
+        let resultado = soma + parseFloat(valorFrete.innerHTML);
+        console.log(resultado);
+        valorTotal.innerHTML = resultado.toFixed(2).replace('.', ',');
+
+        subtotal.value = soma;
+        total.value = resultado;
+        freteValor.value = parseFloat(valorFrete.innerHTML);
+
+
+    })
+}
+
+somaTotal();
+
+
+function pegarData() {
+    const dataPedido = document.querySelector('.data_pedido');
+    let data = new Date();
+    let mes = data.getUTCMonth() + 1;
+
+    window.addEventListener('load', () => {
+        let dataAtual = data.getDate() +'/'+ mes +'/'+ data.getFullYear();
+        console.log(dataAtual);
+        dataPedido.value = dataAtual;
+    })
+}
+
+pegarData();
+
+function pegarProdutos() {
+    const formFinaliza = document.querySelector('.form-finaliza');
+    let produtosCarrinho = document.querySelector('.produto-local');
+  
+    formFinaliza.addEventListener('submit', (e) => {
+      e.preventDefault();
+      let objectCart = JSON.parse(localStorage.getItem("cart") || []);
+
+
+
+      produtosCarrinho.value = JSON.stringify(objectCart);
+      formFinaliza.submit();
+    })
+  }
+  
+  pegarProdutos();
+  
