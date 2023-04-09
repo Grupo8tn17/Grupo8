@@ -12,13 +12,13 @@
   <% for (let i = 0; i < js.length; i ++) { %> 
   <script src="/javascripts/<%= js[i] %>" defer></script>
   <% } %> 
+  <script src="/javascripts/cabecalho.js" defer></script>
   <title>Infinity Cosmeticos</title>
 </head>
 
 <body>
-    <div class="banner-frete"><a>GRÁTIS ACIMA DE R$ 249,90 - TODO BRASIL</a></div>
-    <header id="header">
-      <div class="header-principal">
+    <header id="header" class="workstation">
+      <div class="header-principal ">
         <div class="container-header">
         <div class="header-logo">
             <a href="/"><img src="/images/Logo3PNG.png" alt=""></a>          
@@ -28,16 +28,12 @@
           <input class="header-input" type="search" name="pesquisa" placeholder="Pesquisar Produto...">
           <button><img src="/images/lupa-arredondada.png" alt=""></button>
         </div>  
-        <div class="header-links">
-          <div class="links-favorites">
-            <img src="/images/coracao.png" alt="">
-            <a href="/login">Lista de Desejos</a>
-          </div>
           <div class="links-account">
             <img src="/images/account2.png" alt="">
             <a href="/painel">Minha Conta</a>
           </div>
           <div class="links-cart">
+            <span class="quantidade-produtos"></span>
             <a href="/carrinho"><img src="/images/shopping-bag.png" alt=""></a>
           </div>
         </div>
@@ -57,3 +53,45 @@
         </div>
       </div>
     </header>
+
+    <!-- Menu Mobile-->
+
+    <header id="header" class="mobile">
+      <div class="header-principal ">
+        <div class="container-header">
+          <div class="menu-mobile">
+            <img src="/images/menu-aberto.png" alt="">
+          </div>
+          <div class="header-logo">
+              <a href="/"><img src="/images/Logo3PNG.png" alt=""></a>          
+            <a href="/"><span><strong>Infinity</strong> Cosméticos</span></a>
+          </div>
+          <div class="container-icons">
+            <div class="links-account">
+              <img src="/images/account2.png" alt="">
+            </div>
+            <div class="links-cart">
+              <span class="quantidade-produtos"></span>
+              <a href="/carrinho"><img src="/images/shopping-bag.png" alt=""></a>
+            </div>
+        </div> 
+        </div>
+      </div>
+      <div class="header-search">
+        <input class="header-input" type="search" name="pesquisa" placeholder="Pesquisar Produto...">
+        <button><img src="/images/lupa-arredondada.png" alt=""></button>
+      </div> 
+
+        <div class="navbar-mobile hide">
+          <img class="menu-mobile" src="/images/close.png" alt="">           
+            <li><a href="/produtos">Todos os departamentos</a></li>
+            <li><a href="/cabelos">Cabelos</a></li>
+            <li><a href="/tratamentos">Tratamentos</a></li>
+            <li><a href="/corpoebanho">Corpo e Banho</a></li>
+            <li><a href="/maquiagem">Maquiagem</a></li>
+            <li><a href="/aromaterapia">Aromaterapia</a></li>
+        </div>
+        <div class="hide" id="fade"></div>
+    </header>
+
+    

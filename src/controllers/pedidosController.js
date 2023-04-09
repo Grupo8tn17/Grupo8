@@ -11,7 +11,8 @@ const { Op } = require("sequelize");
 
 module.exports = {
   compra: async (req, res) => {
-    let { produtos, frete, prazo } = req.body;
+    try {
+      let { produtos, frete, prazo } = req.body;
 
     if (frete) {
       let parsedProdutos = JSON.parse(produtos);
@@ -50,92 +51,86 @@ module.exports = {
         erro,
       });
     }
+    } catch (error) {
+     console.log(error) 
+    }
   },
 
   finalizacaoCompra: async (req, res) => {
-    const {
-      subtotal,
-      total,
-      valor_frete,
-      data_pedido,
-      Arrayidprodutos,
-      Arrayquantidades,
-      produtosLocal,
-    } = req.body;
-    let produtosParsed = JSON.parse(produtosLocal);
-    var idprodutos
-    let numeroPedido = Math.floor(Math.random() * 65536);
-    if(typeof Arrayidprodutos == "string") {
-      idprodutos = [Arrayidprodutos];
-    } else {
-      idprodutos = Arrayidprodutos;
-    }
-    console.log(idprodutos);
-    console.log(Arrayquantidades);
-
-    //Adiciona na tabela de pedido
-    if (req.session.login) {
-      var endereco = await Endereco.findAll({
-        include: [{ model: Usuario, as: "usuarios" }],
-        where: { usuarios_idusuarios: req.session.login },
-      });
-      var pedidos = await Pedido.create({
+    try {
+      const {
         subtotal,
         total,
         valor_frete,
         data_pedido,
-        usuarios_idusuarios: req.session.login,
-        codigo_pedido: numeroPedido,
-      });
-      var findPedido = await Pedido.findAll({
-        where: { codigo_pedido: numeroPedido },
-      });
-      console.log(findPedido[0].idpedidos);
-
-      if (findPedido) {
-          for (let index = 0; index < idprodutos.length; index++) {
-            const idproduto = idprodutos[index];
-            await ProdutosPedidos.create({
-              produtos_idprodutos: idproduto,
-              usuarios_idusuarios: req.session.login,
-              pedidos_idpedidos: findPedido[0].idpedidos,
-            });
-            console.log("Deu certo");
-
-            var produtos = await Produto.findAll({
-              where: { idprodutos: { [Op.in]: idprodutos } },
-            });
-            console.log(produtos);
-            if (produtos) {
-              produtos.forEach(async (produto) => {
-                let quantidadeProduto = produto.quantidade;
-                for (let i = 0; i < Arrayquantidades.length; i++) {
-                  var quantidade = Arrayquantidades[i];
-                }
-                let diminuiQuantidade = quantidadeProduto - quantidade;
-                  //Altera o estoque de produtos
-                  await Produto.update(
-                    { quantidade: diminuiQuantidade },
-                    { where: { idprodutos: { [Op.in]: idprodutos } } }
-                  );
+        Arrayidprodutos,
+        Arrayquantidades,
+        produtosLocal,
+      } = req.body;
+      let produtosParsed = JSON.parse(produtosLocal);
+      var idprodutos
+      let numeroPedido = Math.floor(Math.random() * 65536);
+      if(typeof Arrayidprodutos == "string") {
+        idprodutos = [Arrayidprodutos];
+      } else {
+        idprodutos = Arrayidprodutos;
+      }
+      console.log(idprodutos);
+      console.log(Arrayquantidades);
+  
+      //Adiciona na tabela de pedido
+      if (req.session.login) {
+        var endereco = await Endereco.findAll({
+          include: [{ model: Usuario, as: "usuarios" }],
+          where: { usuarios_idusuarios: req.session.login },
+        });
+        var pedidos = await Pedido.create({
+          subtotal,
+          total,
+          valor_frete,
+          data_pedido,
+          usuarios_idusuarios: req.session.login,
+          codigo_pedido: numeroPedido,
+        });
+        var findPedido = await Pedido.findAll({
+          where: { codigo_pedido: numeroPedido },
+        });
+        console.log(findPedido[0].idpedidos);
+  
+        if (findPedido) {
+            for (let index = 0; index < idprodutos.length; index++) {
+              const idproduto = idprodutos[index];
+              await ProdutosPedidos.create({
+                produtos_idprodutos: idproduto,
+                usuarios_idusuarios: req.session.login,
+                pedidos_idpedidos: findPedido[0].idpedidos,
+              });
+              console.log("Deu certo");
+  
+            }
+  
+              produtosParsed.forEach(async produtoParsed => {
+                await Produto.increment({quantidade: -produtoParsed.quantity}, {where: {idprodutos: produtoParsed.id}});
               });
             }
-          }
+  
+  
+        
+      } else {
+        res.redirect("/login");
+        console.log("não adicionou no banco");
       }
-
-      
-    } else {
-      res.redirect("/login");
-      console.log("não adicionou no banco");
+  
+      res.render("finalizacao-compra", {
+        produtos: produtosParsed,
+        Arrayquantidades,
+        findPedido,
+        endereco,
+        css: ["style.css", "finaliza-compra.css"],
+        js: ["finalizacao-compra.js"],
+      });
+    } catch (error) {
+      console.log(error);
     }
-
-    res.render("finalizacao-compra", {
-      produtos: produtosParsed,
-      Arrayquantidades,
-      findPedido,
-      endereco,
-      css: ["style.css", "finaliza-compra.css"],
-      js: ["finalizacao-compra.js"],
-    });
   },
 };
