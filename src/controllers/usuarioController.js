@@ -56,8 +56,9 @@ module.exports = {
         if(req.session.login) {
             let idLogin = req.session.login;
             let usuarios = await Usuario.findAll({where: {idusuarios: idLogin}});
+            let enderecos = await Endereco.findAll({where: {usuarios_idusuarios: usuarios[0].idusuarios}});
             console.log(usuarios);
-            res.render('painel', {usuarios, css: ['style.css', 'painel-usuario.css'], js: ['painel-usuario.js', "formata-data.js"]});
+            res.render('painel', {usuarios, enderecos, css: ['style.css', 'painel-usuario.css'], js: ['painel-usuario.js', "formata-data.js"]});
         } else {
             res.redirect('/login');
         }
@@ -233,14 +234,22 @@ module.exports = {
       });
     } catch (erro) {
       console.log("aqui", erro);
-      
-      
-      return res.render("error", {
-        message: 'algo deu errado',
-        error: erro,
-        css: ["cabecalho-alternativo.css", "style.css"],
-        js: [],
-      });
+
     }
   },
+
+  formUsuario: async (req, res) => {
+    const {id} = req.params;
+    let usuarios = await Usuario.findAll({where: {idusuarios: id}})
+    res.render('painel-edita-usuario', {usuarios, css: ['style.css', 'painel-formUsuario.css', 'painel-usuario.css'], js: '' })
+  },
+
+  editarUsuario: async (req, res) => {
+    const {id} = req.params;
+    const {nome, sobrenome, email, documento_usuario, telefone} = req.body;
+
+    await Usuario.update({nome, sobrenome, email, documento_usuario, telefone}, {where: {idusuarios: id}});
+
+    res.redirect('/painel');
+  }
 };

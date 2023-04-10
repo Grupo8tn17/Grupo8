@@ -5,20 +5,18 @@ module.exports = {
 
   formEndereco: async (req, res) => {
     const { id } = req.params;
-   
-      const usuarios = await Usuario.findAll({
-        where: { idusuarios: id },
-      });
 
       const enderecos = await Endereco.findAll({
         where: { usuarios_idusuarios: id },
       });
+
+      let usuario = await Usuario.findAll({where: {idusuarios: id}});
       console.log(enderecos)
    
       return res.render("painel-adicionaEndereco", {
         enderecos,
-        usuarios,
-        css: ["style.css", "painel-formEndereco.css"],
+        usuario,
+        css: ["style.css", "painel-formEndereco.css", 'painel-usuario.css'],
         js: [],
       });
   },
@@ -36,7 +34,6 @@ module.exports = {
         bairro,
         cidade,
         estado,
-        pais,
       } = req.body;    
      
       await Endereco.create({
@@ -47,10 +44,9 @@ module.exports = {
         bairro,
         cidade,
         estado,
-        pais,
+        pais: 'Brasil',
         usuarios_idusuarios: id,
       });
-      console.log(usuarios_idusuarios)
 
       res.redirect('/painel');     
   },
@@ -67,8 +63,17 @@ module.exports = {
         bairro,
         cidade,
         estado,
-        pais,
+        pais
       } = req.body;
+      console.log(
+        logradouro,
+        endereco_numero,
+        complemento,
+        cep,
+        bairro,
+        cidade,
+        estado,
+        pais)
 
       await Endereco.update(
         {
@@ -92,7 +97,7 @@ module.exports = {
    const { id } = req.params;
 
       await Endereco.destroy({
-        where: { usuarios_idusuarios: id, },
+        where: { idenderecos: id },
       });
 
       res.redirect('/painel');    

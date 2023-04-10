@@ -47,8 +47,8 @@
                     </p>
                     <br>
 
-                    <b id="data-pedido">Data de Nascimento:</b>
-                    <p>
+                    <b >Data de Nascimento:</b>
+                    <p id="data-pedido">
                         <%= usuario.data_nascimento %>
                     </p>
                     <br>
@@ -59,17 +59,22 @@
                     </p>
                     <br>
 
-                    <button class="editar-dados">
-                        <a class="add-button" href="/usuarios/editaUsuario/<%= usuario.idusuarios %>"> Editar Dados</a>
-                    </button>
+                    
+                        <a class="add-button" href="/usuarios/formUsuario/<%= usuario.idusuarios %>"><button class="editar-dados">Editar Dados</button> </a>
+                    
 
                 </div>
 
                 <div id="meus-enderecos" class="estilo-div">
 
-
                     <h2>Meus Endereços</h2>
                     <hr>
+                    <% if(enderecos.length < 1) { %>
+                        <h4>Não há endereços cadastrados</h4>
+
+                        <a class="add-button" href="/formEndereco/<%= usuario.idusuarios %>"><button class="cadastrar-endereco">Adicionar</button></a>
+                    <% } else { %>
+                     
 
                     <% for (let endereco of enderecos) { %>
 
@@ -100,18 +105,12 @@
 
                         <% } %>
 
-                        <button class="cadastrar-endereco">
-                            <a class="add-button" href="/formEndereco/<%= usuario.idusuarios %>">Adicionar</a>
-                        </button>
-
-                        <button class="editar-endereco">
-                            <a class="add-button" href="/formEndereco/<%= usuario.idusuarios %>">Editar</a>
-                        </button>
-
-                        <form action="/<%= enderecos.idendereco %>?_method=DELETE" method="post">
-                            <button class="excluir-endereco">Excluir</button>
+                        <a class="add-button" href="/formEndereco/<%= usuario.idusuarios %>"><button class="editar-endereco">Editar</button></a>
+  
+                        <form action="/usuarios/deletarEndereco/<%= enderecos[0].idenderecos %>?_method=DELETE" method="POST">
+                            <button class="excluir-endereco" type="submit">Excluir</button>
                         </form>
-                        
+                   <% } %>
 
                 </div>
             </section>

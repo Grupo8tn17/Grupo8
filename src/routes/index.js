@@ -15,12 +15,13 @@ router.get('/frete', carrinhoController.calcularFrete);
 
 
 router.get('/login', usuarioController.mostraLogin);
-router.post('/painel', usuarioController.logarUsuario);
+router.post('/logar', usuarioController.logarUsuario);
 router.get('/painel', usuarioController.mostraPainelUsuario);
 //Meus Pedidos
 router.get('/meus-pedidos/:id', usuarioController.mostrarHistorico);
 //Formulário de edição/cadastro endereco
 router.get('/formEndereco/:id', enderecoController.formEndereco);
+router.get('/formUsuario', usuarioController.formUsuario);
 
 //Cadastro Usuário
 router.get('/cadastro', usuarioController.mostraCadastro);
