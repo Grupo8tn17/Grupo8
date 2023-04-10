@@ -31,6 +31,8 @@ router.post('/cadastro/adiciona', validacaoCadastroUsuario, usuarioController.ad
 router.post('/checkout/order', pedidosController.compra);
 router.post('/checkout/order-finished', pedidosController.finalizacaoCompra);
 
+router.get('/resumo-pedido/:id', pedidosController.resumoPedido);
+
 router.get('/politica-privacidade', indexController.mostraPoliticaPrivacidade);
 
 router.get('/cabelos', produtoController.mostraCabelos);
