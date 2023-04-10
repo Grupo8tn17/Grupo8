@@ -6,6 +6,7 @@ const carrinhoController = require('../controllers/carrinhoController');
 const produtoController = require('../controllers/produtoController');
 const validacaoCadastroUsuario = require('../middleware/validacao-cadastro-usuario');
 const pedidosController = require('../controllers/pedidosController');
+const enderecoController = require('../controllers/enderecoController')
 
 //Home
 router.get('/', indexController.index);
