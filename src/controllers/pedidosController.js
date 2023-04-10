@@ -1,3 +1,4 @@
+const { log } = require("console");
 const {
   Produto,
   Categoria,
@@ -133,4 +134,38 @@ module.exports = {
       console.log(error);
     }
   },
+
+  resumoPedido: async (req, res) => {
+    try {
+      const {id} = req.params;
+      console.log('id',id)
+      const pedidos = await Pedido.findAll({
+        where:{ idpedidos: id}
+      });
+      console.log('pedidos',pedidos);
+      const produtosPedidos = await ProdutosPedidos.findAll({
+        where:{pedidos_idpedidos: id}
+      });
+      console.log('produtosPedidos', produtosPedidos);
+      console.log('produtosPedidos: idprodutos', produtosPedidos[0].produtos_idprodutos);
+      const produtos = await Produto.findAll();
+      console.log('produto. id', produtos[0].idprodutos);
+      const produtosDoPedido = produtos.map(() => {
+
+      })
+
+
+      res.render("resumo-pedido", {
+        pedidos,
+        produtosPedidos,
+        produtos,
+        css: ["style.css", "finaliza-compra.css"],
+        js: []
+      })
+
+
+    } catch (error) {
+      console.log(error);
+    }
+  }
 };
