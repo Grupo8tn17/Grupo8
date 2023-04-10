@@ -18,7 +18,6 @@ header {
   max-height: 6rem;
   width: 100%;
   z-index: 100;
-  margin-bottom: 4.2rem;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -28,12 +27,13 @@ header {
 .container-header {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   align-items: center;
   width: 100%;
 }
 
 .header-logo {
-  width: 100%;
+  width: 40%;
   display: flex;
   align-items: center;
 }
@@ -52,8 +52,8 @@ header {
 
 .header-search {
   display: flex;
+  width: 40%;
   align-items: center;
-  width: 100%;
   justify-content: center;
 }
 
@@ -137,6 +137,7 @@ header {
   box-shadow: 0px 2px 6px #464646;
   color: white;
   font-weight: bold;
+  margin-bottom: .2rem;
 }
 
 .navbar-products {
@@ -173,9 +174,9 @@ header {
 }
 
 .navbar-listcategories li {
+  max-width: 8rem;
   display: flex;
   justify-content: center;
-  width: 15rem;
   cursor: pointer;
 }
 
@@ -186,4 +187,127 @@ header {
 .navbar-listcategories li a {
   text-decoration: none;
   color: white;
+}
+
+.quantidade-produtos {
+  display: none;
+  position: absolute;
+  background-color: red;
+  color: white;
+  font-size: .8rem;
+  border-radius: 10rem;
+  padding: .1rem .4rem;
+  top: 1.2rem;
+  right: 1.4rem;
+}
+
+.mobile {
+  display: none;
+} 
+
+@media (max-width: 790px) {
+
+  .mobile {
+    display: block;
+  }
+
+  .container-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 95%;
+    margin: 0 1rem;
+  }
+
+  .workstation {
+    display: none;
+  }
+
+
+  .menu-mobile img {
+    width: 2.5rem;
+    color: white;
+    cursor: pointer;
+  }
+
+  .container-icons {
+    display: flex;
+    flex-direction: row;
+    margin-right: 1rem;
+
+  }
+
+  .navbar-mobile {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    background-color: #bfd68b;
+    width: 25rem;
+    height: 100vh;
+    z-index: 10;
+    top: 0;
+    left: -100%;
+  }
+
+  .navbar-mobile img {
+    width: 2rem;
+    margin: 1rem;
+  }
+
+  .navbar-mobile li {
+    padding: 1rem;
+    border-bottom: 1px solid black;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-top: 1rem;
+    margin-left: 1.5rem;
+  }
+
+  .navbar-mobile li a {
+    color: #4e6122;
+    font-weight: bold;
+  }
+
+  .header-search {
+    width: 100%;
+    background-color: #4e6122;
+    display: flex;
+    padding: 1rem;
+  }
+  .header-search input {
+    width: 80%;
+
+  }
+
+  .links-cart img {
+    margin-right: 0;
+  }
+
+  .container-icons {
+    margin: 0;
+  }
+
+  #fade {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 5;
+  }
+
+  #fade.hide {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .quantidade-produtos {
+    position: absolute;
+    right: .7rem;
+  }
+
 }
