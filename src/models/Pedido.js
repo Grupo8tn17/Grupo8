@@ -6,6 +6,11 @@ const criarPedidoModel = (sequelize, dataTypes) => {
       autoIncrement: true,
       allowNull: false,
     },
+
+    codigo_pedido: {
+      type: dataTypes.INTEGER,
+      allowNull: false
+  },
     
     usuarios_idusuarios: {
       type: dataTypes.INTEGER.UNSIGNED,
