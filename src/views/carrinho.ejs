@@ -79,7 +79,7 @@
                     </div>
                     <div class="text-column">
                         <p>Frete</p>
-                        <p class="text-black valor-frete"><%= valorFrete?.toFixed(2).replace('.', ',') %></p>
+                        <p class="text-black valor-frete"><% if(valorFrete) { %><%= valorFrete?.toFixed(2).replace('.', ',') %><% } else { %><%= "00,00" %><% } %></p>
                     </div>
                     <hr />
                     <div class="text-column text-total">                        

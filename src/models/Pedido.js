@@ -6,6 +6,11 @@ const criarPedidoModel = (sequelize, dataTypes) => {
       autoIncrement: true,
       allowNull: false,
     },
+
+    codigo_pedido: {
+      type: dataTypes.INTEGER,
+      allowNull: false
+  },
     
     usuarios_idusuarios: {
       type: dataTypes.INTEGER.UNSIGNED,
@@ -13,17 +18,37 @@ const criarPedidoModel = (sequelize, dataTypes) => {
     },
 
     data_pedido: {
-      type: dataTypes.DATE,
-      allowNull: false,
-    },    
-  };
+        type: dataTypes.DATE,
+        allowNull: false
+ },
+    subtotal: {
+      type: dataTypes.STRING,
+      allowNull: false
+    },
 
-  const opcoes = {
-    tableName: "pedidos",
-    timestamps: false,
-  };
+    total: {
+      type: dataTypes.STRING,
+      allowNull: false
+    },
 
-  const Pedido = sequelize.define("Pedido", colunas, opcoes);
+    valor_frete: {
+      type: dataTypes.STRING,
+      allowNull: false
+    }, 
+    usuarios_idusuarios: {
+      type: dataTypes.INTEGER.UNSIGNED,
+      allowNull: false
+    }, 
+    
+
+    };
+  
+    const opcoes = {
+      tableName: 'pedidos',
+      timestamps: false
+    };
+  
+    const Pedido = sequelize.define('Pedido', colunas, opcoes);
 
   Pedido.associate = (models) => {
     Pedido.belongsTo(models.Usuario, {
@@ -31,10 +56,9 @@ const criarPedidoModel = (sequelize, dataTypes) => {
       as: 'usuarios',
       foreignKey: 'usuarios_idusuarios'
     });
-  
+
   }
-
   return Pedido;
-};
-
-module.exports = criarPedidoModel;
+  };
+  
+  module.exports = criarPedidoModel;

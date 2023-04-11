@@ -4,8 +4,8 @@ console.log('cheguei', data);
 
 for (let i = 0; i < data.length; i++) {
   const dataAtual = data[i].innerText;
-  var dia  = dataAtual.split("-")[2];
-  var mes  = dataAtual.split("-")[1];
+  var dia  = dataAtual.split("-")[1];
+  var mes  = dataAtual.split("-")[2];
   var ano  = dataAtual.split("-")[0];   
        
 let dataFormatada = ("0"+ dia).slice(-2) + '/' + ("0"+ mes).slice(-2) + '/' + ano;
