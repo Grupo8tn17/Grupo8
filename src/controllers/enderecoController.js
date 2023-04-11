@@ -25,7 +25,7 @@ module.exports = {
 
   adicionarEndereco: async (req, res) => {
     const { id } = req.params;
-      console.log('id usuario do adicionar endereco', id)
+     
         const {
         logradouro,
         endereco_numero,
@@ -54,7 +54,7 @@ module.exports = {
  
   editarEndereco: async (req, res) => {    
     const { id } = req.params;
-    console.log('console do id editar endereco:', id)
+   
       const {
         logradouro,
         endereco_numero,
