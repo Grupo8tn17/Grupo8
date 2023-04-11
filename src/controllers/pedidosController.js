@@ -13,7 +13,8 @@ const { Op } = require("sequelize");
 module.exports = {
   compra: async (req, res) => {
     try {
-      let { produtos, frete, prazo } = req.body;
+      if(req.session.login) {
+        let { produtos, frete, prazo } = req.body;
 
     if (frete) {
       let parsedProdutos = JSON.parse(produtos);
@@ -24,8 +25,10 @@ module.exports = {
           include: [{ model: Usuario, as: "usuarios" }],
           where: { usuarios_idusuarios: idUsuario },
         });
+        let usuario = await Usuario.findAll({where: {idusuarios: idUsuario}});
         return res.render("compra", {
           enderecos,
+          usuario,
           produtos: parsedProdutos,
           frete,
           prazo,
@@ -52,6 +55,10 @@ module.exports = {
         erro,
       });
     }
+      } else {
+        return res.redirect('/login');
+      }
+      
     } catch (error) {
      console.log(error) 
     }
@@ -139,26 +146,24 @@ module.exports = {
     try {
       const {id} = req.params;
       console.log('id',id)
-      const pedidos = await Pedido.findAll({
-        where:{ idpedidos: id}
+      // const pedidos = await Pedido.findAll({
+      //   where:{ idpedidos: id}
+      // });
+      // console.log('pedidos',pedidos);
+      const produtosPedidos = await ProdutosPedidos.findAll({include: [{model: Produto, as: 'produtos'}, {model: Pedido, as: 'pedidos'}],
+        where: {pedidos_idpedidos: id}
       });
-      console.log('pedidos',pedidos);
-      const produtosPedidos = await ProdutosPedidos.findAll({
-        where:{pedidos_idpedidos: id}
-      });
-      console.log('produtosPedidos', produtosPedidos);
-      console.log('produtosPedidos: idprodutos', produtosPedidos[0].produtos_idprodutos);
-      const produtos = await Produto.findAll();
-      console.log('produto. id', produtos[0].idprodutos);
-      const produtosDoPedido = produtos.map(() => {
+      console.log('aqui é produtos pedidos', produtosPedidos);
+      // console.log('produtosPedidos: idprodutos', produtosPedidos[0].produtos_idprodutos);
+      // const produtos = await Produto.findAll();
+      // console.log('produto. id', produtos[0].idprodutos);
+      // const produtosDoPedido = produtos.map(() => {
 
-      })
+      // })
 
 
       res.render("resumo-pedido", {
-        pedidos,
         produtosPedidos,
-        produtos,
         css: ["style.css", "finaliza-compra.css"],
         js: []
       })

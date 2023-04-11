@@ -6,9 +6,10 @@
             <div class="orderFinished-leftTopBox">
                 <span><i class="fa-solid fa-circle-check"></i></span>
                 <h1>Pedido Concluido com Sucesso</h1>
+                    <p class="orderNumberTitle">Número do pedido</p>
+                <p class="orderNumber"><%= produtosPedidos[0].pedidos.codigo_pedido %></p>
 
-                <p class="orderNumberTitle">Número do pedido</p>
-                <p class="orderNumber"><%= pedidos[0].codigo_pedido %></p>
+                
 
                 
                 <h2>Forma de pagamento</h2>
@@ -22,42 +23,43 @@
 
         <div class="orderFinished-right">
             <h2>Resumo da compra</h2>
-            <% produtos.forEach(produto => { %>
-                <% if (produtosPedidos) { %>
-                 
-                    <% if (produto.idprodutos == produtosPedidos[0].produtos_idprodutos) { %>
+           
+                
+           <% produtosPedidos.forEach(produtoPedido => { %>
+            
+                
                  
             <div class="orderProducts">
-                    <img src="<%= produto.img %>"
+                    <img src="/images/products/<%= produtoPedido.produtos.imagem %>"
                     alt="">
-                    <span class="orderProductsTitle"><%= produto.title %></span>
-                    <span class="orderProductsAmount">Qtd: <%= produto.quantity %></span>
-                    <span class="orderProductsPrice">R$ <%= parseInt(produto.price).toFixed(2).replace('.', '.') %></span>
+                    <span class="orderProductsTitle"><%= produtoPedido.produtos.titulo %></span>
+                    <span class="orderProductsAmount">Qtd: </span>
+                    <span class="orderProductsPrice">R$ <%= produtoPedido.produtos.valor %></span>
             </div>
-                    <% } %>
-                <% } %>
-            <% }) %>
+            <% }) %> 
             <div class="orderFinishResume">
                 <div class="orderResume-resume">
                     <p>Subtotal </p>
-                    <p>R$ <%= parseInt(pedidos[0].subtotal).toFixed(2).replace('.', ',') %></p>
+                    <p>R$ <%= produtosPedidos[0].pedidos.subtotal %></p>
                 </div>
                 <div class="orderResume-delivery">
                     <p>Frete</p>
-                    <p>R$ <%= parseInt(pedidos[0].valor_frete).toFixed(2).replace('.', ',') %></p>
+                    <p>R$ <%= produtosPedidos[0].pedidos.valor_frete %></p>
                 </div>
 
                 <div class="orderResume-total">
                     <p>TOTAL</p>
-                    <p>R$ <%= parseInt(pedidos[0].total).toFixed(2).replace('.', ',') %></p>
+                    <p>R$ <%= produtosPedidos[0].pedidos.total %></p>
                 </div>
+                
             </div>
+            
         </div>
-
+        
     </div>
 
     <div class="orderFinishedButtons">
-        <button><a href="/painel">voltar</a></button>
+        <button><a href="/painel">Voltar</a></button>
     </div>
 
 

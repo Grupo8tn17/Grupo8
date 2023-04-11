@@ -33,21 +33,20 @@ header {
 }
 
 .header-logo {
-  width: 40%;
+  width: 20%;
   display: flex;
   align-items: center;
 }
 
 .header-logo img {
-  width: 8rem;
-  height: 5rem;
+  width: 80%;
   margin-right: .3rem;
   margin-left: 2rem;
 }
 
 .header-logo span {
   color: white;
-  font-size: 2rem;
+  font-size: 190%;
 }
 
 .header-search {
@@ -117,6 +116,7 @@ header {
 }
 
 .links-cart {
+  width: 5%;
   display: flex;
   align-items: center;
 }
@@ -125,6 +125,13 @@ header {
   width: 2rem;
   height: 2rem;
   margin-right: 2rem;
+}
+
+.icones {
+  width: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .navbar {
@@ -191,14 +198,14 @@ header {
 
 .quantidade-produtos {
   display: none;
-  position: absolute;
+  position: fixed;
   background-color: red;
   color: white;
   font-size: .8rem;
   border-radius: 10rem;
   padding: .1rem .4rem;
-  top: 1.2rem;
-  right: 1.4rem;
+  top: 2rem;
+  right: 5.3rem;
 }
 
 .mobile {
@@ -218,6 +225,31 @@ header {
     max-width: 95%;
     margin: 0 1rem;
   }
+
+  .header-logo {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .header-logo a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .header-logo img {
+    width: 60%;
+    
+  }
+
+  .logo-span{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
 
   .workstation {
     display: none;
@@ -246,7 +278,7 @@ header {
     height: 100vh;
     z-index: 10;
     top: 0;
-    left: -100%;
+    left: -130%;
   }
 
   .navbar-mobile img {
@@ -310,4 +342,37 @@ header {
     right: .7rem;
   }
 
+}
+
+@media (max-width: 425px) {
+  
+  .header-logo {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .header-logo .image-logo {
+    display: flex;
+    justify-content: end;
+    align-items: flex-end;
+    max-width: 0%;
+    height: 48%;
+    background-color: aliceblue;
+  }
+
+  .header-logo img {
+    min-width: 50%;
+    height: 48%;
+  }
+
+  .header-logo span {
+    font-size: 100%;
+  }
+
+  .navbar-mobile {
+    width: 15rem;
+  }
 }

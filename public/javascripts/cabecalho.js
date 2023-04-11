@@ -32,7 +32,7 @@ button.addEventListener('click', (e) => {
         showNavbar = true
         toggleMenu();
     } else {
-        menuNavbar.style.left = '-100%'
+        menuNavbar.style.left = '-130%'
         showNavbar = false;
         toggleMenu();
     }
@@ -42,7 +42,7 @@ button.addEventListener('click', (e) => {
 
 fade.addEventListener('click', (e) => {
     if(showNavbar) {
-        menuNavbar.style.left = '-100%'
+        menuNavbar.style.left = '-130%'
         showNavbar = false;
         toggleMenu();
     }

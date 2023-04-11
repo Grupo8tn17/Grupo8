@@ -18,6 +18,8 @@ router.get('/frete', carrinhoController.calcularFrete);
 router.get('/login', usuarioController.mostraLogin);
 router.post('/logar', usuarioController.logarUsuario);
 router.get('/painel', usuarioController.mostraPainelUsuario);
+
+router.post('/adiciona-endereco/:id', enderecoController.adicionarEnderecoCompra);
 //Meus Pedidos
 router.get('/meus-pedidos/:id', usuarioController.mostrarHistorico);
 //Formulário de edição/cadastro endereco

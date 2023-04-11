@@ -61,16 +61,18 @@
               <a href="/carrinho"><button class="add-cart" id="add-cart">Adicionar</button></a>
             </div>
             <div class="calculator-freight">
-              <div class="freight-header">
-                <img src="/images/caminhao-de-entrega.png" alt="">
-                <span>Consulte o frete e a disponibilidade</span>
-              </div>
-              <form action="/descricao-produto-frete" method="GET">
-                <div class="freight-field">
-                  <input type="text" name="cep" id="cep" placeholder="CEP">
-                  <button type="submit">Calcular</button>
+              <div class="frete">
+                <div class="freight-header">
+                  <img src="/images/caminhao-de-entrega.png" alt="">
+                  <span>Consulte o frete e a disponibilidade</span>
                 </div>
-              </form>
+                <form action="/descricao-produto-frete" method="GET">
+                  <div class="freight-field">
+                    <input type="text" name="cep" id="cep" placeholder="CEP">
+                    <button type="submit">Calcular</button>
+                  </div>
+                </form>
+              </div>
             </div>
           </div>
     </div>

@@ -82,8 +82,7 @@ module.exports = {
       senha,
       senha2,
     } = req.body;
-    const usuario = await Usuario.findAll({ where: { email: email } });
-    console.log(usuario);
+  
     let { errors } = validationResult(req);
 
     if (errors.length) {
@@ -96,8 +95,10 @@ module.exports = {
         js: "",
       });
     }
+    const usuario = await Usuario.findAll({ where: { email: email } });
+    console.log(usuario);
 
-    if (!usuario) {
+    if (!usuario.length) {
       console.log("entrou no if do usuario");
       if (senha == senha2) {
         const hashSenha = await bcrypt.hash(senha, 10);
@@ -107,7 +108,6 @@ module.exports = {
           email,
           documento_usuario,
           telefone,
-          data_nascimento,
           senha: hashSenha,
           idadmin: 0,
         });

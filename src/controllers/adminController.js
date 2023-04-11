@@ -55,6 +55,13 @@ module.exports = {
     
   },  
 
+  deslogarUsuarioAdmin: (req, res) => {
+    if (req.session.loginAdmin) {
+      req.session.destroy();
+      res.redirect("/");
+    }
+  }
+
   
 
 

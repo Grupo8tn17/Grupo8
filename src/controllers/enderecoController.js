@@ -102,4 +102,32 @@ module.exports = {
 
       res.redirect('/painel');    
   },
+
+  adicionarEnderecoCompra: async (req, res) => {
+    const { id } = req.params;
+      console.log('id usuario do adicionar endereco', id)
+        const {
+        logradouro,
+        endereco_numero,
+        complemento,
+        cep,
+        bairro,
+        cidade,
+        estado,
+      } = req.body;    
+     
+      await Endereco.create({
+        logradouro,
+        endereco_numero,
+        complemento,
+        cep,
+        bairro,
+        cidade,
+        estado,
+        pais: 'Brasil',
+        usuarios_idusuarios: id,
+      });
+
+      res.redirect('/checkout/order');     
+  }
 };
