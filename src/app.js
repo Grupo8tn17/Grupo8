@@ -4,31 +4,21 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var methodOverride = require('method-override');
-<<<<<<< HEAD
-=======
 var session = require('express-session');
->>>>>>> developer
 
 var productsRouter = require('./routes/produto');
 var indexRouter = require('./routes/index');
-<<<<<<< HEAD
-var usersRouter = require('./routes/users');
-=======
 var usersRouter = require('./routes/usuario');
->>>>>>> developer
-var adminRouter = require('./routes/admin');
+var adminRouter =require('./routes/admin');
+
 
 var app = express();
-
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
-<<<<<<< HEAD
-=======
 
 app.use(session({secret:'grupo8infintycosmeticos', resave: false,
 saveUninitialized: true}));
->>>>>>> developer
 app.use(methodOverride('_method'));
 app.use(logger('dev'));
 app.use(express.json());
@@ -37,11 +27,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../public')));
 
 app.use('/admin', adminRouter);
-<<<<<<< HEAD
-app.use('/products', productsRouter);
-=======
 app.use('/produtos', productsRouter);
->>>>>>> developer
 app.use('/', indexRouter);
 app.use('/usuarios', usersRouter);
 

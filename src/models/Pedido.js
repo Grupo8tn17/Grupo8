@@ -1,22 +1,4 @@
 const criarPedidoModel = (sequelize, dataTypes) => {
-<<<<<<< HEAD
-    const colunas = {
-      idpedidos: {
-        type: dataTypes.INTEGER.UNSIGNED,
-        primaryKey: true,
-        autoIncrement: true,
-        allowNull: false
-      },
-  
-    codigo_pedido: {
-        type: dataTypes.INTEGER,
-        allowNull: false
-    },
-    data_pedido: {
-        type: dataTypes.DATE,
-        allowNull: false
- }
-=======
   const colunas = {
     idpedidos: {
       type: dataTypes.INTEGER.UNSIGNED,
@@ -58,7 +40,6 @@ const criarPedidoModel = (sequelize, dataTypes) => {
       allowNull: false
     }, 
     
->>>>>>> developer
 
     };
   
@@ -68,10 +49,6 @@ const criarPedidoModel = (sequelize, dataTypes) => {
     };
   
     const Pedido = sequelize.define('Pedido', colunas, opcoes);
-<<<<<<< HEAD
-  
-    return Pedido;
-=======
 
   Pedido.associate = (models) => {
     Pedido.belongsTo(models.Usuario, {
@@ -82,7 +59,6 @@ const criarPedidoModel = (sequelize, dataTypes) => {
 
   }
   return Pedido;
->>>>>>> developer
   };
   
   module.exports = criarPedidoModel;

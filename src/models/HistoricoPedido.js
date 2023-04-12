@@ -7,21 +7,11 @@ const criarHistoricoPedidoModel = (sequelize, dataTypes) => {
       allowNull: false
     },
 
-<<<<<<< HEAD
-    status_pedido: {
-      type: dataTypes.STRING,
-      allowNull: false
-    },
-    idpedidos: {
-=======
     pedidos_idpedidos: {
->>>>>>> developer
       type: dataTypes.INTEGER.UNSIGNED,
       allowNull: false
     },
 
-<<<<<<< HEAD
-=======
     data_compra: {
       type: dataTypes.DATE,
       allowNull: false
@@ -36,7 +26,6 @@ const criarHistoricoPedidoModel = (sequelize, dataTypes) => {
       type: dataTypes.INTEGER.UNSIGNED,
       allowNull: false
     },
->>>>>>> developer
 
   };
 
@@ -51,11 +40,6 @@ const criarHistoricoPedidoModel = (sequelize, dataTypes) => {
     HistoricoPedido.belongsTo(models.Pedido, {
 
       as: 'pedidos',
-<<<<<<< HEAD
-      foreignKey: 'idpedidos'
-    });
-
-=======
       foreignKey: 'pedidos_idpedidos'
     });
   
@@ -64,7 +48,6 @@ const criarHistoricoPedidoModel = (sequelize, dataTypes) => {
       as: 'usuarios',
       foreignKey: 'usuarios_idusuarios'
     });
->>>>>>> developer
 
   }
   return HistoricoPedido;
