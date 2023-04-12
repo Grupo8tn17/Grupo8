@@ -2,17 +2,17 @@
 
 <div class="content-products">
     <div class="container-products"> 
-        <% if (!usuario) { %>
-            <form  action="/admin/usuarios/editar/<%= usuario.idusuarios %>?_method=PUT" method="POST" id="form">
+        <% if (usuario.length) { %>
+            <form  action="/admin/usuarios/editar/<%= usuario[0].idusuarios %>?_method=PUT" method="POST" id="form">
         <% } else { %>
         <form  action="/admin/usuarios/adiciona" method="POST" id="form">
             <% } %>
             <div class="box">
                 <div class="box-header">
-                    <% if(usuario) { %> 
-                    <h4 class="box-title">Editar Usuario</h4>
-                    <% } else { %>
+                    <% if(!usuario.length) { %> 
                     <h4 class="box-title">Novo Usuario</h4>
+                    <% } else { %>
+                    <h4 class="box-title">Editar Usuario</h4>
                     <% } %>
                     <p class="msgError"><%= erro.msg %></p>
                     <div class="box-tools">
@@ -23,17 +23,17 @@
 
                     <div class="form-group">
                         <label for="p_name">Nome do Usuario</label>
-                        <input  type="text" id="p_name" name="nome" value="<%= usuario?.nome %>"/>
+                        <input  type="text" id="p_name" name="nome" value="<%= usuario[0]?.nome %>"/>
                         <p class="msgError"><%= errors.titulo %></p>
                     </div>
                     <div class="form-group">
                         <label for="p_name">Sobrenome:</label>
-                        <input  type="text" id="p_name" name="sobrenome" value="<%= usuario?.sobrenome %>"/>
+                        <input  type="text" id="p_name" name="sobrenome" value="<%= usuario[0]?.sobrenome %>"/>
                         <p class="msgError"><%= errors.titulo %></p>
                     </div>
                     <div class="form-group">
                         <label for="p_description">Email:</label>
-                        <input  type="text" id="p_name" name="email" value="<%= usuario?.email %>"/>
+                        <input  type="text" id="p_name" name="email" value="<%= usuario[0]?.email %>"/>
                         <p class="msgError"><%= errors.descricao %></p>
                     </div>
                     <div class="form-group">
@@ -44,13 +44,13 @@
                     </div>
                     <div class="form-group">
                         <label for="p_name">CPF:</label>
-                        <input  type="text" id="p_name" name="documento_usuario" value="<%= usuario?.documento_usuario %>"/>
+                        <input  type="text" id="p_name" name="documento_usuario" value="<%= usuario[0]?.documento_usuario %>"/>
                         <p class="msgError"><%= errors.titulo %></p>
                     </div>
     
                     <div class="form-group">
                         <label for="p_price">Telefone: </label>
-                        <input  type="text"  id="p_price" name="telefone" value="<%= usuario?.telefone %>" />
+                        <input  type="text"  id="p_price" name="telefone" value="<%= usuario[0]?.telefone %>" />
                         <p class="msgError"><%= errors.valor %></p>
                     </div>       
                 </div>
