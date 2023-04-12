@@ -84,7 +84,7 @@ module.exports = {
             usuarios: usuario,
             enderecos,
             css: ["style.css", "painel-usuario.css"],
-            js: ["painel-usuario.js", "formata-data.js", "compra.js"],
+            js: ["painel-usuario.js", "formata-data.js", "formata-cep.js"],
           });
         } else {
           let erro = {
@@ -233,7 +233,7 @@ module.exports = {
       res.redirect("/admin/usuarios");
     } else {
       return res.render("painelAdmin-adicionaUsuarios", {
-        usuario: {},
+        usuario: [],
         erro,
         errors: {},
         css: ["painelAdmin-adiciona.css", "painelAdmin-adiciona-produto.css"],
@@ -245,7 +245,8 @@ module.exports = {
   formularioEditarUsuarioAdmin: async (req, res) => {
     const { id } = req.params;
 
-    let usuario = await Usuario.findByPk(id);
+    let usuario = await Usuario.findAll({where:{idusuarios: id}});
+    console.log(usuario);
 
     res.render("painelAdmin-adicionaUsuarios", {
       erro: {},

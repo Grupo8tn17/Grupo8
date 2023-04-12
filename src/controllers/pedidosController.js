@@ -36,7 +36,7 @@ module.exports = {
           frete,
           prazo,
           css: ["style.css", "compra.css"],
-          js: ["compra.js"],
+          js: ["compra.js", 'formata-cep.js'],
         });
       } else {
         return res.render("login-carrinho", {
@@ -138,7 +138,7 @@ module.exports = {
         findPedido,
         endereco,
         css: ["style.css", "finaliza-compra.css"],
-        js: ["finalizacao-compra.js", "compra.js"],
+        js: ["finalizacao-compra.js", "formata-cep.js"],
       });
     } catch (error) {
       console.log(error);
