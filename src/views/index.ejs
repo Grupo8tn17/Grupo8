@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <%- include('partials/header') %>
 
   <div id="banner">
@@ -5,44 +6,53 @@
       alt="">
     <img
       src="https://useorganico.vteximg.com.br/arquivos/ids/169149/20221103-campanha-black-friday-desconto-progressivo-v3.jpg?v=638035101660330000"
+=======
+<%- include('partials/cabecalho') %>
+
+  <div id="banner">
+    <img class="firstBanner" src="/images/Desk_DUO_1.webp"
+>>>>>>> developer
       alt="">
     <img
-      src="https://useorganico.vteximg.com.br/arquivos/ids/169190/20221103-campanha-black-friday-bob-v5.jpg?v=638037620562300000"
+      src="/images/20221103-campanha-black-friday-desconto-progressivo-v3.webp"
       alt="">
-    <img src="https://images.tcdn.com.br/img/img_prod/1055762/1667357938_3-desktop-petrizi-min.jpg" alt="">
+    <img
+      src="/images/7149bc4a-5681-430a-978e-3323d9e2234c___2cc11552fc0b8f553592abd1dfbee9e2.webp"
+      alt="">
+    <img src="/images/20221103-campanha-black-friday-bob-v5.webp" alt="">
   </div>
 
 
   <div class="selecaoProdutosPosBanner">
     <div class="produtosPosBanner">
-      <img
-        src="https://images.unsplash.com/photo-1609357912333-27872db33d5c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80"
+      <a href="/maquiagem"><img
+        src="/images/photo-1609357912333-27872db33d5c.avif"
         alt="">
-      <span>Pó Facial</span>
+      <span>Pó Facial</span></a>
     </div>
     <div class="produtosPosBanner">
-      <img
-        src="https://images.unsplash.com/photo-1654977631007-498a9b2c5235?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80"
+      <a href="/maquiagem"><img
+        src="/images/photo-1654977631007-498a9b2c5235.avif"
         alt="">
-      <span>Batom e Balm</span>
+      <span>Batom e Balm</span></a>
     </div>
     <div class="produtosPosBanner">
-      <img
-        src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80"
+      <a href="/maquiagem"><img
+        src="/images/photo-1519699047748-de8e457a634e.avif"
         alt="">
-      <span>Blush</span>
+      <span>Blush</span></a>
     </div>
     <div class="produtosPosBanner">
-      <img
-        src="https://images.pexels.com/photos/13474565/pexels-photo-13474565.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+      <a href="/maquiagem"><img
+        src="/images/pexels-photo-13474565.jpeg"
         alt="">
-      <span>Lip Oil</span>
+      <span>Lip Oil</span></a>
     </div>
     <div class="produtosPosBanner">
-      <img
-        src="https://images.pexels.com/photos/13440123/pexels-photo-13440123.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+      <a href="/produtos"><img
+        src="/images/pexels-photo-13440123.jpeg"
         alt="">
-      <span>Mais Produtos</span>
+      <span>Mais Produtos</span></a>
     </div>
   </div>
 
@@ -51,12 +61,13 @@
 
 
     <div class="indexProductsTitle">
-      <h2>lip oils</h2>
-      <span><a href="#">ver todos</a></span>
+      <h2>Batons</h2>
+      <span><a href="/maquiagem">ver todos</a></span>
     </div>
 
-
+    <% productBatom.forEach(productsBatom =>{  %>
     <div class="indexProductsProducts">
+<<<<<<< HEAD
       <a href="#"> <img
           src="https://img.melvita.com/ocms/img/P.aspx?l=en-IE&s=450&e=jpg&name=certified-organic-luscious-natural-lip-oil&id=8RZ0050&v=1"
           alt="">
@@ -86,8 +97,24 @@
         <p class="indexProductsOldPrice">R$ 45,00</p>
         <p class="indexProductsPrice">R$ 32,50</p>
         <p class="indexProductsSubPrice"><sub>3x de R$ 10,85 Sem juros</sub></p>
+=======
+      
+      <a href="/produtos/descricao-produto/<%= productsBatom.idprodutos %>"> 
+        <img
+          src="/images/products/<%= productsBatom.imagem %>"
+          alt="">
+        <p class="indexProductsDescription"> <%= productsBatom.titulo %><br><%= productsBatom.marcas.nome %></p>
+        <p class="indexProductsOldPrice">R$ 95,00</p>
+        <p class="indexProductsPrice price">R$ <%= productsBatom.valor %></p>
+        <p class="indexProductsSubPrice"><sub>5x de R$ 14,20 Sem juros</sub></p>
+>>>>>>> developer
       </a>
+      
     </div>
+<<<<<<< HEAD
+=======
+    <% }); %>
+>>>>>>> developer
 
   </div>
 
@@ -95,7 +122,7 @@
     <div class="aboutInfinity-container">
       <div class="aboutInfinity-image">
         <img
-          src="https://images.unsplash.com/photo-1537024211977-7b857dc498ae?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80"
+          src="/images/photo-1537024211977-7b857dc498ae.avif"
           alt="">
       </div>
 
@@ -115,7 +142,7 @@
           <li><i class="fa-solid fa-chess-queen"></i> Produtos Oficiais</li>
           <li><i class="fa-solid fa-paw"></i> CrueltyFree and Vegan</li>
         </ul>
-        <button>ir para as compras</button>
+        <a href="/produtos"><button>ir para as compras</button></a>
       </div>
     </div>
   </div>
@@ -125,10 +152,11 @@
 
     <div class="indexProductsTitle">
       <h2>Pó Facial</h2>
-      <span><a href="#">ver todos</a></span>
+      <span><a href="/maquiagem">ver todos</a></span>
     </div>
 
 
+<<<<<<< HEAD
     <div class="indexProductsProducts">
       <a href="#"> <img
           src="https://cdn.shopify.com/s/files/1/1328/1409/products/organic-face-powder-translucent-399798_1000x.jpg?v=1607534334"
@@ -162,6 +190,23 @@
       </a>
     </div>
 
+=======
+    <% productPoFacial.forEach(productsPoFacial =>{  %>
+      <div class="indexProductsProducts">
+        
+        <a href="/produtos/descricao-produto/<%= productsPoFacial.idprodutos %>"> 
+          <img
+            src="/images/products/<%= productsPoFacial.imagem %>"
+            alt="">
+          <p class="indexProductsDescription"> <%= productsPoFacial.titulo %><br><%= productsPoFacial.marcas.nome %></p>
+          <p class="indexProductsOldPrice" id="old-price"></p>
+          <p class="indexProductsPrice price" >R$ <%= productsPoFacial.valor %></p>
+          <p class="indexProductsSubPrice"><sub>5x de R$ 14,20 Sem juros</sub></p>
+        </a>
+        
+      </div>
+      <% }); %>
+>>>>>>> developer
   </div>
 
   <div class="promotionalProducts">
@@ -173,14 +218,14 @@
           poderosa
           que habita em você.
         </p>
-        <button>
+        <a href="/produtos"><button>
           comprar agora
-        </button>
+        </button></a>
       </div>
 
       <div class="promotionalProducts-right">
         <img
-          src="https://images.unsplash.com/photo-1659533581859-7fcac8637d9e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
+          src="/images/photo-1659533581859-7fcac8637d9e.avif"
           alt="">
       </div>
     </div>
@@ -197,7 +242,7 @@
         <input type="submit" id="userSignUp" value="cadastrar">
 
       </form>
-      <sub>Enviando seus dados você estará de acordo com nossa <strong> <a href="">Politica de
+      <sub>Enviando seus dados você estará de acordo com nossa <strong> <a href="/politica-privacidade">Politica de
             Privacidade</a></strong>.</sub>
 
     </div>
@@ -215,4 +260,8 @@
 
 
 
+<<<<<<< HEAD
   <%- include('partials/footer') %>
+=======
+  <%- include('partials/rodape') %>
+>>>>>>> developer

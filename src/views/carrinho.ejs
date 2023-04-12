@@ -1,0 +1,113 @@
+<%- include('partials/cabecalho-alternativo') %>
+<main>
+
+    <div class="cart-container">
+        <!-- Cabeçalho do Carrinho -->
+        <div class="meu-carrinho">
+            <h1>Meu Carrinho</h1>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <td>CÓD</td>
+                        <td>PRODUTO</td>
+                        <td>PREÇO</td>
+                        <td>QUANTIDADE</td>
+                        <td>SUBTOTAL</td>
+                        <td>REMOVER</td>
+                    </tr>
+                </thead>
+                <tbody class="cart-product">
+
+                </tbody>
+                <tfoot>
+                    <tr>
+                        
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+
+        <!--Carrinho vazio-->
+        <div class="cart-empty cart-invisible">
+            <div class="img-cart">
+                <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="currentColor"
+                    class="bi bi-cart2" viewBox="0 0 16 16">
+                    <path
+                        d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z" />
+                </svg>
+            </div>
+            <h1>Seu carrinho está vazio</h1>
+            <p>Parece que você não adicionou nenhum item ao carrinho; comece a fazer compras para
+                preenchê-lo.</p>
+        </div>
+        <!--End Carrinho vazio-->
+
+        <section class="container-entrega">
+
+            <form class="form-entrega" action="/frete" method="GET">
+
+                <div class="entrega entrega-left">
+                    <% if (erro) { %>
+                        <p class="msgError"><%= erro.msg %></p>
+                    <% } %>
+                    <span class="img-entrega"><i class="fa-solid fa-truck-fast"></i></span>
+                    <h2><strong>ENTREGA</strong></h2>
+
+                    <h3>Insira o cep e veja o valor do frete e o prazo de entrega.</h3>
+
+                    <label for="cep"></label>
+                    <input type="text" name="cep" id="cep" placeholder="CEP" required>
+                    <button type="">Calcular frete</button>
+                    <% if (valorFrete) { %>
+                    <div class="frete-entrega">
+                        <i class="fa-solid fa-truck-fast"></i>
+                        <div class="info-entrega">
+                            <p>Receba em até <%= prazo %></p>
+                            <h3>Após o pagamento confirmado</h3>
+                        </div>
+                        <p><%= valorFrete?.toLocaleString('pt-br',{style: 'currency' , currency: 'BRL' }) %></p>
+                    </div>
+                    <% } %>
+                </div>
+
+                <div class="entrega entrega-right">
+                    <h2>TOTAL DA COMPRA</h2>
+                    <div class="text-column">
+                        <p>Subtotal</p>
+                        <p class="text-black resultado"></p>
+                    </div>
+                    <div class="text-column">
+                        <p>Frete</p>
+                        <p class="text-black valor-frete"><% if(valorFrete) { %><%= valorFrete?.toFixed(2).replace('.', ',') %><% } else { %><%= "00,00" %><% } %></p>
+                    </div>
+                    <hr />
+                    <div class="text-column text-total">                        
+                        <p>TOTAL</p>
+                        <p class="text-black total">00,00</p>
+                    </div>
+                </div>
+            </form>
+
+
+            <div class="form-fechar-pedido">
+                <button class="btn-f">
+                    <a href="/produtos">Escolher Mais Produtos</a>
+                </button>
+            
+                <form action="/checkout/order" method="POST" class="form-finaliza">
+                    <input type="hidden" name="produtos" id="produtosCarrinho" value="">
+                    <input type="hidden" name="frete" value="<%= valorFrete %>">
+                    <input type="hidden" name="prazo" value="<%= prazo%>">
+                    <button type="submit" class="btn-f">
+                        <p>Finalizar pedido</p>
+                    </button>
+                </form>
+            </div>
+
+        </section>
+
+    </div>
+
+</main>
+        <%- include('partials/rodape-alternativo') %>

@@ -1,0 +1,230 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+:root {
+    --bg-lightcolor: #d0e1aa;
+    --bg-midlelightcolor: #bfd68b;
+    --bg-midlecolor: #9ab669;
+    --bg-darkcolor: #4e6122;
+    --offwhite: #f7f4eb;
+    --offwhite-lightborder: #fffaf0;
+    --offwhite-darkborder: #dbcea6;
+    --gray: #b5c1b8;
+  }
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'lato';
+
+}
+
+body{
+   background-color: var(-offwhite);
+}
+
+.titulo-painel{
+    width: 100%;
+    padding-top: 1.25rem;
+    text-align: center;
+    padding-bottom: 0.625rem;
+    color: var(--bg-darkcolor);
+}
+
+.painel-container main{
+    grid-area: main;
+}
+
+.titulo-painel h1{
+    font-size: 3rem;
+    color: var(--bg-darkcolor);
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.titulo-painel hr {
+    border: 0;
+    height: 0.2rem;
+    background-image: linear-gradient(to right,transparent,var(--bg-darkcolor),transparent);
+    margin-bottom: 1rem;
+  }
+
+.painel-container{
+    width: 95%;
+    margin: auto;
+    display: grid;
+    gap: 0.625rem;
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+    grid-template-areas: "aside main main main main main";
+}
+
+.introduction {
+  font-size: 1.5rem;
+  font-style: italic;
+  text-align: center;
+  font-weight: 700;
+}
+
+.introduction h3{
+    color: var(--bg-darkcolor);
+    padding: 1rem;
+}
+
+.introduction p{
+    color: var(--gray);
+    padding: .5rem;
+}
+
+.dados-usuario{
+    width: 100%;
+    display: flex; 
+    flex-direction: column;   
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: center;
+    margin: 2rem;
+}
+
+.estilo-div{
+    width: 50%;
+    text-align: center;
+    min-width:35vw;
+    padding: 1rem;
+    margin: 1rem;
+    box-shadow: 1px 3px 3px 3px var(--gray);
+}
+
+.estilo-div h2{
+    font-size: 2rem;
+    color: var(--bg-darkcolor);
+    font-weight: 700;
+    padding-bottom: 1rem;
+}
+
+.estilo-div hr {
+    border: 0;
+    height: 0.2rem;
+    background-image: linear-gradient(to right,transparent,var(--bg-darkcolor),transparent);
+    margin-bottom: 1rem;
+  }
+
+  .estilo-div b{
+    font-size: 1.5rem;
+    color: var(--bg-darkcolor);
+  }
+
+  .estilo-div p{
+    font-size: 1.3rem;
+    font-weight: 600;
+  }
+
+  .estilo-div button {
+    width: 18rem;
+    height: 2.5rem;
+    background-color: var(--bg-darkcolor);
+    border: none;
+    border-radius: 3rem;
+    margin-top: 0.8rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+    transition: all 0.15s ease-in-out;
+    font-size: 1.3rem;
+    text-align: center;
+    color: var(--offwhite);
+    cursor: pointer;
+  }
+
+  .estilo-div button:hover {
+   filter: brightness(115%);
+  -webkit-transform: translateX(-2px);
+  transform: translateX(-2px);  
+  }
+
+/* Início Aside */
+
+.painel-container aside{
+    grid-area: aside;
+}
+.aside-user{
+    height: 100%;
+    padding: 0.625rem;
+    background-color: var(-offwhite);
+    box-shadow: 1px 3px 3px 3px var(--gray);
+}
+
+.aside-user figure{
+    width: 100%;
+    text-align: center;
+    padding-bottom: 1.5rem;        
+}
+
+.icon-user {
+    width: 9rem;
+    font-size: 4rem;
+    color: var(--offwhite);
+    background-color: var(--bg-darkcolor);
+    text-align: center;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    margin: 1rem;
+    border-radius: 50%;
+}
+
+.name-user{
+    text-align: center;    
+    color: var(--bg-darkcolor);
+    font-size: 1.7rem;
+    margin-bottom: 3rem;
+}
+
+.options-user{
+    list-style: none;    
+}
+
+.options-user li{
+    margin-top: 0.625rem;
+    margin-bottom: 0.625rem;    
+}
+
+
+.options-user li a{
+    color: var(--gray);
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.options-user hr{
+    width: 100%;   
+    border: .03rem solid var(--gray);
+}
+
+
+.list-icon i{
+    font-size: 2.5rem;
+    color: var(--bg-darkcolor);
+    padding: 1rem 2rem 1rem 1rem;
+}
+
+.list-icon:hover{
+    color: var(--bg-darkcolor);
+}
+
+/* Responsividade */
+
+@media(max-width: 986px){
+    .painel-container{
+        grid-template-areas: "aside ." "main main";
+    }
+    .painel-container aside{
+        margin-bottom: 1.25rem
+    }
+}
+
+@media(max-width: 430px){
+    .painel-container main .grupo-dados{
+        grid-template-areas: "dados01" "dados02";
+    }
+}

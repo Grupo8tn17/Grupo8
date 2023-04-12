@@ -39,6 +39,7 @@ const criarEnderecoModel = (sequelize, dataTypes) => {
       type: dataTypes.STRING,
       allowNull: false
     },
+<<<<<<< HEAD
     idusuarios: {
       type: dataTypes.INTEGER.UNSIGNED,
       allowNull: false
@@ -47,6 +48,12 @@ const criarEnderecoModel = (sequelize, dataTypes) => {
       type: dataTypes.INTEGER.UNSIGNED,
       allowNull: false
     },
+=======
+    usuarios_idusuarios: {
+      type: dataTypes.INTEGER.UNSIGNED,
+      allowNull: false
+    }
+>>>>>>> developer
 
 
 
@@ -63,6 +70,7 @@ const criarEnderecoModel = (sequelize, dataTypes) => {
     Endereco.belongsTo(models.Usuario, {
 
       as: 'usuarios',
+<<<<<<< HEAD
       foreignKey: 'idusuarios'
     });
 
@@ -74,6 +82,11 @@ const criarEnderecoModel = (sequelize, dataTypes) => {
 
 
 
+=======
+      foreignKey: 'usuarios_idusuarios'
+    });
+
+>>>>>>> developer
   }
   return Endereco;
 }

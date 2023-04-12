@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 <%- include('partials/alternative-header') %>
 =======
 <!DOCTYPE html>
@@ -22,6 +23,11 @@
 
 
   <main>
+=======
+<%- include('partials/cabecalho-alternativo') %>
+
+<main>
+>>>>>>> developer
 
     <div id="login">
       <h1>Registre-se</h1>
@@ -35,17 +41,32 @@
       <div id="first-login">
         <h2>LOGIN</h2>
 
+<<<<<<< HEAD
 
         <form action="/user/user-panel">
+=======
+>>>>>>> developer
 
+        <form action="/logar" method="POST">
+          <p class="msgError"><%= erro.msg %></p>
           <div class="input">
             <label for="email"></label>
+<<<<<<< HEAD
             <input type="email" id="email" name="email" placeholder="E-mail"  />
+=======
+            <input type="email" id="email" name="email" placeholder="E-mail"  /> 
+            <p class="msgError"><%= errors.email %></p>
+>>>>>>> developer
           </div>
 
           <div class="input">
             <label for="pwd"></label>
+<<<<<<< HEAD
             <input type="password" id="pwd" name="pwd" placeholder="Senha"  />
+=======
+            <input type="password" id="pwd" name="senha" placeholder="Senha"  />
+            <p class="msgError"><%= errors.senha %></p>
+>>>>>>> developer
           </div>
           <div class="first-login-buttom">
             <p>
@@ -66,7 +87,11 @@
         </div>
 
         <div id="buttonRegister">
+<<<<<<< HEAD
           <a href="/registrate"><button type="submit">Clique e cadastre-se</button></a>
+=======
+          <a href="/cadastro"><button type="submit">Clique e cadastre-se</button></a>
+>>>>>>> developer
         </div>
 
         <aside id="desc">
@@ -81,4 +106,8 @@
 
   </main>
 
+<<<<<<< HEAD
   <%- include('partials/alternative-footer') %>
+=======
+  <%- include('partials/rodape-alternativo') %>
+>>>>>>> developer

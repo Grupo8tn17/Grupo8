@@ -1,0 +1,66 @@
+<%- include('partials/cabecalho-alternativo') %>
+
+    <div class="orderFinished">
+
+        <div class="orderFinished-left">
+            <div class="orderFinished-leftTopBox">
+                <span><i class="fa-solid fa-circle-check"></i></span>
+                <h1>Pedido Concluido com Sucesso</h1>
+                    <p class="orderNumberTitle">Número do pedido</p>
+                <p class="orderNumber"><%= produtosPedidos[0].pedidos.codigo_pedido %></p>
+
+                
+
+                
+                <h2>Forma de pagamento</h2>
+                <p>MasterCard 5555********6789 <br> 2x de R$ 227,75 sem juros <br>Valor Total R$
+                    455,50
+                </p>
+
+                <span>Pedido Entregue <i class="fa-solid fa-truck-fast"></i></span>
+            </div>
+        </div>
+
+        <div class="orderFinished-right">
+            <h2>Resumo da compra</h2>
+           
+                
+           <% produtosPedidos.forEach(produtoPedido => { %>
+            
+                
+                 
+            <div class="orderProducts">
+                    <img src="/images/products/<%= produtoPedido.produtos.imagem %>"
+                    alt="">
+                    <span class="orderProductsTitle"><%= produtoPedido.produtos.titulo %></span>
+                    <span class="orderProductsAmount">Qtd: </span>
+                    <span class="orderProductsPrice">R$ <%= produtoPedido.produtos.valor %></span>
+            </div>
+            <% }) %> 
+            <div class="orderFinishResume">
+                <div class="orderResume-resume">
+                    <p>Subtotal </p>
+                    <p>R$ <%= produtosPedidos[0].pedidos.subtotal %></p>
+                </div>
+                <div class="orderResume-delivery">
+                    <p>Frete</p>
+                    <p>R$ <%= produtosPedidos[0].pedidos.valor_frete %></p>
+                </div>
+
+                <div class="orderResume-total">
+                    <p>TOTAL</p>
+                    <p>R$ <%= produtosPedidos[0].pedidos.total %></p>
+                </div>
+                
+            </div>
+            
+        </div>
+        
+    </div>
+
+    <div class="orderFinishedButtons">
+        <button><a href="/painel">Voltar</a></button>
+    </div>
+
+
+    <%- include('partials/rodape-alternativo') %>

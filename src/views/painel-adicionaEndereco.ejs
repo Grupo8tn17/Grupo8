@@ -1,0 +1,108 @@
+<%- include('partials/cabecalho-alternativo') %>
+
+
+<section class="painel-container">
+<main>
+
+    <div class="titulo-formEndereco">
+        <% if(enderecos.length) {%>
+            <h1>Editar Endereço</h1>
+            <% } else { %>
+                <h1>Adicionar Endereço</h1>
+                <% } %>
+                    <hr>
+    </div>
+
+    <section class="formEndereco-container">
+
+        <div class="div-form">
+
+            <% if (enderecos.length) { %>
+
+                <form action="/usuarios/editarEndereco/<%= usuario[0].idusuarios %>?_method=PUT" method="POST"
+                    class="formEndereco-estilo">
+
+                    <% } %>
+                        
+                        <form action="/usuarios/adicionaEndereco/<%= usuario[0].idusuarios %>" method="POST" class="formEndereco-estilo">
+
+                                <label for="cep">CEP:</label>
+                                <input type="number" id="cep" name="cep" min="8" required="required"
+                                    value="<%= enderecos[0]?.cep %>"
+                                    placeholder="Neste campo deve ser inserido somente números" />
+
+                                <label for="logradouro">Logradouro</label>
+                                <input type="text" id="logradouro" value="<%= enderecos[0]?.logradouro %>"
+                                    name="logradouro" required="required" />
+
+                                <label for="endereco_numero">Número:</label>
+                                <input type="number" id="endereco_numero" value="<%= enderecos[0]?.endereco_numero %>"
+                                    name="endereco_numero" required="required" />
+
+                                <label for="complemento">Complemento:</label>
+                                <input type="text" id="complemento" value="<%= enderecos[0]?.complemento %>"
+                                    name="complemento" />
+
+                                <label for="bairro">Bairro:</label>
+                                <input type="text" id="bairro" value="<%= enderecos[0]?.bairro %>" name="bairro"
+                                    required="required" />
+
+                                <label for="cidade">Cidade:</label>
+                                <input type="text" id="cidade" value="<%= enderecos[0]?.cidade %>" name="cidade"
+                                    required="required" />
+
+                                <label for="estado">UF:</label>
+                                <input type="text" id="estado" value="<%= enderecos[0]?.estado %>" name="estado"
+                                    required="required" />
+
+                                <button class="salvar-endereco" type="submit">Salvar</button>
+
+
+
+                        </form>
+        </div>
+
+    </section>
+
+</main>
+
+
+        <!-- Fim da Section dos Dados Pessoais -->
+    <!-- Fim do Main -->
+
+    <!-- Início do Aside -->
+    <aside>
+        <section class="aside-user">
+            <figure>
+                <i class="icon-user fa-solid fa-user"></i>
+            </figure>
+
+            <h3 class="name-user">
+                <%= usuario[0].nome + " " + usuario[0].sobrenome %>
+            </h3>
+            <nav>
+                <ul class="options-user">
+                    <li><a class="list-icon" href="#meus-dados"><i class="fa-solid fa-user"></i>Meus Dados</a></li>
+                    <hr>
+                    <li><a class="list-icon" href="/meus-pedidos/<%= usuario[0].idusuarios %>"><i
+                                class="fa-sharp fa-solid fa-clipboard-list"></i>Meus Pedidos</a></li>
+                    <hr>
+                    <li><a class="list-icon" href="#meus-enderecos"><i class="fa-solid fa-address-card"></i>Meus
+                            Endereços</a>
+                    </li>
+                    <hr>
+                    <li><a class="list-icon" href="/sair"><i class="fa-solid fa-right-from-bracket"></i>Sair</a>
+                    </li>
+                    <hr>
+                </ul>
+            </nav>
+        </section>
+    </aside>
+    <!-- Fim do Aside -->
+
+</section>
+
+</body>
+<!-- Fim do Container -->
+
+<%- include('partials/rodape-alternativo') %>

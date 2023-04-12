@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+:root {
+    --bg-lightcolor: #d0e1aa;
+    --bg-midlelightcolor: #bfd68b;
+    --bg-midlecolor: #9ab669;
+    --bg-darkcolor: #4e6122;
+    --offwhite: #f7f4eb;
+    --offwhite-lightborder: #fffaf0;
+    --offwhite-darkborder: #dbcea6;
+    --gray: #b5c1b8;
+}
+
+main {
+    width: 100%;
+}
+
+.titulo-formEndereco {
+    margin: 1rem;
+    padding: 1rem 0.5rem 0.5rem 0.5rem;
+}
+
+.titulo-formEndereco h1 {
+    font-size: 3rem;
+    text-align: center;
+    color: var(--bg-darkcolor);
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.titulo-formEndereco hr {
+    border: 0;
+    height: 0.2rem;
+    margin-bottom: 1rem;
+    background-image: linear-gradient(to right,
+            transparent,
+            var(--bg-darkcolor),
+            transparent);
+}
+
+
+.formEndereco-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    padding-bottom: 2rem;
+}
+
+.formEndereco-estilo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.formEndereco-estilo input {
+    background-color: #ffff;
+    border: none;
+    width: 50%;
+    height: 3rem;
+    padding-left: 1rem;
+    margin-bottom: 2rem;
+    box-shadow: 5px 4px 4px var(--gray);
+    font-size: 1.5rem;
+    transition: all 0.15s ease-in-out;
+    font-size: 1.3rem; 
+    text-align: center;   
+    font-weight: 600;
+}
+
+.formEndereco-estilo label{
+    font-size: 1.3rem;
+    color: var(--bg-darkcolor);
+    font-weight: 700;
+}
+
+.formEndereco-estilo button {
+    width: 18rem;
+    height: 2.5rem;
+    background-color: var(--bg-darkcolor);
+    border: none;
+    border-radius: 3rem;
+    margin-top: 0.8rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+    transition: all 0.15s ease-in-out;
+    font-size: 1.3rem;
+    text-align: center;
+    color: var(--offwhite);
+    cursor: pointer;
+  }
+
+  .formEndereco-estilo button:hover {
+   filter: brightness(115%);
+  -webkit-transform: translateX(-2px);
+  transform: translateX(-2px);  
+  }
