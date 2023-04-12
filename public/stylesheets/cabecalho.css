@@ -198,14 +198,14 @@ header {
 
 .quantidade-produtos {
   display: none;
-  position: fixed;
+  position: relative;
   background-color: red;
   color: white;
   font-size: .8rem;
   border-radius: 10rem;
   padding: .1rem .4rem;
-  top: 2rem;
-  right: 5.3rem;
+  left: 2.5rem;
+  top: .7rem;
 }
 
 .mobile {
@@ -335,11 +335,6 @@ header {
   #fade.hide {
     opacity: 0;
     pointer-events: none;
-  }
-
-  .quantidade-produtos {
-    position: absolute;
-    right: .7rem;
   }
 
 }

@@ -18,6 +18,9 @@ module.exports = {
 
     if (frete) {
       let parsedProdutos = JSON.parse(produtos);
+      req.session.produtos = parsedProdutos;
+      req.session.frete = frete;
+      req.session.prazo = prazo;
       console.log(parsedProdutos)
       if (req.session.login) {
         let idUsuario = req.session.login;
@@ -36,7 +39,7 @@ module.exports = {
           js: ["compra.js"],
         });
       } else {
-        return res.render("login", {
+        return res.render("login-carrinho", {
           erro: {},
           errors: {},
           css: ["style.css", "login.css"],
@@ -56,7 +59,7 @@ module.exports = {
       });
     }
       } else {
-        return res.redirect('/login');
+        return res.redirect('/login-carrinho');
       }
       
     } catch (error) {
@@ -128,14 +131,14 @@ module.exports = {
         res.redirect("/login");
         console.log("não adicionou no banco");
       }
-  
+
       res.render("finalizacao-compra", {
         produtos: produtosParsed,
         Arrayquantidades,
         findPedido,
         endereco,
         css: ["style.css", "finaliza-compra.css"],
-        js: ["finalizacao-compra.js"],
+        js: ["finalizacao-compra.js", "compra.js"],
       });
     } catch (error) {
       console.log(error);

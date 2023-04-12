@@ -128,6 +128,22 @@ module.exports = {
         usuarios_idusuarios: id,
       });
 
-      res.redirect('/checkout/order');     
-  }
+      if (req.session.login) {
+        let idUsuario = req.session.login;
+        let enderecos = await Endereco.findAll({
+          include: [{ model: Usuario, as: "usuarios" }],
+          where: { usuarios_idusuarios: idUsuario },
+        });
+        let usuario = await Usuario.findAll({where: {idusuarios: idUsuario}});
+        return res.render("compra", {
+          enderecos,
+          usuario,
+          produtos: req.session.produtos,
+          frete: req.session.frete,
+          prazo: req.session.prazo,
+          css: ["style.css", "compra.css"],
+          js: ["compra.js"],
+        });
+      }
+  },
 };
