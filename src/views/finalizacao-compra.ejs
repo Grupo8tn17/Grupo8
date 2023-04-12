@@ -15,7 +15,7 @@
             </div>
             <div class="orderFinished-leftBotBox">
                 <h2>Endereço de entrega</h2>
-                <p><%= endereco[0].usuarios.nome %><br> <%= endereco[0].logradouro %> <br> <%= endereco[0].cep %></p>
+                <p ><%= endereco[0].usuarios.nome + " " + endereco[0].usuarios.sobrenome%><br> <%= endereco[0].logradouro %> <br> </p><p class="text-cep"><%= endereco[0].cep %></p>
 
                 <h2>Forma de pagamento</h2>
                 <p>MasterCard 5555********6789 <br> 2x de R$ 227,75 sem juros <br>Valor Total R$

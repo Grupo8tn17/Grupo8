@@ -13,7 +13,7 @@ const createError = function (input, mensagem) {
 }
 
 
-form.addEventListener('submit', function(event) {
+button.addEventListener('submit', function(event) {
     event.preventDefault();
     removeError();
    

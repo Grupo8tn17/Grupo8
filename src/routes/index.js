@@ -16,8 +16,12 @@ router.get('/frete', carrinhoController.calcularFrete);
 
 
 router.get('/login', usuarioController.mostraLogin);
+router.get('/login-carrinho', usuarioController.mostraLoginCarrinho);
+router.post('/logar-carrinho', usuarioController.logarCarrinho);
 router.post('/logar', usuarioController.logarUsuario);
 router.get('/painel', usuarioController.mostraPainelUsuario);
+
+router.post('/adiciona-endereco/:id', enderecoController.adicionarEnderecoCompra);
 //Meus Pedidos
 router.get('/meus-pedidos/:id', usuarioController.mostrarHistorico);
 //Formulário de edição/cadastro endereco
@@ -28,6 +32,7 @@ router.get('/formUsuario', usuarioController.formUsuario);
 router.get('/cadastro', usuarioController.mostraCadastro);
 router.post('/cadastro/adiciona', validacaoCadastroUsuario, usuarioController.adicionaUsuario);
 
+router.post('/checkout/order', pedidosController.compra);
 router.post('/checkout/order', pedidosController.compra);
 router.post('/checkout/order-finished', pedidosController.finalizacaoCompra);
 

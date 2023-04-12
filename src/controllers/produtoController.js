@@ -302,7 +302,7 @@ module.exports = {
       }],
     });
     console.log(products);
-    if(!products) {
+    if(!products.length) {
       return res.render('erro-404', {categoria: categoria, marca: marca, products: products, css: ['style.css', 'produtos.css'], js: [] });
     } else {
       return res.render('produtos', {categoria: categoria, marca: marca, products, css: ['style.css', 'produtos.css'], js: ['produtos.js'] });

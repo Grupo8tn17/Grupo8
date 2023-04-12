@@ -206,6 +206,8 @@ p.msgError {
   color: red;
   padding: .5rem;
   margin-left: 1.5rem;
+  text-align: center;
+  font-size: 1.5rem;
 }
 
 @media (max-width: 1020px) {

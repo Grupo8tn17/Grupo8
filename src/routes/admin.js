@@ -12,6 +12,8 @@ const validacaoFormularioAdmin = require('../middleware/validacao-formulario-adm
 router.get('/', adminController.mostraAdmin);
 router.post('/', adminController.logarAdmin);
 
+router.get('/sair', adminController.deslogarUsuarioAdmin);
+
 router.get('/login', adminController.loginAdmin);
 
 

@@ -16,34 +16,91 @@ module.exports = {
     });
   },
 
-    logarUsuario: async (req, res) => {
-        const { email, senha} = req.body;
-        let usuario = await Usuario.findAll({where: {email: email}});
-      
-        console.log(usuario)
-        console.log(usuario[0].email, email)
-       
-            if(email == usuario[0].email) {                          
-                bcrypt.compare(senha, usuario[0].senha, async (erro, result) => {
-                    if(result) {
-                        req.session.login = usuario[0].idusuarios 
-                       
-                        let enderecos = await Endereco.findAll({where: {usuarios_idusuarios: usuario[0].idusuarios}});                                             
-                          
-                     res.render('painel', {usuarios: usuario, enderecos, css: ['style.css', 'painel-usuario.css'], js: ['painel-usuario.js', "formata-data.js"]});
-                    } else {
-                        let erro = {
-                            msg: "Não foi possível realizar o login!"
-                        }
-                        return res.render('login', {erro, errors: {}, css: ['style.css', 'login.css'], js: ''});
-                    }
-                })
-                
-            } else {
-                
-            }
-      
-    },
+  mostraLoginCarrinho: (req, res) => {
+    return res.render("login-carrinho", {
+      erro: {},
+      errors: {},
+      css: ["style.css", "login.css"],
+      js: "",
+    });
+  },
+
+  logarCarrinho: async (req, res) => {
+    const { email, senha } = req.body;
+    let usuario = await Usuario.findAll({ where: { email: email } });
+
+    console.log(usuario);
+    console.log(usuario[0].email, email);
+
+    if (email == usuario[0].email) {
+      bcrypt.compare(senha, usuario[0].senha, async (erro, result) => {
+        if (result) {
+          req.session.login = usuario[0].idusuarios;
+
+          let enderecos = await Endereco.findAll({
+            where: { usuarios_idusuarios: usuario[0].idusuarios },
+          });
+
+          res.render("carrinho", {
+            css: ["style.css", "carrinho.css", "cabecalho-alternativo.css"],
+            js: ["carrinho.js"],
+            valorFrete: null,
+            prazo: null,
+            erro: [],
+          });
+        } else {
+          let erro = {
+            msg: "Não foi possível realizar o login!",
+          };
+          return res.render("login", {
+            erro,
+            errors: {},
+            css: ["style.css", "login.css"],
+            js: "",
+          });
+        }
+      });
+    } else {
+    }
+  },
+
+  logarUsuario: async (req, res) => {
+    const { email, senha } = req.body;
+    let usuario = await Usuario.findAll({ where: { email: email } });
+
+    console.log(usuario);
+    console.log(usuario[0].email, email);
+
+    if (email == usuario[0].email) {
+      bcrypt.compare(senha, usuario[0].senha, async (erro, result) => {
+        if (result) {
+          req.session.login = usuario[0].idusuarios;
+
+          let enderecos = await Endereco.findAll({
+            where: { usuarios_idusuarios: usuario[0].idusuarios },
+          });
+
+          res.render("painel", {
+            usuarios: usuario,
+            enderecos,
+            css: ["style.css", "painel-usuario.css"],
+            js: ["painel-usuario.js", "formata-data.js", "compra.js"],
+          });
+        } else {
+          let erro = {
+            msg: "Não foi possível realizar o login!",
+          };
+          return res.render("login", {
+            erro,
+            errors: {},
+            css: ["style.css", "login.css"],
+            js: "",
+          });
+        }
+      });
+    } else {
+    }
+  },
 
   deslogarUsuario: (req, res) => {
     if (req.session.login) {
@@ -52,23 +109,31 @@ module.exports = {
     }
   },
 
-    mostraPainelUsuario: async (req, res) => {
-        if(req.session.login) {
-            let idLogin = req.session.login;
-            let usuarios = await Usuario.findAll({where: {idusuarios: idLogin}});
-            let enderecos = await Endereco.findAll({where: {usuarios_idusuarios: usuarios[0].idusuarios}});
-            console.log(usuarios);
-            res.render('painel', {usuarios, enderecos, css: ['style.css', 'painel-usuario.css'], js: ['painel-usuario.js', "formata-data.js"]});
-        } else {
-            res.redirect('/login');
-        }
-    }, 
+  mostraPainelUsuario: async (req, res) => {
+    if (req.session.login) {
+      let idLogin = req.session.login;
+      let usuarios = await Usuario.findAll({ where: { idusuarios: idLogin } });
+      let enderecos = await Endereco.findAll({
+        where: { usuarios_idusuarios: usuarios[0].idusuarios },
+      });
+      console.log(usuarios);
+      res.render("painel", {
+        usuarios,
+        enderecos,
+        css: ["style.css", "painel-usuario.css"],
+        js: ["painel-usuario.js", "formata-data.js"],
+      });
+    } else {
+      res.redirect("/login");
+    }
+  },
 
   mostraCadastro: (req, res) => {
     res.render("cadastro", {
+      erro: {},
       errors: {},
       css: ["style.css", "cadastro.css"],
-      js: "",
+      js: ["cadastro.js"],
     });
   },
 
@@ -84,6 +149,7 @@ module.exports = {
     } = req.body;
     const usuario = await Usuario.findAll({ where: { email: email } });
     console.log(usuario);
+
     let { errors } = validationResult(req);
 
     if (errors.length) {
@@ -97,7 +163,7 @@ module.exports = {
       });
     }
 
-    if (!usuario) {
+    if (!usuario.length) {
       console.log("entrou no if do usuario");
       if (senha == senha2) {
         const hashSenha = await bcrypt.hash(senha, 10);
@@ -107,22 +173,18 @@ module.exports = {
           email,
           documento_usuario,
           telefone,
-          data_nascimento,
           senha: hashSenha,
           idadmin: 0,
         });
         res.redirect("/login");
       }
     } else {
-      let erro = {
-        msg: "Email já cadastrado!",
-      };
-
+      const erro = { msg: "esse e-mail já foi cadastrado" };
       res.render("cadastro", {
         errors: {},
         erro,
         css: ["style.css", "cadastro.css"],
-        js: "",
+        js: ["cadastro.js"],
       });
     }
   },
@@ -220,12 +282,12 @@ module.exports = {
       const { id } = req.params;
       const usuarios = await Usuario.findAll({ where: { idusuarios: id } });
       const pedidos = await Pedido.findAll({
-        where:{
-          usuarios_idusuarios: id
-        }
+        where: {
+          usuarios_idusuarios: id,
+        },
       });
-      console.log(pedidos)
-      
+      console.log(pedidos);
+
       return res.render("meus-pedidos", {
         usuarios,
         pedidos,
@@ -234,22 +296,28 @@ module.exports = {
       });
     } catch (erro) {
       console.log("aqui", erro);
-
     }
   },
 
   formUsuario: async (req, res) => {
-    const {id} = req.params;
-    let usuarios = await Usuario.findAll({where: {idusuarios: id}})
-    res.render('painel-edita-usuario', {usuarios, css: ['style.css', 'painel-formUsuario.css', 'painel-usuario.css'], js: '' })
+    const { id } = req.params;
+    let usuarios = await Usuario.findAll({ where: { idusuarios: id } });
+    res.render("painel-edita-usuario", {
+      usuarios,
+      css: ["style.css", "painel-formUsuario.css", "painel-usuario.css"],
+      js: "",
+    });
   },
 
   editarUsuario: async (req, res) => {
-    const {id} = req.params;
-    const {nome, sobrenome, email, documento_usuario, telefone} = req.body;
+    const { id } = req.params;
+    const { nome, sobrenome, email, documento_usuario, telefone } = req.body;
 
-    await Usuario.update({nome, sobrenome, email, documento_usuario, telefone}, {where: {idusuarios: id}});
+    await Usuario.update(
+      { nome, sobrenome, email, documento_usuario, telefone },
+      { where: { idusuarios: id } }
+    );
 
-    res.redirect('/painel');
-  }
+    res.redirect("/painel");
+  },
 };
