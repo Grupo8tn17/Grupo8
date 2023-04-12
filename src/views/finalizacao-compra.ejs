@@ -18,8 +18,8 @@
                 <p ><%= endereco[0].usuarios.nome + " " + endereco[0].usuarios.sobrenome%><br> <%= endereco[0].logradouro %> <br> </p><p class="text-cep"><%= endereco[0].cep %></p>
 
                 <h2>Forma de pagamento</h2>
-                <p>MasterCard 5555********6789 <br> 2x de R$ 227,75 sem juros <br>Valor Total R$
-                    455,50
+                <p>MasterCard 5555********6789 <br> 2x de R$ <% let valorDividido = parseInt(findPedido[0].total) / 2 %><%= valorDividido.toFixed(2).replace('.', ',') %> sem juros <br>Valor Total R$
+                    <%= parseInt(findPedido[0].total).toFixed(2).replace('.', ',') %>
                 </p>
 
                 <span>Receba seu pedido até 31 de Dezembro <i class="fa-solid fa-truck-fast"></i></span>

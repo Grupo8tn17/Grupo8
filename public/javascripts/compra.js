@@ -55,20 +55,6 @@ const pegaEndereco = async (cep) => {
     inputEstado.value = data.uf;
 }
 
-function alteraCEP () {
-    const textCep = document.querySelectorAll('.text-cep');
-    console.log(textCep);
-
-    for(let i = 0; i < textCep.length; i++) {
-        let cepFormatado = textCep[i].innerHTML
-        console.log(cepFormatado);
-        cepFormatado.split('-',5);
-
-        textCep[i].innerHTML = "<strong>CEP: </strong> 0" + cepFormatado
-    }
-}
-
-alteraCEP();
 
 function somaTotal() {
     let valorProdutos = document.querySelectorAll('.valor-produto');
