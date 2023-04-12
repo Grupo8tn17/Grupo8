@@ -113,7 +113,7 @@ module.exports = {
     res.render("cadastro", {
       errors: {},
       css: ["style.css", "cadastro.css"],
-      js:"" 
+      js:["cadastro.js"] 
     });
   },
 
@@ -157,20 +157,17 @@ module.exports = {
           idadmin: 0,
         });
         res.redirect("/login");
-      }
-    } else {
-      let erro = {
-        msg: "Email já cadastrado!",
       };
+    }
 
       res.render("cadastro", {
         errors: {},
-        erro,
+        erro:{},
         css: ["style.css", "cadastro.css"],
         js: ["cadastro.js"],
       });
-    }
-  },
+    },
+  
 
   mostraUsuarioAdmin: async (req, res) => {
     const usuarios = await Usuario.findAll({ where: { idadmin: 1 } });
