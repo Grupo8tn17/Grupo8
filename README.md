@@ -1,5 +1,5 @@
 <h1 align="center">
-<a><img align="center" height="100em" src="/public/images/Logo3PNG.png"></a>  Infinity Cosméticos
+Infinity Cosméticos
 </h1>
 
 <h2 align="center">
@@ -12,7 +12,6 @@
 
 </br>
 
-<h2>
 🍁 Sobre o Projeto
 </h2> 
 
@@ -20,20 +19,3 @@
 
  Foi desenvolvido para o Projeto Integrador do curso de Desenvolvimento Web Full Stack da Digital House.
 
- </br>
-
-<h2>
- 💻 Tecnologias utilizadas:
-</h2> 
-
-<ul>
-<li>HTML</li>
-<li>CSS</li>
-<li>JavaScript</li>
-<li>EJS</li>
-<li>Express</li>
-<li>MySQL</li>
-<li>Sequelize</li>
-<li>NodeJS</li>
-<li>APIs</li>
-</ul>

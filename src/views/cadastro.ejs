@@ -1,0 +1,86 @@
+<%- include('partials/cabecalho-alternativo') %>
+
+  <main>
+    <div id="new-customer">
+      <h1>Cadastro de Novo Cliente</h1>
+      <hr />
+      <h2>Dados Pessoais</h2>
+    </div>
+
+    <form method="POST" action="/cadastro/adiciona" class="registrationForm">
+
+      <section id="personal-data">
+
+        <div id="first-new-customer">
+          <p class="msgError"><%= erro.msg %></p>
+          <div class="small-data">
+            
+            <div>
+              <label for="nome"></label>
+              <p class="msgError"><%= errors.nome %></p>
+              <input type="text" id="nome" name="nome" required="required" placeholder="Nome:" />              
+            </div>
+            
+
+            <div>
+            <label for="sobrenome"></label>
+            <p class="msgError"><%= errors.sobrenome %></p>
+            <input type="text" id="sobrenome" name="sobrenome" required="required" placeholder="Sobrenome:" />            
+            </div>
+            
+          </div>
+
+          <div class="data">
+            <label for="email"></label>
+            <p class="msgError"><%= errors.email %></p>
+            <input type="email" id="email" name="email" required="required" placeholder="E-mail:" />
+          </div>
+
+          <div class="data">
+            <label for="cpf"></label>
+            <p class="msgError"><%= errors.documento_usuario %></p>
+            <input type="text" id="documento_usuario" name="documento_usuario" required="required" placeholder="CPF:">
+          </div>
+
+          <div class="data">
+            <label for="tel"></label>
+            <p class="msgError"><%= errors.telefone %></p>
+            <input type="text" id="telefone" name="telefone" required="required" placeholder="Tel Celular:" />
+          </div>
+
+          <div class="data">
+            <label for="pwd1"></label>
+            <p class="msgError"><%= errors.senha %></p>
+            <input type="password" id="pwd1" name="senha" required="required" placeholder="Crie sua senha de acesso:" />
+            
+          </div>
+
+          <div class="data">
+            <label for="pwd2"></label>
+            <p class="msgError"><%= errors.senha2 %></p>
+            <input type="password" id="pwd2" name="senha2" placeholder="Confirme sua senha de acesso:" />
+            
+          </div>
+
+          <div class="checkbox">
+            <input type="checkbox" name="promotional-email" id="promotional-email" value="true">
+            <label for="promotional-email">Desejo receber e-mails promocionais</label>
+          </div>
+
+          <div class="checkbox">
+            <input type="checkbox" name="privacy-policy" id="privacy-policy" required="required" value="true">
+            <label for="privacy-policy">Concordo com a <a href="/politica-privacidade">política de privacidade</a> e os
+              <a href="/politica-privacidade/#termo-uso-id">termos de uso</a>.</label>
+          </div>
+
+          <div class="personal-data-button">
+            <button type="submit" id="advance">Avançar</button>
+          </div>
+        </div>
+
+      </section>
+
+    </form>
+  </main>
+
+  <%- include('partials/rodape-alternativo') %>

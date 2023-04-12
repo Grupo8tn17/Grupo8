@@ -1,0 +1,90 @@
+<%- include('partials/cabecalho-alternativo') %>
+
+<section class="painel-container">
+
+    <!-- início do main -->
+    <main>
+
+        <div class="titulo-formUsuario">
+            
+            <% usuarios.forEach(usuario => { %>
+             
+            
+
+            <h1>Editar Meus Dados Pessoais</h1>
+            <hr>
+        </div>
+
+        <section class="formUsuario-container">
+
+            <div class="div-form">
+
+                <form action="/usuarios/editarUsuario/<%= usuario.idusuarios %>?_method=PUT" method="POST"
+                    class="formUsuario-estilo">
+
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome" required="required" value="<%= usuario.nome %>"/>
+
+                    <label for="sobrenome">Sobrenome:</label>
+                    <input type="text" id="sobrenome" name="sobrenome" required="required" value="<%= usuario.sobrenome %>"/>
+
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email" required="required" value="<%= usuario.email %>" />
+
+                    <label for="cpf">CPF:</label>
+                    <input type="number" id="documento_usuario" name="documento_usuario"
+                        required="required" value="<%= usuario.documento_usuario %>"/>
+
+                    <label for="tel">Tel Celular:</label>
+                    <input type="number" id="telefone" name="telefone" required="required"
+                        placeholder="Inserir somente números" value="<%= usuario.telefone %>"/>
+
+                    <button class="salvar-dados" type="submit">Salvar Alterações</button>
+
+                </form>
+            </div>
+
+        </section>
+
+    </main>
+
+        <!-- Fim da Section dos Dados Pessoais -->
+    <!-- Fim do Main -->
+
+    <!-- Início do Aside -->
+    <aside>
+        <section class="aside-user">
+            <figure>
+                <i class="icon-user fa-solid fa-user"></i>
+            </figure>
+
+            <h3 class="name-user">
+                <%= usuario.nome + " " + usuario.sobrenome%>
+            </h3>
+            <nav>
+                <ul class="options-user">
+                    <li><a class="list-icon" href="#meus-dados"><i class="fa-solid fa-user"></i>Meus Dados</a></li>
+                    <hr>
+                    <li><a class="list-icon" href="/meus-pedidos/<%= usuario.idusuarios %>"><i
+                                class="fa-sharp fa-solid fa-clipboard-list"></i>Meus Pedidos</a></li>
+                    <hr>
+                    <li><a class="list-icon" href="#meus-enderecos"><i class="fa-solid fa-address-card"></i>Meus
+                            Endereços</a>
+                    </li>
+                    <hr>
+                    <li><a class="list-icon" href="/sair"><i class="fa-solid fa-right-from-bracket"></i>Sair</a>
+                    </li>
+                    <hr>
+                </ul>
+            </nav>
+        </section>
+        <% }) %>
+    </aside>
+    <!-- Fim do Aside -->
+
+</section>
+
+</body>
+<!-- Fim do Container -->
+
+<%- include('partials/rodape-alternativo') %>

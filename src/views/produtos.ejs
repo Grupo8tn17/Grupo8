@@ -1,0 +1,77 @@
+<%- include('partials/cabecalho') %>
+
+<main>
+  <div class="container-principal">
+    <div class="menu-filter">
+      <h3>Filtros</h3>
+      <div class="list-filter">
+          <li class="item">
+            <div class="item-icon categorias">
+              <a href="">Categorias</a><button><i class="fa-solid fa-angle-down"></i></button>
+            </div>
+              <ul class="item-ul-categorias removed">
+                <li>
+                  <% for(let categorias of categoria) { %>
+                  <div class="item-input">
+                    <input type="checkbox" name="<%= categorias.nome %>" id="cabelos">
+                    <label for="<%= categorias.nome %>"><%= categorias.nome %></label>
+                  </div>
+                 <% } %>
+                </li>
+              </ul>
+          </li>
+          <li class="item">
+            <div class="item-icon marcas">
+              <a href="">Marcas</a><button><i class="fa-solid fa-angle-down"></i></button>
+            </div>
+              <ul class="item-ul-marcas removed">
+                <li>
+                  <% for (let marcas of marca) { %>
+                  <div class="item-input">
+                    <input type="checkbox" name="<%= marcas.nome %>" id="cabelos">
+                    <label for="<%= marcas.nome %>"><%= marcas.nome %></label>
+                  </div>
+                  <% } %>
+                </li>
+              </ul>
+      </div>
+    </div>  
+    <button id="button-filter">Filtrar</button>
+    <div class="container-produtos">
+      <div class="container-order">    
+        <section class="section-filter">
+          <span>Home / </span>
+          <div class="order">
+            <span>Ordenar por:</span>
+            <select name="Ordenar" id="ordenar">
+              <option value="" selected>Lançamento</option>
+              <option value="">Batom</option>
+              <option value="">Blush</option>
+            </select>
+          </div>
+        </section>
+      </div>
+      <hr />
+
+      <section id="list-products">
+        <div class="container">
+          <% for ( let itemProducts of products) { %>
+          <div class="indexProductsProducts">
+            <a href="/produtos/descricao-produto/<%= itemProducts.idprodutos %> "> <img
+                src="/images/products/<%= itemProducts.imagem %> "
+                alt="">
+              <p class="indexProductsDescription"><%= itemProducts.titulo %></p>
+              <p class="indexProductsOldPrice">R$ 45,00</p>
+              <p class="indexProductsPrice price">R$ <%= itemProducts.valor %></p>
+              <p class="indexProductsSubPrice"><sub>3x de R$ 10,85 Sem juros</sub></p>
+            </a>
+          </div>
+          
+       <% } %>
+        </div>
+      </section>
+    </div>
+  </div>
+</main>
+
+<%- include('partials/rodape') %>

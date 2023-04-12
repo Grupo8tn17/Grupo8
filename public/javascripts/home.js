@@ -19,3 +19,15 @@ function start() {
   }, time);
 }
 window.addEventListener("load", start);
+
+var valores = document.querySelectorAll('.price');
+var valorAntigo = document.querySelectorAll('.price');
+const valorPromo = document.querySelectorAll('#old-price');
+
+
+window.addEventListener('load', function (e) {
+  valores.forEach(valor => {
+    valor.innerText = valor.innerText.replace(".", ",");
+  })
+        
+  });
