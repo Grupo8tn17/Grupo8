@@ -113,7 +113,7 @@ module.exports = {
     res.render("cadastro", {
       errors: {},
       css: ["style.css", "cadastro.css"],
-      js: "",
+      js:"" 
     });
   },
 
@@ -127,6 +127,8 @@ module.exports = {
       senha,
       senha2,
     } = req.body;
+    const usuario = await Usuario.findAll({ where: { email: email } });
+    console.log(usuario);
   
     let { errors } = validationResult(req);
 
@@ -140,8 +142,6 @@ module.exports = {
         js: "",
       });
     }
-    const usuario = await Usuario.findAll({ where: { email: email } });
-    console.log(usuario);
 
     if (!usuario.length) {
       console.log("entrou no if do usuario");
@@ -167,7 +167,7 @@ module.exports = {
         errors: {},
         erro,
         css: ["style.css", "cadastro.css"],
-        js: "",
+        js: ["cadastro.js"],
       });
     }
   },
